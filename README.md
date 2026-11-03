@@ -136,6 +136,13 @@ g++ -std=c++23 -I EROverlay/deps/nlohmann_json/include -o bossdata_validate tool
 ./bossdata_validate bosses.json
 ```
 
+## Updating
+
+Between releases, only these files change: `EROverlay.dll`, `overlays\Boss.dll` and the language
+datasets under `data\`. **Do not overwrite your `configs\` folder** — it holds your personal
+settings (`boss_kill_text` with deaths/IGT, challenge mode, randomizer paths, panel position...).
+Extract new releases elsewhere and copy over everything except `configs\`.
+
 ## Credits
 
 * [soarqin/EROverlay](https://github.com/soarqin/EROverlay) by Soar Qin (MIT) — overlay loader,
