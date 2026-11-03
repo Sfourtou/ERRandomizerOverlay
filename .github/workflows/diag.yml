@@ -2,6 +2,11 @@ name: Diagnostic
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/diag.yml"
+    branches:
+      - main
 
 jobs:
   diag:
