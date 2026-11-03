@@ -1,0 +1,275 @@
+# Writing an Overlay Plugin
+
+EROverlay supports third-party overlay plugins as individual DLLs placed in the `overlays/` folder. This document explains how to create one.
+
+---
+
+## Overview
+
+A plugin is a standard Windows DLL that exports a single function `getExports()`, which returns a pointer to a `PluginExports` struct. The loader calls the functions in this struct at the appropriate times during the overlay lifecycle.
+
+---
+
+## Plugin Lifecycle
+
+```
+DLL loaded → init() → [game running loop] → uninit()
+                           │
+                    ┌──────┴──────┐
+                 update()      createRenderer()
+                 (60 Hz)            │
+                              render() (per frame)
+                                   │
+                            destroyRenderer()
+```
+
+- **`init()`** — Called once when the plugin is loaded. Receive the API pointer here.
+- **`update()`** — Called at approximately 60 Hz in a dedicated thread. Use for game state polling.
+- **`createRenderer()`** — Called when the DX12 renderer is ready. Set up ImGui context here.
+- **`render()`** — Called once per overlay frame from the game's render-queue callback. Draw ImGui widgets here.
+- **`destroyRenderer()`** — Called when the renderer is being torn down.
+- **`uninit()`** — Called when the plugin is unloaded.
+
+---
+
+## Step-by-Step Guide
+
+### 1. Set up your CMakeLists.txt
+
+Create a new directory under `src/` (e.g., `src/myplugin/`) and add a `CMakeLists.txt`:
+
+```cmake
+add_project(myplugin SHARED
+    dllmain.cpp
+
+    LANGUAGES CXX
+    NO_PREFIX
+    FOLDER overlays
+    OUTPUT_SUBDIR overlays
+    OUTPUT_NAME MyPlugin
+)
+
+target_link_libraries(${PROJECT_NAME} EROverlayDLL)
+```
+
+Then add `add_subdirectory(myplugin)` to `src/CMakeLists.txt`.
+
+### 2. Include the API header
+
+```cpp
+#include "api.h"
+```
+
+This header is in `src/` and is automatically on the include path when you link against `EROverlayDLL`.
+
+### 3. Implement the plugin functions
+
+```cpp
+#include "api.h"
+
+static EROverlayAPI *api = nullptr;
+
+// Called once on load. Return 0 for success, non-zero to abort loading.
+int init(EROverlayAPI *erOverlayAPI) {
+    api = erOverlayAPI;
+    // Read config, load data, resolve memory addresses, etc.
+    return 0;
+}
+
+// Called on unload.
+void uninit() {
+    // Clean up resources.
+}
+
+// Called at ~60 Hz in a dedicated thread.
+void update() {
+    // Poll game state, update internal data structures.
+}
+
+// Called when the DX12 renderer is ready.
+// Return the render priority: lower value = rendered earlier (lower ImGui layer).
+int createRenderer(void *context, void *allocFunc, void *freeFunc, void *userData) {
+    ImGui::SetCurrentContext(static_cast<ImGuiContext *>(context));
+    ImGui::SetAllocatorFunctions(
+        reinterpret_cast<ImGuiMemAllocFunc>(allocFunc),
+        reinterpret_cast<ImGuiMemFreeFunc>(freeFunc),
+        userData);
+    // Initialize your renderer here.
+    return 100; // priority
+}
+
+// Called when the renderer is torn down.
+void destroyRenderer() {
+    // Release renderer resources.
+}
+
+// Called every frame. Return true if your plugin wants to show the mouse cursor.
+bool render() {
+    ImGui::Begin("My Plugin");
+    ImGui::Text("Hello from MyPlugin!");
+    ImGui::End();
+    return false;
+}
+
+// Export the plugin entry point.
+static PluginExports exports = { init, uninit, update, createRenderer, destroyRenderer, render };
+PLUGIN_DEFINE(exports)
+```
+
+---
+
+## The `EROverlayAPI` Interface
+
+The `EROverlayAPI` struct (defined in `src/api.h`) provides access to game data and loader utilities. All functions are available after `init()` is called.
+
+### Global
+
+| Function | Signature | Description |
+|---|---|---|
+| `getGameVersion` | `uint64_t ()` | Returns the running game version as a packed integer. |
+| `getModulePath` | `const wchar_t *()` | Returns the absolute path to the directory containing `EROverlay.dll`. |
+
+### Game Status
+
+| Function | Signature | Description |
+|---|---|---|
+| `menuLoaded` | `bool ()` | Returns `true` when the main game menu is loaded. |
+| `screenState` | `int ()` | Returns the current screen state (loading, in-game, etc.). |
+
+### Steam
+
+| Function | Signature | Description |
+|---|---|---|
+| `getGameLanguage` | `const wchar_t *()` | Returns the Steam game language string (e.g., `"enUS"`, `"zhCN"`). |
+| `isDLC01Installed` | `bool ()` | Returns `true` if the "Shadow of the Erdtree" DLC is installed. |
+
+### Config
+
+> **Note:** Config functions are not efficient for per-frame use. Call them only during `init()` or data loading.
+
+Config keys use dot notation: `"section.key"` (e.g., `"boss.data_file"`, `"common.font_size"`).
+
+| Function | Signature | Description |
+|---|---|---|
+| `configGet` | `const char *(name)` | Returns the raw string value for a config key, or `nullptr`. |
+| `configGetString` | `const wchar_t *(name, defValue)` | Returns the value as a wide string, or `defValue` if not set. |
+| `configGetInt` | `int (name, defValue)` | Returns the value as an integer, or `defValue` if not set. |
+| `configGetFloat` | `float (name, defValue)` | Returns the value as a float, or `defValue` if not set. |
+| `configEnabled` | `bool (name)` | Returns `true` if the value is `"true"`, `"1"`, or `"yes"`. |
+| `configGetImGuiKey` | `int (name, defValue)` | Returns the value parsed as an ImGui key code. |
+
+### Game Addresses
+
+| Function | Signature | Description |
+|---|---|---|
+| `getGameAddresses` | `GameAddresses ()` | Returns a struct with pointers to key game manager objects. |
+| `resolveFlagAddress` | `uintptr_t (flagId, bits)` | Resolves the memory address and bit mask for a game event flag. |
+
+The `GameAddresses` struct contains:
+
+```c
+typedef struct {
+    uintptr_t csMenuManImp;   // Menu manager
+    uintptr_t gameDataMan;    // Game data manager
+    uintptr_t eventFlagMan;   // Event flag manager
+    uintptr_t fieldArea;      // Field area manager
+    uintptr_t gameBase;       // Game base pointer
+} GameAddresses;
+```
+
+### Params
+
+| Function | Signature | Description |
+|---|---|---|
+| `paramFindTable` | `const void *(name)` | Finds a game param table by name (e.g., `L"NpcParam"`). |
+
+### Rendering / Textures
+
+| Function | Signature | Description |
+|---|---|---|
+| `loadTexture` | `TextureContext (filename)` | Loads a texture from the `data/` folder (or an absolute path) for use in ImGui. |
+| `destroyTexture` | `void (TextureContext *)` | Releases a previously loaded texture. |
+
+The `TextureContext` struct:
+
+```c
+typedef struct {
+    void *texture;    // ID3D12Resource pointer
+    int   width;
+    int   height;
+    void *cpuHandle;  // D3D12_CPU_DESCRIPTOR_HANDLE
+    void *gpuHandle;  // D3D12_GPU_DESCRIPTOR_HANDLE
+    bool  loaded;     // true even if loading failed (prevents retry)
+} TextureContext;
+```
+
+---
+
+## Threading Notes
+
+- `update()` runs in a **dedicated overlay thread** at ~60 Hz.
+- `render()` runs in the **native game render-queue callback** through UI_SCENE.
+- If you share state between `update()` and `render()`, protect it with a `std::mutex`.
+- Use `std::atomic_bool` for simple cross-thread flags.
+
+Update and render callbacks remain serialized for existing plugins. A plugin
+whose data is synchronized independently can opt in to concurrent callbacks:
+
+```cpp
+PLUGIN_EXPORT bool supportsConcurrentUpdateRender() { return true; }
+```
+
+An opted-in plugin must protect every mutable object shared by the two threads.
+`createRenderer()`, `destroyRenderer()` and `uninit()` still run exclusively,
+after active update/render callbacks finish. Older cores ignore this optional
+export and keep the original serialization.
+
+The size-gated native extension in `nativeapi.h` offers `queueDdsTexture()` for
+CPU preparation on update, `beginOffscreenRegion()` for a local compositing
+target, and `textureMemoryBytes()` for the actual committed DDS allocation.
+Check `size >= offsetof(EROverlayNativeAPI, member) + sizeof(api->member)` and
+the function pointer before each optional method. GPU status queries and
+retirement stay on render; a READY view must be polled at least once in each
+frame that uses it so deferred retirement covers all draws.
+
+---
+
+## Rendering Below Game UI
+
+Plugins draw above the game's composited UI by default. Existing Boss,
+Achievements and third-party plugin binaries keep that behavior without
+recompiling. A plugin can opt into the lower scene target by
+adding this optional DLL export:
+
+```cpp
+PLUGIN_EXPORT ERRenderLayer getRenderLayer() { return ER_RENDER_LAYER_BELOW_UI; }
+```
+
+The core reads this export once when loading the plugin. Missing exports,
+`ER_RENDER_LAYER_ABOVE_UI` and unrecognized values select the upper layer.
+`PluginExports` and `EROverlayAPI` retain their existing layouts. Older cores
+ignore the export. Minimap is the only bundled plugin that opts in.
+
+The native backend builds one ImGui/input frame, calls every plugin's `render()`
+once, and submits the lower commands before native UI composition and the upper
+commands afterward. `createRenderer()`'s return value still controls callback
+order; it does not select a game render stage. A shared window or foreground
+draw list can contain commands from both plugin layers.
+
+UI_SCENE is the only renderer; no backend selection is required. Use the new
+core together with the new Minimap DLL for the lower layer and the immediate
+loading/logo/world-map visibility checks. The size-gated native
+`readDisplayState()` reports these conditions independently of resource and
+map-snapshot readiness; check the API size and pointer before calling it.
+
+---
+
+## Config File Convention
+
+If your plugin needs user-configurable settings, create a `.ini` file in the `configs/` folder (e.g., `configs/myplugin.ini`). The loader automatically reads all `.ini` files in that folder. Access your keys via `api->configGetInt("myplugin.my_key", defaultValue)`.
+
+---
+
+## Reference Implementation
+
+See [`src/boss/dllmain.cpp`](../src/boss/dllmain.cpp) for a complete, production-quality example of a plugin that uses the full API: config loading, memory address resolution, threaded data updates, and ImGui rendering.

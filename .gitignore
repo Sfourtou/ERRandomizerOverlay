@@ -1,0 +1,13 @@
+# Build artifacts
+EROverlay/build/
+EROverlay/dist/
+
+# Editor
+.vs/
+.vscode/
+.idea/
+.DS_Store
+
+# Private game data — do not publish spoiler logs (they reveal your run)
+spoiler_logs.txt
+spoiler_logs/

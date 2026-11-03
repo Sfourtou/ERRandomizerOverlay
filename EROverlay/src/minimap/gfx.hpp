@@ -1,0 +1,114 @@
+#pragma once
+
+#include <array>
+#include <cstdint>
+#include <map>
+#include <string>
+#include <unordered_map>
+#include <vector>
+
+#include "util/assets.hpp"
+
+namespace er::minimap {
+
+enum class MapLayer : uint8_t { Area, Item, Warp, Memo, Marker, Dead, Player };
+
+struct Point {
+    float x = 0, y = 0;
+};
+using Matrix = std::array<float, 6>; // x=a*x+c*y+tx, y=b*x+d*y+ty
+constexpr Matrix IDENTITY_MATRIX{1, 0, 0, 1, 0, 0};
+struct Bounds {
+    float left = 0, top = 0, right = 0, bottom = 0;
+};
+struct VectorStyle {
+    uint32_t color = 0;
+    float width = 0;
+};
+struct VectorCommand {
+    uint8_t op;
+    Point to, control;
+    uint16_t fill0 = 0, fill1 = 0, stroke = 0;
+};
+struct VectorShape {
+    Bounds bounds;
+    std::vector<VectorStyle> fills, strokes;
+    std::vector<VectorCommand> commands;
+};
+struct ColorTransform {
+    std::array<float, 4> multiply{1, 1, 1, 1};
+    std::array<float, 4> add{};
+    [[nodiscard]] bool operator==(const ColorTransform &) const = default;
+    [[nodiscard]] bool identity() const { return *this == ColorTransform{}; }
+    // Packed RGBA, the byte order of SWF styles and RGBA8 texels. Each channel
+    // is rounded and clamped to 0-255.
+    [[nodiscard]] uint32_t apply(uint32_t rgba) const;
+};
+struct IconLayer {
+    std::string image;
+    uint32_t width = 0, height = 0;
+    Matrix matrix = IDENTITY_MATRIX;
+    ColorTransform color;
+    VectorShape shape;
+    std::vector<uint16_t> depth;
+    uint32_t resourceRegion = UINT32_MAX; // Resolved once by Resources.
+    [[nodiscard]] bool bitmap() const { return !image.empty(); }
+};
+struct IconRecipe {
+    std::vector<IconLayer> layers;
+    Bounds bounds;
+};
+struct TextLayout {
+    Bounds bounds;
+    Matrix matrix = IDENTITY_MATRIX;
+    float fontHeight = 0;
+    uint32_t color = 0xffffffff;
+    uint8_t align = 0;
+    float leftMargin = 0, rightMargin = 0, indent = 0, leading = 0;
+    std::string fontClass;
+};
+
+class GfxMovie {
+public:
+    [[nodiscard]] bool parse(util::Bytes bytes);
+    [[nodiscard]] bool icon(uint32_t frame, IconRecipe &recipe) const;
+    [[nodiscard]] bool itemOverlay(const std::string &name, IconRecipe &recipe) const;
+    [[nodiscard]] bool special(const std::string &path, IconRecipe &recipe, uint32_t frame = 1) const;
+    [[nodiscard]] bool image(const std::string &name, IconRecipe &recipe) const;
+    [[nodiscard]] bool text(const std::string &path, TextLayout &layout) const;
+    [[nodiscard]] uint32_t iconFrameCount() const;
+    [[nodiscard]] uint32_t iconLayerCount(uint32_t frame) const;
+    [[nodiscard]] std::vector<MapLayer> markerLayers() const;
+
+private:
+    struct Placement {
+        uint32_t character = 0;
+        Matrix matrix = IDENTITY_MATRIX;
+        ColorTransform color;
+        std::string name;
+        bool visible = true;
+        bool effects = false;
+    };
+    struct Character {
+        std::string image;
+        uint32_t width = 0, height = 0;
+        VectorShape shape;
+        bool vector = false;
+        std::vector<std::map<uint16_t, Placement>> frames;
+    };
+    [[nodiscard]] bool parseTimeline(util::Bytes bytes, uint32_t count, Character &character, unsigned nesting);
+    [[nodiscard]] bool flatten(uint32_t character, uint32_t frame, const Matrix &matrix, std::vector<uint16_t> &depth, std::vector<uint32_t> &parents, IconRecipe &recipe,
+                               const ColorTransform &color = {}) const;
+    [[nodiscard]] uint32_t named(const std::string &path, Matrix *placementMatrix = nullptr) const;
+    std::unordered_map<uint32_t, Character> characters_;
+    std::unordered_map<uint32_t, std::pair<uint16_t, std::vector<uint8_t>>> shapeBytes_;
+    std::unordered_map<uint32_t, std::vector<uint8_t>> textBytes_;
+    uint32_t icons_ = 0;
+    uint32_t worldMapItem_ = 0;
+};
+
+[[nodiscard]] Point transform(const Matrix &matrix, Point point);
+[[nodiscard]] Matrix multiply(const Matrix &outer, const Matrix &inner);
+[[nodiscard]] bool parseGfxMatrix(util::Bytes bytes, Matrix &matrix);
+
+} // namespace er::minimap

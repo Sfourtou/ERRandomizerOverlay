@@ -1,0 +1,127 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+---
+
+### [Unreleased]
+
+#### Added
+
+- Randomizer integration: read the Elden Ring Item and Enemy Randomizer's spoiler log to show, per boss location, which enemy was placed there. The full list reveals the placed boss's name once it is defeated (`randomizer_reveal=on_kill`, default, spoiler-free; `always` shows it from the start), tooltips show both names, and a "Boss defeated" toast names the placed enemy. A collapsible "Remaining pool" section lists alive bosses grouped by placed enemy identity (locations stay hidden), and an optional "Hide defeated" filter shortens the list to what is left. Placements are matched through the randomizer's `diste/Base/enemy.txt` entity→defeat-flag table, covering every boss including festival Radahn, Night's Cavalry and duo/trio fights. Configure with `randomizer_spoiler_log`, `randomizer_enemy_data` and the pool options in `boss.ini`; see the Boss README. Without a log the overlay behaves as before.
+- Add Chinese text, special-boss behavior notices and failure messages to the revival confirmation dialog. Failed revival attempts leave the previous state unchanged.
+
+#### Changed
+
+- Support Ctrl, Alt, Shift and Win combinations for the mini/full mode shortcut, and allow sharing keys with other overlays.
+- Clarify the `boss.ini` instructions and provide a Chinese-comment template in `configs_CN/`.
+
+#### Fixed
+
+- Fix arena, phase, summon or entry states not being restored when reviving some bosses. Fast travel or reload the area after revival.
+- Correct the Fire Giant's defeat detection and fix possible incorrect boss states after switching saves.
+- Fix possible game crashes caused by invalid panel-position settings or boss data files that cannot be parsed; invalid position values are treated as `0`.
+
+#### Upgrade notes
+
+- Update `EROverlay.dll`, `overlays/Boss.dll` and the Boss data files together.
+
+### [1.5.2] - 2026-06-30
+
+#### Fixed
+- Boss data now re-queries game memory addresses (`gameDataMan`, `fieldArea`) during `update()` if they were not yet resolved at init time. This fixes boss tracking failing to work when signature scanning runs before the game has fully loaded its code, mirroring the minimap fix.
+
+### [1.5.1] - 2025-11-13
+
+#### Fixed
+- `Death Count` was always shown as zero when `challenge_mode` was not enabled.
+
+### [1.5.0] - 2025-10-20
+
+#### Changed
+- Boss overlay is now a standalone module (`Boss.dll`) loaded by the Overlay Loader.
+
+### [1.4.0] - 2024-10-15
+
+#### Added
+- Challenge mode: set `challenge_mode = true` in the `[boss]` section to enable it.
+- Display text format can now be customized manually — see `boss.ini` for details.
+
+#### Changed
+- Font loading now falls back to system font links when the character set is not Latin or Cyrillic and no font file is explicitly configured.
+
+### [1.3.0] - 2024-07-03
+
+#### Added
+- `language` key added to the `[common]` section to select the data language independently of the game language.
+
+#### Changed
+- Data folder structure updated to support multiple language data files.
+- `data` key in `[boss]` section renamed to `data_file` (now specifies the data filename).
+- Boss memory addresses are now resolved by flag ID.
+
+#### Removed
+- `boss_display` and `place_display` fields removed from boss data (unused).
+
+#### Fixed
+- Mouse cursor remained locked after the mod was unloaded.
+- Player location area determination was incorrect in some cases.
+- Various boss flag data corrections.
+
+### [1.2.0] - 2024-06-30
+
+#### Added
+- New `[style]` section in config to customize overlay panel appearance.
+- New `[input]` section in config to customize shortcut keys.
+- DLC bosses are excluded from the list when the DLC is not installed.
+- Data is now loaded by game language when `data` in `[boss]` is left empty (note: `font` and `charset` in `[common]` must be set manually for non-Latin characters).
+
+#### Changed
+- Default font changed to **Open Sans** with a default size of 20 for better readability.
+- `charset` in `[common]` now defaults to empty, which auto-selects the charset based on game language.
+
+#### Fixed
+- Improved DX12 hooking to reduce crashes and add fullscreen mode support (alt-tab now works, though minor rendering artifacts may remain).
+- The mod can no longer be loaded multiple times simultaneously.
+
+### [1.1.3] - 2024-06-24
+
+#### Fixed
+- Crash caused by incorrect memory deallocation.
+
+#### Changed
+- Switched to [Pattern16](https://github.com/Dasaav-dsv/Pattern16) for faster signature scanning.
+
+### [1.1.2] - 2024-06-23
+
+#### Fixed
+- Missing boss: `Divine Beast Dancing Lion` in `Ancient Ruins of Rauh` was not listed.
+
+### [1.1.1] - 2024-06-23
+
+#### Fixed
+- Timing logic for applying hooks revised to reduce crash risk.
+- Boss data is no longer checked during loading screens or when returning to the main menu.
+
+### [1.1.0] - 2024-06-22
+
+#### Added
+- Support for Elden Ring v1.12 with DLC "Shadow of the Erdtree" — 41 new bosses added (all known bosses; some optional bosses may be missing).
+
+#### Fixed
+- Minor corrections to existing boss data.
+
+### [1.0.1] - 2024-01-13
+
+#### Added
+- `boss.panel_pos` config key to adjust the position of the boss panel.
+
+#### Fixed
+- Various bugs in boss data.
+
+### [1.0.0] - 2023-08-27
+
+#### Added
+- Initial release.

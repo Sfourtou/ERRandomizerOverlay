@@ -1,0 +1,157 @@
+#include "config.hpp"
+#include "d3drenderer.hpp"
+#include "gamefiles.hpp"
+#include "global.hpp"
+#include "hooking.hpp"
+#include "input.hpp"
+#include "plugin.hpp"
+#include "proxy/winhttp.h"
+#include "util/nativelog.hpp"
+#include "util/steam.hpp"
+
+#include <chrono>
+#include <shlwapi.h>
+#include <thread>
+#include <vector>
+
+void init();
+void mainThread();
+bool waitForRendererHook();
+
+#define OVERLAY_ATOM_NAME L"EROVERLAY_BY_SOARQIN"
+
+BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved) {
+    UNREFERENCED_PARAMETER(lpReserved);
+
+    static ATOM processAtom = 0;
+
+    switch (ul_reason_for_call) {
+        case DLL_PROCESS_ATTACH:
+            if (FindAtomW(OVERLAY_ATOM_NAME))
+                return FALSE;
+            load_winhttp_proxy();
+            processAtom = AddAtomW(OVERLAY_ATOM_NAME);
+            if (!::er::gModule) {
+                ::er::gModule = hModule;
+            }
+            DisableThreadLibraryCalls(hModule);
+            CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)init, er::gModule, 0, nullptr);
+            break;
+        case DLL_PROCESS_DETACH:
+            DeleteAtom(processAtom);
+            break;
+        default:
+            break;
+    }
+
+    return TRUE;
+}
+
+void checkGameVersion() {
+    wchar_t exepath[MAX_PATH];
+    GetModuleFileNameW(nullptr, exepath, MAX_PATH);
+    DWORD len = GetFileVersionInfoSizeW(exepath, nullptr);
+    if (len == 0)
+        return;
+    std::vector<BYTE> versionResource(len);
+    if (!GetFileVersionInfoW(exepath, 0, len, versionResource.data())) {
+        return;
+    }
+    UINT uLen;
+    VS_FIXEDFILEINFO *ptFixedFileInfo;
+    if (VerQueryValueW(versionResource.data(), L"\\", reinterpret_cast<LPVOID *>(&ptFixedFileInfo), &uLen) && uLen > 0) {
+        er::gGameVersion = (uint64_t(ptFixedFileInfo->dwFileVersionMS) << 32) | uint64_t(ptFixedFileInfo->dwFileVersionLS);
+    }
+}
+
+void init() {
+    checkGameVersion();
+    GetModuleFileNameW(::er::gModule, ::er::gModulePath, MAX_PATH);
+    PathRemoveFileSpecW(::er::gModulePath);
+    er::gConfig.loadFile(L"EROverlay.ini");
+    er::gConfig.loadDir(L"configs");
+    auto nativeLog = er::gConfig.getw("minimap.diagnostics.log_file", L"");
+    if (!nativeLog.empty())
+        er::util::nativeLogFile = _wfopen(nativeLog.c_str(), L"ab");
+    bool enableConsole = false;
+    if (er::gConfig.enabled("common.console")) {
+        enableConsole = true;
+        AllocConsole();
+        freopen("CONIN$", "r", stdin);
+        freopen("CONOUT$", "w", stdout);
+        freopen("CONOUT$", "w", stderr);
+    }
+
+    using namespace std::chrono_literals;
+    std::this_thread::sleep_for(1000ms);
+    er::gIsDLC01Installed = er::gGameVersion >= 0x0002000200000000ULL && (er::util::isDLCInstalled(2778580) || er::util::isDLCInstalled(2778590));
+    fwprintf(stderr, L"DLC \"Shadow of the Erdtree\" is %ls\n", er::gIsDLC01Installed ? L"installed" : L"not installed");
+    er::gHooking = std::make_unique<er::Hooking>();
+    er::gGameFiles = std::make_unique<er::GameFiles>();
+
+    er::pluginsInit();
+
+    const bool rendererReady = waitForRendererHook();
+    if (rendererReady)
+        mainThread();
+    else {
+        er::gRunning = false;
+        fwprintf(stderr, L"[EROverlay] UI_SCENE was not installed; overlay thread exiting\n");
+    }
+
+    // Drain render callbacks before uninitializing plugins, and keep MinHook
+    // alive until both the renderer and plugin hooks have been removed.
+    // Renderer destruction callbacks use the public API through gD3DRenderer;
+    // keep that pointer published until those callbacks and uninit return.
+    if (er::gD3DRenderer)
+        er::gD3DRenderer->unhook();
+    er::pluginsUninit();
+    er::gD3DRenderer.reset();
+    er::gGameFiles.reset();
+    er::gHooking.reset();
+    er::util::closeNativeLog();
+    // Keep the proxy DLL loaded and the diagnostic console available on an
+    // unsupported image. Normal unload remains an explicit user action.
+    if (!rendererReady)
+        return;
+    std::this_thread::sleep_for(500ms);
+    if (enableConsole) {
+        FreeConsole();
+    }
+    FreeLibraryAndExitThread(er::gModule, 0);
+}
+
+bool waitForRendererHook() {
+    using namespace std::chrono_literals;
+
+    er::gD3DRenderer = std::make_unique<er::D3DRenderer>();
+    while (er::gRunning) {
+        // A missing window is transient. Missing signatures or a hook
+        // installation failure cannot be repaired by rescanning every 500 ms.
+        if (er::gD3DRenderer->initOverlay())
+            return er::gD3DRenderer->hook();
+        std::this_thread::sleep_for(500ms);
+    }
+    return false;
+}
+
+void mainThread() {
+    auto unloadKey = er::gConfig.getVirtualKey("input.unload", 0);
+
+    er::gShowMenu = false;
+
+    using namespace std::chrono_literals;
+    constexpr auto tick = 1000000us / 60;
+    er::pluginsUpdate();
+    while (er::gRunning) {
+        if (unloadKey != 0 && er::input::isKeyChordPressed(unloadKey)) {
+            er::gShowMenu = false;
+            er::gRunning = false;
+            er::gHooking->showMouseCursor(false);
+            break;
+        }
+        std::this_thread::sleep_for(tick);
+
+        er::pluginsUpdate();
+    }
+}

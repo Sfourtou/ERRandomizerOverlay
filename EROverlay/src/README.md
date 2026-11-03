@@ -1,0 +1,97 @@
+# ELDEN RING Overlay Loader
+
+The core loader (`EROverlay.dll`) for ELDEN RING Overlay Hook. It hooks into the game's DirectX 12 rendering pipeline and renders ImGui-based overlays using a modular plugin architecture — discovering and loading individual overlay DLLs from the `overlays/` folder at runtime.
+
+> 🇨🇳 [中文说明](README_CN.md)
+
+---
+
+## Compatibility
+
+UI_SCENE is the only renderer. It uses signature- and RTTI-validated game hooks instead of DXGI hooks. Static address checks pass for game versions 1.05–1.17.1; 1.02–1.04.1 currently do not render overlays. See [UI_SCENE rendering](../docs/ui-scene-prototype.md) for behavior and verification scope.
+
+Minimap native file adapters cover hash-verified 1.02–1.17 historical EXEs and Steam 1.17.1; this data coverage does not extend the renderer's version range above. Offline address/layout regressions passed for all supplied old EXEs; per-version old-game visual testing remains pending. Atlas mods were verified with 12 atlases. See the [compatibility report](../docs/minimap-version-compatibility.md).
+
+---
+
+## Installation
+
+1. Edit the `.ini` files in the `configs/` folder to your liking (see [Configuration](#configuration) below).
+2. Inject `EROverlay.dll` into Elden Ring using one of the following methods:
+
+   | Method | Instructions |
+   |---|---|
+   | **Proxy DLL** *(recommended)* | Rename `EROverlay.dll` to `winhttp.dll` and place it next to `eldenring.exe`. Also copy the `configs/` and `data/` folders to the same directory. |
+   | **Mod loader** | Load `EROverlay.dll` via [EldenModLoader](https://www.nexusmods.com/eldenring/mods/117), [ModEngine2](https://github.com/soulsmods/ModEngine2), or [me3](https://github.com/garyttierney/me3). |
+   | **Injector** | Run the bundled `injector.exe`. *(Not recommended — unstable and may be blocked by security software.)* |
+
+3. Wait a few seconds for the mod to finish loading. Press `=` to toggle between mini and full mode.
+
+The loader maintains backward compatibility — you only need to ensure the Overlay Loader version meets the minimum requirement for any given overlay module.
+
+---
+
+## Configuration
+
+The loader reads INI files from `configs/`. Save edits as UTF-8 and restart the game to apply them. Put comments on separate lines.
+
+`configs/` contains English comments; `configs_CN/` contains Chinese-comment templates with the same filenames, keys and default values. To use Chinese comments, back up any customized file, copy its matching template into `configs/` and reapply your settings. Editing `configs_CN/` alone does not affect the running mod. The comment language does not select the game or data language.
+
+### `common.ini` — Global Settings
+
+| Key | Default | Description |
+|---|---|---|
+| `console` | `false` | Enable debug console output. |
+| `font` | *(empty)* | Path to a font file in the `data/` folder (or an absolute path). Leave empty to use the built-in Latin font or fall back to system fonts for other languages. |
+| `font_size` | `20` | Font size in pixels. |
+| `charset` | *(empty)* | Character set for font loading (`enUS`, `jaJP`, `koKR`, `zhCN`, `ruRU`, etc.). Leave empty to auto-detect from the game language. |
+| `language` | *(empty)* | Language used to load data files. Leave empty to use the game language. |
+
+### `input.ini` — Global Shortcuts
+
+| Key | Default | Description |
+|---|---|---|
+| `unload` | *(empty)* | Shortcut key to unload the mod. |
+
+Key names support modifiers with `+` (e.g., `CTRL+SHIFT+[`). See `input.ini` for the full list of available key names.
+
+### `style.ini` — Visual Style
+
+Customizes the ImGui color theme used by all overlay panels. All color values are `R,G,B,A` (0–255 each).
+
+| Key | Description |
+|---|---|
+| `text_color` | Text color |
+| `check_mark_color` | Checkbox check mark color |
+| `bg_color` | Panel background color |
+| `border_color` | Panel border color |
+| `button_color` / `button_hover_color` / `button_press_color` | Button states |
+| `node_color` / `node_hover_color` / `node_press_color` | Tree node states |
+| `scroll_bg_color` / `scroll_color` / `scroll_hover_color` / `scroll_press_color` | Scrollbar states |
+| `border_width` | Border width in pixels |
+| `rounding` | Window corner rounding radius |
+
+---
+
+## Documentation
+
+- [Building from source](../docs/building.md)
+- [Writing an overlay plugin](../docs/writing-plugins.md)
+
+---
+
+## License
+
+[MIT License](../LICENSE)
+
+---
+
+## Credits
+
+- Based on [ELDEN RING Internal Menu](https://github.com/NightFyre/ELDENRING-INTERNAL)
+- [minhook](https://github.com/TsudaKageyu/minhook)
+- [imgui](https://github.com/ocornut/imgui)
+- [stb](https://github.com/nothings/stb)
+- [JSON for Modern C++](https://github.com/nlohmann/json)
+- [Pattern16](https://github.com/Dasaav-dsv/Pattern16)
+- [Open Sans](https://fonts.google.com/specimen/Open+Sans)

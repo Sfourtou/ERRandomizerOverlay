@@ -1,0 +1,24 @@
+# ELDEN RING Overlay Hook
+
+## NOTE
+* The current core uses UI_SCENE rendering. Static address checks pass for game versions 1.05–1.17.1; 1.02–1.04.1 currently do not render overlays.
+* You can use `EROverlay.dll` to load multiple overlays, I will keep the back compatibility so that you just need to make sure `Overlay Loader` version meets the minimal requirements for certain overlay.
+
+## USAGE
+
+* Edit `configs/achievements.ini`, save as UTF-8 and restart the game after changes.
+* For Chinese comments, back up your customized file, copy the matching template from `configs_CN/` into `configs/` and reapply your settings. Keys and default values are identical; the loader reads `configs/`.
+* Inject the mod to Elden Ring, you can either:
+  + Rename `EROverlay.dll` to `winhttp.dll` and put it aside `eldenring.exe` (don't forget folders `configs` and `data`).
+  + Load `EROverlay.dll` with any mod loader ([EldenModLoader](https://www.nexusmods.com/eldenring/mods/117), [ModEngine2](https://github.com/soulsmods/ModEngine2) or [me3](https://github.com/garyttierney/me3)).
+  + Run `injector.exe` to inject (not recommended, because that this method is not very stable and is blocked by some security softwares).
+
+## [LICENSE](https://github.com/soarqin/EROverlay/blob/master/LICENSE)
+
+## CREDITS
+* modified from [ELDEN RING Internal Menu](https://github.com/NightFyre/ELDENRING-INTERNAL)
+* [minhook](https://github.com/TsudaKageyu/minhook)
+* [imgui](https://github.com/ocornut/imgui)
+* [stb](https://github.com/nothings/stb)
+* [JSON for Modern C++](https://github.com/nlohmann/json)
+* [Pattern16](https://github.com/Dasaav-dsv/Pattern16)

@@ -1,0 +1,113 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+---
+
+### [Unreleased]
+
+#### Added
+
+- Add `[markers] others` to show NPCs, placed stamps and other points added by map mods. Disabled by default; quest targets remain controlled by the landmark setting.
+- Support Map for Goblins markers, including DLL edition 2.1.7 and later. With `others` enabled, icons, colors, category switches and visibility after collecting items or defeating enemies follow the mod's settings.
+
+#### Changed
+
+- Draw the minimap below game UI so menus, dialogs and HUD elements can cover it.
+- Keep the minimap visible and its shortcuts usable in ordinary menus. Automatic hiding applies only to loading screens, startup logos and the full-screen map, including the border and loading messages.
+- Reduce CPU overhead when refreshing map markers.
+
+#### Fixed
+
+- Fix the minimap not appearing after updating the game to 1.17.2.
+- Fix missing icons and resources failing to load with map mods that use large texture packs.
+- Fix missing boss completion markers in mods and standalone boss markers remaining visible after their grace is activated.
+- Draw overlapping graces, landmarks and mod icons in the same order as the game's full-screen map.
+
+#### Upgrade notes
+
+- Update `EROverlay.dll` and `overlays/Minimap.dll` together.
+
+### [2.0.0] - 2026-10-03
+
+#### Added
+
+- Show dropped runes on the minimap until they are recovered. Enabled by default.
+- Show the game's numbered map beacons 1–5, following placement and removal while preserving each beacon's number. Enabled by default.
+- Add an optional fully revealed map for surface, underground and DLC areas. Disabled by default; it changes only the minimap display, without changing saves, granting fragments or discovering graces and landmarks.
+
+#### Changed
+
+- Use the game's map and icon artwork; external map images are no longer required.
+- Reduce rendering overhead and video memory use, including circular and translucent maps; release unused map resources automatically.
+- Organize settings into sections and independent named display presets, keeping all existing display options configurable. Provide clearer English instructions and separate Chinese-comment templates.
+- Enter border width directly in pixels.
+- Position the map at the center or any corner using horizontal and vertical margins. Margins support pixels, percentages and negative values, retaining the selected corner when the map changes size.
+- Width, height and all percentage margins use the shorter screen side. Equal percentages give equal horizontal and vertical distances; pixel margins keep their units.
+- Support modifier-key shortcuts and sharing keys with other overlays.
+
+#### Fixed
+
+- Fix circular borders being cut off at the top, bottom, left and right edges.
+
+#### Upgrade notes
+
+- Replace the old `configs/minimap.ini` with the new template and reapply custom settings. The old flat settings and comma-separated preset lists are no longer supported.
+
+### [1.1.3] - 2026-06-30
+
+#### Fixed
+- Minimap GPU resources (textures, atlas sprites, offscreen target) are now properly destroyed and recreated during D3D12 device recovery and renderer resets. A new `Atlas::unloadTextures()` and a `Renderer` destructor clean up resources, and `prepareTile()` now bounds-checks the tile index to avoid crashes when the texture list is reset.
+- Game memory addresses (`csMenuManImp`, `fieldArea`) are now re-queried during `update()` if they were unresolved at init time, so the minimap works even when signature scanning runs before the game code is fully loaded.
+- Added a null-renderer guard in the plugin `render()` entry point.
+
+### [1.1.2] - 2026-03-27
+
+#### Fixed
+- Fixed decorations (grace icons, landmarks) rendering outside the visible area in `circle` and `rounded` minimap shapes. The offscreen compositing now applies proper shape masking for all non-rect modes.
+- Fixed decorations near the shape boundary being completely hidden instead of partially visible. The strict center-point shape check is removed since offscreen compositing now handles clipping.
+
+### [1.1.1] - 2026-03-26
+
+#### Added
+- Per-state extra scale multipliers for rendering elements: `extra_tile_scale`, `extra_decoration_scale`, `extra_player_scale`, and `extra_bearing_scale` config options. Each accepts comma-separated values per scale state (cycled via `scale_key`), following the same pattern as `scale`/`alpha`/`width_ratio`.
+
+#### Changed
+- Increased bearing compass indicator size ratio from 0.25 to 0.4 for better visibility.
+
+### [1.1.0] - 2026-03-23
+
+#### Added
+- Rotation mode: set `rotate=1` to rotate the minimap so the camera's facing direction always points up. When enabled, the shape is forced to circle. Configurable per scale state (comma-separated).
+- A bearing compass indicator is shown in the top-right corner of the minimap when rotation mode is active.
+- Camera yaw is now read from game memory for accurate map rotation.
+- Landmark markers now appear on the minimap, with rotation support for directional icons.
+- `landmarks_key` config option to set the key for toggling landmark marker visibility (default: `N`).
+- `landmarks` config option to show/hide landmark markers by default (default: `1`).
+
+#### Fixed
+- Fixed translucent minimap elements (markers, tiles) appearing washed out due to double-alpha blending.
+- Fixed crash when cycling minimap presets with mismatched config list lengths.
+- Fixed pixel-snapping issues that could cause sub-pixel jitter on minimap edges.
+- Various internal code fixes and optimizations.
+
+### [1.0.0] - 2026-03-21
+
+#### Added
+- Configurable minimap shape: `rect` (default), `rounded`, or `circle`, set per scale state via `shape=` in `minimap.ini`.
+- Configurable rounding radius for the `rounded` shape: supports percentage (e.g. `20%` of the shorter side) or absolute pixel values (e.g. `30`).
+- Configurable shape border: `border_color` (R,G,B,A, 0–255 each) and `border_width_x10` (width × 10, e.g. `15` = 1.5 px). Set `border_width_x10=0` to disable.
+- In `circle` mode, the minimap is automatically constrained to a square (the smaller of width and height).
+- Bonfire/grace icons and the Roundtable Hold marker are now clipped to the minimap shape boundary in non-rect modes.
+
+#### Fixed
+- Fixed tile texture stretching in shaped (`rounded`/`circle`) rendering caused by incorrect UV clamping in `ShadeVertsLinearUV`.
+- Fixed a null pointer dereference when `csMenuManImp_` address is zero.
+- Removed leftover debug CSV dump from data loading.
+
+### [0.1.0] - 2025-10-20
+
+#### Added
+- Initial release.

@@ -1,0 +1,31 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+---
+
+### [Unreleased]
+
+#### Changed
+
+- Clarify the achievement-count limit and panel-layout instructions, and provide a Chinese-comment template in `configs_CN/`.
+
+#### Fixed
+
+- Fix possible game crashes caused by invalid panel-position settings; values that cannot be read as numbers are treated as `0`.
+
+#### Upgrade notes
+
+- Update `EROverlay.dll` and `overlays/Achievements.dll` together.
+
+### [0.1.1] - 2026-06-30
+
+#### Changed
+- Refactored internal data structures: replaced anonymous tuples with named structs (`Achievement`, `Locked`, `CollectionFlag`, `UnlockNotification`), extracted timing/animation constants into a `timing` namespace, and switched the renderer to RAII lifetime management. No behavior changes.
+
+### [0.1.0] - 2025-10-20
+
+#### Added
+- Initial release.
