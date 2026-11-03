@@ -121,6 +121,24 @@ void Renderer::renderFull(const RenderState &state) {
             ImGui::Checkbox("Hide defeated", &hideDefeated_);
         }
 
+        // Show which spoiler log the randomizer placements come from.
+        if (gBossDataSet.randoLoaded()) {
+            const auto &logPath = gBossDataSet.randoPath();
+            auto pos = logPath.find_last_of(L"\\/");
+            std::wstring fileNameW = pos == std::wstring::npos ? logPath : logPath.substr(pos + 1);
+            // Log filenames are ASCII (date, seed, hash); strip non-ASCII defensively.
+            std::string fileName;
+            for (wchar_t c: fileNameW) {
+                fileName.push_back(c >= 32 && c < 127 ? static_cast<char>(c) : '?');
+            }
+            ImGui::PushStyleColor(ImGuiCol_Text, ImGui::GetStyleColorVec4(ImGuiCol_TextDisabled));
+            ImGui::TextUnformatted(fmt::format("Randomizer: {}", fileName).c_str());
+            ImGui::PopStyleColor();
+            if (ImGui::IsItemHovered()) {
+                ImGui::SetTooltip("%ls", logPath.c_str());
+            }
+        }
+
         const auto &bosses = gBossDataSet.bosses();
         bool popup = false;
         if (ImGui::BeginChild("##bosses_list", ImGui::GetContentRegionAvail())) {

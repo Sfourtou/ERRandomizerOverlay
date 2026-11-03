@@ -68,6 +68,18 @@ the randomizer UI. It only *reads* files the randomizer's license explicitly per
 > The randomizer writes the spoiler log at randomization time, and the game must be restarted
 > after randomizing anyway — so the mapping is always in sync with the loaded run.
 
+### Multiple spoiler logs
+
+The randomizer keeps every past run's log in `spoiler_logs/`. When configured with a directory,
+ERTracker picks the log with the **newest modification time** among `*_log_*.txt` files. Since the
+randomizer requires a game restart after randomizing, the newest log always matches the loaded
+run. Files without boss placements (e.g. items-only runs, or a randomization that errored out)
+yield no placements and the tracker falls back to vanilla behavior rather than showing wrong data.
+
+To track a specific older run instead, point `randomizer_spoiler_log` directly at that log file.
+The full list header shows the loaded log's filename (`Randomizer: <name>`, full path on hover),
+so you can always confirm which run is being tracked.
+
 ## Configuration (`configs/boss.ini`)
 
 | Key | Default | Description |
