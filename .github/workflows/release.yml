@@ -12,6 +12,9 @@ permissions:
 jobs:
   build:
     runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: EROverlay
     strategy:
       matrix:
         include:
@@ -23,12 +26,7 @@ jobs:
 
       - name: Configure (Release)
         shell: pwsh
-        run: |
-          # Pick the newest Visual Studio generator available on the runner.
-          $vs = & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property catalog_productLineVersion
-          $gen = if ([int]$vs -ge 18) { "Visual Studio 18 2026" } else { "Visual Studio 17 2022" }
-          Write-Host "Using generator: $gen (VS $vs)"
-          cmake -B build -G "$gen" -A x64 -T v142 -DRELEASE_USE_STATIC_CRT=OFF -DRELEASE_USE_LTO=ON .
+        run: cmake -B build -G "Visual Studio 17 2022" -A x64 -T v142 -DRELEASE_USE_STATIC_CRT=OFF -DRELEASE_USE_LTO=ON .
 
       - name: Build (Release)
         shell: pwsh
@@ -51,7 +49,7 @@ jobs:
             New-Item -ItemType Directory -Force -Path "dist/$plugin/docs" | Out-Null
             Copy-Item "docs/boss-revival.md", "docs/boss-revival.evidence.json" "dist/$plugin/docs/" -ErrorAction SilentlyContinue
             Copy-Item -Recurse -Force "src/boss/data" "dist/$plugin/data"
-            # Ship the repository's updated boss dataset too (with [N] prefixes variant at repo root).
+            # Ship the repository's optional [N]-prefixed boss dataset variant.
             Copy-Item "../bosses.json" "dist/$plugin/bosses-user.json" -ErrorAction SilentlyContinue
           }
           Compress-Archive -Path "dist/$plugin/*" -DestinationPath "dist/$plugin.zip" -CompressionLevel Optimal
@@ -60,7 +58,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.plugin }}.zip
-          path: dist/${{ matrix.plugin }}.zip
+          path: EROverlay/dist/${{ matrix.plugin }}.zip
 
   release:
     needs: build
