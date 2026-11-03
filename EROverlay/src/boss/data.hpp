@@ -107,7 +107,8 @@ public:
     void load(bool hasDLC);
     // Load randomized placements from a spoiler log (randomizer integration).
     void loadRandoLog();
-    void initMemoryAddresses();    void update();
+    void initMemoryAddresses();
+    void update();
     [[nodiscard]] bool revive(int index);
 
     // Immutable after load() — safe to read from any thread without synchronization.
@@ -130,7 +131,6 @@ private:
     void updateBosses();
     void updateNormalMode();
     void updateChallengeMode();
-    void detectKillNotifications();
     [[nodiscard]] int readDeathCount() const;
     [[nodiscard]] int readInGameTime() const;
 
