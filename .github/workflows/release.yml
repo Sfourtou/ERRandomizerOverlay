@@ -26,7 +26,20 @@ jobs:
 
       - name: Configure (Release)
         shell: pwsh
-        run: cmake -B build -G "Visual Studio 17 2022" -A x64 -T v142 -DRELEASE_USE_STATIC_CRT=OFF -DRELEASE_USE_LTO=ON .
+        run: |
+          # Pick the Visual Studio generator and MSVC toolset available on the runner.
+          $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+          $vsVersion = & $vswhere -latest -property catalog_productLineVersion
+          $vsPath = & $vswhere -latest -property installationPath
+          $gen = if ([int]$vsVersion -ge 18) { "Visual Studio 18 2026" } else { "Visual Studio 17 2022" }
+          Write-Host "VS $vsVersion at $vsPath -> generator '$gen'"
+          $toolsets = Get-ChildItem "$vsPath\VC\Tools\MSVC" -Directory -ErrorAction SilentlyContinue | ForEach-Object { $_.Name }
+          Write-Host "MSVC toolsets installed: $($toolsets -join ', ')"
+          $toolsetArgs = @()
+          if ($toolsets -match '^14\.29\.') { $toolsetArgs = @('-T', 'v142') }
+          elseif ($toolsets -match '^14\.3[0-9]\.') { $toolsetArgs = @('-T', 'v143') }
+          else { Write-Host 'Using the default toolset' }
+          cmake -B build -G "$gen" -A x64 @toolsetArgs -DRELEASE_USE_STATIC_CRT=OFF -DRELEASE_USE_LTO=ON .
 
       - name: Build (Release)
         shell: pwsh
