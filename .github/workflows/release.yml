@@ -54,7 +54,7 @@ jobs:
           Copy-Item "build/bin/overlays/$plugin.dll" "dist/$plugin/overlays/"
           Copy-Item "src/$plugin/README.md", "src/$plugin/README_CN.md" "dist/$plugin/" -ErrorAction SilentlyContinue
           Copy-Item "LICENSE" "dist/$plugin/"
-          foreach ($cfg in @("common", "input", "style", $plugin)) {
+          foreach ($cfg in @("common", "input", "style", $plugin.ToLowerInvariant())) {
             Copy-Item "configs/$cfg.ini" "dist/$plugin/configs/"
             Copy-Item "configs_CN/$cfg.ini" "dist/$plugin/configs_CN/"
           }

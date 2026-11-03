@@ -305,10 +305,18 @@ void Config::loadSingleFile(const std::wstring &filename, const std::string &mod
         fwprintf(stderr, L"Unable to open %ls\n", filename.c_str());
         return;
     }
+    // The module name becomes a config key prefix (e.g. "boss.xxx" for
+    // configs/boss.ini); normalize it to lowercase so a file named "Boss.ini"
+    // still provides the "boss.*" keys.
+    std::string lowerName;
+    lowerName.reserve(modname.size());
+    for (char c: modname) {
+        lowerName.push_back(static_cast<char>(std::tolower(static_cast<unsigned char>(c))));
+    }
     struct ConfigData {
         std::map<std::string, std::string> &entries;
         const std::string &modname;
-    } configData = {entries_, modname};
+    } configData = {entries_, lowerName};
     util::parseIniFile(f, [](void *user, const char *section, const char *name, const char *value) {
         auto &configData = *static_cast<ConfigData *>(user);
         auto &entries = configData.entries;
