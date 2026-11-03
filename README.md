@@ -85,11 +85,14 @@ vanilla EROverlay — see the comments in `configs/boss.ini` and the
 
 ## Boss data
 
-`bosses.json` (per language, under `data/<lang>/`) lists every tracked boss with its location
-and defeat flag. This repository ships an updated dataset (`bosses.json` at the repo root,
-designed for `data/engUS/`) that fixes the Fire Giant defeat flag (`1252520800`, previously
-`1052520800`, which never triggers) — copy it over `data/engUS/bosses.json`.
-`tools/user_bosses.example.json` documents the format.
+`data/<lang>/bosses.json` (shipped for 15 languages) lists every tracked boss with its location
+and defeat flag — 207 bosses, already matching the randomizer's entity IDs (including the
+Fire Giant defeat-flag fix). You don't need to change anything.
+
+The `bosses.json` at the repository root is an optional variant with display prefixes (`[N]`
+scalability hints from the author's setup) and the same defeat flags; copy it over
+`data/engUS/bosses.json` if you want that style. `tools/user_bosses.example.json` documents
+the format, and `tools/bossdata_validate.cpp` validates edits.
 
 ## Building
 

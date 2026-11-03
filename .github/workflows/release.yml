@@ -1,0 +1,77 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        include:
+          - plugin: Boss
+          - plugin: Minimap
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure (Release)
+        shell: pwsh
+        run: cmake -B build -G "Visual Studio 17 2022" -A x64 -T v142 -DRELEASE_USE_STATIC_CRT=OFF -DRELEASE_USE_LTO=ON .
+
+      - name: Build (Release)
+        shell: pwsh
+        run: cmake --build build --config Release --clean-first
+
+      - name: Package (${{ matrix.plugin }})
+        shell: pwsh
+        run: |
+          $plugin = "${{ matrix.plugin }}"
+          New-Item -ItemType Directory -Force -Path "dist/$plugin/overlays", "dist/$plugin/configs", "dist/$plugin/configs_CN" | Out-Null
+          Copy-Item "build/bin/EROverlay.dll" "dist/$plugin/"
+          Copy-Item "build/bin/overlays/$plugin.dll" "dist/$plugin/overlays/"
+          Copy-Item "src/$plugin/README.md", "src/$plugin/README_CN.md" "dist/$plugin/" -ErrorAction SilentlyContinue
+          Copy-Item "LICENSE" "dist/$plugin/"
+          foreach ($cfg in @("common", "input", "style", $plugin)) {
+            Copy-Item "configs/$cfg.ini" "dist/$plugin/configs/"
+            Copy-Item "configs_CN/$cfg.ini" "dist/$plugin/configs_CN/"
+          }
+          if ($plugin -eq "Boss") {
+            New-Item -ItemType Directory -Force -Path "dist/$plugin/docs" | Out-Null
+            Copy-Item "docs/boss-revival.md", "docs/boss-revival.evidence.json" "dist/$plugin/docs/" -ErrorAction SilentlyContinue
+            Copy-Item -Recurse -Force "src/boss/data" "dist/$plugin/data"
+            # Ship the repository's updated boss dataset too (with [N] prefixes variant at repo root).
+            Copy-Item "../bosses.json" "dist/$plugin/bosses-user.json" -ErrorAction SilentlyContinue
+          }
+          Compress-Archive -Path "dist/$plugin/*" -DestinationPath "dist/$plugin.zip" -CompressionLevel Optimal
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.plugin }}.zip
+          path: dist/${{ matrix.plugin }}.zip
+
+  release:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          merge-multiple: true
+          path: dist
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/Boss.zip
+            dist/Minimap.zip
+          generate_release_notes: true
