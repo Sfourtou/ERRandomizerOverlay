@@ -84,14 +84,16 @@
        {
         "chest": "Gatefront Ruins western carriage",
         "place": "",
-        "flag_id": 0,
-        "site_id": 3
+        "flag_id": 1042377070,
+        "site_id": 3,
+        "lot_id": 942370070
        },
        {
         "chest": "Gatefront upper platform",
         "place": "",
-        "flag_id": 0,
-        "site_id": 1
+        "flag_id": 1042377300,
+        "site_id": 1,
+        "lot_id": 1042371300
        },
        {
         "chest": "Mistwood Ruins cellar",
@@ -131,8 +133,9 @@
        {
         "chest": "Waypoint Ruins encampment approach",
         "place": "",
-        "flag_id": 0,
-        "site_id": 134
+        "flag_id": 1044357900,
+        "site_id": 134,
+        "lot_id": 1044350900
        },
        {
         "chest": "Waypoint Ruins troll-drawn carriage",
@@ -665,8 +668,9 @@
        {
         "chest": "West Liurnia troll-drawn carriage",
         "place": "",
-        "flag_id": 0,
-        "site_id": 30
+        "flag_id": 1033477200,
+        "site_id": 30,
+        "lot_id": 1033470200
        }
       ],
       "bosses": [
@@ -2009,8 +2013,9 @@
        {
         "chest": "Troll-drawn carriage in the blizzard",
         "place": "",
-        "flag_id": 0,
-        "site_id": 206
+        "flag_id": 1049547900,
+        "site_id": 206,
+        "lot_id": 1049540900
        },
        {
         "chest": "Yelough Anix Ruins cellar",
