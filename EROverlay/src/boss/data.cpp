@@ -167,6 +167,9 @@ void BossDataSet::load(bool hasDLC) {
 
     // Recursive loader: handles both the flat dataset (regions + bosses) and the
     // Chest Challenge tree (children + chests + bosses at any depth).
+    // Regions are always written through their index — emplace_back during the
+    // recursive descent reallocates regions_, so holding a reference across the
+    // recursion would be a use-after-free.
     struct Loader {
         BossDataSet &self;
         bool hasDLC;
@@ -178,9 +181,11 @@ void BossDataSet::load(bool hasDLC) {
                     continue;
                 }
                 auto regionIndex = self.regions_.size();
-                auto &rd = self.regions_.emplace_back();
-                rd.name = v["region_name"];
-                rd.parent = parent;
+                {
+                    auto &rd = self.regions_.emplace_back();
+                    rd.name = v["region_name"];
+                    rd.parent = parent;
+                }
                 indices.push_back(regionIndex);
                 for (auto &n: v.value("regions", nlohmann::ordered_json::array())) {
                     self.regionMap_[n.get<uint32_t>()] = static_cast<int>(regionIndex);
@@ -197,7 +202,7 @@ void BossDataSet::load(bool hasDLC) {
                     }
                     bd.index = index;
                     bd.regionIndex = regionIndex;
-                    rd.bosses.push_back(index);
+                    self.regions_[regionIndex].bosses.push_back(index);
                 }
                 for (auto &n: v.value("chests", nlohmann::ordered_json::array())) {
                     auto index = self.chests_.size();
@@ -210,11 +215,11 @@ void BossDataSet::load(bool hasDLC) {
                     }
                     cd.index = index;
                     cd.regionIndex = regionIndex;
-                    rd.chests.push_back(index);
+                    self.regions_[regionIndex].chests.push_back(index);
                 }
                 auto children = v.find("children");
                 if (children != v.end() && children->is_array()) {
-                    rd.children = loadNodes(*children, regionIndex);
+                    self.regions_[regionIndex].children = loadNodes(*children, regionIndex);
                 }
             }
             return indices;
@@ -222,6 +227,14 @@ void BossDataSet::load(bool hasDLC) {
     } loader{*this, hasDLC};
     loader.loadNodes(j, kNoRegion);
     treeMode_ = !chests_.empty();
+    if (treeMode_) {
+        size_t withFlag = 0;
+        for (const auto &c: chests_) {
+            if (c.flagId != 0) withFlag++;
+        }
+        fwprintf(stderr, L"Loaded %zu regions, %zu bosses, %zu chests (%zu with flags)\n",
+                 regions_.size(), bosses_.size(), chests_.size(), withFlag);
+    }
 
     regionCounts_.resize(regions_.size());
     dead_.resize(bosses_.size());
