@@ -10,14 +10,16 @@
      {
       "chest": "Roundtable Hold dining room",
       "place": "Roundtable Hold",
-      "flag_id": 0,
-      "site_id": 91
+      "flag_id": 11107710,
+      "site_id": 91,
+      "lot_id": 11100710
      },
      {
       "chest": "Roundtable Hold kitchen",
       "place": "Roundtable Hold",
-      "flag_id": 0,
-      "site_id": 92
+      "flag_id": 11107700,
+      "site_id": 92,
+      "lot_id": 11100700
      }
     ],
     "bosses": []
@@ -33,44 +35,51 @@
        {
         "chest": "Chapel of Anticipation gallery",
         "place": "",
-        "flag_id": 0,
-        "site_id": 13
+        "flag_id": 10017900,
+        "site_id": 13,
+        "lot_id": 10010900
        },
        {
         "chest": "Deathtouched Catacombs boss arena",
         "place": "Deathtouched Catacombs",
-        "flag_id": 0,
-        "site_id": 135
+        "flag_id": 30097000,
+        "site_id": 135,
+        "lot_id": 30090000
        },
        {
         "chest": "Dragon-Burnt Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 5
+        "flag_id": 1043367110,
+        "site_id": 5,
+        "lot_id": 1043361010
        },
        {
         "chest": "Encampment between Warmaster's Shack and Saintsbridge",
         "place": "",
-        "flag_id": 0,
-        "site_id": 196
+        "flag_id": 1042397900,
+        "site_id": 196,
+        "lot_id": 1042390900
        },
        {
         "chest": "Fort Haight tower",
         "place": "",
-        "flag_id": 0,
-        "site_id": 8
+        "flag_id": 1046367500,
+        "site_id": 8,
+        "lot_id": 1046360500
        },
        {
         "chest": "Gatefront Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 194
+        "flag_id": 1042377110,
+        "site_id": 194,
+        "lot_id": 1042371010
        },
        {
         "chest": "Gatefront Ruins eastern carriage",
         "place": "",
-        "flag_id": 0,
-        "site_id": 2
+        "flag_id": 1042377060,
+        "site_id": 2,
+        "lot_id": 942370060
        },
        {
         "chest": "Gatefront Ruins western carriage",
@@ -87,32 +96,37 @@
        {
         "chest": "Mistwood Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 153
+        "flag_id": 1045377100,
+        "site_id": 153,
+        "lot_id": 1045371000
        },
        {
         "chest": "Mistwood Ruins small room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 152
+        "flag_id": 1045377010,
+        "site_id": 152,
+        "lot_id": 1045370010
        },
        {
         "chest": "Murkwater Cave dead-end tunnel",
         "place": "Murkwater Cave",
-        "flag_id": 0,
-        "site_id": 7
+        "flag_id": 31007000,
+        "site_id": 7,
+        "lot_id": 31000000
        },
        {
         "chest": "Murkwater Cave Patches chest",
         "place": "Murkwater Cave",
-        "flag_id": 0,
-        "site_id": 6
+        "flag_id": 31007010,
+        "site_id": 6,
+        "lot_id": 31000010
        },
        {
         "chest": "Summonwater Village",
         "place": "",
-        "flag_id": 0,
-        "site_id": 150
+        "flag_id": 1045397120,
+        "site_id": 150,
+        "lot_id": 1045390120
        },
        {
         "chest": "Waypoint Ruins encampment approach",
@@ -123,8 +137,9 @@
        {
         "chest": "Waypoint Ruins troll-drawn carriage",
         "place": "",
-        "flag_id": 0,
-        "site_id": 4
+        "flag_id": 1044367200,
+        "site_id": 4,
+        "lot_id": 944360200
        }
       ],
       "bosses": [
@@ -237,56 +252,65 @@
        {
         "chest": "Broken down carriage",
         "place": "",
-        "flag_id": 0,
-        "site_id": 197
+        "flag_id": 1044337210,
+        "site_id": 197,
+        "lot_id": 1044330210
        },
        {
         "chest": "Castle Morne backside tower",
         "place": "Castle Morne",
-        "flag_id": 0,
-        "site_id": 16
+        "flag_id": 1043317900,
+        "site_id": 16,
+        "lot_id": 1043310900
        },
        {
         "chest": "Chest behind wooden screens",
         "place": "Castle Morne",
-        "flag_id": 0,
-        "site_id": 137
+        "flag_id": 1043317910,
+        "site_id": 137,
+        "lot_id": 1043310910
        },
        {
         "chest": "Chest in mining shack",
         "place": "Morne Tunnel",
-        "flag_id": 0,
-        "site_id": 136
+        "flag_id": 32007900,
+        "site_id": 136,
+        "lot_id": 32000900
        },
        {
         "chest": "Demi-Human Forest Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 149
+        "flag_id": 1043347100,
+        "site_id": 149,
+        "lot_id": 1043340100
        },
        {
         "chest": "Earthbore Cave entrance",
         "place": "Earthbore Cave",
-        "flag_id": 0,
-        "site_id": 14
+        "flag_id": 31017060,
+        "site_id": 14,
+        "lot_id": 31010100
        },
        {
         "chest": "Forest Lookout Tower top floor",
         "place": "",
-        "flag_id": 0,
-        "site_id": 195
+        "flag_id": 1044347100,
+        "site_id": 195,
+        "lot_id": 1044340100
        },
        {
         "chest": "Oridys's Rise top room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 138
+        "flag_id": 60460,
+        "site_id": 138,
+        "lot_id": 1052410900
        },
        {
         "chest": "Tombsward Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 15
+        "flag_id": 1042347100,
+        "site_id": 15,
+        "lot_id": 1042340100
        }
       ],
       "bosses": [
@@ -349,38 +373,44 @@
        {
         "chest": "Balcony above scion hall",
         "place": "Stormveil Castle",
-        "flag_id": 0,
-        "site_id": 139
+        "flag_id": 10007960,
+        "site_id": 139,
+        "lot_id": 10000960
        },
        {
         "chest": "Banquet room",
         "place": "Stormveil Castle",
-        "flag_id": 0,
-        "site_id": 10
+        "flag_id": 10007970,
+        "site_id": 10,
+        "lot_id": 10000970
        },
        {
         "chest": "Barracks basement east chest",
         "place": "Stormveil Castle",
-        "flag_id": 0,
-        "site_id": 9
+        "flag_id": 10007965,
+        "site_id": 9,
+        "lot_id": 10000965
        },
        {
         "chest": "Barracks basement west chest",
         "place": "Stormveil Castle",
-        "flag_id": 0,
-        "site_id": 12
+        "flag_id": 10007990,
+        "site_id": 12,
+        "lot_id": 10000990
        },
        {
         "chest": "Gostoc trap room",
         "place": "Stormveil Castle",
-        "flag_id": 0,
-        "site_id": 11
+        "flag_id": 10007975,
+        "site_id": 11,
+        "lot_id": 10000975
        },
        {
         "chest": "Room right of Throne Room",
         "place": "Stormveil Castle",
-        "flag_id": 0,
-        "site_id": 132
+        "flag_id": 60101,
+        "site_id": 132,
+        "lot_id": 10000995
        }
       ],
       "bosses": [
@@ -409,74 +439,86 @@
        {
         "chest": "Black Knife Catacombs boss chest",
         "place": "Black Knife Catacombs",
-        "flag_id": 0,
-        "site_id": 44
+        "flag_id": 30117000,
+        "site_id": 44,
+        "lot_id": 30110000
        },
        {
         "chest": "Chest in encampment in front of Grand Lift of Dectus",
         "place": "",
-        "flag_id": 0,
-        "site_id": 200
+        "flag_id": 1037497200,
+        "site_id": 200,
+        "lot_id": 1037490200
        },
        {
         "chest": "Church of Vows right of altar pool",
         "place": "",
-        "flag_id": 0,
-        "site_id": 199
+        "flag_id": 1037467000,
+        "site_id": 199,
+        "lot_id": 1037460000
        },
        {
         "chest": "Converted Fringe Tower highest room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 148
+        "flag_id": 1039487100,
+        "site_id": 148,
+        "lot_id": 1039480100
        },
        {
         "chest": "Frenzy-Flaming Tower 2nd floor",
         "place": "",
-        "flag_id": 0,
-        "site_id": 19
+        "flag_id": 1038497900,
+        "site_id": 19,
+        "lot_id": 1038490900
        },
        {
         "chest": "Highway Lookout Tower first floor",
         "place": "",
-        "flag_id": 0,
-        "site_id": 146
+        "flag_id": 67480,
+        "site_id": 146,
+        "lot_id": 1038420100
        },
        {
         "chest": "Purified Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 17
+        "flag_id": 1039417100,
+        "site_id": 17,
+        "lot_id": 1039410100
        },
        {
         "chest": "Raya Lucaria Crystal Tunnel side room",
         "place": "Raya Lucaria Crystal Tunnel",
-        "flag_id": 0,
-        "site_id": 42
+        "flag_id": 32027900,
+        "site_id": 42,
+        "lot_id": 32020900
        },
        {
         "chest": "Stone chest on wooden deck",
         "place": "Raya Lucaria Crystal Tunnel",
-        "flag_id": 0,
-        "site_id": 41
+        "flag_id": 12017940,
+        "site_id": 41,
+        "lot_id": 12010940
        },
        {
         "chest": "Storage room",
         "place": "Academy Crystal Cave",
-        "flag_id": 0,
-        "site_id": 142
+        "flag_id": 1047407900,
+        "site_id": 142,
+        "lot_id": 1047400900
        },
        {
         "chest": "Storage room upper ledge",
         "place": "Academy Crystal Cave",
-        "flag_id": 0,
-        "site_id": 40
+        "flag_id": 31067030,
+        "site_id": 40,
+        "lot_id": 31060110
        },
        {
         "chest": "Abandoned carriage south Liurnia Highway on bridge",
         "place": "",
-        "flag_id": 0,
-        "site_id": 198
+        "flag_id": 1040407000,
+        "site_id": 198,
+        "lot_id": 1040400000
        }
       ],
       "bosses": [
@@ -539,74 +581,86 @@
        {
         "chest": "Atop large tower in Raya Lucaria",
         "place": "Academy Crystal Cave",
-        "flag_id": 0,
-        "site_id": 27
+        "flag_id": 14007920,
+        "site_id": 27,
+        "lot_id": 14000920
        },
        {
         "chest": "Converted tower top room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 145
+        "flag_id": 60400,
+        "site_id": 145,
+        "lot_id": 1045330100
        },
        {
         "chest": "Encampment lower level",
         "place": "",
-        "flag_id": 0,
-        "site_id": 32
+        "flag_id": 1033477910,
+        "site_id": 32,
+        "lot_id": 1033470910
        },
        {
         "chest": "Encampment upper level",
         "place": "",
-        "flag_id": 0,
-        "site_id": 28
+        "flag_id": 1051367910,
+        "site_id": 28,
+        "lot_id": 1051360910
        },
        {
         "chest": "Encampment upper level",
         "place": "",
-        "flag_id": 0,
-        "site_id": 31
+        "flag_id": 1033477900,
+        "site_id": 31,
+        "lot_id": 1033470900
        },
        {
         "chest": "Kingsrealm Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 144
+        "flag_id": 1034487100,
+        "site_id": 144,
+        "lot_id": 1034480100
        },
        {
         "chest": "Lakeside Crystal Cave entrance",
         "place": "Lakeside Crystal Cave",
-        "flag_id": 0,
-        "site_id": 37
+        "flag_id": 31057070,
+        "site_id": 37,
+        "lot_id": 31050070
        },
        {
         "chest": "Lakeside Crystal Cave rear room",
         "place": "Lakeside Crystal Cave",
-        "flag_id": 0,
-        "site_id": 38
+        "flag_id": 31057100,
+        "site_id": 38,
+        "lot_id": 31050100
        },
        {
         "chest": "Ranni's Rise",
         "place": "",
-        "flag_id": 0,
-        "site_id": 133
+        "flag_id": 60102,
+        "site_id": 133,
+        "lot_id": 1034500300
        },
        {
         "chest": "Road's End Catacombs hidden room",
         "place": "Road's End Catacombs",
-        "flag_id": 0,
-        "site_id": 43
+        "flag_id": 30037010,
+        "site_id": 43,
+        "lot_id": 30030010
        },
        {
         "chest": "Temple Quarter sunken spire",
         "place": "",
-        "flag_id": 0,
-        "site_id": 18
+        "flag_id": 1034447900,
+        "site_id": 18,
+        "lot_id": 1034440900
        },
        {
         "chest": "The Four Belfries fourth Belfry",
         "place": "",
-        "flag_id": 0,
-        "site_id": 29
+        "flag_id": 2048447800,
+        "site_id": 29,
+        "lot_id": 2048440800
        },
        {
         "chest": "West Liurnia troll-drawn carriage",
@@ -670,26 +724,30 @@
        {
         "chest": "Sunken spire in western Academy Gate Town",
         "place": "",
-        "flag_id": 0,
-        "site_id": 141
+        "flag_id": 1036457110,
+        "site_id": 141,
+        "lot_id": 1036450110
        },
        {
         "chest": "Laskyar Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 140
+        "flag_id": 1037427900,
+        "site_id": 140,
+        "lot_id": 1037420900
        },
        {
         "chest": "Sunken spire in central Academy Gate Town",
         "place": "",
-        "flag_id": 0,
-        "site_id": 217
+        "flag_id": 67400,
+        "site_id": 217,
+        "lot_id": 1036440100
        },
        {
         "chest": "Testu's Rise upper room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 33
+        "flag_id": 60420,
+        "site_id": 33,
+        "lot_id": 1035470100
        }
       ],
       "bosses": [
@@ -717,44 +775,51 @@
        {
         "chest": "Between Schoolhouse and Debate Parlor",
         "place": "Raya Lucaria Academy",
-        "flag_id": 0,
-        "site_id": 21
+        "flag_id": 66410,
+        "site_id": 21,
+        "lot_id": 14000900
        },
        {
         "chest": "Debate Parlor gallery",
         "place": "Raya Lucaria Academy",
-        "flag_id": 0,
-        "site_id": 23
+        "flag_id": 14007940,
+        "site_id": 23,
+        "lot_id": 14000940
        },
        {
         "chest": "Grand Library next to Rennala",
         "place": "Raya Lucaria Academy",
-        "flag_id": 0,
-        "site_id": 25
+        "flag_id": 114,
+        "site_id": 25,
+        "lot_id": 14000960
        },
        {
         "chest": "Office left from Schoolhouse",
         "place": "Raya Lucaria Academy",
-        "flag_id": 0,
-        "site_id": 24
+        "flag_id": 67420,
+        "site_id": 24,
+        "lot_id": 14000950
        },
        {
         "chest": "Secret Library",
         "place": "Raya Lucaria Academy",
-        "flag_id": 0,
-        "site_id": 147
+        "flag_id": 14007880,
+        "site_id": 147,
+        "lot_id": 14000880
        },
        {
         "chest": "Upstairs room by Ball Trap summoning circle",
         "place": "Raya Lucaria Academy",
-        "flag_id": 0,
-        "site_id": 22
+        "flag_id": 14007910,
+        "site_id": 22,
+        "lot_id": 14000910
        },
        {
         "chest": "Watchtower accessed from rooftops",
         "place": "Raya Lucaria Academy",
-        "flag_id": 0,
-        "site_id": 26
+        "flag_id": 14007970,
+        "site_id": 26,
+        "lot_id": 14000970
        }
       ],
       "bosses": [
@@ -777,20 +842,23 @@
        {
         "chest": "Caria Manor ground floor study",
         "place": "Caria Manor",
-        "flag_id": 0,
-        "site_id": 20
+        "flag_id": 1035507900,
+        "site_id": 20,
+        "lot_id": 1035500900
        },
        {
         "chest": "Renna's Rise",
         "place": "",
-        "flag_id": 0,
-        "site_id": 168
+        "flag_id": 1034517900,
+        "site_id": 168,
+        "lot_id": 1034510900
        },
        {
         "chest": "Seluvis's Rise upper room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 169
+        "flag_id": 60410,
+        "site_id": 169,
+        "lot_id": 1034430100
        }
       ],
       "bosses": [
@@ -819,134 +887,156 @@
        {
         "chest": "Abandoned carriage near Caelem Ruins",
         "place": "",
-        "flag_id": 0,
-        "site_id": 52
+        "flag_id": 1047407920,
+        "site_id": 52,
+        "lot_id": 1047400920
        },
        {
         "chest": "Behind illusory wall in large chamber before boss room",
         "place": "Sellia Hideaway",
-        "flag_id": 0,
-        "site_id": 212
+        "flag_id": 31117200,
+        "site_id": 212,
+        "lot_id": 31110200
        },
        {
         "chest": "Caelid Waypoint Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 47
+        "flag_id": 1047387910,
+        "site_id": 47,
+        "lot_id": 1047380910
        },
        {
         "chest": "Caelem Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 151
+        "flag_id": 1048407900,
+        "site_id": 151,
+        "lot_id": 1048400900
        },
        {
         "chest": "Encampment under red tent",
         "place": "",
-        "flag_id": 0,
-        "site_id": 218
+        "flag_id": 31217400,
+        "site_id": 218,
+        "lot_id": 31210400
        },
        {
         "chest": "Forsaken Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 51
+        "flag_id": 1047407910,
+        "site_id": 51,
+        "lot_id": 1047400910
        },
        {
         "chest": "Fort Gael lower room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 48
+        "flag_id": 1047387920,
+        "site_id": 48,
+        "lot_id": 1047380920
        },
        {
         "chest": "Gaol Cave at entrance",
         "place": "Gaol Cave",
-        "flag_id": 0,
-        "site_id": 59
+        "flag_id": 32057910,
+        "site_id": 59,
+        "lot_id": 32050910
        },
        {
         "chest": "Gaol Cave in barracks",
         "place": "Gaol Cave",
-        "flag_id": 0,
-        "site_id": 58
+        "flag_id": 12017700,
+        "site_id": 58,
+        "lot_id": 12010700
        },
        {
         "chest": "Gaol Fort upper level",
         "place": "",
-        "flag_id": 0,
-        "site_id": 154
+        "flag_id": 1047387900,
+        "site_id": 154,
+        "lot_id": 1047380900
        },
        {
         "chest": "Impassable Greatbridge watchtower",
         "place": "",
-        "flag_id": 0,
-        "site_id": 46
+        "flag_id": 1050367900,
+        "site_id": 46,
+        "lot_id": 1050360900
        },
        {
         "chest": "Redmane Castle rooftop past Red-Hot Whetblade",
         "place": "Redmane Castle",
-        "flag_id": 0,
-        "site_id": 158
+        "flag_id": 1033477010,
+        "site_id": 158,
+        "lot_id": 1033470010
        },
        {
         "chest": "Sellia Crystal Tunnel mining shack",
         "place": "Sellia Crystal Tunnel",
-        "flag_id": 0,
-        "site_id": 55
+        "flag_id": 32087900,
+        "site_id": 55,
+        "lot_id": 32080900
        },
        {
         "chest": "Sellia Crystal Tunnel mining shack upper level",
         "place": "Sellia Crystal Tunnel",
-        "flag_id": 0,
-        "site_id": 56
+        "flag_id": 32087910,
+        "site_id": 56,
+        "lot_id": 32080910
        },
        {
         "chest": "Sellia Hideaway, secret sorcerer room",
         "place": "Sellia Hideaway",
-        "flag_id": 0,
-        "site_id": 157
+        "flag_id": 31117220,
+        "site_id": 157,
+        "lot_id": 31110220
        },
        {
         "chest": "Sellia, Town of Sorcery boss room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 155
+        "flag_id": 1049397900,
+        "site_id": 155,
+        "lot_id": 1049390900
        },
        {
         "chest": "Sellia, Town of Sorcery central sealed room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 54
+        "flag_id": 1050397900,
+        "site_id": 54,
+        "lot_id": 1050390900
        },
        {
         "chest": "Sellia, Town of Sorcery north eastern sealed room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 156
+        "flag_id": 1033477020,
+        "site_id": 156,
+        "lot_id": 1033470020
        },
        {
         "chest": "Sellia, Town of Sorcery western sealed room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 53
+        "flag_id": 1049397910,
+        "site_id": 53,
+        "lot_id": 1049390910
        },
        {
         "chest": "Small encampment under red tent",
         "place": "",
-        "flag_id": 0,
-        "site_id": 49
+        "flag_id": 1047397080,
+        "site_id": 49,
+        "lot_id": 1047390080
        },
        {
         "chest": "Street of Sages Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 214
+        "flag_id": 1048397900,
+        "site_id": 214,
+        "lot_id": 1048390900
        },
        {
         "chest": "War-Dead Catacombs, bottom floor in the rot",
         "place": "War-Dead Catacombs",
-        "flag_id": 0,
-        "site_id": 57
+        "flag_id": 30167040,
+        "site_id": 57,
+        "lot_id": 30160040
        }
       ],
       "bosses": [
@@ -1049,20 +1139,23 @@
        {
         "chest": "Divine Tower of Caelid basement",
         "place": "",
-        "flag_id": 0,
-        "site_id": 60
+        "flag_id": 34137900,
+        "site_id": 60,
+        "lot_id": 34130900
        },
        {
         "chest": "Fort Faroth Tower",
         "place": "",
-        "flag_id": 0,
-        "site_id": 45
+        "flag_id": 1051397900,
+        "site_id": 45,
+        "lot_id": 1051390900
        },
        {
         "chest": "Lenne's Rise upper room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 159
+        "flag_id": 60430,
+        "site_id": 159,
+        "lot_id": 1034500100
        }
       ],
       "bosses": [
@@ -1122,182 +1215,212 @@
        {
         "chest": "Altus Tunnel stone chest in side room near entrance",
         "place": "Altus Tunnel",
-        "flag_id": 0,
-        "site_id": 80
+        "flag_id": 31067100,
+        "site_id": 80,
+        "lot_id": 31060100
        },
        {
         "chest": "Chest in small encampment",
         "place": "",
-        "flag_id": 0,
-        "site_id": 160
+        "flag_id": 1039517020,
+        "site_id": 160,
+        "lot_id": 1039510020
        },
        {
         "chest": "Encampment ambushed by Ulcerated Tree Spirit",
         "place": "",
-        "flag_id": 0,
-        "site_id": 203
+        "flag_id": 1042507000,
+        "site_id": 203,
+        "lot_id": 1042500000
        },
        {
         "chest": "Erdtree-Gazing Hill east carriage",
         "place": "",
-        "flag_id": 0,
-        "site_id": 63
+        "flag_id": 1038517090,
+        "site_id": 63,
+        "lot_id": 1038510090
        },
        {
         "chest": "Erdtree-Gazing Hill west carriage",
         "place": "",
-        "flag_id": 0,
-        "site_id": 62
+        "flag_id": 1038517030,
+        "site_id": 62,
+        "lot_id": 1038510030
        },
        {
         "chest": "Highway Lookout Tower top floor",
         "place": "",
-        "flag_id": 0,
-        "site_id": 201
+        "flag_id": 1042547060,
+        "site_id": 201,
+        "lot_id": 1042540060
        },
        {
         "chest": "Lux Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 61
+        "flag_id": 1038517050,
+        "site_id": 61,
+        "lot_id": 1038510050
        },
        {
         "chest": "Mirage Rise upper room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 167
+        "flag_id": 1039537050,
+        "site_id": 167,
+        "lot_id": 1039530050
        },
        {
         "chest": "Perfumer's Grotto one of two chests behind branch",
         "place": "Perfumer's Grotto",
-        "flag_id": 0,
-        "site_id": 67
+        "flag_id": 31187020,
+        "site_id": 67,
+        "lot_id": 31180020
        },
        {
         "chest": "Perfumer's Grotto one of two chests behind branch",
         "place": "Perfumer's Grotto",
-        "flag_id": 0,
-        "site_id": 166
+        "flag_id": 66710,
+        "site_id": 166,
+        "lot_id": 11000130
        },
        {
         "chest": "Perfumer's Ruins by Omenkiller",
         "place": "",
-        "flag_id": 0,
-        "site_id": 161
+        "flag_id": 67840,
+        "site_id": 161,
+        "lot_id": 1036510010
        },
        {
         "chest": "Perfumer's Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 65
+        "flag_id": 1036527010,
+        "site_id": 65,
+        "lot_id": 1036520010
        },
        {
         "chest": "Road of Iniquity Side Path troll-drawn carriage",
         "place": "",
-        "flag_id": 0,
-        "site_id": 163
+        "flag_id": 1040547000,
+        "site_id": 163,
+        "lot_id": 1040540000
        },
        {
         "chest": "Sage's Cave one of four chests in secret room between two braziers",
         "place": "Sage's Cave",
-        "flag_id": 0,
-        "site_id": 70
+        "flag_id": 31197030,
+        "site_id": 70,
+        "lot_id": 31190030
        },
        {
         "chest": "Sage's Cave one of four chests in secret room between two braziers",
         "place": "Sage's Cave",
-        "flag_id": 0,
-        "site_id": 71
+        "flag_id": 31197040,
+        "site_id": 71,
+        "lot_id": 31190040
        },
        {
         "chest": "Sage's Cave one of four chests in secret room between two braziers",
         "place": "Sage's Cave",
-        "flag_id": 0,
-        "site_id": 72
+        "flag_id": 31197050,
+        "site_id": 72,
+        "lot_id": 31190050
        },
        {
         "chest": "Sage's Cave one of four chests in secret room between two braziers",
         "place": "Sage's Cave",
-        "flag_id": 0,
-        "site_id": 73
+        "flag_id": 31197060,
+        "site_id": 73,
+        "lot_id": 31190060
        },
        {
         "chest": "Sage's Cave one of two chests on path",
         "place": "Sage's Cave",
-        "flag_id": 0,
-        "site_id": 68
+        "flag_id": 31197000,
+        "site_id": 68,
+        "lot_id": 31190000
        },
        {
         "chest": "Sage's Cave one of two chests on path",
         "place": "Sage's Cave",
-        "flag_id": 0,
-        "site_id": 69
+        "flag_id": 31197010,
+        "site_id": 69,
+        "lot_id": 31190010
        },
        {
         "chest": "Sage's Cave one of two chests on path deeper",
         "place": "Sage's Cave",
-        "flag_id": 0,
-        "site_id": 75
+        "flag_id": 31197090,
+        "site_id": 75,
+        "lot_id": 31190090
        },
        {
         "chest": "Sage's Cave one of two chests on path deeper",
         "place": "Sage's Cave",
-        "flag_id": 0,
-        "site_id": 76
+        "flag_id": 31197100,
+        "site_id": 76,
+        "lot_id": 31190100
        },
        {
         "chest": "Sage's Cave one of two chests before Garris",
         "place": "Sage's Cave",
-        "flag_id": 0,
-        "site_id": 78
+        "flag_id": 31197120,
+        "site_id": 78,
+        "lot_id": 31190120
        },
        {
         "chest": "Sage's Cave one of two chests before Garris",
         "place": "Sage's Cave",
-        "flag_id": 0,
-        "site_id": 79
+        "flag_id": 31197130,
+        "site_id": 79,
+        "lot_id": 31190130
        },
        {
         "chest": "Sage's Cave opposite two chests in nook",
         "place": "Sage's Cave",
-        "flag_id": 0,
-        "site_id": 77
+        "flag_id": 31197110,
+        "site_id": 77,
+        "lot_id": 31190110
        },
        {
         "chest": "Sage's Cave single chest behind illusory wall",
         "place": "Sage's Cave",
-        "flag_id": 0,
-        "site_id": 74
+        "flag_id": 11007980,
+        "site_id": 74,
+        "lot_id": 11000980
        },
        {
         "chest": "Shaded Castle west wing",
         "place": "Shaded Castle",
-        "flag_id": 0,
-        "site_id": 165
+        "flag_id": 1039547300,
+        "site_id": 165,
+        "lot_id": 1039540300
        },
        {
         "chest": "Stormcaller Church",
         "place": "",
-        "flag_id": 0,
-        "site_id": 162
+        "flag_id": 1040517020,
+        "site_id": 162,
+        "lot_id": 1040510020
        },
        {
         "chest": "Woodfolk Ruins south ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 202
+        "flag_id": 1041537020,
+        "site_id": 202,
+        "lot_id": 1041530020
        },
        {
         "chest": "Writheblood Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 164
+        "flag_id": 1040537010,
+        "site_id": 164,
+        "lot_id": 1040530010
        },
        {
         "chest": "Wyndham Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 64
+        "flag_id": 1038527000,
+        "site_id": 64,
+        "lot_id": 1038520000
        }
       ],
       "bosses": [
@@ -1410,8 +1533,9 @@
        {
         "chest": "Sealed Tunnel entrance",
         "place": "Sealed Tunnel",
-        "flag_id": 0,
-        "site_id": 81
+        "flag_id": 34127900,
+        "site_id": 81,
+        "lot_id": 34120900
        }
       ],
       "bosses": [
@@ -1444,14 +1568,16 @@
        {
         "chest": "Cathedral of the Forsaken",
         "place": "Subterranean Shunning-Grounds",
-        "flag_id": 0,
-        "site_id": 87
+        "flag_id": 35007700,
+        "site_id": 87,
+        "lot_id": 35000700
        },
        {
         "chest": "Behind illusory wall Frenzied Flame Proscription",
         "place": "Subterranean Shunning-Grounds",
-        "flag_id": 0,
-        "site_id": 204
+        "flag_id": 1050557900,
+        "site_id": 204,
+        "lot_id": 1050550900
        }
       ],
       "bosses": []
@@ -1463,26 +1589,30 @@
        {
         "chest": "Divine Bridge",
         "place": "Leyndell, Royal Capital",
-        "flag_id": 0,
-        "site_id": 86
+        "flag_id": 11007994,
+        "site_id": 86,
+        "lot_id": 11001020
        },
        {
         "chest": "Erdtree Sanctuary gallery",
         "place": "Leyndell, Royal Capital",
-        "flag_id": 0,
-        "site_id": 84
+        "flag_id": 11007015,
+        "site_id": 84,
+        "lot_id": 11000015
        },
        {
         "chest": "Estate house at end of East Ramparts",
         "place": "Leyndell, Royal Capital",
-        "flag_id": 0,
-        "site_id": 66
+        "flag_id": 66780,
+        "site_id": 66,
+        "lot_id": 31180000
        },
        {
         "chest": "Leyndell room under Avenue Balcony",
         "place": "Leyndell, Royal Capital",
-        "flag_id": 0,
-        "site_id": 85
+        "flag_id": 31197080,
+        "site_id": 85,
+        "lot_id": 31190080
        }
       ],
       "bosses": [
@@ -1531,14 +1661,16 @@
        {
         "chest": "Gelmir Hero's Grave boss chest",
         "place": "Gelmir Hero's Grave",
-        "flag_id": 0,
-        "site_id": 82
+        "flag_id": 30207910,
+        "site_id": 82,
+        "lot_id": 30200910
        },
        {
         "chest": "Gelmir Hero's Grave room after lava",
         "place": "Gelmir Hero's Grave",
-        "flag_id": 0,
-        "site_id": 83
+        "flag_id": 30097010,
+        "site_id": 83,
+        "lot_id": 30090010
        }
       ],
       "bosses": [
@@ -1641,38 +1773,44 @@
        {
         "chest": "Giants' Mountaintop Catacombs boss chest",
         "place": "Giants' Mountaintop Catacombs",
-        "flag_id": 0,
-        "site_id": 95
+        "flag_id": 30187900,
+        "site_id": 95,
+        "lot_id": 30180900
        },
        {
         "chest": "Giants' Mountaintop Catacombs secret basement",
         "place": "Giants' Mountaintop Catacombs",
-        "flag_id": 0,
-        "site_id": 94
+        "flag_id": 30187070,
+        "site_id": 94,
+        "lot_id": 30180070
        },
        {
         "chest": "Guardians' Garrison",
         "place": "",
-        "flag_id": 0,
-        "site_id": 170
+        "flag_id": 1052557900,
+        "site_id": 170,
+        "lot_id": 1052550900
        },
        {
         "chest": "Heretical Rise upper floor",
         "place": "",
-        "flag_id": 0,
-        "site_id": 171
+        "flag_id": 1052577900,
+        "site_id": 171,
+        "lot_id": 1052570900
        },
        {
         "chest": "Stargazers' Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 93
+        "flag_id": 1051567900,
+        "site_id": 93,
+        "lot_id": 1051560900
        },
        {
         "chest": "Zamor Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 172
+        "flag_id": 1049537900,
+        "site_id": 172,
+        "lot_id": 1049530900
        }
       ],
       "bosses": [
@@ -1732,20 +1870,23 @@
      {
       "chest": "Crumbling Farum Azula atop fallen buildings",
       "place": "Crumbling Farum Azula",
-      "flag_id": 0,
-      "site_id": 103
+      "flag_id": 13007940,
+      "site_id": 103,
+      "lot_id": 13000940
      },
      {
       "chest": "Crumbling Farum Azula by Bernahl invasion",
       "place": "Crumbling Farum Azula",
-      "flag_id": 0,
-      "site_id": 104
+      "flag_id": 13007950,
+      "site_id": 104,
+      "lot_id": 13000950
      },
      {
       "chest": "Crumbling Farum Azula by large circular elevator",
       "place": "Crumbling Farum Azula",
-      "flag_id": 0,
-      "site_id": 102
+      "flag_id": 13007920,
+      "site_id": 102,
+      "lot_id": 13000920
      }
     ],
     "bosses": [
@@ -1790,26 +1931,30 @@
      {
       "chest": "Chelona's Rise upper room",
       "place": "",
-      "flag_id": 0,
-      "site_id": 177
+      "flag_id": 1033407100,
+      "site_id": 177,
+      "lot_id": 1033400100
      },
      {
       "chest": "Lunar Estate Ruins east cellar",
       "place": "",
-      "flag_id": 0,
-      "site_id": 36
+      "flag_id": 1035417110,
+      "site_id": 36,
+      "lot_id": 1035410110
      },
      {
       "chest": "Lunar Estate Ruins west cellar",
       "place": "",
-      "flag_id": 0,
-      "site_id": 35
+      "flag_id": 1035417100,
+      "site_id": 35,
+      "lot_id": 1035410100
      },
      {
       "chest": "Moonfolk Ruins cellar",
       "place": "",
-      "flag_id": 0,
-      "site_id": 34
+      "flag_id": 31217200,
+      "site_id": 34,
+      "lot_id": 31210200
      }
     ],
     "bosses": [
@@ -1836,26 +1981,30 @@
        {
         "chest": "Chest on ledge by Rise",
         "place": "",
-        "flag_id": 0,
-        "site_id": 209
+        "flag_id": 35007780,
+        "site_id": 209,
+        "lot_id": 35000780
        },
        {
         "chest": "Hidden Path to the Haligtree boss chest",
         "place": "Hidden Path to the Haligtree",
-        "flag_id": 0,
-        "site_id": 97
+        "flag_id": 30057030,
+        "site_id": 97,
+        "lot_id": 30050030
        },
        {
         "chest": "Hidden Path to the Haligtree invisible walkway",
         "place": "Hidden Path to the Haligtree",
-        "flag_id": 0,
-        "site_id": 96
+        "flag_id": 30207900,
+        "site_id": 96,
+        "lot_id": 30200900
        },
        {
         "chest": "Troll-drawn carriage in open snowfields",
         "place": "",
-        "flag_id": 0,
-        "site_id": 207
+        "flag_id": 1048557900,
+        "site_id": 207,
+        "lot_id": 1048550900
        },
        {
         "chest": "Troll-drawn carriage in the blizzard",
@@ -1866,8 +2015,9 @@
        {
         "chest": "Yelough Anix Ruins cellar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 208
+        "flag_id": 1047557900,
+        "site_id": 208,
+        "lot_id": 1047550900
        }
       ],
       "bosses": [
@@ -1920,8 +2070,9 @@
        {
         "chest": "Chest atop elevator tower",
         "place": "Miquella's Haligtree",
-        "flag_id": 0,
-        "site_id": 216
+        "flag_id": 2048417800,
+        "site_id": 216,
+        "lot_id": 2048410800
        }
       ],
       "bosses": [
@@ -1944,38 +2095,44 @@
        {
         "chest": "Behind rotten Crystalian trio",
         "place": "Elphael Brace of the Haligtree",
-        "flag_id": 0,
-        "site_id": 211
+        "flag_id": 15007860,
+        "site_id": 211,
+        "lot_id": 15000860
        },
        {
         "chest": "Elphael cathedral gallery",
         "place": "Elphael Brace of the Haligtree",
-        "flag_id": 0,
-        "site_id": 101
+        "flag_id": 15007930,
+        "site_id": 101,
+        "lot_id": 15000930
        },
        {
         "chest": "Elphael guarded by Cleanrot Knight",
         "place": "Elphael Brace of the Haligtree",
-        "flag_id": 0,
-        "site_id": 99
+        "flag_id": 15007580,
+        "site_id": 99,
+        "lot_id": 15000580
        },
        {
         "chest": "Elphael high room after climbing architecture",
         "place": "Elphael Brace of the Haligtree",
-        "flag_id": 0,
-        "site_id": 100
+        "flag_id": 12057900,
+        "site_id": 100,
+        "lot_id": 12050900
        },
        {
         "chest": "In decadent room near the Plaza",
         "place": "Miquella's Haligtree",
-        "flag_id": 0,
-        "site_id": 210
+        "flag_id": 15007350,
+        "site_id": 210,
+        "lot_id": 15000350
        },
        {
         "chest": "Miquella's Haligtree in Stonesword Key room dropping down from Prayer Room",
         "place": "Elphael Brace of the Haligtree",
-        "flag_id": 0,
-        "site_id": 98
+        "flag_id": 15007560,
+        "site_id": 98,
+        "lot_id": 15000560
        }
       ],
       "bosses": []
@@ -1999,8 +2156,9 @@
        {
         "chest": "Ancestral Woods water ruins",
         "place": "",
-        "flag_id": 0,
-        "site_id": 115
+        "flag_id": 12027090,
+        "site_id": 115,
+        "lot_id": 12020090
        }
       ],
       "bosses": [
@@ -2023,14 +2181,16 @@
        {
         "chest": "Night's Sacred Ground in Stonesword Key room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 173
+        "flag_id": 12027880,
+        "site_id": 173,
+        "lot_id": 12020880
        },
        {
         "chest": "Night's Sacred Ground under ancient being",
         "place": "",
-        "flag_id": 0,
-        "site_id": 114
+        "flag_id": 12027080,
+        "site_id": 114,
+        "lot_id": 12020080
        }
       ],
       "bosses": [
@@ -2064,14 +2224,16 @@
        {
         "chest": "Ainsel River atop Uhl Palace ruins",
         "place": "",
-        "flag_id": 0,
-        "site_id": 105
+        "flag_id": 12017900,
+        "site_id": 105,
+        "lot_id": 12010900
        },
        {
         "chest": "Under giant throne after Dragonkin Soldier",
         "place": "",
-        "flag_id": 0,
-        "site_id": 215
+        "flag_id": 12017690,
+        "site_id": 215,
+        "lot_id": 12010690
        }
       ],
       "bosses": [
@@ -2089,50 +2251,58 @@
        {
         "chest": "Nokstella at the back of large room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 106
+        "flag_id": 12017910,
+        "site_id": 106,
+        "lot_id": 12010910
        },
        {
         "chest": "Nokstella back of large room with large ambush",
         "place": "",
-        "flag_id": 0,
-        "site_id": 108
+        "flag_id": 32027000,
+        "site_id": 108,
+        "lot_id": 32020000
        },
        {
         "chest": "Nokstella building bordering the river, up stairway",
         "place": "",
-        "flag_id": 0,
-        "site_id": 109
+        "flag_id": 12017950,
+        "site_id": 109,
+        "lot_id": 12010950
        },
        {
         "chest": "Nokstella cathedral altar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 110
+        "flag_id": 12017960,
+        "site_id": 110,
+        "lot_id": 12010960
        },
        {
         "chest": "Nokstella dark room at top of staircases",
         "place": "",
-        "flag_id": 0,
-        "site_id": 175
+        "flag_id": 1034427100,
+        "site_id": 175,
+        "lot_id": 1034420100
        },
        {
         "chest": "Nokstella first staircase room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 111
+        "flag_id": 12017970,
+        "site_id": 111,
+        "lot_id": 12010970
        },
        {
         "chest": "Nokstella second staircase room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 112
+        "flag_id": 12017980,
+        "site_id": 112,
+        "lot_id": 12010980
        },
        {
         "chest": "Nokstella Stonesword Key room at very top of building",
         "place": "",
-        "flag_id": 0,
-        "site_id": 113
+        "flag_id": 12017990,
+        "site_id": 113,
+        "lot_id": 12010990
        }
       ],
       "bosses": []
@@ -2144,14 +2314,16 @@
        {
         "chest": "Grand Cloister",
         "place": "",
-        "flag_id": 0,
-        "site_id": 107
+        "flag_id": 12017920,
+        "site_id": 107,
+        "lot_id": 12010920
        },
        {
         "chest": "Lake of Rot in small building to the west",
         "place": "",
-        "flag_id": 0,
-        "site_id": 176
+        "flag_id": 67890,
+        "site_id": 176,
+        "lot_id": 12010020
        }
       ],
       "bosses": [
@@ -2180,8 +2352,9 @@
        {
         "chest": "Deeproot Depths in hollow giant tree",
         "place": "",
-        "flag_id": 0,
-        "site_id": 205
+        "flag_id": 12037300,
+        "site_id": 205,
+        "lot_id": 12030300
        }
       ],
       "bosses": [
@@ -2211,8 +2384,9 @@
      {
       "chest": "Mohgwyn Dynasty Mausoleum atop stage",
       "place": "",
-      "flag_id": 0,
-      "site_id": 174
+      "flag_id": 15007590,
+      "site_id": 174,
+      "lot_id": 15000590
      }
     ],
     "bosses": [
@@ -2240,38 +2414,44 @@
        {
         "chest": "Belurat Gaol wooden platform after dropping down hanging pots",
         "place": "Belurat Gaol",
-        "flag_id": 0,
-        "site_id": 118
+        "flag_id": 66900,
+        "site_id": 118,
+        "lot_id": 41000140
        },
        {
         "chest": "Castle Ensis outer encampment",
         "place": "",
-        "flag_id": 0,
-        "site_id": 187
+        "flag_id": 2047447840,
+        "site_id": 187,
+        "lot_id": 2047440840
        },
        {
         "chest": "Fog Rift Catacombs on a high secret ledge",
         "place": "Fog Rift Catacombs",
-        "flag_id": 0,
-        "site_id": 184
+        "flag_id": 40007900,
+        "site_id": 184,
+        "lot_id": 40000900
        },
        {
         "chest": "Prospect Town upstairs room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 117
+        "flag_id": 2045417800,
+        "site_id": 117,
+        "lot_id": 2045410800
        },
        {
         "chest": "Scorched Ruins upstairs room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 116
+        "flag_id": 2047417800,
+        "site_id": 116,
+        "lot_id": 2047410800
        },
        {
         "chest": "Suppressing Pillar",
         "place": "",
-        "flag_id": 0,
-        "site_id": 183
+        "flag_id": 15007460,
+        "site_id": 183,
+        "lot_id": 15000460
        }
       ],
       "bosses": [
@@ -2319,38 +2499,44 @@
        {
         "chest": "Castle Ensis approach battlements in tower",
         "place": "Castle Ensis",
-        "flag_id": 0,
-        "site_id": 120
+        "flag_id": 2047447800,
+        "site_id": 120,
+        "lot_id": 2047440800
        },
        {
         "chest": "Castle Ensis before the hole",
         "place": "Castle Ensis",
-        "flag_id": 0,
-        "site_id": 119
+        "flag_id": 68790,
+        "site_id": 119,
+        "lot_id": 2047440810
        },
        {
         "chest": "Castle Ensis Gate battlements",
         "place": "Castle Ensis",
-        "flag_id": 0,
-        "site_id": 186
+        "flag_id": 2047447820,
+        "site_id": 186,
+        "lot_id": 2047440820
        },
        {
         "chest": "Periphery tower",
         "place": "Castle Ensis",
-        "flag_id": 0,
-        "site_id": 179
+        "flag_id": 2048447810,
+        "site_id": 179,
+        "lot_id": 2048440810
        },
        {
         "chest": "Room below church with fireplace",
         "place": "Castle Ensis",
-        "flag_id": 0,
-        "site_id": 191
+        "flag_id": 2047447830,
+        "site_id": 191,
+        "lot_id": 2047440830
        },
        {
         "chest": "Turret before elevator to Rellana",
         "place": "Castle Ensis",
-        "flag_id": 0,
-        "site_id": 178
+        "flag_id": 1050397910,
+        "site_id": 178,
+        "lot_id": 1050390910
        }
       ],
       "bosses": []
@@ -2433,74 +2619,86 @@
        {
         "chest": "Chest on rear battlement",
         "place": "Fort of Reprimand",
-        "flag_id": 0,
-        "site_id": 182
+        "flag_id": 2049437520,
+        "site_id": 182,
+        "lot_id": 2049430520
        },
        {
         "chest": "Courtyard behind flame throwers",
         "place": "Fog Rift Fort",
-        "flag_id": 0,
-        "site_id": 181
+        "flag_id": 2047457900,
+        "site_id": 181,
+        "lot_id": 2047450900
        },
        {
         "chest": "Darklight Catacombs behind giant Bigmouth Imp",
         "place": "Darklight Catacombs",
-        "flag_id": 0,
-        "site_id": 130
+        "flag_id": 40027220,
+        "site_id": 130,
+        "lot_id": 40020220
        },
        {
         "chest": "Fog Rift Fort - chest atop the southernmost rampart tower",
         "place": "Fog Rift Fort",
-        "flag_id": 0,
-        "site_id": 121
+        "flag_id": 2047457910,
+        "site_id": 121,
+        "lot_id": 2047450910
        },
        {
         "chest": "Fort of Reprimand dungeon cells",
         "place": "Fort of Reprimand",
-        "flag_id": 0,
-        "site_id": 189
+        "flag_id": 2049437500,
+        "site_id": 189,
+        "lot_id": 2049430500
        },
        {
         "chest": "Fort of Reprimand highest tower behind boss",
         "place": "Fort of Reprimand",
-        "flag_id": 0,
-        "site_id": 123
+        "flag_id": 68820,
+        "site_id": 123,
+        "lot_id": 2049430510
        },
        {
         "chest": "Fort of Reprimand inside main building behind a mess of cages",
         "place": "Fort of Reprimand",
-        "flag_id": 0,
-        "site_id": 122
+        "flag_id": 2049437270,
+        "site_id": 122,
+        "lot_id": 2049430270
        },
        {
         "chest": "Inside building behind Garrew",
         "place": "Fog Rift Fort",
-        "flag_id": 0,
-        "site_id": 180
+        "flag_id": 2047457920,
+        "site_id": 180,
+        "lot_id": 2047450920
        },
        {
         "chest": "Moorth Ruins sinkhole in tall building",
         "place": "",
-        "flag_id": 0,
-        "site_id": 131
+        "flag_id": 2049447900,
+        "site_id": 131,
+        "lot_id": 2049440900
        },
        {
         "chest": "Rabbath's Rise high room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 213
+        "flag_id": 2051467900,
+        "site_id": 213,
+        "lot_id": 2051460900
        },
        {
         "chest": "Ruins of Unte back room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 188
+        "flag_id": 2050467910,
+        "site_id": 188,
+        "lot_id": 2050460910
        },
        {
         "chest": "Secret room accessible from ledge near start of catacomb",
         "place": "Darklight Catacombs",
-        "flag_id": 0,
-        "site_id": 190
+        "flag_id": 40027020,
+        "site_id": 190,
+        "lot_id": 40020020
        }
       ],
       "bosses": [
@@ -2625,32 +2823,37 @@
        {
         "chest": "North of Temple Town Ruins via Spiritspring",
         "place": "",
-        "flag_id": 0,
-        "site_id": 125
+        "flag_id": 2046457920,
+        "site_id": 125,
+        "lot_id": 2046450920
        },
        {
         "chest": "North of Temple Town Ruins via Spiritspring",
         "place": "",
-        "flag_id": 0,
-        "site_id": 185
+        "flag_id": 2045467910,
+        "site_id": 185,
+        "lot_id": 2045460910
        },
        {
         "chest": "Scorpion River Catacombs secret high chamber by floating eyes",
         "place": "Scorpion River Catacombs",
-        "flag_id": 0,
-        "site_id": 129
+        "flag_id": 68780,
+        "site_id": 129,
+        "lot_id": 40010900
        },
        {
         "chest": "Small encampment under a brown tent",
         "place": "",
-        "flag_id": 0,
-        "site_id": 126
+        "flag_id": 2047477900,
+        "site_id": 126,
+        "lot_id": 2047470900
        },
        {
         "chest": "Temple Town Ruins upstairs room",
         "place": "",
-        "flag_id": 0,
-        "site_id": 124
+        "flag_id": 2046457910,
+        "site_id": 124,
+        "lot_id": 2046450910
        }
       ],
       "bosses": [
@@ -2683,14 +2886,16 @@
        {
         "chest": "Ancient Ruins of Rauh by secret elevator",
         "place": "",
-        "flag_id": 0,
-        "site_id": 127
+        "flag_id": 2044457900,
+        "site_id": 127,
+        "lot_id": 2044450900
        },
        {
         "chest": "Ancient Ruins of Rauh via a sealed Spiritspring",
         "place": "",
-        "flag_id": 0,
-        "site_id": 128
+        "flag_id": 2045467900,
+        "site_id": 128,
+        "lot_id": 2045460900
        }
       ],
       "bosses": [
