@@ -1,0 +1,2353 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "slug": "overground",
+            "name": "Overground",
+            "map_slug": "overworld",
+            "map_width": 9728,
+            "map_height": 9216,
+            "map_x": null,
+            "map_y": null,
+            "map_zoom": null,
+            "total": 162,
+            "opened": 22,
+            "children": [
+                {
+                    "id": 2,
+                    "slug": "roundtable-hold",
+                    "name": "Roundtable Hold",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.0674,
+                    "map_y": 0.9323,
+                    "map_zoom": 20,
+                    "total": 2,
+                    "opened": 0,
+                    "children": [],
+                    "chests": [
+                        {
+                            "id": 91,
+                            "slug": "roundtable-hold-1",
+                            "name": "Roundtable Hold dining room",
+                            "opened": false
+                        },
+                        {
+                            "id": 92,
+                            "slug": "roundtable-hold-2",
+                            "name": "Roundtable Hold kitchen",
+                            "opened": false
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "slug": "greater-limgrave",
+                    "name": "Greater Limgrave",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.4281,
+                    "map_y": 0.8031,
+                    "map_zoom": 4,
+                    "total": 31,
+                    "opened": 22,
+                    "children": [
+                        {
+                            "id": 4,
+                            "slug": "limgrave",
+                            "name": "Limgrave",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.4162,
+                            "map_y": 0.7617,
+                            "map_zoom": 6,
+                            "total": 16,
+                            "opened": 13,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 13,
+                                    "slug": "limgrave-12",
+                                    "name": "Chapel of Anticipation gallery",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 135,
+                                    "slug": "new-chest-1IX6Ny9L",
+                                    "name": "Deathtouched Catacombs boss arena",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 5,
+                                    "slug": "limgrave-05",
+                                    "name": "Dragon-Burnt Ruins cellar",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 196,
+                                    "slug": "new-chest-CbUAEHp5",
+                                    "name": "Encampment between Warmaster's Shack and Saintsbridge",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 8,
+                                    "slug": "limgrave-11",
+                                    "name": "Fort Haight tower",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 194,
+                                    "slug": "limgrave-902",
+                                    "name": "Gatefront Ruins cellar",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 2,
+                                    "slug": "limgrave-02",
+                                    "name": "Gatefront Ruins eastern carriage",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 3,
+                                    "slug": "limgrave-03",
+                                    "name": "Gatefront Ruins western carriage",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 1,
+                                    "slug": "limgrave-01",
+                                    "name": "Gatefront upper platform",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 153,
+                                    "slug": "new-chest-SbZphgfl",
+                                    "name": "Mistwood Ruins cellar",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 152,
+                                    "slug": "new-chest-qOIPBSp7",
+                                    "name": "Mistwood Ruins small room",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 7,
+                                    "slug": "limgrave-08",
+                                    "name": "Murkwater Cave dead-end tunnel",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 6,
+                                    "slug": "limgrave-07",
+                                    "name": "Murkwater Cave Patches chest",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 150,
+                                    "slug": "new-chest-lSPFpx9N",
+                                    "name": "Summonwater Village",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 134,
+                                    "slug": "new-chest-4BYnRzxP",
+                                    "name": "Waypoint Ruins encampment approach",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 4,
+                                    "slug": "limgrave-04",
+                                    "name": "Waypoint Ruins troll-drawn carriage",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 5,
+                            "slug": "weeping-peninsula",
+                            "name": "Weeping Peninsula",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.4072,
+                            "map_y": 0.8894,
+                            "map_zoom": 8.5,
+                            "total": 9,
+                            "opened": 9,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 197,
+                                    "slug": "new-chest-gief6a1l",
+                                    "name": "Broken down carriage",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 16,
+                                    "slug": "weeping-peninsula-03",
+                                    "name": "Castle Morne backside tower",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 137,
+                                    "slug": "new-chest-mruJzUaN",
+                                    "name": "Chest behind wooden screens",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 136,
+                                    "slug": "new-chest-JJUX3i9N",
+                                    "name": "Chest in mining shack",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 149,
+                                    "slug": "new-chest-drf8p4G9",
+                                    "name": "Demi-Human Forest Ruins cellar",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 14,
+                                    "slug": "weeping-peninsula-01",
+                                    "name": "Earthbore Cave entrance",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 195,
+                                    "slug": "new-chest-Nss8mMFz2",
+                                    "name": "Forest Lookout Tower top floor",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 138,
+                                    "slug": "new-chest-Nss8mMFz",
+                                    "name": "Oridys's Rise top room",
+                                    "opened": true
+                                },
+                                {
+                                    "id": 15,
+                                    "slug": "weeping-peninsula-02",
+                                    "name": "Tombsward Ruins cellar",
+                                    "opened": true
+                                }
+                            ]
+                        },
+                        {
+                            "id": 6,
+                            "slug": "stormveil-castle",
+                            "name": "Stormveil Castle",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.3182,
+                            "map_y": 0.7153,
+                            "map_zoom": 17,
+                            "total": 6,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 139,
+                                    "slug": "new-chest-VsDIcy8c",
+                                    "name": "Balcony above scion hall",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 10,
+                                    "slug": "stormveil-castle-02",
+                                    "name": "Banquet room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 9,
+                                    "slug": "stormveil-castle-01",
+                                    "name": "Barracks basement east chest",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 12,
+                                    "slug": "stormveil-castle-04",
+                                    "name": "Barracks basement west chest",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 11,
+                                    "slug": "stormveil-castle-03",
+                                    "name": "Gostoc trap room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 132,
+                                    "slug": "stormveil-castle-05",
+                                    "name": "Room right of Throne Room",
+                                    "opened": false
+                                }
+                            ]
+                        }
+                    ],
+                    "chests": []
+                },
+                {
+                    "id": 7,
+                    "slug": "greater-liurnia",
+                    "name": "Greater Liurnia",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.22,
+                    "map_y": 0.5321,
+                    "map_zoom": 3,
+                    "total": 39,
+                    "opened": 0,
+                    "children": [
+                        {
+                            "id": 8,
+                            "slug": "liurnia-eastern-coast",
+                            "name": "Liurnia Eastern Coast",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.2798,
+                            "map_y": 0.5627,
+                            "map_zoom": 3.5,
+                            "total": 12,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 44,
+                                    "slug": "liurnia-eastern-coast-07",
+                                    "name": "Black Knife Catacombs boss chest",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 200,
+                                    "slug": "new-chest-R0UQk2a2",
+                                    "name": "Chest in encampment in front of Grand Lift of Dectus",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 199,
+                                    "slug": "new-chest-C7kWSfIs",
+                                    "name": "Church of Vows right of altar pool",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 148,
+                                    "slug": "new-chest-21PhKsho",
+                                    "name": "Converted Fringe Tower highest room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 19,
+                                    "slug": "liurnia-eastern-coast-02",
+                                    "name": "Frenzy-Flaming Tower 2nd floor",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 146,
+                                    "slug": "new-chest-Htod2Sae",
+                                    "name": "Highway Lookout Tower first floor",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 17,
+                                    "slug": "liurnia-eastern-coast-01",
+                                    "name": "Purified Ruins cellar",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 42,
+                                    "slug": "liurnia-eastern-coast-06",
+                                    "name": "Raya Lucaria Crystal Tunnel side room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 41,
+                                    "slug": "liurnia-eastern-coast-05",
+                                    "name": "Stone chest on wooden deck",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 142,
+                                    "slug": "new-chest-pGQnr3l2",
+                                    "name": "Storage room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 40,
+                                    "slug": "liurnia-eastern-coast-04",
+                                    "name": "Storage room upper ledge",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 198,
+                                    "slug": "new-chest-JDNNQ0Rc",
+                                    "name": "Abandoned carriage south Liurnia Highway on bridge",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 9,
+                            "slug": "liurnia-western-coast",
+                            "name": "Liurnia Western Coast",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.1797,
+                            "map_y": 0.503,
+                            "map_zoom": 3.5,
+                            "total": 13,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 27,
+                                    "slug": "liurnia-western-coast-00",
+                                    "name": "Atop large tower in Raya Lucaria",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 145,
+                                    "slug": "new-chest-jkxGQdYl",
+                                    "name": "Converted tower top room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 32,
+                                    "slug": "liurnia-western-coast-06",
+                                    "name": "Encampment lower level",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 28,
+                                    "slug": "liurnia-western-coast-02",
+                                    "name": "Encampment upper level",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 31,
+                                    "slug": "liurnia-western-coast-05",
+                                    "name": "Encampment upper level",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 144,
+                                    "slug": "new-chest-RP7wMapO",
+                                    "name": "Kingsrealm Ruins cellar",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 37,
+                                    "slug": "liurnia-western-coast-11",
+                                    "name": "Lakeside Crystal Cave entrance",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 38,
+                                    "slug": "liurnia-western-coast-12",
+                                    "name": "Lakeside Crystal Cave rear room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 133,
+                                    "slug": "liurnia-western-coast-14",
+                                    "name": "Ranni's Rise",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 43,
+                                    "slug": "liurnia-western-coast-13",
+                                    "name": "Road's End Catacombs hidden room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 18,
+                                    "slug": "liurnia-western-coast-01",
+                                    "name": "Temple Quarter sunken spire",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 29,
+                                    "slug": "liurnia-western-coast-03",
+                                    "name": "The Four Belfries fourth Belfry",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 30,
+                                    "slug": "liurnia-western-coast-04",
+                                    "name": "West Liurnia troll-drawn carriage",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 10,
+                            "slug": "liurnia-lakebed",
+                            "name": "Liurnia Lakebed",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.2108,
+                            "map_y": 0.5476,
+                            "map_zoom": 5.5,
+                            "total": 4,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 141,
+                                    "slug": "new-chest-MLO2x7kp",
+                                    "name": "Sunken spire in western Academy Gate Town",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 140,
+                                    "slug": "new-chest-kf2OioTk",
+                                    "name": "Laskyar Ruins cellar",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 217,
+                                    "slug": "new-chest-GnxBtNI6",
+                                    "name": "Sunken spire in central Academy Gate Town",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 33,
+                                    "slug": "liurnia-western-coast-07",
+                                    "name": "Testu's Rise upper room",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 11,
+                            "slug": "academy-of-raya-lucaria",
+                            "name": "Academy of Raya Lucaria",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.1911,
+                            "map_y": 0.5347,
+                            "map_zoom": 20,
+                            "total": 7,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 21,
+                                    "slug": "academy-of-raya-lucaria-01",
+                                    "name": "Between Schoolhouse and Debate Parlor",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 23,
+                                    "slug": "academy-of-raya-lucaria-04",
+                                    "name": "Debate Parlor gallery",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 25,
+                                    "slug": "academy-of-raya-lucaria-06",
+                                    "name": "Grand Library next to Rennala",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 24,
+                                    "slug": "academy-of-raya-lucaria-05",
+                                    "name": "Office left from Schoolhouse",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 147,
+                                    "slug": "new-chest-aziGa5cq",
+                                    "name": "Secret Library",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 22,
+                                    "slug": "academy-of-raya-lucaria-02",
+                                    "name": "Upstairs room by Ball Trap summoning circle",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 26,
+                                    "slug": "academy-of-raya-lucaria-07",
+                                    "name": "Watchtower accessed from rooftops",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 12,
+                            "slug": "caria-manor",
+                            "name": "Caria Manor",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.1965,
+                            "map_y": 0.4036,
+                            "map_zoom": 20,
+                            "total": 3,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 20,
+                                    "slug": "caria-manor-01",
+                                    "name": "Caria Manor ground floor study",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 168,
+                                    "slug": "new-chest-7Tbmqvcp",
+                                    "name": "Renna's Rise",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 169,
+                                    "slug": "new-chest-A0Gl2If6",
+                                    "name": "Seluvis's Rise upper room",
+                                    "opened": false
+                                }
+                            ]
+                        }
+                    ],
+                    "chests": []
+                },
+                {
+                    "id": 13,
+                    "slug": "greater-caelid",
+                    "name": "Greater Caelid",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.5711,
+                    "map_y": 0.6993,
+                    "map_zoom": 4.5,
+                    "total": 25,
+                    "opened": 0,
+                    "children": [
+                        {
+                            "id": 14,
+                            "slug": "caelid",
+                            "name": "Caelid",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.5384,
+                            "map_y": 0.7336,
+                            "map_zoom": 7.5,
+                            "total": 22,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 52,
+                                    "slug": "caelid-08",
+                                    "name": "Abandoned carriage near Caelem Ruins",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 212,
+                                    "slug": "new-chest-fi7cwout",
+                                    "name": "Behind illusory wall in large chamber before boss room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 47,
+                                    "slug": "caelid-03",
+                                    "name": "Caelid Waypoint Ruins cellar",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 151,
+                                    "slug": "new-chest-jPfHfptA",
+                                    "name": "Caelem Ruins cellar",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 218,
+                                    "slug": "new-chest-sg83Db9d",
+                                    "name": "Encampment under red tent",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 51,
+                                    "slug": "caelid-07",
+                                    "name": "Forsaken Ruins cellar",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 48,
+                                    "slug": "caelid-04",
+                                    "name": "Fort Gael lower room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 59,
+                                    "slug": "caelid-15",
+                                    "name": "Gaol Cave at entrance",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 58,
+                                    "slug": "caelid-14",
+                                    "name": "Gaol Cave in barracks",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 154,
+                                    "slug": "new-chest-hesVq43j",
+                                    "name": "Gaol Fort upper level",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 46,
+                                    "slug": "caelid-02",
+                                    "name": "Impassable Greatbridge watchtower",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 158,
+                                    "slug": "new-chest-9oqUeYbw",
+                                    "name": "Redmane Castle rooftop past Red-Hot Whetblade",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 55,
+                                    "slug": "caelid-11",
+                                    "name": "Sellia Crystal Tunnel mining shack",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 56,
+                                    "slug": "caelid-12",
+                                    "name": "Sellia Crystal Tunnel mining shack upper level",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 157,
+                                    "slug": "new-chest-SklPShoN",
+                                    "name": "Sellia Hideaway, secret sorcerer room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 155,
+                                    "slug": "new-chest-w8Ufh0pP",
+                                    "name": "Sellia, Town of Sorcery boss room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 54,
+                                    "slug": "caelid-10",
+                                    "name": "Sellia, Town of Sorcery central sealed room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 156,
+                                    "slug": "new-chest-A4zR94Nv",
+                                    "name": "Sellia, Town of Sorcery north eastern sealed room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 53,
+                                    "slug": "caelid-09",
+                                    "name": "Sellia, Town of Sorcery western sealed room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 49,
+                                    "slug": "caelid-05",
+                                    "name": "Small encampment under red tent",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 214,
+                                    "slug": "new-chest-eEnxvGl8",
+                                    "name": "Street of Sages Ruins cellar",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 57,
+                                    "slug": "caelid-13",
+                                    "name": "War-Dead Catacombs, bottom floor in the rot",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 15,
+                            "slug": "dragonbarrow",
+                            "name": "Dragonbarrow",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.5928,
+                            "map_y": 0.6491,
+                            "map_zoom": 7.5,
+                            "total": 3,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 60,
+                                    "slug": "dragonbarrow-01",
+                                    "name": "Divine Tower of Caelid basement",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 45,
+                                    "slug": "caelid-01",
+                                    "name": "Fort Faroth Tower",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 159,
+                                    "slug": "new-chest-ayqyIaZL",
+                                    "name": "Lenne's Rise upper room",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 16,
+                            "slug": "redmane-castle",
+                            "name": "Redmane Castle",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.6209,
+                            "map_y": 0.7945,
+                            "map_zoom": 20,
+                            "total": 0,
+                            "opened": 0,
+                            "children": [],
+                            "chests": []
+                        }
+                    ],
+                    "chests": []
+                },
+                {
+                    "id": 17,
+                    "slug": "greater-altus",
+                    "name": "Greater Altus",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.379,
+                    "map_y": 0.3484,
+                    "map_zoom": 4.5,
+                    "total": 37,
+                    "opened": 0,
+                    "children": [
+                        {
+                            "id": 18,
+                            "slug": "altus-plateau",
+                            "name": "Altus Plateau",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.3417,
+                            "map_y": 0.3416,
+                            "map_zoom": null,
+                            "total": 30,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 80,
+                                    "slug": "altus-plateau-20",
+                                    "name": "Altus Tunnel stone chest in side room near entrance",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 160,
+                                    "slug": "new-chest-gRaW7EmT",
+                                    "name": "Chest in small encampment",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 203,
+                                    "slug": "new-chest-dR4f25D2",
+                                    "name": "Encampment ambushed by Ulcerated Tree Spirit",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 63,
+                                    "slug": "altus-plateau-03",
+                                    "name": "Erdtree-Gazing Hill east carriage",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 62,
+                                    "slug": "altus-plateau-02",
+                                    "name": "Erdtree-Gazing Hill west carriage",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 201,
+                                    "slug": "new-chest-LBzH20mk",
+                                    "name": "Highway Lookout Tower top floor",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 61,
+                                    "slug": "altus-plateau-01",
+                                    "name": "Lux Ruins cellar",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 167,
+                                    "slug": "new-chest-74JMYp1M",
+                                    "name": "Mirage Rise upper room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 67,
+                                    "slug": "altus-plateau-07",
+                                    "name": "Perfumer's Grotto one of two chests behind branch",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 166,
+                                    "slug": "new-chest-Xkdlr8yK",
+                                    "name": "Perfumer's Grotto one of two chests behind branch",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 161,
+                                    "slug": "new-chest-VbCmtBlx",
+                                    "name": "Perfumer's Ruins by Omenkiller",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 65,
+                                    "slug": "altus-plateau-05",
+                                    "name": "Perfumer's Ruins cellar",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 163,
+                                    "slug": "new-chest-flN2rbJd",
+                                    "name": "Road of Iniquity Side Path troll-drawn carriage",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 70,
+                                    "slug": "altus-plateau-10",
+                                    "name": "Sage's Cave one of four chests in secret room between two braziers",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 71,
+                                    "slug": "altus-plateau-11",
+                                    "name": "Sage's Cave one of four chests in secret room between two braziers",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 72,
+                                    "slug": "altus-plateau-12",
+                                    "name": "Sage's Cave one of four chests in secret room between two braziers",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 73,
+                                    "slug": "altus-plateau-13",
+                                    "name": "Sage's Cave one of four chests in secret room between two braziers",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 68,
+                                    "slug": "altus-plateau-08",
+                                    "name": "Sage's Cave one of two chests on path",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 69,
+                                    "slug": "altus-plateau-09",
+                                    "name": "Sage's Cave one of two chests on path",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 75,
+                                    "slug": "altus-plateau-15",
+                                    "name": "Sage's Cave one of two chests on path deeper",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 76,
+                                    "slug": "altus-plateau-16",
+                                    "name": "Sage's Cave one of two chests on path deeper",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 78,
+                                    "slug": "altus-plateau-18",
+                                    "name": "Sage's Cave one of two chests before Garris",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 79,
+                                    "slug": "altus-plateau-19",
+                                    "name": "Sage's Cave one of two chests before Garris",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 77,
+                                    "slug": "altus-plateau-17",
+                                    "name": "Sage's Cave opposite two chests in nook",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 74,
+                                    "slug": "altus-plateau-14",
+                                    "name": "Sage's Cave single chest behind illusory wall",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 165,
+                                    "slug": "new-chest-FeT26Erq",
+                                    "name": "Shaded Castle west wing",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 162,
+                                    "slug": "new-chest-zpPjcIxa",
+                                    "name": "Stormcaller Church",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 202,
+                                    "slug": "new-chest-cm2WTPmX",
+                                    "name": "Woodfolk Ruins south ruins cellar",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 164,
+                                    "slug": "new-chest-3U8h6kxf",
+                                    "name": "Writheblood Ruins cellar",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 64,
+                                    "slug": "altus-plateau-04",
+                                    "name": "Wyndham Ruins cellar",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 21,
+                            "slug": "capital-outskirts",
+                            "name": "Capital Outskirts",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.4122,
+                            "map_y": 0.3554,
+                            "map_zoom": 9,
+                            "total": 1,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 81,
+                                    "slug": "altus-plateau-21",
+                                    "name": "Sealed Tunnel entrance",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 72,
+                            "slug": "sewers-shunning-grounds",
+                            "name": "Sewers & Shunning Grounds",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.4501,
+                            "map_y": 0.3687,
+                            "map_zoom": 15.5,
+                            "total": 2,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 87,
+                                    "slug": "leyndell-royal-capital-04",
+                                    "name": "Cathedral of the Forsaken",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 204,
+                                    "slug": "new-chest-NS95clrN",
+                                    "name": "Behind illusory wall Frenzied Flame Proscription",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 22,
+                            "slug": "leyndell-royal-capital",
+                            "name": "Leyndell, Royal Capital",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.4437,
+                            "map_y": 0.3895,
+                            "map_zoom": 16,
+                            "total": 4,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 86,
+                                    "slug": "leyndell-royal-capital-03",
+                                    "name": "Divine Bridge",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 84,
+                                    "slug": "leyndell-royal-capital-01",
+                                    "name": "Erdtree Sanctuary gallery",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 66,
+                                    "slug": "altus-plateau-06",
+                                    "name": "Estate house at end of East Ramparts",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 85,
+                                    "slug": "leyndell-royal-capital-02",
+                                    "name": "Leyndell room under Avenue Balcony",
+                                    "opened": false
+                                }
+                            ]
+                        }
+                    ],
+                    "chests": []
+                },
+                {
+                    "id": 71,
+                    "slug": "mt-gelmir-2",
+                    "name": "Mt. Gelmir",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.2371,
+                    "map_y": 0.3084,
+                    "map_zoom": 11.5,
+                    "total": 2,
+                    "opened": 0,
+                    "children": [
+                        {
+                            "id": 19,
+                            "slug": "mt-gelmir",
+                            "name": "Mt. Gelmir",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.2371,
+                            "map_y": 0.3084,
+                            "map_zoom": 11.5,
+                            "total": 2,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 82,
+                                    "slug": "mt-gelmir-01",
+                                    "name": "Gelmir Hero's Grave boss chest",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 83,
+                                    "slug": "mt-gelmir-02",
+                                    "name": "Gelmir Hero's Grave room after lava",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 20,
+                            "slug": "volcano-manor",
+                            "name": "Volcano Manor",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.2235,
+                            "map_y": 0.3244,
+                            "map_zoom": 20,
+                            "total": 0,
+                            "opened": 0,
+                            "children": [],
+                            "chests": []
+                        }
+                    ],
+                    "chests": []
+                },
+                {
+                    "id": 23,
+                    "slug": "greater-mountaintops",
+                    "name": "Greater Mountaintops",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.6236,
+                    "map_y": 0.2847,
+                    "map_zoom": 5,
+                    "total": 6,
+                    "opened": 0,
+                    "children": [
+                        {
+                            "id": 67,
+                            "slug": "forbidden-lands",
+                            "name": "Forbidden Lands",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.5423,
+                            "map_y": 0.367,
+                            "map_zoom": 14,
+                            "total": 0,
+                            "opened": 0,
+                            "children": [],
+                            "chests": []
+                        },
+                        {
+                            "id": 24,
+                            "slug": "mountaintops-of-the-giants",
+                            "name": "Mountaintops of the Giants",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.6307,
+                            "map_y": 0.2694,
+                            "map_zoom": 5,
+                            "total": 6,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 95,
+                                    "slug": "mountaintops-of-the-giants-03",
+                                    "name": "Giants' Mountaintop Catacombs boss chest",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 94,
+                                    "slug": "mountaintops-of-the-giants-02",
+                                    "name": "Giants' Mountaintop Catacombs secret basement",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 170,
+                                    "slug": "new-chest-o3AtvM0A",
+                                    "name": "Guardians' Garrison",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 171,
+                                    "slug": "new-chest-cKyG1bhT",
+                                    "name": "Heretical Rise upper floor",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 93,
+                                    "slug": "mountaintops-of-the-giants-01",
+                                    "name": "Stargazers' Ruins cellar",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 172,
+                                    "slug": "new-chest-BKbLv16d",
+                                    "name": "Zamor Ruins cellar",
+                                    "opened": false
+                                }
+                            ]
+                        }
+                    ],
+                    "chests": []
+                },
+                {
+                    "id": 25,
+                    "slug": "crumbling-farum-azula",
+                    "name": "Crumbling Farum Azula",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.8792,
+                    "map_y": 0.4872,
+                    "map_zoom": 14,
+                    "total": 3,
+                    "opened": 0,
+                    "children": [],
+                    "chests": [
+                        {
+                            "id": 103,
+                            "slug": "crumbling-farum-azula-02",
+                            "name": "Crumbling Farum Azula atop fallen buildings",
+                            "opened": false
+                        },
+                        {
+                            "id": 104,
+                            "slug": "crumbling-farum-azula-03",
+                            "name": "Crumbling Farum Azula by Bernahl invasion",
+                            "opened": false
+                        },
+                        {
+                            "id": 102,
+                            "slug": "crumbling-farum-azula-01",
+                            "name": "Crumbling Farum Azula by large circular elevator",
+                            "opened": false
+                        }
+                    ]
+                },
+                {
+                    "id": 70,
+                    "slug": "leyndell-capital-of-ash",
+                    "name": "Leyndell, Capital of Ash",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.4414,
+                    "map_y": 0.3838,
+                    "map_zoom": 14,
+                    "total": 0,
+                    "opened": 0,
+                    "children": [],
+                    "chests": []
+                },
+                {
+                    "id": 63,
+                    "slug": "moonlight-alter",
+                    "name": "Moonlight Altar",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.174,
+                    "map_y": 0.6433,
+                    "map_zoom": 10,
+                    "total": 4,
+                    "opened": 0,
+                    "children": [],
+                    "chests": [
+                        {
+                            "id": 177,
+                            "slug": "new-chest-P7qxTIOA",
+                            "name": "Chelona's Rise upper room",
+                            "opened": false
+                        },
+                        {
+                            "id": 36,
+                            "slug": "liurnia-western-coast-10",
+                            "name": "Lunar Estate Ruins east cellar",
+                            "opened": false
+                        },
+                        {
+                            "id": 35,
+                            "slug": "liurnia-western-coast-09",
+                            "name": "Lunar Estate Ruins west cellar",
+                            "opened": false
+                        },
+                        {
+                            "id": 34,
+                            "slug": "liurnia-western-coast-08",
+                            "name": "Moonfolk Ruins cellar",
+                            "opened": false
+                        }
+                    ]
+                },
+                {
+                    "id": 26,
+                    "slug": "greater-snowfields",
+                    "name": "Greater Snowfields",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.5518,
+                    "map_y": 0.2012,
+                    "map_zoom": 3.5,
+                    "total": 13,
+                    "opened": 0,
+                    "children": [
+                        {
+                            "id": 27,
+                            "slug": "consecrated-snowfield",
+                            "name": "Consecrated Snowfield",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.549,
+                            "map_y": 0.549,
+                            "map_zoom": 7,
+                            "total": 6,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 209,
+                                    "slug": "new-chest-2nmg9yoE",
+                                    "name": "Chest on ledge by Rise",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 97,
+                                    "slug": "consecrated-snowfield-02",
+                                    "name": "Hidden Path to the Haligtree boss chest",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 96,
+                                    "slug": "consecrated-snowfield-01",
+                                    "name": "Hidden Path to the Haligtree invisible walkway",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 207,
+                                    "slug": "new-chest-JDupxOMI",
+                                    "name": "Troll-drawn carriage in open snowfields",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 206,
+                                    "slug": "new-chest-ijqYUGk4",
+                                    "name": "Troll-drawn carriage in the blizzard",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 208,
+                                    "slug": "new-chest-UflE2xph",
+                                    "name": "Yelough Anix Ruins cellar",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 28,
+                            "slug": "miquellas-haligtree",
+                            "name": "Miquella's Haligtree",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.5851,
+                            "map_y": 0.1205,
+                            "map_zoom": 20,
+                            "total": 1,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 216,
+                                    "slug": "new-chest-jgsCLLOw",
+                                    "name": "Chest atop elevator tower",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 65,
+                            "slug": "elphael-brace-of-the-haligtree",
+                            "name": "Elphael Brace of the Haligtree",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.5779,
+                            "map_y": 0.0955,
+                            "map_zoom": 20,
+                            "total": 6,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 211,
+                                    "slug": "new-chest-ds2D0tNC",
+                                    "name": "Behind rotten Crystalian trio",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 101,
+                                    "slug": "miquellas-haligtree-04",
+                                    "name": "Elphael cathedral gallery",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 99,
+                                    "slug": "miquellas-haligtree-02",
+                                    "name": "Elphael guarded by Cleanrot Knight",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 100,
+                                    "slug": "miquellas-haligtree-03",
+                                    "name": "Elphael high room after climbing architecture",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 210,
+                                    "slug": "new-chest-lJiuRh0x",
+                                    "name": "In decadent room near the Plaza",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 98,
+                                    "slug": "miquellas-haligtree-01",
+                                    "name": "Miquella's Haligtree in Stonesword Key room dropping down from Prayer Room",
+                                    "opened": false
+                                }
+                            ]
+                        }
+                    ],
+                    "chests": []
+                }
+            ],
+            "chests": []
+        },
+        {
+            "id": 29,
+            "slug": "underground",
+            "name": "Underground",
+            "map_slug": "underground",
+            "map_width": 9728,
+            "map_height": 9216,
+            "map_x": null,
+            "map_y": null,
+            "map_zoom": null,
+            "total": 17,
+            "opened": 0,
+            "children": [
+                {
+                    "id": 30,
+                    "slug": "greater-siofra",
+                    "name": "Greater Siofra",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.5215,
+                    "map_y": 0.7215,
+                    "map_zoom": 10,
+                    "total": 3,
+                    "opened": 0,
+                    "children": [
+                        {
+                            "id": 31,
+                            "slug": "siofra-river",
+                            "name": "Siofra River",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.5279,
+                            "map_y": 0.5279,
+                            "map_zoom": 10,
+                            "total": 1,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 115,
+                                    "slug": "siofra-river-01",
+                                    "name": "Ancestral Woods water ruins",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 33,
+                            "slug": "nokron-eternal-city",
+                            "name": "Nokron, Eternal City",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.5051,
+                            "map_y": 0.7213,
+                            "map_zoom": 10,
+                            "total": 2,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 173,
+                                    "slug": "new-chest-rDMpWBJ0",
+                                    "name": "Night's Sacred Ground in Stonesword Key room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 114,
+                                    "slug": "nokron-eternal-city-01",
+                                    "name": "Night's Sacred Ground under ancient being",
+                                    "opened": false
+                                }
+                            ]
+                        }
+                    ],
+                    "chests": []
+                },
+                {
+                    "id": 34,
+                    "slug": "greater-ainsel",
+                    "name": "Greater Ainsel",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.2389,
+                    "map_y": 0.5003,
+                    "map_zoom": 7,
+                    "total": 12,
+                    "opened": 0,
+                    "children": [
+                        {
+                            "id": 35,
+                            "slug": "ainsel-river",
+                            "name": "Ainsel River",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.2562,
+                            "map_y": 0.472,
+                            "map_zoom": 10,
+                            "total": 2,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 105,
+                                    "slug": "ainsel-river-01",
+                                    "name": "Ainsel River atop Uhl Palace ruins",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 215,
+                                    "slug": "new-chest-FPEujiva",
+                                    "name": "Under giant throne after Dragonkin Soldier",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 37,
+                            "slug": "nokstella-eternal-city",
+                            "name": "Nokstella, Eternal City",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.2309,
+                            "map_y": 0.4696,
+                            "map_zoom": 20,
+                            "total": 8,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 106,
+                                    "slug": "ainsel-river-02",
+                                    "name": "Nokstella at the back of large room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 108,
+                                    "slug": "ainsel-river-03",
+                                    "name": "Nokstella back of large room with large ambush",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 109,
+                                    "slug": "ainsel-river-04",
+                                    "name": "Nokstella building bordering the river, up stairway",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 110,
+                                    "slug": "nokstella-eternal-city-01",
+                                    "name": "Nokstella cathedral altar",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 175,
+                                    "slug": "new-chest-02VjyPYv",
+                                    "name": "Nokstella dark room at top of staircases",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 111,
+                                    "slug": "ainsel-river-05",
+                                    "name": "Nokstella first staircase room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 112,
+                                    "slug": "nokstella-eternal-city-02",
+                                    "name": "Nokstella second staircase room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 113,
+                                    "slug": "nokstella-eternal-city-03",
+                                    "name": "Nokstella Stonesword Key room at very top of building",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 36,
+                            "slug": "lake-of-rot",
+                            "name": "Lake of Rot",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.2063,
+                            "map_y": 0.529,
+                            "map_zoom": 12.5,
+                            "total": 2,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 107,
+                                    "slug": "lake-of-rot-01",
+                                    "name": "Grand Cloister",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 176,
+                                    "slug": "new-chest-2khxu0R7",
+                                    "name": "Lake of Rot in small building to the west",
+                                    "opened": false
+                                }
+                            ]
+                        }
+                    ],
+                    "chests": []
+                },
+                {
+                    "id": 38,
+                    "slug": "greater-deeproot",
+                    "name": "Greater Deeproot",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.4488,
+                    "map_y": 0.3787,
+                    "map_zoom": 7.5,
+                    "total": 1,
+                    "opened": 0,
+                    "children": [
+                        {
+                            "id": 39,
+                            "slug": "deeproot-depths",
+                            "name": "Deeproot Depths",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.4367,
+                            "map_y": 0.3561,
+                            "map_zoom": 15.5,
+                            "total": 1,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 205,
+                                    "slug": "new-chest-EwtDwzGa",
+                                    "name": "Deeproot Depths in hollow giant tree",
+                                    "opened": false
+                                }
+                            ]
+                        }
+                    ],
+                    "chests": []
+                },
+                {
+                    "id": 32,
+                    "slug": "mohgwyn-palace",
+                    "name": "Mohgwyn Palace",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.5972,
+                    "map_y": 0.7324,
+                    "map_zoom": 14,
+                    "total": 1,
+                    "opened": 0,
+                    "children": [],
+                    "chests": [
+                        {
+                            "id": 174,
+                            "slug": "new-chest-12T9r1cd",
+                            "name": "Mohgwyn Dynasty Mausoleum atop stage",
+                            "opened": false
+                        }
+                    ]
+                }
+            ],
+            "chests": []
+        },
+        {
+            "id": 40,
+            "slug": "land-of-shadow",
+            "name": "Land of Shadow",
+            "map_slug": "shadow",
+            "map_width": 4096,
+            "map_height": 4964,
+            "map_x": null,
+            "map_y": null,
+            "map_zoom": null,
+            "total": 31,
+            "opened": 0,
+            "children": [
+                {
+                    "id": 41,
+                    "slug": "greater-gravesite",
+                    "name": "Greater Gravesite",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.3543,
+                    "map_y": 0.6191,
+                    "map_zoom": 3.5,
+                    "total": 12,
+                    "opened": 0,
+                    "children": [
+                        {
+                            "id": 42,
+                            "slug": "gravesite-plain",
+                            "name": "Gravesite Plain",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.3543,
+                            "map_y": 0.6191,
+                            "map_zoom": 3.5,
+                            "total": 6,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 118,
+                                    "slug": "gravesite-plain-03",
+                                    "name": "Belurat Gaol wooden platform after dropping down hanging pots",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 187,
+                                    "slug": "new-chest-SpCkEhXd",
+                                    "name": "Castle Ensis outer encampment",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 184,
+                                    "slug": "new-chest-5NSS2udB",
+                                    "name": "Fog Rift Catacombs on a high secret ledge",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 117,
+                                    "slug": "gravesite-plain-02",
+                                    "name": "Prospect Town upstairs room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 116,
+                                    "slug": "gravesite-plain-01",
+                                    "name": "Scorched Ruins upstairs room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 183,
+                                    "slug": "new-chest-u74vNcJA",
+                                    "name": "Suppressing Pillar",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 43,
+                            "slug": "castle-ensis",
+                            "name": "Castle Ensis",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.4058,
+                            "map_y": 0.5497,
+                            "map_zoom": 13,
+                            "total": 6,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 120,
+                                    "slug": "castle-ensis-02",
+                                    "name": "Castle Ensis approach battlements in tower",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 119,
+                                    "slug": "castle-ensis-01",
+                                    "name": "Castle Ensis before the hole",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 186,
+                                    "slug": "new-chest-WWvDgEDx",
+                                    "name": "Castle Ensis Gate battlements",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 179,
+                                    "slug": "new-chest-VIZyB6rJ",
+                                    "name": "Periphery tower",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 191,
+                                    "slug": "new-chest-wG0QIqP6",
+                                    "name": "Room below church with fireplace",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 178,
+                                    "slug": "new-chest-84Q06wpL",
+                                    "name": "Turret before elevator to Rellana",
+                                    "opened": false
+                                }
+                            ]
+                        }
+                    ],
+                    "chests": []
+                },
+                {
+                    "id": 44,
+                    "slug": "greater-cerulean",
+                    "name": "Greater Cerulean",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.3872,
+                    "map_y": 0.8558,
+                    "map_zoom": null,
+                    "total": 0,
+                    "opened": 0,
+                    "children": [
+                        {
+                            "id": 45,
+                            "slug": "cerulean-coast",
+                            "name": "Cerulean Coast",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.3872,
+                            "map_y": 0.8558,
+                            "map_zoom": null,
+                            "total": 0,
+                            "opened": 0,
+                            "children": [],
+                            "chests": []
+                        },
+                        {
+                            "id": 46,
+                            "slug": "stone-coffin-fissure",
+                            "name": "Stone Coffin Fissure",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.421,
+                            "map_y": 0.9097,
+                            "map_zoom": null,
+                            "total": 0,
+                            "opened": 0,
+                            "children": [],
+                            "chests": []
+                        }
+                    ],
+                    "chests": []
+                },
+                {
+                    "id": 47,
+                    "slug": "belurat-and-enir-ilim",
+                    "name": "Belurat and Enir-Ilim",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.2326,
+                    "map_y": 0.5628,
+                    "map_zoom": 8,
+                    "total": 0,
+                    "opened": 0,
+                    "children": [
+                        {
+                            "id": 48,
+                            "slug": "belurat-tower-settlement",
+                            "name": "Belurat, Tower Settlement",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.2545,
+                            "map_y": 0.5874,
+                            "map_zoom": 14,
+                            "total": 0,
+                            "opened": 0,
+                            "children": [],
+                            "chests": []
+                        },
+                        {
+                            "id": 49,
+                            "slug": "enir-ilim",
+                            "name": "Enir-Ilim",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.2193,
+                            "map_y": 0.5446,
+                            "map_zoom": 15.5,
+                            "total": 0,
+                            "opened": 0,
+                            "children": [],
+                            "chests": []
+                        }
+                    ],
+                    "chests": []
+                },
+                {
+                    "id": 50,
+                    "slug": "greater-scadu",
+                    "name": "Greater Scadu",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.494,
+                    "map_y": 0.4977,
+                    "map_zoom": 3.5,
+                    "total": 12,
+                    "opened": 0,
+                    "children": [
+                        {
+                            "id": 51,
+                            "slug": "scadu-altus",
+                            "name": "Scadu Altus",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.512,
+                            "map_y": 0.5323,
+                            "map_zoom": 5,
+                            "total": 12,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 182,
+                                    "slug": "new-chest-4mufmu35",
+                                    "name": "Chest on rear battlement",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 181,
+                                    "slug": "new-chest-d9nssIVY",
+                                    "name": "Courtyard behind flame throwers",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 130,
+                                    "slug": "scadu-altus-04",
+                                    "name": "Darklight Catacombs behind giant Bigmouth Imp",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 121,
+                                    "slug": "scadu-altus-01",
+                                    "name": "Fog Rift Fort - chest atop the southernmost rampart tower",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 189,
+                                    "slug": "new-chest-7t7HnHs1",
+                                    "name": "Fort of Reprimand dungeon cells",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 123,
+                                    "slug": "scadu-altus-03",
+                                    "name": "Fort of Reprimand highest tower behind boss",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 122,
+                                    "slug": "scadu-altus-02",
+                                    "name": "Fort of Reprimand inside main building behind a mess of cages",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 180,
+                                    "slug": "new-chest-WNWldlf6",
+                                    "name": "Inside building behind Garrew",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 131,
+                                    "slug": "scadu-altus-05",
+                                    "name": "Moorth Ruins sinkhole in tall building",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 213,
+                                    "slug": "new-chest-4mt4RnfQ",
+                                    "name": "Rabbath's Rise high room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 188,
+                                    "slug": "new-chest-VXkdvABN",
+                                    "name": "Ruins of Unte back room",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 190,
+                                    "slug": "new-chest-0OQHwK7U",
+                                    "name": "Secret room accessible from ledge near start of catacomb",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 52,
+                            "slug": "scaduview",
+                            "name": "Scaduview",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.5178,
+                            "map_y": 0.3672,
+                            "map_zoom": 10,
+                            "total": 0,
+                            "opened": 0,
+                            "children": [],
+                            "chests": []
+                        },
+                        {
+                            "id": 53,
+                            "slug": "shadow-keep",
+                            "name": "Shadow Keep",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.4833,
+                            "map_y": 0.42,
+                            "map_zoom": 13,
+                            "total": 0,
+                            "opened": 0,
+                            "children": [],
+                            "chests": []
+                        },
+                        {
+                            "id": 66,
+                            "slug": "hinterlands",
+                            "name": "Hinterlands",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.6837,
+                            "map_y": 0.4303,
+                            "map_zoom": 5.5,
+                            "total": 0,
+                            "opened": 0,
+                            "children": [],
+                            "chests": []
+                        }
+                    ],
+                    "chests": []
+                },
+                {
+                    "id": 54,
+                    "slug": "greater-rauh",
+                    "name": "Greater Rauh",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.3318,
+                    "map_y": 0.4594,
+                    "map_zoom": 5.5,
+                    "total": 7,
+                    "opened": 0,
+                    "children": [
+                        {
+                            "id": 55,
+                            "slug": "rauh-base",
+                            "name": "Rauh Base",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.3318,
+                            "map_y": 0.4594,
+                            "map_zoom": null,
+                            "total": 5,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 125,
+                                    "slug": "rauh-base-02",
+                                    "name": "North of Temple Town Ruins via Spiritspring",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 185,
+                                    "slug": "new-chest-vYorCnch",
+                                    "name": "North of Temple Town Ruins via Spiritspring",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 129,
+                                    "slug": "rauh-base-04",
+                                    "name": "Scorpion River Catacombs secret high chamber by floating eyes",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 126,
+                                    "slug": "rauh-base-03",
+                                    "name": "Small encampment under a brown tent",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 124,
+                                    "slug": "rauh-base-01",
+                                    "name": "Temple Town Ruins upstairs room",
+                                    "opened": false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 56,
+                            "slug": "ancient-ruins-of-rauh",
+                            "name": "Ancient Ruins of Rauh",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.3043,
+                            "map_y": 0.4534,
+                            "map_zoom": 7,
+                            "total": 2,
+                            "opened": 0,
+                            "children": [],
+                            "chests": [
+                                {
+                                    "id": 127,
+                                    "slug": "ancient-ruins-of-rauh-01",
+                                    "name": "Ancient Ruins of Rauh by secret elevator",
+                                    "opened": false
+                                },
+                                {
+                                    "id": 128,
+                                    "slug": "ancient-ruins-of-rauh-02",
+                                    "name": "Ancient Ruins of Rauh via a sealed Spiritspring",
+                                    "opened": false
+                                }
+                            ]
+                        }
+                    ],
+                    "chests": []
+                },
+                {
+                    "id": 57,
+                    "slug": "greater-jagged-peak",
+                    "name": "Greater Jagged Peak",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.5703,
+                    "map_y": 0.7562,
+                    "map_zoom": 3,
+                    "total": 0,
+                    "opened": 0,
+                    "children": [
+                        {
+                            "id": 58,
+                            "slug": "jagged-peak",
+                            "name": "Jagged Peak",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.7269,
+                            "map_y": 0.7645,
+                            "map_zoom": 5.5,
+                            "total": 0,
+                            "opened": 0,
+                            "children": [],
+                            "chests": []
+                        },
+                        {
+                            "id": 59,
+                            "slug": "charos-hidden-grave",
+                            "name": "Charo's Hidden Grave",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.3914,
+                            "map_y": 0.7733,
+                            "map_zoom": 7,
+                            "total": 0,
+                            "opened": 0,
+                            "children": [],
+                            "chests": []
+                        }
+                    ],
+                    "chests": []
+                },
+                {
+                    "id": 60,
+                    "slug": "greater-abyss",
+                    "name": "Greater Abyss",
+                    "map_slug": null,
+                    "map_width": null,
+                    "map_height": null,
+                    "map_x": 0.5601,
+                    "map_y": 0.6782,
+                    "map_zoom": 5,
+                    "total": 0,
+                    "opened": 0,
+                    "children": [
+                        {
+                            "id": 61,
+                            "slug": "abyssal-woods",
+                            "name": "Abyssal Woods",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.5601,
+                            "map_y": 0.6782,
+                            "map_zoom": 5,
+                            "total": 0,
+                            "opened": 0,
+                            "children": [],
+                            "chests": []
+                        },
+                        {
+                            "id": 62,
+                            "slug": "midras-manse",
+                            "name": "Midra's Manse",
+                            "map_slug": null,
+                            "map_width": null,
+                            "map_height": null,
+                            "map_x": 0.4823,
+                            "map_y": 0.7134,
+                            "map_zoom": 15.5,
+                            "total": 0,
+                            "opened": 0,
+                            "children": [],
+                            "chests": []
+                        }
+                    ],
+                    "chests": []
+                }
+            ],
+            "chests": []
+        }
+    ]
+}

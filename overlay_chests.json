@@ -1,0 +1,2787 @@
+[
+ {
+  "region_name": "Overground",
+  "regions": [],
+  "children": [
+   {
+    "region_name": "Roundtable Hold",
+    "regions": [],
+    "chests": [
+     {
+      "chest": "Roundtable Hold dining room",
+      "place": "Roundtable Hold",
+      "flag_id": 0,
+      "site_id": 91
+     },
+     {
+      "chest": "Roundtable Hold kitchen",
+      "place": "Roundtable Hold",
+      "flag_id": 0,
+      "site_id": 92
+     }
+    ],
+    "bosses": []
+   },
+   {
+    "region_name": "Greater Limgrave",
+    "regions": [],
+    "children": [
+     {
+      "region_name": "Limgrave",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Chapel of Anticipation gallery",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 13
+       },
+       {
+        "chest": "Deathtouched Catacombs boss arena",
+        "place": "Deathtouched Catacombs",
+        "flag_id": 0,
+        "site_id": 135
+       },
+       {
+        "chest": "Dragon-Burnt Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 5
+       },
+       {
+        "chest": "Encampment between Warmaster's Shack and Saintsbridge",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 196
+       },
+       {
+        "chest": "Fort Haight tower",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 8
+       },
+       {
+        "chest": "Gatefront Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 194
+       },
+       {
+        "chest": "Gatefront Ruins eastern carriage",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 2
+       },
+       {
+        "chest": "Gatefront Ruins western carriage",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 3
+       },
+       {
+        "chest": "Gatefront upper platform",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 1
+       },
+       {
+        "chest": "Mistwood Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 153
+       },
+       {
+        "chest": "Mistwood Ruins small room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 152
+       },
+       {
+        "chest": "Murkwater Cave dead-end tunnel",
+        "place": "Murkwater Cave",
+        "flag_id": 0,
+        "site_id": 7
+       },
+       {
+        "chest": "Murkwater Cave Patches chest",
+        "place": "Murkwater Cave",
+        "flag_id": 0,
+        "site_id": 6
+       },
+       {
+        "chest": "Summonwater Village",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 150
+       },
+       {
+        "chest": "Waypoint Ruins encampment approach",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 134
+       },
+       {
+        "chest": "Waypoint Ruins troll-drawn carriage",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 4
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[1] Soldier of Godrick",
+        "place": "Stranded Graveyard",
+        "flag_id": 18000850
+       },
+       {
+        "boss": "[3] Tree Sentinel",
+        "place": "Church of Elleh",
+        "flag_id": 1042360800
+       },
+       {
+        "boss": "[1] Demi-Human Chief(x2)",
+        "place": "Coastal Cave",
+        "flag_id": 31150800
+       },
+       {
+        "boss": "[1] Erdtree Burial Watchdog",
+        "place": "Stormfoot Catacombs",
+        "flag_id": 30020800
+       },
+       {
+        "boss": "[1] Beastman of Farum Azula",
+        "place": "Groveside Cave",
+        "flag_id": 31030800
+       },
+       {
+        "boss": "[3] Crucible Knight",
+        "place": "Stormhill Evergaol",
+        "flag_id": 1042370800
+       },
+       {
+        "boss": "[5] Flying Dragon Agheel",
+        "place": "Agheel Lake",
+        "flag_id": 1043360800
+       },
+       {
+        "boss": "[1] Stonedigger Troll",
+        "place": "Limgrave Tunnels",
+        "flag_id": 32010800
+       },
+       {
+        "boss": "[1] Patches",
+        "place": "Murkwater Cave",
+        "flag_id": 31000800
+       },
+       {
+        "boss": "[1] Grave Warden Duelist",
+        "place": "Murkwater Catacombs",
+        "flag_id": 30040800
+       },
+       {
+        "boss": "[1] Guardian Golem",
+        "place": "Highroad Cave",
+        "flag_id": 31170800
+       },
+       {
+        "boss": "[1] Black Knife Assassin",
+        "place": "Deathtouched Catacombs",
+        "flag_id": 30110800
+       },
+       {
+        "boss": "[3] Tibia Mariner",
+        "place": "Summonwater Village",
+        "flag_id": 1045390800
+       },
+       {
+        "boss": "[3] Bloodhound Knight Darriwil",
+        "place": "Forlorn Hound Evergaol",
+        "flag_id": 1044350800
+       },
+       {
+        "boss": "[1] Mad Pumpkin Head",
+        "place": "Waypoint Ruins",
+        "flag_id": 1044360800
+       },
+       {
+        "boss": "[3] Night's Cavalry",
+        "place": "",
+        "flag_id": 1043370800
+       },
+       {
+        "boss": "[3] Deathbird",
+        "place": "",
+        "flag_id": 1042380800
+       },
+       {
+        "boss": "[3] Bell Bearing Hunter",
+        "place": "Warmaster's Shack",
+        "flag_id": 1042380850
+       },
+       {
+        "boss": "[6] Ulcerated Tree Spirit",
+        "place": "Fringefolk Hero's Grave",
+        "flag_id": 18000800
+       },
+       {
+        "boss": "[9] Grave Warden Duelist",
+        "place": "Auriza Side Tomb",
+        "flag_id": 30130800
+       }
+      ]
+     },
+     {
+      "region_name": "Weeping Peninsula",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Broken down carriage",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 197
+       },
+       {
+        "chest": "Castle Morne backside tower",
+        "place": "Castle Morne",
+        "flag_id": 0,
+        "site_id": 16
+       },
+       {
+        "chest": "Chest behind wooden screens",
+        "place": "Castle Morne",
+        "flag_id": 0,
+        "site_id": 137
+       },
+       {
+        "chest": "Chest in mining shack",
+        "place": "Morne Tunnel",
+        "flag_id": 0,
+        "site_id": 136
+       },
+       {
+        "chest": "Demi-Human Forest Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 149
+       },
+       {
+        "chest": "Earthbore Cave entrance",
+        "place": "Earthbore Cave",
+        "flag_id": 0,
+        "site_id": 14
+       },
+       {
+        "chest": "Forest Lookout Tower top floor",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 195
+       },
+       {
+        "chest": "Oridys's Rise top room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 138
+       },
+       {
+        "chest": "Tombsward Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 15
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[2] Runebear",
+        "place": "Earthbore Cave",
+        "flag_id": 31010800
+       },
+       {
+        "boss": "[2] Scaly Misbegotten",
+        "place": "Morne Tunnel",
+        "flag_id": 32000800
+       },
+       {
+        "boss": "[2] Cemetery Shade",
+        "place": "Tombsward Catacombs",
+        "flag_id": 30000800
+       },
+       {
+        "boss": "[4] Erdtree Avatar",
+        "place": "Minor Erdtree",
+        "flag_id": 1043330800
+       },
+       {
+        "boss": "[4] Ancient Hero of Zamor",
+        "place": "Weeping Evergaol",
+        "flag_id": 1042330800
+       },
+       {
+        "boss": "[2] Miranda the Blighted Bloom",
+        "place": "Tombsward Cave",
+        "flag_id": 31020800
+       },
+       {
+        "boss": "[2] Erdtree Burial Watchdog",
+        "place": "Impaler's Catacombs",
+        "flag_id": 30010800
+       },
+       {
+        "boss": "[4] Night's Cavalry",
+        "place": "Castle Morne Rampart",
+        "flag_id": 1044320850
+       },
+       {
+        "boss": "[2] Deathbird",
+        "place": "",
+        "flag_id": 1044320800
+       },
+       {
+        "boss": "[3] Leonine Misbegotten",
+        "place": "Morne Moangrave",
+        "flag_id": 1043300800
+       }
+      ]
+     },
+     {
+      "region_name": "Stormveil Castle",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Balcony above scion hall",
+        "place": "Stormveil Castle",
+        "flag_id": 0,
+        "site_id": 139
+       },
+       {
+        "chest": "Banquet room",
+        "place": "Stormveil Castle",
+        "flag_id": 0,
+        "site_id": 10
+       },
+       {
+        "chest": "Barracks basement east chest",
+        "place": "Stormveil Castle",
+        "flag_id": 0,
+        "site_id": 9
+       },
+       {
+        "chest": "Barracks basement west chest",
+        "place": "Stormveil Castle",
+        "flag_id": 0,
+        "site_id": 12
+       },
+       {
+        "chest": "Gostoc trap room",
+        "place": "Stormveil Castle",
+        "flag_id": 0,
+        "site_id": 11
+       },
+       {
+        "chest": "Room right of Throne Room",
+        "place": "Stormveil Castle",
+        "flag_id": 0,
+        "site_id": 132
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[3] Margit, the Fell Omen",
+        "place": "Stormveil Castle",
+        "flag_id": 10000850
+       },
+       {
+        "boss": "[4] Godrick the Grafted",
+        "place": "Stormveil Castle",
+        "flag_id": 10000800
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "region_name": "Greater Liurnia",
+    "regions": [],
+    "children": [
+     {
+      "region_name": "Liurnia Eastern Coast",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Black Knife Catacombs boss chest",
+        "place": "Black Knife Catacombs",
+        "flag_id": 0,
+        "site_id": 44
+       },
+       {
+        "chest": "Chest in encampment in front of Grand Lift of Dectus",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 200
+       },
+       {
+        "chest": "Church of Vows right of altar pool",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 199
+       },
+       {
+        "chest": "Converted Fringe Tower highest room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 148
+       },
+       {
+        "chest": "Frenzy-Flaming Tower 2nd floor",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 19
+       },
+       {
+        "chest": "Highway Lookout Tower first floor",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 146
+       },
+       {
+        "chest": "Purified Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 17
+       },
+       {
+        "chest": "Raya Lucaria Crystal Tunnel side room",
+        "place": "Raya Lucaria Crystal Tunnel",
+        "flag_id": 0,
+        "site_id": 42
+       },
+       {
+        "chest": "Stone chest on wooden deck",
+        "place": "Raya Lucaria Crystal Tunnel",
+        "flag_id": 0,
+        "site_id": 41
+       },
+       {
+        "chest": "Storage room",
+        "place": "Academy Crystal Cave",
+        "flag_id": 0,
+        "site_id": 142
+       },
+       {
+        "chest": "Storage room upper ledge",
+        "place": "Academy Crystal Cave",
+        "flag_id": 0,
+        "site_id": 40
+       },
+       {
+        "chest": "Abandoned carriage south Liurnia Highway on bridge",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 198
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[6] Cleanrot Knight",
+        "place": "Stillwater Cave",
+        "flag_id": 31040800
+       },
+       {
+        "boss": "[8] Tibia Mariner",
+        "place": "",
+        "flag_id": 1039440800
+       },
+       {
+        "boss": "[6] Erdtree Burial Watchdog",
+        "place": "Cliffbottom Catacombs",
+        "flag_id": 30060800
+       },
+       {
+        "boss": "[6] Crystalian (Staff) & Crystalian (Spear)",
+        "place": "Academy Crystal Cave",
+        "flag_id": 31060800
+       },
+       {
+        "boss": "[6] Crystalian (Ringblade)",
+        "place": "Raya Lucaria Crystal Tunnel",
+        "flag_id": 32020800
+       },
+       {
+        "boss": "[6] Cemetery Shade",
+        "place": "Black Knife Catacombs",
+        "flag_id": 30050800
+       },
+       {
+        "boss": "[6] Black Knife Assassin",
+        "place": "Black Knife Catacombs",
+        "flag_id": 30050850
+       },
+       {
+        "boss": "[8] Bell Bearing Hunter",
+        "place": "Church of Vows",
+        "flag_id": 1037460800
+       },
+       {
+        "boss": "[7] Magma Wyrm Makar",
+        "place": "Ruin-Strewn Precipice",
+        "flag_id": 39200800
+       },
+       {
+        "boss": "[11] Bell Bearing Hunter",
+        "place": "Hermit Merchant's Shack",
+        "flag_id": 1043530800
+       }
+      ]
+     },
+     {
+      "region_name": "Liurnia Western Coast",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Atop large tower in Raya Lucaria",
+        "place": "Academy Crystal Cave",
+        "flag_id": 0,
+        "site_id": 27
+       },
+       {
+        "chest": "Converted tower top room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 145
+       },
+       {
+        "chest": "Encampment lower level",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 32
+       },
+       {
+        "chest": "Encampment upper level",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 28
+       },
+       {
+        "chest": "Encampment upper level",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 31
+       },
+       {
+        "chest": "Kingsrealm Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 144
+       },
+       {
+        "chest": "Lakeside Crystal Cave entrance",
+        "place": "Lakeside Crystal Cave",
+        "flag_id": 0,
+        "site_id": 37
+       },
+       {
+        "chest": "Lakeside Crystal Cave rear room",
+        "place": "Lakeside Crystal Cave",
+        "flag_id": 0,
+        "site_id": 38
+       },
+       {
+        "chest": "Ranni's Rise",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 133
+       },
+       {
+        "chest": "Road's End Catacombs hidden room",
+        "place": "Road's End Catacombs",
+        "flag_id": 0,
+        "site_id": 43
+       },
+       {
+        "chest": "Temple Quarter sunken spire",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 18
+       },
+       {
+        "chest": "The Four Belfries fourth Belfry",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 29
+       },
+       {
+        "chest": "West Liurnia troll-drawn carriage",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 30
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[8] Adan, Thief of Fire",
+        "place": "Malefactor's Evergaol",
+        "flag_id": 1038410800
+       },
+       {
+        "boss": "[6] Bloodhound Knight",
+        "place": "Lakeside Crystal Cave",
+        "flag_id": 31050800
+       },
+       {
+        "boss": "[8] Omenkiller",
+        "place": "Village of the Albinaurics",
+        "flag_id": 1035420800
+       },
+       {
+        "boss": "[8] Bols, Carian Knight",
+        "place": "Cuckoo's Evergaol",
+        "flag_id": 1033450800
+       },
+       {
+        "boss": "[6] Grafted Scion",
+        "place": "Chapel of Anticipation",
+        "flag_id": 10010800
+       },
+       {
+        "boss": "[8] Erdtree Avatar",
+        "place": "Converted Tower",
+        "flag_id": 1033430800
+       },
+       {
+        "boss": "[6] Spiritcaller Snail",
+        "place": "Road's End Catacombs",
+        "flag_id": 30030800
+       },
+       {
+        "boss": "[6] Royal Revenant",
+        "place": "Kingsrealm Ruins",
+        "flag_id": 1034480800
+       },
+       {
+        "boss": "[8] Erdtree Avatar",
+        "place": "Mausoleum Compound",
+        "flag_id": 1038480800
+       }
+      ]
+     },
+     {
+      "region_name": "Liurnia Lakebed",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Sunken spire in western Academy Gate Town",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 141
+       },
+       {
+        "chest": "Laskyar Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 140
+       },
+       {
+        "chest": "Sunken spire in central Academy Gate Town",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 217
+       },
+       {
+        "chest": "Testu's Rise upper room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 33
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[8] Deathbird",
+        "place": "Scenic Isle",
+        "flag_id": 1037420800
+       },
+       {
+        "boss": "[10] Glintstone Dragon Smarag",
+        "place": "Temple Quarter",
+        "flag_id": 1034450800
+       },
+       {
+        "boss": "[8] Death Rite Bird",
+        "place": "Gate Town North",
+        "flag_id": 1036450800
+       }
+      ]
+     },
+     {
+      "region_name": "Academy of Raya Lucaria",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Between Schoolhouse and Debate Parlor",
+        "place": "Raya Lucaria Academy",
+        "flag_id": 0,
+        "site_id": 21
+       },
+       {
+        "chest": "Debate Parlor gallery",
+        "place": "Raya Lucaria Academy",
+        "flag_id": 0,
+        "site_id": 23
+       },
+       {
+        "chest": "Grand Library next to Rennala",
+        "place": "Raya Lucaria Academy",
+        "flag_id": 0,
+        "site_id": 25
+       },
+       {
+        "chest": "Office left from Schoolhouse",
+        "place": "Raya Lucaria Academy",
+        "flag_id": 0,
+        "site_id": 24
+       },
+       {
+        "chest": "Secret Library",
+        "place": "Raya Lucaria Academy",
+        "flag_id": 0,
+        "site_id": 147
+       },
+       {
+        "chest": "Upstairs room by Ball Trap summoning circle",
+        "place": "Raya Lucaria Academy",
+        "flag_id": 0,
+        "site_id": 22
+       },
+       {
+        "chest": "Watchtower accessed from rooftops",
+        "place": "Raya Lucaria Academy",
+        "flag_id": 0,
+        "site_id": 26
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[6] Red Wolf of Radagon",
+        "place": "",
+        "flag_id": 14000850
+       },
+       {
+        "boss": "[7] Rennala, Queen of the Full Moon",
+        "place": "",
+        "flag_id": 14000800
+       }
+      ]
+     },
+     {
+      "region_name": "Caria Manor",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Caria Manor ground floor study",
+        "place": "Caria Manor",
+        "flag_id": 0,
+        "site_id": 20
+       },
+       {
+        "chest": "Renna's Rise",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 168
+       },
+       {
+        "chest": "Seluvis's Rise upper room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 169
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[6] Royal Knight Loretta",
+        "place": "Caria Manor",
+        "flag_id": 1035500800
+       },
+       {
+        "boss": "[8] Onyx Lord",
+        "place": "Royal Grave Evergaol",
+        "flag_id": 1036500800
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "region_name": "Greater Caelid",
+    "regions": [],
+    "children": [
+     {
+      "region_name": "Caelid",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Abandoned carriage near Caelem Ruins",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 52
+       },
+       {
+        "chest": "Behind illusory wall in large chamber before boss room",
+        "place": "Sellia Hideaway",
+        "flag_id": 0,
+        "site_id": 212
+       },
+       {
+        "chest": "Caelid Waypoint Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 47
+       },
+       {
+        "chest": "Caelem Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 151
+       },
+       {
+        "chest": "Encampment under red tent",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 218
+       },
+       {
+        "chest": "Forsaken Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 51
+       },
+       {
+        "chest": "Fort Gael lower room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 48
+       },
+       {
+        "chest": "Gaol Cave at entrance",
+        "place": "Gaol Cave",
+        "flag_id": 0,
+        "site_id": 59
+       },
+       {
+        "chest": "Gaol Cave in barracks",
+        "place": "Gaol Cave",
+        "flag_id": 0,
+        "site_id": 58
+       },
+       {
+        "chest": "Gaol Fort upper level",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 154
+       },
+       {
+        "chest": "Impassable Greatbridge watchtower",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 46
+       },
+       {
+        "chest": "Redmane Castle rooftop past Red-Hot Whetblade",
+        "place": "Redmane Castle",
+        "flag_id": 0,
+        "site_id": 158
+       },
+       {
+        "chest": "Sellia Crystal Tunnel mining shack",
+        "place": "Sellia Crystal Tunnel",
+        "flag_id": 0,
+        "site_id": 55
+       },
+       {
+        "chest": "Sellia Crystal Tunnel mining shack upper level",
+        "place": "Sellia Crystal Tunnel",
+        "flag_id": 0,
+        "site_id": 56
+       },
+       {
+        "chest": "Sellia Hideaway, secret sorcerer room",
+        "place": "Sellia Hideaway",
+        "flag_id": 0,
+        "site_id": 157
+       },
+       {
+        "chest": "Sellia, Town of Sorcery boss room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 155
+       },
+       {
+        "chest": "Sellia, Town of Sorcery central sealed room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 54
+       },
+       {
+        "chest": "Sellia, Town of Sorcery north eastern sealed room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 156
+       },
+       {
+        "chest": "Sellia, Town of Sorcery western sealed room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 53
+       },
+       {
+        "chest": "Small encampment under red tent",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 49
+       },
+       {
+        "chest": "Street of Sages Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 214
+       },
+       {
+        "chest": "War-Dead Catacombs, bottom floor in the rot",
+        "place": "War-Dead Catacombs",
+        "flag_id": 0,
+        "site_id": 57
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[9] Putrid Avatar",
+        "place": "Minor Erdtree",
+        "flag_id": 1047400800
+       },
+       {
+        "boss": "[7] Erdtree Burial Watchdog (Sword) & Erdtree Burial Watchdog (Scepter)",
+        "place": "Minor Erdtree Catacombs",
+        "flag_id": 30140800
+       },
+       {
+        "boss": "[7] Mad Pumpkin Head (Hammer) & Mad Pumpkin Head (Flail)",
+        "place": "Caelem Ruins",
+        "flag_id": 1048400800
+       },
+       {
+        "boss": "[7] Putrid Crystalian (Ringblade) & Putrid Crystalian (Spear) & Putrid Crystalian (Staff)",
+        "place": "Sellia Hideaway",
+        "flag_id": 31110800
+       },
+       {
+        "boss": "[7] Cleanrot Knight (Spear) & Cleanrot Knight (Sickle)",
+        "place": "Abandoned Cave",
+        "flag_id": 31200800
+       },
+       {
+        "boss": "[7] Magma Wyrm",
+        "place": "Gael Tunnel",
+        "flag_id": 32070800
+       },
+       {
+        "boss": "[7] Frenzied Duelist",
+        "place": "Gaol Cave",
+        "flag_id": 31210800
+       },
+       {
+        "boss": "[11] Decaying Ekzykes",
+        "place": "Church of the Plague",
+        "flag_id": 1048370800
+       },
+       {
+        "boss": "[9] Night's Cavalry",
+        "place": "Caelid Highway South",
+        "flag_id": 1049370800
+       },
+       {
+        "boss": "[9] Death Rite Bird",
+        "place": "Southern Aeonia Swamp Bank",
+        "flag_id": 1049370850
+       },
+       {
+        "boss": "[9] Commander O'Neil",
+        "place": "Swamp of Aeonia",
+        "flag_id": 1049380800
+       },
+       {
+        "boss": "[7] Fallingstar Beast",
+        "place": "Sellia Crystal Tunnel",
+        "flag_id": 32080800
+       },
+       {
+        "boss": "[7] Nox Monk & Nox Swordstress",
+        "place": "Sellia, Town of Sorcery",
+        "flag_id": 1049390800
+       },
+       {
+        "boss": "[7] Cemetery Shade",
+        "place": "Caelid Catacombs",
+        "flag_id": 30150800
+       },
+       {
+        "boss": "[10] Starscourge Radahn",
+        "place": "Wailing Dunes",
+        "flag_id": 1252380800
+       },
+       {
+        "boss": "[8] Crucible Knight & Misbegotten Warrior",
+        "place": "Redmane Castle",
+        "flag_id": 1051360800
+       },
+       {
+        "boss": "[15] Putrid Tree Spirit",
+        "place": "War-Dead Catacombs",
+        "flag_id": 30160800
+       },
+       {
+        "boss": "[15] Godskin Apostle",
+        "place": "Divine Tower of Caelid",
+        "flag_id": 34130800
+       }
+      ]
+     },
+     {
+      "region_name": "Dragonbarrow",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Divine Tower of Caelid basement",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 60
+       },
+       {
+        "chest": "Fort Faroth Tower",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 45
+       },
+       {
+        "chest": "Lenne's Rise upper room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 159
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[9] Battlemage Hugues",
+        "place": "Sellia Evergaol",
+        "flag_id": 1049390850
+       },
+       {
+        "boss": "[17] Bell Bearing Hunter",
+        "place": "Isolated Merchant's Shack",
+        "flag_id": 1048410800
+       },
+       {
+        "boss": "[15] Beastman of Farum Azula (Cleaver) & Beastman of Farum Azula (Throwing Knife)",
+        "place": "Dragonbarrow Cave",
+        "flag_id": 31100800
+       },
+       {
+        "boss": "[17] Putrid Avatar",
+        "place": "Minor Erdtree",
+        "flag_id": 1051400800
+       },
+       {
+        "boss": "[17] Flying Dragon Greyll",
+        "place": "Greyoll's Dragonbarrow",
+        "flag_id": 1052410800
+       },
+       {
+        "boss": "[17] Night's Cavalry",
+        "place": "Lenne's Rise",
+        "flag_id": 1052410850
+       },
+       {
+        "boss": "[17] Black Blade Kindred",
+        "place": "Bestial Sanctum",
+        "flag_id": 1051430800
+       }
+      ]
+     },
+     {
+      "region_name": "Redmane Castle",
+      "regions": [],
+      "chests": [],
+      "bosses": []
+     }
+    ]
+   },
+   {
+    "region_name": "Greater Altus",
+    "regions": [],
+    "children": [
+     {
+      "region_name": "Altus Plateau",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Altus Tunnel stone chest in side room near entrance",
+        "place": "Altus Tunnel",
+        "flag_id": 0,
+        "site_id": 80
+       },
+       {
+        "chest": "Chest in small encampment",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 160
+       },
+       {
+        "chest": "Encampment ambushed by Ulcerated Tree Spirit",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 203
+       },
+       {
+        "chest": "Erdtree-Gazing Hill east carriage",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 63
+       },
+       {
+        "chest": "Erdtree-Gazing Hill west carriage",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 62
+       },
+       {
+        "chest": "Highway Lookout Tower top floor",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 201
+       },
+       {
+        "chest": "Lux Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 61
+       },
+       {
+        "chest": "Mirage Rise upper room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 167
+       },
+       {
+        "chest": "Perfumer's Grotto one of two chests behind branch",
+        "place": "Perfumer's Grotto",
+        "flag_id": 0,
+        "site_id": 67
+       },
+       {
+        "chest": "Perfumer's Grotto one of two chests behind branch",
+        "place": "Perfumer's Grotto",
+        "flag_id": 0,
+        "site_id": 166
+       },
+       {
+        "chest": "Perfumer's Ruins by Omenkiller",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 161
+       },
+       {
+        "chest": "Perfumer's Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 65
+       },
+       {
+        "chest": "Road of Iniquity Side Path troll-drawn carriage",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 163
+       },
+       {
+        "chest": "Sage's Cave one of four chests in secret room between two braziers",
+        "place": "Sage's Cave",
+        "flag_id": 0,
+        "site_id": 70
+       },
+       {
+        "chest": "Sage's Cave one of four chests in secret room between two braziers",
+        "place": "Sage's Cave",
+        "flag_id": 0,
+        "site_id": 71
+       },
+       {
+        "chest": "Sage's Cave one of four chests in secret room between two braziers",
+        "place": "Sage's Cave",
+        "flag_id": 0,
+        "site_id": 72
+       },
+       {
+        "chest": "Sage's Cave one of four chests in secret room between two braziers",
+        "place": "Sage's Cave",
+        "flag_id": 0,
+        "site_id": 73
+       },
+       {
+        "chest": "Sage's Cave one of two chests on path",
+        "place": "Sage's Cave",
+        "flag_id": 0,
+        "site_id": 68
+       },
+       {
+        "chest": "Sage's Cave one of two chests on path",
+        "place": "Sage's Cave",
+        "flag_id": 0,
+        "site_id": 69
+       },
+       {
+        "chest": "Sage's Cave one of two chests on path deeper",
+        "place": "Sage's Cave",
+        "flag_id": 0,
+        "site_id": 75
+       },
+       {
+        "chest": "Sage's Cave one of two chests on path deeper",
+        "place": "Sage's Cave",
+        "flag_id": 0,
+        "site_id": 76
+       },
+       {
+        "chest": "Sage's Cave one of two chests before Garris",
+        "place": "Sage's Cave",
+        "flag_id": 0,
+        "site_id": 78
+       },
+       {
+        "chest": "Sage's Cave one of two chests before Garris",
+        "place": "Sage's Cave",
+        "flag_id": 0,
+        "site_id": 79
+       },
+       {
+        "chest": "Sage's Cave opposite two chests in nook",
+        "place": "Sage's Cave",
+        "flag_id": 0,
+        "site_id": 77
+       },
+       {
+        "chest": "Sage's Cave single chest behind illusory wall",
+        "place": "Sage's Cave",
+        "flag_id": 0,
+        "site_id": 74
+       },
+       {
+        "chest": "Shaded Castle west wing",
+        "place": "Shaded Castle",
+        "flag_id": 0,
+        "site_id": 165
+       },
+       {
+        "chest": "Stormcaller Church",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 162
+       },
+       {
+        "chest": "Woodfolk Ruins south ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 202
+       },
+       {
+        "chest": "Writheblood Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 164
+       },
+       {
+        "chest": "Wyndham Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 64
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[8] Perfumer Tricia & Misbegotten Warrior",
+        "place": "Unsightly Catacombs",
+        "flag_id": 30120800
+       },
+       {
+        "boss": "[10] Necromancer Garris",
+        "place": "Sage's Cave",
+        "flag_id": 31190850
+       },
+       {
+        "boss": "[8] Black Knife Assassin",
+        "place": "Sage's Cave",
+        "flag_id": 31190800
+       },
+       {
+        "boss": "[8] Demi-Human Queen Gilika",
+        "place": "Lux Ruins",
+        "flag_id": 1038510800
+       },
+       {
+        "boss": "[11] Tibia Mariner",
+        "place": "Wyndham Ruins",
+        "flag_id": 1038520800
+       },
+       {
+        "boss": "[9] Erdtree Burial Watchdog",
+        "place": "Wyndham Catacombs",
+        "flag_id": 30070800
+       },
+       {
+        "boss": "[8] Stonedigger Troll",
+        "place": "Old Altus Tunnel",
+        "flag_id": 32040800
+       },
+       {
+        "boss": "[9] Elemer of the Briar",
+        "place": "The Shaded Castle",
+        "flag_id": 1039540800
+       },
+       {
+        "boss": "[10] Night's Cavalry",
+        "place": "Altus Highway Junction",
+        "flag_id": 1039510800
+       },
+       {
+        "boss": "[10] Godefroy the Grafted",
+        "place": "Golden Lineage Evergaol",
+        "flag_id": 1039500800
+       },
+       {
+        "boss": "[10] Fallingstar Beast",
+        "place": "Starfall Crater",
+        "flag_id": 1041500800
+       },
+       {
+        "boss": "[10] Tree Sentinel(x2)",
+        "place": "",
+        "flag_id": 1041510800
+       },
+       {
+        "boss": "[8] Omenkiller & Miranda the Blighted Bloom",
+        "place": "Perfumer's Grotto",
+        "flag_id": 31180800
+       },
+       {
+        "boss": "[8] Sanguine Noble",
+        "place": "Writheblood Ruins",
+        "flag_id": 1040530800
+       },
+       {
+        "boss": "[10] Wormface",
+        "place": "Minor Erdtree",
+        "flag_id": 1041530800
+       },
+       {
+        "boss": "[8] Crystalian (Spear) & Crystalian (Ringblade)",
+        "place": "Altus Tunnel",
+        "flag_id": 32050800
+       },
+       {
+        "boss": "[10] Godskin Apostle",
+        "place": "Dominula, Windmill Village",
+        "flag_id": 1042550800
+       },
+       {
+        "boss": "[12] Ancient Dragon Lansseax",
+        "place": "Rampartside Path",
+        "flag_id": 1041520800
+       },
+       {
+        "boss": "[8] Ancient Hero of Zamor",
+        "place": "Sainted Hero's Grave",
+        "flag_id": 30080800
+       },
+       {
+        "boss": "[10] Black Knife Assassin",
+        "place": "Sainted Hero's Grave",
+        "flag_id": 1040520800
+       }
+      ]
+     },
+     {
+      "region_name": "Capital Outskirts",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Sealed Tunnel entrance",
+        "place": "Sealed Tunnel",
+        "flag_id": 0,
+        "site_id": 81
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[9] Onyx Lord",
+        "place": "Sealed Tunnel",
+        "flag_id": 34120800
+       },
+       {
+        "boss": "[11] Deathbird",
+        "place": "",
+        "flag_id": 1044530800
+       },
+       {
+        "boss": "[11] Draconic Tree Sentinel",
+        "place": "Capital Rampart",
+        "flag_id": 1045520800
+       },
+       {
+        "boss": "[9] Crucible Knight & Crucible Knight Ordovis",
+        "place": "Auriza Hero's Grave",
+        "flag_id": 30100800
+       }
+      ]
+     },
+     {
+      "region_name": "Sewers & Shunning Grounds",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Cathedral of the Forsaken",
+        "place": "Subterranean Shunning-Grounds",
+        "flag_id": 0,
+        "site_id": 87
+       },
+       {
+        "chest": "Behind illusory wall Frenzied Flame Proscription",
+        "place": "Subterranean Shunning-Grounds",
+        "flag_id": 0,
+        "site_id": 204
+       }
+      ],
+      "bosses": []
+     },
+     {
+      "region_name": "Leyndell, Royal Capital",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Divine Bridge",
+        "place": "Leyndell, Royal Capital",
+        "flag_id": 0,
+        "site_id": 86
+       },
+       {
+        "chest": "Erdtree Sanctuary gallery",
+        "place": "Leyndell, Royal Capital",
+        "flag_id": 0,
+        "site_id": 84
+       },
+       {
+        "chest": "Estate house at end of East Ramparts",
+        "place": "Leyndell, Royal Capital",
+        "flag_id": 0,
+        "site_id": 66
+       },
+       {
+        "chest": "Leyndell room under Avenue Balcony",
+        "place": "Leyndell, Royal Capital",
+        "flag_id": 0,
+        "site_id": 85
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[13] Esgar, Priest of Blood",
+        "place": "Leyndell Catacombs",
+        "flag_id": 35000850
+       },
+       {
+        "boss": "[13] Mohg, the Omen",
+        "place": "Cathedral of the Forsaken",
+        "flag_id": 35000800
+       },
+       {
+        "boss": "[11] Godfrey, First Elden Lord",
+        "place": "Erdtree Sanctuary",
+        "flag_id": 11000850
+       },
+       {
+        "boss": "[11] Morgott, the Omen King",
+        "place": "Elden Throne",
+        "flag_id": 11000800
+       },
+       {
+        "boss": "[12] Fell Twin(x2)",
+        "place": "Divine Tower of East Altus",
+        "flag_id": 34140850
+       },
+       {
+        "boss": "[16] Godfrey, First Elden Lord",
+        "place": "Elden Throne",
+        "flag_id": 11050800
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "region_name": "Mt. Gelmir",
+    "regions": [],
+    "children": [
+     {
+      "region_name": "Mt. Gelmir",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Gelmir Hero's Grave boss chest",
+        "place": "Gelmir Hero's Grave",
+        "flag_id": 0,
+        "site_id": 82
+       },
+       {
+        "chest": "Gelmir Hero's Grave room after lava",
+        "place": "Gelmir Hero's Grave",
+        "flag_id": 0,
+        "site_id": 83
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[9] Kindred of Rot(x2)",
+        "place": "Seethewater Cave",
+        "flag_id": 31070800
+       },
+       {
+        "boss": "[11] Magma Wyrm",
+        "place": "Fort Laiedd",
+        "flag_id": 1035530800
+       },
+       {
+        "boss": "[11] Demi-Human Queen Maggie",
+        "place": "Hermit Village",
+        "flag_id": 1037530800
+       },
+       {
+        "boss": "[9] Red Wolf of the Champion",
+        "place": "Gelmir Hero's Grave",
+        "flag_id": 30090800
+       },
+       {
+        "boss": "[9] Demi-Human Queen Margot",
+        "place": "Volcano Cave",
+        "flag_id": 31090800
+       },
+       {
+        "boss": "[11] Full-Grown Fallingstar Beast",
+        "place": "Ninth Mt. Gelmir Campsite",
+        "flag_id": 1036540800
+       },
+       {
+        "boss": "[11] Ulcerated Tree Spirit",
+        "place": "Minor Erdtree",
+        "flag_id": 1037540810
+       }
+      ]
+     },
+     {
+      "region_name": "Volcano Manor",
+      "regions": [],
+      "chests": [],
+      "bosses": [
+       {
+        "boss": "[11] Godskin Noble",
+        "place": "Temple of Eiglay",
+        "flag_id": 16000850
+       },
+       {
+        "boss": "[8] Abductor Virgin (Swinging Sickle) & Abductor Virgin (Wheel)",
+        "place": "Subterranean Inquisition Chamber",
+        "flag_id": 16000860
+       },
+       {
+        "boss": "[12] God-Devouring Serpent & Rykard, Lord of Blasphemy",
+        "place": "Volcano Manor",
+        "flag_id": 16000800
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "region_name": "Greater Mountaintops",
+    "regions": [],
+    "children": [
+     {
+      "region_name": "Forbidden Lands",
+      "regions": [],
+      "chests": [],
+      "bosses": [
+       {
+        "boss": "[8] Night's Cavalry",
+        "place": "Gate Town Bridge",
+        "flag_id": 1039430800
+       },
+       {
+        "boss": "[8] Night's Cavalry",
+        "place": "Bellum Church",
+        "flag_id": 1036480800
+       },
+       {
+        "boss": "[14] Night's Cavalry",
+        "place": "",
+        "flag_id": 1048510800
+       },
+       {
+        "boss": "[12] Black Blade Kindred",
+        "place": "",
+        "flag_id": 1049520800
+       }
+      ]
+     },
+     {
+      "region_name": "Mountaintops of the Giants",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Giants' Mountaintop Catacombs boss chest",
+        "place": "Giants' Mountaintop Catacombs",
+        "flag_id": 0,
+        "site_id": 95
+       },
+       {
+        "chest": "Giants' Mountaintop Catacombs secret basement",
+        "place": "Giants' Mountaintop Catacombs",
+        "flag_id": 0,
+        "site_id": 94
+       },
+       {
+        "chest": "Guardians' Garrison",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 170
+       },
+       {
+        "chest": "Heretical Rise upper floor",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 171
+       },
+       {
+        "chest": "Stargazers' Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 93
+       },
+       {
+        "chest": "Zamor Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 172
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[12] Ulcerated Tree Spirit",
+        "place": "Giants' Mountaintop Catacombs",
+        "flag_id": 30180800
+       },
+       {
+        "boss": "[14] Death Rite Bird",
+        "place": "",
+        "flag_id": 1050570800
+       },
+       {
+        "boss": "[14] Erdtree Avatar",
+        "place": "Minor Erdtree",
+        "flag_id": 1052560800
+       },
+       {
+        "boss": "[13] Commander Niall",
+        "place": "Castle Sol",
+        "flag_id": 1051570800
+       },
+       {
+        "boss": "[16] Borealis the Freezing Fog",
+        "place": "Freezing Lake",
+        "flag_id": 1254560800
+       },
+       {
+        "boss": "[12] Godskin Apostle & Godskin Noble & Spiritcaller Snail",
+        "place": "Spiritcaller Cave",
+        "flag_id": 31220800
+       },
+       {
+        "boss": "[14] Roundtable Knight Vyke",
+        "place": "Lord Contender's Evergaol",
+        "flag_id": 1053560800
+       },
+       {
+        "boss": "[12] Ancient Hero of Zamor",
+        "place": "Giant-Conquering Hero's Grave",
+        "flag_id": 30170800
+       },
+       {
+        "boss": "[14] Fire Giant",
+        "place": "Flame Peak",
+        "flag_id": 1252520800
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "region_name": "Crumbling Farum Azula",
+    "regions": [],
+    "chests": [
+     {
+      "chest": "Crumbling Farum Azula atop fallen buildings",
+      "place": "Crumbling Farum Azula",
+      "flag_id": 0,
+      "site_id": 103
+     },
+     {
+      "chest": "Crumbling Farum Azula by Bernahl invasion",
+      "place": "Crumbling Farum Azula",
+      "flag_id": 0,
+      "site_id": 104
+     },
+     {
+      "chest": "Crumbling Farum Azula by large circular elevator",
+      "place": "Crumbling Farum Azula",
+      "flag_id": 0,
+      "site_id": 102
+     }
+    ],
+    "bosses": [
+     {
+      "boss": "[14] Godskin Duo",
+      "place": "Dragon Temple Altar",
+      "flag_id": 13000850
+     },
+     {
+      "boss": "[17] Dragonlord Placidusax",
+      "place": "Beside the Great Bridge",
+      "flag_id": 13000830
+     },
+     {
+      "boss": "[15] Maliketh, the Black Blade",
+      "place": "",
+      "flag_id": 13000800
+     }
+    ]
+   },
+   {
+    "region_name": "Leyndell, Capital of Ash",
+    "regions": [],
+    "chests": [],
+    "bosses": [
+     {
+      "boss": "[15] Sir Gideon Ofnir, the All-Knowing",
+      "place": "Erdtree Sanctuary",
+      "flag_id": 11050850
+     },
+     {
+      "boss": "[17] Radagon of the Golden Order & Elden Beast",
+      "place": "Fractured Marika",
+      "flag_id": 19000800
+     }
+    ]
+   },
+   {
+    "region_name": "Moonlight Altar",
+    "regions": [],
+    "chests": [
+     {
+      "chest": "Chelona's Rise upper room",
+      "place": "",
+      "flag_id": 0,
+      "site_id": 177
+     },
+     {
+      "chest": "Lunar Estate Ruins east cellar",
+      "place": "",
+      "flag_id": 0,
+      "site_id": 36
+     },
+     {
+      "chest": "Lunar Estate Ruins west cellar",
+      "place": "",
+      "flag_id": 0,
+      "site_id": 35
+     },
+     {
+      "chest": "Moonfolk Ruins cellar",
+      "place": "",
+      "flag_id": 0,
+      "site_id": 34
+     }
+    ],
+    "bosses": [
+     {
+      "boss": "[17] Glintstone Dragon Adula",
+      "place": "Moonlight Altar",
+      "flag_id": 1034420800
+     },
+     {
+      "boss": "[15] Alecto, Black Knife Ringleader",
+      "place": "Ringleader's Evergaol",
+      "flag_id": 1033420800
+     }
+    ]
+   },
+   {
+    "region_name": "Greater Snowfields",
+    "regions": [],
+    "children": [
+     {
+      "region_name": "Consecrated Snowfield",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Chest on ledge by Rise",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 209
+       },
+       {
+        "chest": "Hidden Path to the Haligtree boss chest",
+        "place": "Hidden Path to the Haligtree",
+        "flag_id": 0,
+        "site_id": 97
+       },
+       {
+        "chest": "Hidden Path to the Haligtree invisible walkway",
+        "place": "Hidden Path to the Haligtree",
+        "flag_id": 0,
+        "site_id": 96
+       },
+       {
+        "chest": "Troll-drawn carriage in open snowfields",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 207
+       },
+       {
+        "chest": "Troll-drawn carriage in the blizzard",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 206
+       },
+       {
+        "chest": "Yelough Anix Ruins cellar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 208
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[16] Stray Mimic Tear",
+        "place": "Hidden Path to the Haligtree",
+        "flag_id": 30200800
+       },
+       {
+        "boss": "[16] Putrid Grave Warden Duelist",
+        "place": "Consecrated Snowfield Catacombs",
+        "flag_id": 30190800
+       },
+       {
+        "boss": "[18] Great Wyrm Theodorix",
+        "place": "",
+        "flag_id": 1050560800
+       },
+       {
+        "boss": "[16] Misbegotten Crusader",
+        "place": "Cave of the Forlorn",
+        "flag_id": 31120800
+       },
+       {
+        "boss": "[18] Putrid Avatar",
+        "place": "Minor Erdtree",
+        "flag_id": 1050570850
+       },
+       {
+        "boss": "[18] Death Rite Bird",
+        "place": "",
+        "flag_id": 1048570800
+       },
+       {
+        "boss": "[18] Night's Cavalry (Glaive) & Night's Cavalry (Flail)",
+        "place": "Inner Consecrated Snowfield",
+        "flag_id": 1248550800
+       },
+       {
+        "boss": "[16] Astel, Stars of Darkness",
+        "place": "Yelough Anix Tunnel",
+        "flag_id": 32110800
+       }
+      ]
+     },
+     {
+      "region_name": "Miquella's Haligtree",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Chest atop elevator tower",
+        "place": "Miquella's Haligtree",
+        "flag_id": 0,
+        "site_id": 216
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[18] Loretta, Knight of the Haligtree",
+        "place": "",
+        "flag_id": 15000850
+       },
+       {
+        "boss": "[20] Malenia, Blade of Miquella & Malenia, Goddess of Rot",
+        "place": "",
+        "flag_id": 15000800
+       }
+      ]
+     },
+     {
+      "region_name": "Elphael Brace of the Haligtree",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Behind rotten Crystalian trio",
+        "place": "Elphael Brace of the Haligtree",
+        "flag_id": 0,
+        "site_id": 211
+       },
+       {
+        "chest": "Elphael cathedral gallery",
+        "place": "Elphael Brace of the Haligtree",
+        "flag_id": 0,
+        "site_id": 101
+       },
+       {
+        "chest": "Elphael guarded by Cleanrot Knight",
+        "place": "Elphael Brace of the Haligtree",
+        "flag_id": 0,
+        "site_id": 99
+       },
+       {
+        "chest": "Elphael high room after climbing architecture",
+        "place": "Elphael Brace of the Haligtree",
+        "flag_id": 0,
+        "site_id": 100
+       },
+       {
+        "chest": "In decadent room near the Plaza",
+        "place": "Miquella's Haligtree",
+        "flag_id": 0,
+        "site_id": 210
+       },
+       {
+        "chest": "Miquella's Haligtree in Stonesword Key room dropping down from Prayer Room",
+        "place": "Elphael Brace of the Haligtree",
+        "flag_id": 0,
+        "site_id": 98
+       }
+      ],
+      "bosses": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "region_name": "Underground",
+  "regions": [],
+  "children": [
+   {
+    "region_name": "Greater Siofra",
+    "regions": [],
+    "children": [
+     {
+      "region_name": "Siofra River",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Ancestral Woods water ruins",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 115
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[6] Ancestor Spirit",
+        "place": "Siofra River Bank",
+        "flag_id": 12080800
+       },
+       {
+        "boss": "[11] Dragonkin Soldier",
+        "place": "Siofra River Bank",
+        "flag_id": 12020830
+       }
+      ]
+     },
+     {
+      "region_name": "Nokron, Eternal City",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Night's Sacred Ground in Stonesword Key room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 173
+       },
+       {
+        "chest": "Night's Sacred Ground under ancient being",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 114
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[9] Mimic Tear",
+        "place": "",
+        "flag_id": 12020850
+       },
+       {
+        "boss": "[9] Regal Ancestor Spirit",
+        "place": "Hallowhorn Grounds",
+        "flag_id": 12090800
+       },
+       {
+        "boss": "[9] Valiant Gargoyle & Valiant Gargoyle (Twinblade)",
+        "place": "Siofra Aqueduct",
+        "flag_id": 12020800
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "region_name": "Greater Ainsel",
+    "regions": [],
+    "children": [
+     {
+      "region_name": "Ainsel River",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Ainsel River atop Uhl Palace ruins",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 105
+       },
+       {
+        "chest": "Under giant throne after Dragonkin Soldier",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 215
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[5] Dragonkin Soldier of Nokstella",
+        "place": "",
+        "flag_id": 12010800
+       }
+      ]
+     },
+     {
+      "region_name": "Nokstella, Eternal City",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Nokstella at the back of large room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 106
+       },
+       {
+        "chest": "Nokstella back of large room with large ambush",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 108
+       },
+       {
+        "chest": "Nokstella building bordering the river, up stairway",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 109
+       },
+       {
+        "chest": "Nokstella cathedral altar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 110
+       },
+       {
+        "chest": "Nokstella dark room at top of staircases",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 175
+       },
+       {
+        "chest": "Nokstella first staircase room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 111
+       },
+       {
+        "chest": "Nokstella second staircase room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 112
+       },
+       {
+        "chest": "Nokstella Stonesword Key room at very top of building",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 113
+       }
+      ],
+      "bosses": []
+     },
+     {
+      "region_name": "Lake of Rot",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Grand Cloister",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 107
+       },
+       {
+        "chest": "Lake of Rot in small building to the west",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 176
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[13] Dragonkin Soldier",
+        "place": "",
+        "flag_id": 12010850
+       },
+       {
+        "boss": "[11] Astel, Naturalborn of the Void",
+        "place": "Grand Cloister",
+        "flag_id": 12040800
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "region_name": "Greater Deeproot",
+    "regions": [],
+    "children": [
+     {
+      "region_name": "Deeproot Depths",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Deeproot Depths in hollow giant tree",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 205
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[11] Fia's Champion & Sorcerer Rogier & Lionel the Lionhearted",
+        "place": "",
+        "flag_id": 12030800
+       },
+       {
+        "boss": "[11] Lichdragon Fortissax",
+        "place": "",
+        "flag_id": 12030850
+       },
+       {
+        "boss": "[13] Crucible Knight Siluria",
+        "place": "",
+        "flag_id": 12030390
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "region_name": "Mohgwyn Palace",
+    "regions": [],
+    "chests": [
+     {
+      "chest": "Mohgwyn Dynasty Mausoleum atop stage",
+      "place": "",
+      "flag_id": 0,
+      "site_id": 174
+     }
+    ],
+    "bosses": [
+     {
+      "boss": "[18] Mohg, Lord of Blood",
+      "place": "",
+      "flag_id": 12050800
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "region_name": "Land of Shadow",
+  "regions": [],
+  "children": [
+   {
+    "region_name": "Greater Gravesite",
+    "regions": [],
+    "children": [
+     {
+      "region_name": "Gravesite Plain",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Belurat Gaol wooden platform after dropping down hanging pots",
+        "place": "Belurat Gaol",
+        "flag_id": 0,
+        "site_id": 118
+       },
+       {
+        "chest": "Castle Ensis outer encampment",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 187
+       },
+       {
+        "chest": "Fog Rift Catacombs on a high secret ledge",
+        "place": "Fog Rift Catacombs",
+        "flag_id": 0,
+        "site_id": 184
+       },
+       {
+        "chest": "Prospect Town upstairs room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 117
+       },
+       {
+        "chest": "Scorched Ruins upstairs room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 116
+       },
+       {
+        "chest": "Suppressing Pillar",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 183
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[21] Blackgaol Knight",
+        "place": "Western Nameless Mausoleum",
+        "flag_id": 2046410800
+       },
+       {
+        "boss": "[23] Ghostflame Dragon",
+        "place": "",
+        "flag_id": 2045440800
+       },
+       {
+        "boss": "[21] Demi-Human Swordmaster Onze",
+        "place": "Belurat Gaol",
+        "flag_id": 41000800
+       },
+       {
+        "boss": "[23] Ancient Dragon-Man",
+        "place": "Dragon's Pit",
+        "flag_id": 43010800
+       },
+       {
+        "boss": "[26] Rellana, Twin Moon Knight",
+        "place": "Castle Ensis",
+        "flag_id": 2048440800
+       },
+       {
+        "boss": "[25] Chief Bloodfiend",
+        "place": "Rivermouth Cave",
+        "flag_id": 43000800
+       },
+       {
+        "boss": "[26] Ghostflame Dragon",
+        "place": "",
+        "flag_id": 2048380850
+       }
+      ]
+     },
+     {
+      "region_name": "Castle Ensis",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Castle Ensis approach battlements in tower",
+        "place": "Castle Ensis",
+        "flag_id": 0,
+        "site_id": 120
+       },
+       {
+        "chest": "Castle Ensis before the hole",
+        "place": "Castle Ensis",
+        "flag_id": 0,
+        "site_id": 119
+       },
+       {
+        "chest": "Castle Ensis Gate battlements",
+        "place": "Castle Ensis",
+        "flag_id": 0,
+        "site_id": 186
+       },
+       {
+        "chest": "Periphery tower",
+        "place": "Castle Ensis",
+        "flag_id": 0,
+        "site_id": 179
+       },
+       {
+        "chest": "Room below church with fireplace",
+        "place": "Castle Ensis",
+        "flag_id": 0,
+        "site_id": 191
+       },
+       {
+        "chest": "Turret before elevator to Rellana",
+        "place": "Castle Ensis",
+        "flag_id": 0,
+        "site_id": 178
+       }
+      ],
+      "bosses": []
+     }
+    ]
+   },
+   {
+    "region_name": "Greater Cerulean",
+    "regions": [],
+    "children": [
+     {
+      "region_name": "Cerulean Coast",
+      "regions": [],
+      "chests": [],
+      "bosses": [
+       {
+        "boss": "[26] Demi-Human Queen Marigga",
+        "place": "",
+        "flag_id": 2046400800
+       },
+       {
+        "boss": "[24] Dancer of Ranah",
+        "place": "Southern Nameless Mausoleum",
+        "flag_id": 2046380800
+       }
+      ]
+     },
+     {
+      "region_name": "Stone Coffin Fissure",
+      "regions": [],
+      "chests": [],
+      "bosses": [
+       {
+        "boss": "[28] Putrescent Knight",
+        "place": "Stone Coffin Fissure",
+        "flag_id": 22000800
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "region_name": "Belurat and Enir-Ilim",
+    "regions": [],
+    "children": [
+     {
+      "region_name": "Belurat, Tower Settlement",
+      "regions": [],
+      "chests": [],
+      "bosses": [
+       {
+        "boss": "[24] Divine Beast Dancing Lion",
+        "place": "Belurat, Tower Settlement",
+        "flag_id": 20000800
+       }
+      ]
+     },
+     {
+      "region_name": "Enir-Ilim",
+      "regions": [],
+      "chests": [],
+      "bosses": [
+       {
+        "boss": "[33] Promised Consort Radahn & Radahn, Consort of Miquella",
+        "place": "",
+        "flag_id": 20010800
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "region_name": "Greater Scadu",
+    "regions": [],
+    "children": [
+     {
+      "region_name": "Scadu Altus",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Chest on rear battlement",
+        "place": "Fort of Reprimand",
+        "flag_id": 0,
+        "site_id": 182
+       },
+       {
+        "chest": "Courtyard behind flame throwers",
+        "place": "Fog Rift Fort",
+        "flag_id": 0,
+        "site_id": 181
+       },
+       {
+        "chest": "Darklight Catacombs behind giant Bigmouth Imp",
+        "place": "Darklight Catacombs",
+        "flag_id": 0,
+        "site_id": 130
+       },
+       {
+        "chest": "Fog Rift Fort - chest atop the southernmost rampart tower",
+        "place": "Fog Rift Fort",
+        "flag_id": 0,
+        "site_id": 121
+       },
+       {
+        "chest": "Fort of Reprimand dungeon cells",
+        "place": "Fort of Reprimand",
+        "flag_id": 0,
+        "site_id": 189
+       },
+       {
+        "chest": "Fort of Reprimand highest tower behind boss",
+        "place": "Fort of Reprimand",
+        "flag_id": 0,
+        "site_id": 123
+       },
+       {
+        "chest": "Fort of Reprimand inside main building behind a mess of cages",
+        "place": "Fort of Reprimand",
+        "flag_id": 0,
+        "site_id": 122
+       },
+       {
+        "chest": "Inside building behind Garrew",
+        "place": "Fog Rift Fort",
+        "flag_id": 0,
+        "site_id": 180
+       },
+       {
+        "chest": "Moorth Ruins sinkhole in tall building",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 131
+       },
+       {
+        "chest": "Rabbath's Rise high room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 213
+       },
+       {
+        "chest": "Ruins of Unte back room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 188
+       },
+       {
+        "chest": "Secret room accessible from ledge near start of catacomb",
+        "place": "Darklight Catacombs",
+        "flag_id": 0,
+        "site_id": 190
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[27] Black Knight Garrew",
+        "place": "Fog Rift Fort",
+        "flag_id": 2047450800
+       },
+       {
+        "boss": "[27] Ralva the Great Red Bear",
+        "place": "",
+        "flag_id": 2049450800
+       },
+       {
+        "boss": "[25] Dryleaf Dane",
+        "place": "Moorth Ruins",
+        "flag_id": 2049440800
+       },
+       {
+        "boss": "[27] Ghostflame Dragon",
+        "place": "",
+        "flag_id": 2049430800
+       },
+       {
+        "boss": "[27] Black Knight Edredd",
+        "place": "Fort of Reprimand",
+        "flag_id": 2049430850
+       },
+       {
+        "boss": "[25] Curseblade Labirith",
+        "place": "Bonny Gaol",
+        "flag_id": 41010800
+       },
+       {
+        "boss": "[27] Golden Hippopotamus",
+        "place": "Shadow Keep",
+        "flag_id": 21000850
+       },
+       {
+        "boss": "[32] Metyr, Mother of Fingers",
+        "place": "Cathedral of Manus Metyr",
+        "flag_id": 25000800
+       },
+       {
+        "boss": "[25] Count Ymir, Mother of Fingers",
+        "place": "Cathedral of Manus Metyr",
+        "flag_id": 2051450800
+       },
+       {
+        "boss": "[28] Rakshasa",
+        "place": "Eastern Nameless Mausoleum",
+        "flag_id": 2051440800
+       },
+       {
+        "boss": "[31] Jori, Elder Inquisitor",
+        "place": "Darklight Catacombs",
+        "flag_id": 2052430800
+       }
+      ]
+     },
+     {
+      "region_name": "Scaduview",
+      "regions": [],
+      "chests": [],
+      "bosses": [
+       {
+        "boss": "[28] Scadutree Avatar",
+        "place": "Scadutree Base",
+        "flag_id": 2050480800
+       },
+       {
+        "boss": "[29] Commander Gaius",
+        "place": "",
+        "flag_id": 2049480800
+       },
+       {
+        "boss": "[32] Tree Sentinel 1",
+        "place": "Hinterland",
+        "flag_id": 2050470800
+       },
+       {
+        "boss": "[32] Tree Sentinel 2",
+        "place": "Hinterland Bridge",
+        "flag_id": 2050480860
+       }
+      ]
+     },
+     {
+      "region_name": "Shadow Keep",
+      "regions": [],
+      "chests": [],
+      "bosses": [
+       {
+        "boss": "[30] Messmer the Impaler & Base Serpent Messmer",
+        "place": "Shadow Keep",
+        "flag_id": 21010800
+       }
+      ]
+     },
+     {
+      "region_name": "Hinterlands",
+      "regions": [],
+      "chests": [],
+      "bosses": [
+       {
+        "boss": "[32] Fallingstar Beast",
+        "place": "Fingerstone Hill",
+        "flag_id": 2052480800
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "region_name": "Greater Rauh",
+    "regions": [],
+    "children": [
+     {
+      "region_name": "Rauh Base",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "North of Temple Town Ruins via Spiritspring",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 125
+       },
+       {
+        "chest": "North of Temple Town Ruins via Spiritspring",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 185
+       },
+       {
+        "chest": "Scorpion River Catacombs secret high chamber by floating eyes",
+        "place": "Scorpion River Catacombs",
+        "flag_id": 0,
+        "site_id": 129
+       },
+       {
+        "chest": "Small encampment under a brown tent",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 126
+       },
+       {
+        "chest": "Temple Town Ruins upstairs room",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 124
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[23] Death Knight",
+        "place": "Fog Rift Catacombs",
+        "flag_id": 40000800
+       },
+       {
+        "boss": "[26] Red Bear",
+        "place": "Northern Nameless Mausoleum",
+        "flag_id": 2046450800
+       },
+       {
+        "boss": "[28] Rugalea the Great Red Bear",
+        "place": "Rauh Base",
+        "flag_id": 2044470800
+       },
+       {
+        "boss": "[26] Death Knight",
+        "place": "Scorpion River Catacombs",
+        "flag_id": 40010800
+       }
+      ]
+     },
+     {
+      "region_name": "Ancient Ruins of Rauh",
+      "regions": [],
+      "chests": [
+       {
+        "chest": "Ancient Ruins of Rauh by secret elevator",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 127
+       },
+       {
+        "chest": "Ancient Ruins of Rauh via a sealed Spiritspring",
+        "place": "",
+        "flag_id": 0,
+        "site_id": 128
+       }
+      ],
+      "bosses": [
+       {
+        "boss": "[32] Divine Beast Dancing Lion",
+        "place": "",
+        "flag_id": 2046460800
+       },
+       {
+        "boss": "[32] Romina, Saint of the Bud",
+        "place": "Church of the Bud",
+        "flag_id": 2044450800
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "region_name": "Greater Jagged Peak",
+    "regions": [],
+    "children": [
+     {
+      "region_name": "Jagged Peak",
+      "regions": [],
+      "chests": [],
+      "bosses": [
+       {
+        "boss": "[28] Jagged Peak Drake",
+        "place": "Foot of the Jagged Peak",
+        "flag_id": 2049410800
+       },
+       {
+        "boss": "[33] Jagged Peak Drake",
+        "place": "Jagged Peak Mountainside",
+        "flag_id": 2052400800
+       },
+       {
+        "boss": "[33] Ancient Dragon Senessax",
+        "place": "Jagged Peak Mountainside",
+        "flag_id": 2054390850
+       },
+       {
+        "boss": "[34] Bayle the Dread",
+        "place": "Jagged Peak Summit",
+        "flag_id": 2054390800
+       }
+      ]
+     },
+     {
+      "region_name": "Charo's Hidden Grave",
+      "regions": [],
+      "chests": [],
+      "bosses": [
+       {
+        "boss": "[28] Death Rite Bird",
+        "place": "",
+        "flag_id": 2047390800
+       },
+       {
+        "boss": "[26] Lamenter",
+        "place": "Lamenter's Gaol",
+        "flag_id": 41020800
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "region_name": "Greater Abyss",
+    "regions": [],
+    "children": [
+     {
+      "region_name": "Abyssal Woods",
+      "regions": [],
+      "chests": [],
+      "bosses": [
+       {
+        "boss": "[32] Midra, Lord of Frenzied Flame",
+        "place": "Midra's Manse",
+        "flag_id": 28000800
+       }
+      ]
+     },
+     {
+      "region_name": "Midra's Manse",
+      "regions": [],
+      "chests": [],
+      "bosses": []
+     }
+    ]
+   }
+  ]
+ }
+]

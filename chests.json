@@ -1,0 +1,5124 @@
+{
+    "data": [
+        {
+            "id": 21,
+            "slug": "academy-of-raya-lucaria-01",
+            "name": "Between Schoolhouse and Debate Parlor",
+            "region_id": 11,
+            "region": "Academy of Raya Lucaria",
+            "dungeon_id": 2,
+            "dungeon": "Raya Lucaria Academy",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-academy-of-raya-lucaria.png",
+            "map_slug": "overworld",
+            "map_x": 0.19542123930449,
+            "map_y": 0.54670918999773,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Ritual Pot",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "slug": "academy-of-raya-lucaria-04",
+            "name": "Debate Parlor gallery",
+            "region_id": 11,
+            "region": "Academy of Raya Lucaria",
+            "dungeon_id": 2,
+            "dungeon": "Raya Lucaria Academy",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-academy-of-raya-lucaria.png",
+            "map_slug": "overworld",
+            "map_x": 0.20010026666109,
+            "map_y": 0.54369918192752,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Radagon Icon",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "slug": "academy-of-raya-lucaria-06",
+            "name": "Grand Library next to Rennala",
+            "region_id": 11,
+            "region": "Academy of Raya Lucaria",
+            "dungeon_id": 2,
+            "dungeon": "Raya Lucaria Academy",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-academy-of-raya-lucaria.png",
+            "map_slug": "overworld",
+            "map_x": 0.18964463220029,
+            "map_y": 0.52221869239727,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Dark Moon Ring",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "slug": "academy-of-raya-lucaria-05",
+            "name": "Office left from Schoolhouse",
+            "region_id": 11,
+            "region": "Academy of Raya Lucaria",
+            "dungeon_id": 2,
+            "dungeon": "Raya Lucaria Academy",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-academy-of-raya-lucaria.png",
+            "map_slug": "overworld",
+            "map_x": 0.20200329866278,
+            "map_y": 0.54333943478261,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Glintstone Craftsman's Cookbook [5]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 147,
+            "slug": "new-chest-aziGa5cq",
+            "name": "Secret Library",
+            "region_id": 11,
+            "region": "Academy of Raya Lucaria",
+            "dungeon_id": 2,
+            "dungeon": "Raya Lucaria Academy",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-academy-of-raya-lucaria.png",
+            "map_slug": "overworld",
+            "map_x": 0.19621509788282,
+            "map_y": 0.54331972551341,
+            "description": "Behind illusory wall",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Comet",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "slug": "academy-of-raya-lucaria-02",
+            "name": "Upstairs room by Ball Trap summoning circle",
+            "region_id": 11,
+            "region": "Academy of Raya Lucaria",
+            "dungeon_id": 2,
+            "dungeon": "Raya Lucaria Academy",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-academy-of-raya-lucaria.png",
+            "map_slug": "overworld",
+            "map_x": 0.20100479004654,
+            "map_y": 0.52698976444838,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Glintstone Scarab",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "slug": "academy-of-raya-lucaria-07",
+            "name": "Watchtower accessed from rooftops",
+            "region_id": 11,
+            "region": "Academy of Raya Lucaria",
+            "dungeon_id": 2,
+            "dungeon": "Raya Lucaria Academy",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-academy-of-raya-lucaria.png",
+            "map_slug": "overworld",
+            "map_x": 0.18515557143286,
+            "map_y": 0.54179386994424,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Full Moon Crossbow",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 105,
+            "slug": "ainsel-river-01",
+            "name": "Ainsel River atop Uhl Palace ruins",
+            "region_id": 35,
+            "region": "Ainsel River",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "underground",
+            "map_x": 0.2431385,
+            "map_y": 0.4972685,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Wing of Astel",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 215,
+            "slug": "new-chest-FPEujiva",
+            "name": "Under giant throne after Dragonkin Soldier",
+            "region_id": 35,
+            "region": "Ainsel River",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "underground",
+            "map_x": 0.22610096536211,
+            "map_y": 0.47772409850869,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Great Ghost Glovewort",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 80,
+            "slug": "altus-plateau-20",
+            "name": "Altus Tunnel stone chest in side room near entrance",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": 56,
+            "dungeon": "Altus Tunnel",
+            "dungeon_type": "Tunnel",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.34832405997265,
+            "map_y": 0.34896813774772,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Rune Arc",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 160,
+            "slug": "new-chest-gRaW7EmT",
+            "name": "Chest in small encampment",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.30037385987882,
+            "map_y": 0.36939224405442,
+            "description": "In front of yellow tent",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Sacrificial Twig",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 203,
+            "slug": "new-chest-dR4f25D2",
+            "name": "Encampment ambushed by Ulcerated Tree Spirit",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.37651832588768,
+            "map_y": 0.3969023583358,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Giant-Crusher",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 63,
+            "slug": "altus-plateau-03",
+            "name": "Erdtree-Gazing Hill east carriage",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.29142801986407,
+            "map_y": 0.37489770075517,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Troll's Golden Sword",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 62,
+            "slug": "altus-plateau-02",
+            "name": "Erdtree-Gazing Hill west carriage",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.28673247545239,
+            "map_y": 0.37701002931298,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Greatshield Talisman",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 201,
+            "slug": "new-chest-LBzH20mk",
+            "name": "Highway Lookout Tower top floor",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.38345097546973,
+            "map_y": 0.29530025898857,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Greatbow",
+                    "quantity": 1
+                },
+                {
+                    "name": "Great Arrow",
+                    "quantity": 20
+                }
+            ]
+        },
+        {
+            "id": 61,
+            "slug": "altus-plateau-01",
+            "name": "Lux Ruins cellar",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.2736361142542,
+            "map_y": 0.37490259440484,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Ritual Sword Talisman",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 167,
+            "slug": "new-chest-74JMYp1M",
+            "name": "Mirage Rise upper room",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.31194283073427,
+            "map_y": 0.32777428749415,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Unseen Blade",
+                    "quantity": 1
+                },
+                {
+                    "name": "Unseen Form",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 67,
+            "slug": "altus-plateau-07",
+            "name": "Perfumer's Grotto one of two chests behind branch",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": 58,
+            "dungeon": "Perfumer's Grotto",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.35546955817616,
+            "map_y": 0.3558679439775,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Living Jar Shard",
+                    "quantity": 10
+                }
+            ]
+        },
+        {
+            "id": 166,
+            "slug": "new-chest-Xkdlr8yK",
+            "name": "Perfumer's Grotto one of two chests behind branch",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": 58,
+            "dungeon": "Perfumer's Grotto",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.35339451602978,
+            "map_y": 0.35669613733688,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Perfume Bottle",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 161,
+            "slug": "new-chest-VbCmtBlx",
+            "name": "Perfumer's Ruins by Omenkiller",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.21942916608599,
+            "map_y": 0.36159881627782,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Perfumer's Cookbook [1]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 65,
+            "slug": "altus-plateau-05",
+            "name": "Perfumer's Ruins cellar",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.21840052292964,
+            "map_y": 0.35684277888362,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Perfumer's Talisman",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 163,
+            "slug": "new-chest-flN2rbJd",
+            "name": "Road of Iniquity Side Path troll-drawn carriage",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.33016509098385,
+            "map_y": 0.28647155430957,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Great Stars",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 70,
+            "slug": "altus-plateau-10",
+            "name": "Sage's Cave one of four chests in secret room between two braziers",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": 53,
+            "dungeon": "Sage's Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.26496569615952,
+            "map_y": 0.35540500506977,
+            "description": "After the first two chests on the path, a secret room is hidden behind an illusory wall between two burning braziers",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Candletree Wooden Shield",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 71,
+            "slug": "altus-plateau-11",
+            "name": "Sage's Cave one of four chests in secret room between two braziers",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": 53,
+            "dungeon": "Sage's Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.264325808927,
+            "map_y": 0.35708209268139,
+            "description": "After the first two chests on the path, a secret room is hidden behind an illusory wall between two burning braziers",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Silver-Pickled Fowl Foot",
+                    "quantity": 5
+                }
+            ]
+        },
+        {
+            "id": 72,
+            "slug": "altus-plateau-12",
+            "name": "Sage's Cave one of four chests in secret room between two braziers",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": 53,
+            "dungeon": "Sage's Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.26507210613588,
+            "map_y": 0.35656160008795,
+            "description": "After the first two chests on the path, a secret room is hidden behind an illusory wall between two burning braziers",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Black Hood",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 73,
+            "slug": "altus-plateau-13",
+            "name": "Sage's Cave one of four chests in secret room between two braziers",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": 53,
+            "dungeon": "Sage's Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.26407897981881,
+            "map_y": 0.35596428207444,
+            "description": "After the first two chests on the path, a secret room is hidden behind an illusory wall between two burning braziers",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Nascent Butterfly",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 68,
+            "slug": "altus-plateau-08",
+            "name": "Sage's Cave one of two chests on path",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": 53,
+            "dungeon": "Sage's Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.26276481974789,
+            "map_y": 0.35398670758029,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Rejuvenating Boluses",
+                    "quantity": 5
+                }
+            ]
+        },
+        {
+            "id": 69,
+            "slug": "altus-plateau-09",
+            "name": "Sage's Cave one of two chests on path",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": 53,
+            "dungeon": "Sage's Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.26243002673236,
+            "map_y": 0.35502883353385,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Lost Ashes of War",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 75,
+            "slug": "altus-plateau-15",
+            "name": "Sage's Cave one of two chests on path deeper",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": 53,
+            "dungeon": "Sage's Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.26673170021997,
+            "map_y": 0.35806088207715,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Dragonwound Grease",
+                    "quantity": 4
+                }
+            ]
+        },
+        {
+            "id": 76,
+            "slug": "altus-plateau-16",
+            "name": "Sage's Cave one of two chests on path deeper",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": 53,
+            "dungeon": "Sage's Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.26684378518593,
+            "map_y": 0.35705477719724,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Raptor Talons",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 78,
+            "slug": "altus-plateau-18",
+            "name": "Sage's Cave one of two chests before Garris",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": 53,
+            "dungeon": "Sage's Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.25930852677984,
+            "map_y": 0.35504897328105,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Raptor's Black Feathers",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 79,
+            "slug": "altus-plateau-19",
+            "name": "Sage's Cave one of two chests before Garris",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": 53,
+            "dungeon": "Sage's Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.2599371267749,
+            "map_y": 0.35420920840786,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Skeletal Mask",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 77,
+            "slug": "altus-plateau-17",
+            "name": "Sage's Cave opposite two chests in nook",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": 53,
+            "dungeon": "Sage's Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.26046260916596,
+            "map_y": 0.35539857770224,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Golden Great Arrow",
+                    "quantity": 10
+                }
+            ]
+        },
+        {
+            "id": 74,
+            "slug": "altus-plateau-14",
+            "name": "Sage's Cave single chest behind illusory wall",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": 53,
+            "dungeon": "Sage's Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.26445452672593,
+            "map_y": 0.35875950149582,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Stonesword Key",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 165,
+            "slug": "new-chest-FeT26Erq",
+            "name": "Shaded Castle west wing",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": 11,
+            "dungeon": "Shaded Castle",
+            "dungeon_type": "Minor Legacy Dungeon",
+            "dungeon_icon": "location-shaded-castle.png",
+            "map_slug": "overworld",
+            "map_x": 0.29216380604861,
+            "map_y": 0.28439842667285,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Valkyrie's Prosthesis",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 162,
+            "slug": "new-chest-zpPjcIxa",
+            "name": "Stormcaller Church",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.33287279756731,
+            "map_y": 0.3630248049858,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Dragonbolt Blessing",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 202,
+            "slug": "new-chest-cm2WTPmX",
+            "name": "Woodfolk Ruins south ruins cellar",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.35642376559532,
+            "map_y": 0.33461935232981,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Wrath of Gold",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 164,
+            "slug": "new-chest-3U8h6kxf",
+            "name": "Writheblood Ruins cellar",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.31832443129018,
+            "map_y": 0.31075805333301,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Bloody Helice",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 64,
+            "slug": "altus-plateau-04",
+            "name": "Wyndham Ruins cellar",
+            "region_id": 18,
+            "region": "Altus Plateau",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.26754703566764,
+            "map_y": 0.3421203366148,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Pearldrake Talisman +1",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 127,
+            "slug": "ancient-ruins-of-rauh-01",
+            "name": "Ancient Ruins of Rauh by secret elevator",
+            "region_id": 56,
+            "region": "Ancient Ruins of Rauh",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.2503,
+            "map_y": 0.5184,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Talisman of All Crucibles",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 128,
+            "slug": "ancient-ruins-of-rauh-02",
+            "name": "Ancient Ruins of Rauh via a sealed Spiritspring",
+            "region_id": 56,
+            "region": "Ancient Ruins of Rauh",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.2746,
+            "map_y": 0.4601,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Mottled Necklace +2",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 52,
+            "slug": "caelid-08",
+            "name": "Abandoned carriage near Caelem Ruins",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.51649406165757,
+            "map_y": 0.67627256458128,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Greatsword",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 212,
+            "slug": "new-chest-fi7cwout",
+            "name": "Behind illusory wall in large chamber before boss room",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": 48,
+            "dungeon": "Sellia Hideaway",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.58629700345865,
+            "map_y": 0.68257558609575,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Crystal Spear",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 47,
+            "slug": "caelid-03",
+            "name": "Caelid Waypoint Ruins cellar",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.51301397500952,
+            "map_y": 0.73904915112153,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Meteoric Ore Blade",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 151,
+            "slug": "new-chest-jPfHfptA",
+            "name": "Caelem Ruins cellar",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.52726165777188,
+            "map_y": 0.68891563098753,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Visage Shield",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 218,
+            "slug": "new-chest-sg83Db9d",
+            "name": "Encampment under red tent",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.51813603800325,
+            "map_y": 0.67194711843544,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Rune Arc",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 51,
+            "slug": "caelid-07",
+            "name": "Forsaken Ruins cellar",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.50478222823431,
+            "map_y": 0.6909005465952,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Sword of St. Trina",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "slug": "caelid-04",
+            "name": "Fort Gael lower room",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.5007157944993,
+            "map_y": 0.73836779583251,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Katar",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 59,
+            "slug": "caelid-15",
+            "name": "Gaol Cave at entrance",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": 44,
+            "dungeon": "Gaol Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.5058138362345,
+            "map_y": 0.73073448064019,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Rune Arc",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 58,
+            "slug": "caelid-14",
+            "name": "Gaol Cave in barracks",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": 44,
+            "dungeon": "Gaol Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.5050487886592,
+            "map_y": 0.71906998411241,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Somber Smithing Stone [5]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 154,
+            "slug": "new-chest-hesVq43j",
+            "name": "Gaol Fort upper level",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.50196059044913,
+            "map_y": 0.73695741748236,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Starscourge Heirloom",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 46,
+            "slug": "caelid-02",
+            "name": "Impassable Greatbridge watchtower",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.58413619746095,
+            "map_y": 0.80194448147873,
+            "description": "In the corner on the top floor",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Arrow's Sting Talisman",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 158,
+            "slug": "new-chest-9oqUeYbw",
+            "name": "Redmane Castle rooftop past Red-Hot Whetblade",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": 7,
+            "dungeon": "Redmane Castle",
+            "dungeon_type": "Minor Legacy Dungeon",
+            "dungeon_icon": "location-redmane-castle.png",
+            "map_slug": "overworld",
+            "map_x": 0.62857032698806,
+            "map_y": 0.79704076960773,
+            "description": "Past Red-Hot Whetblade, up the stairs to the roof and continue until the end.",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Smithing Stone [6]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 55,
+            "slug": "caelid-11",
+            "name": "Sellia Crystal Tunnel mining shack",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": 47,
+            "dungeon": "Sellia Crystal Tunnel",
+            "dungeon_type": "Tunnel",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.56745453317347,
+            "map_y": 0.68656312766306,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Gravity Stone Fan",
+                    "quantity": 6
+                },
+                {
+                    "name": "Gravity Stone Chunk",
+                    "quantity": 3
+                }
+            ]
+        },
+        {
+            "id": 56,
+            "slug": "caelid-12",
+            "name": "Sellia Crystal Tunnel mining shack upper level",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": 47,
+            "dungeon": "Sellia Crystal Tunnel",
+            "dungeon_type": "Tunnel",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.57091107578244,
+            "map_y": 0.68471224096872,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Rock Blaster",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 157,
+            "slug": "new-chest-SklPShoN",
+            "name": "Sellia Hideaway, secret sorcerer room",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": 48,
+            "dungeon": "Sellia Hideaway",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.58728794062891,
+            "map_y": 0.68939273326695,
+            "description": "After the Stake of Marika, climb the crystals in the large room to a ledge and drop into the hole beyond.",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Crystalian Ashes",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 155,
+            "slug": "new-chest-w8Ufh0pP",
+            "name": "Sellia, Town of Sorcery boss room",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.57562447359363,
+            "map_y": 0.6970011217715,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Lusat's Glintstone Staff",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 54,
+            "slug": "caelid-10",
+            "name": "Sellia, Town of Sorcery central sealed room",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.5800209,
+            "map_y": 0.7153136,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Night Comet",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 156,
+            "slug": "new-chest-A4zR94Nv",
+            "name": "Sellia, Town of Sorcery north eastern sealed room",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.58395890445554,
+            "map_y": 0.71060757236945,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Imbued Sword Key",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 53,
+            "slug": "caelid-09",
+            "name": "Sellia, Town of Sorcery western sealed room",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.5781945,
+            "map_y": 0.7100328,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Spelldrake Talisman +1",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 49,
+            "slug": "caelid-05",
+            "name": "Small encampment under red tent",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.5220327,
+            "map_y": 0.7173578,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Slumbering Egg",
+                    "quantity": 2
+                }
+            ]
+        },
+        {
+            "id": 214,
+            "slug": "new-chest-eEnxvGl8",
+            "name": "Street of Sages Ruins cellar",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.54229940754766,
+            "map_y": 0.7206114050662,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Rock Sling",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 57,
+            "slug": "caelid-13",
+            "name": "War-Dead Catacombs, bottom floor in the rot",
+            "region_id": 14,
+            "region": "Caelid",
+            "dungeon_id": 51,
+            "dungeon": "War-Dead Catacombs",
+            "dungeon_type": "Catacombs",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.64224667865048,
+            "map_y": 0.66373442627511,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Collapsing Stars",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 81,
+            "slug": "altus-plateau-21",
+            "name": "Sealed Tunnel entrance",
+            "region_id": 21,
+            "region": "Capital Outskirts",
+            "dungeon_id": 62,
+            "dungeon": "Sealed Tunnel",
+            "dungeon_type": "Tunnel",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.39412340252508,
+            "map_y": 0.40403318249644,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Smithing-Stone Miner's Bell Bearing [2]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "slug": "caria-manor-01",
+            "name": "Caria Manor ground floor study",
+            "region_id": 12,
+            "region": "Caria Manor",
+            "dungeon_id": 10,
+            "dungeon": "Caria Manor",
+            "dungeon_type": "Minor Legacy Dungeon",
+            "dungeon_icon": "location-caria-manor.png",
+            "map_slug": "overworld",
+            "map_x": 0.20142877459149,
+            "map_y": 0.40769026875996,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Sword of Night and Flame",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 168,
+            "slug": "new-chest-7Tbmqvcp",
+            "name": "Renna's Rise",
+            "region_id": 12,
+            "region": "Caria Manor",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.18049373333133,
+            "map_y": 0.38146556802143,
+            "description": "Accessible after giving Ranni the Fingerslayer Blade",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Snow Witch Hat",
+                    "quantity": 1
+                },
+                {
+                    "name": "Snow Witch Robe",
+                    "quantity": 1
+                },
+                {
+                    "name": "Snow Witch Skirt",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 169,
+            "slug": "new-chest-A0Gl2If6",
+            "name": "Seluvis's Rise upper room",
+            "region_id": 12,
+            "region": "Caria Manor",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.17796059718746,
+            "map_y": 0.41289990067002,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Memory Stone",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 120,
+            "slug": "castle-ensis-02",
+            "name": "Castle Ensis approach battlements in tower",
+            "region_id": 43,
+            "region": "Castle Ensis",
+            "dungeon_id": 18,
+            "dungeon": "Castle Ensis",
+            "dungeon_type": "Minor Legacy Dungeon",
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.3878614202668,
+            "map_y": 0.54939178455938,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Milady",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 119,
+            "slug": "castle-ensis-01",
+            "name": "Castle Ensis before the hole",
+            "region_id": 43,
+            "region": "Castle Ensis",
+            "dungeon_id": 18,
+            "dungeon": "Castle Ensis",
+            "dungeon_type": "Minor Legacy Dungeon",
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.40605251943367,
+            "map_y": 0.54324695585521,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Loyal Knight's Cookbook",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 186,
+            "slug": "new-chest-WWvDgEDx",
+            "name": "Castle Ensis Gate battlements",
+            "region_id": 43,
+            "region": "Castle Ensis",
+            "dungeon_id": 18,
+            "dungeon": "Castle Ensis",
+            "dungeon_type": "Minor Legacy Dungeon",
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.40810741114796,
+            "map_y": 0.55134391501202,
+            "description": "Under brown tent",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Carian Sorcery Sword",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 179,
+            "slug": "new-chest-VIZyB6rJ",
+            "name": "Periphery tower",
+            "region_id": 43,
+            "region": "Castle Ensis",
+            "dungeon_id": 18,
+            "dungeon": "Castle Ensis",
+            "dungeon_type": "Minor Legacy Dungeon",
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.44086814339518,
+            "map_y": 0.56437118670979,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Ash of War: Wing Stance",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 191,
+            "slug": "new-chest-wG0QIqP6",
+            "name": "Room below church with fireplace",
+            "region_id": 43,
+            "region": "Castle Ensis",
+            "dungeon_id": 18,
+            "dungeon": "Castle Ensis",
+            "dungeon_type": "Minor Legacy Dungeon",
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.40910451642451,
+            "map_y": 0.5649872802035,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Wolf Crest Shield",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 178,
+            "slug": "new-chest-84Q06wpL",
+            "name": "Turret before elevator to Rellana",
+            "region_id": 43,
+            "region": "Castle Ensis",
+            "dungeon_id": 18,
+            "dungeon": "Castle Ensis",
+            "dungeon_type": "Minor Legacy Dungeon",
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.4277704644127,
+            "map_y": 0.56623351208643,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Imbued Sword Key",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 209,
+            "slug": "new-chest-2nmg9yoE",
+            "name": "Chest on ledge by Rise",
+            "region_id": 27,
+            "region": "Consecrated Snowfield",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.58167559163697,
+            "map_y": 0.24740718900192,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Rune Arc",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 97,
+            "slug": "consecrated-snowfield-02",
+            "name": "Hidden Path to the Haligtree boss chest",
+            "region_id": 27,
+            "region": "Consecrated Snowfield",
+            "dungeon_id": 69,
+            "dungeon": "Hidden Path to the Haligtree",
+            "dungeon_type": "Catacombs",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.55629516767926,
+            "map_y": 0.32094776569344,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Deathroot",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 96,
+            "slug": "consecrated-snowfield-01",
+            "name": "Hidden Path to the Haligtree invisible walkway",
+            "region_id": 27,
+            "region": "Consecrated Snowfield",
+            "dungeon_id": 69,
+            "dungeon": "Hidden Path to the Haligtree",
+            "dungeon_type": "Catacombs",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.55866402672429,
+            "map_y": 0.30946558284698,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Silver Scarab",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 207,
+            "slug": "new-chest-JDupxOMI",
+            "name": "Troll-drawn carriage in open snowfields",
+            "region_id": 27,
+            "region": "Consecrated Snowfield",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.54755480172172,
+            "map_y": 0.26465862861289,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Flowing Curved Sword",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 206,
+            "slug": "new-chest-ijqYUGk4",
+            "name": "Troll-drawn carriage in the blizzard",
+            "region_id": 27,
+            "region": "Consecrated Snowfield",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.56896457938461,
+            "map_y": 0.27960449512742,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "St. Trina's Torch",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 208,
+            "slug": "new-chest-UflE2xph",
+            "name": "Yelough Anix Ruins cellar",
+            "region_id": 27,
+            "region": "Consecrated Snowfield",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.51973871255785,
+            "map_y": 0.26241261065368,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Unendurable Frenzy",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 103,
+            "slug": "crumbling-farum-azula-02",
+            "name": "Crumbling Farum Azula atop fallen buildings",
+            "region_id": 25,
+            "region": "Crumbling Farum Azula",
+            "dungeon_id": 5,
+            "dungeon": "Crumbling Farum Azula",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-crumbling-farum-azula.png",
+            "map_slug": "overworld",
+            "map_x": 0.89421809225571,
+            "map_y": 0.46813166296786,
+            "description": "After birds and Frank turn left and jump down the floating rocks to the building. Climb the ladder and find the chest by some railings.",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Dragon Towershield",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 104,
+            "slug": "crumbling-farum-azula-03",
+            "name": "Crumbling Farum Azula by Bernahl invasion",
+            "region_id": 25,
+            "region": "Crumbling Farum Azula",
+            "dungeon_id": 5,
+            "dungeon": "Crumbling Farum Azula",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-crumbling-farum-azula.png",
+            "map_slug": "overworld",
+            "map_x": 0.8868561,
+            "map_y": 0.4642177,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Old Lord's Talisman",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 102,
+            "slug": "crumbling-farum-azula-01",
+            "name": "Crumbling Farum Azula by large circular elevator",
+            "region_id": 25,
+            "region": "Crumbling Farum Azula",
+            "dungeon_id": 5,
+            "dungeon": "Crumbling Farum Azula",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-crumbling-farum-azula.png",
+            "map_slug": "overworld",
+            "map_x": 0.8833,
+            "map_y": 0.4563,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Drake Knight Helm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Drake Knight Armor",
+                    "quantity": 1
+                },
+                {
+                    "name": "Drake Knight Gauntlets",
+                    "quantity": 1
+                },
+                {
+                    "name": "Drake Knight Greaves",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 205,
+            "slug": "new-chest-EwtDwzGa",
+            "name": "Deeproot Depths in hollow giant tree",
+            "region_id": 39,
+            "region": "Deeproot Depths",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "underground",
+            "map_x": 0.405480671336,
+            "map_y": 0.35118948725482,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Crucible Tree Helm",
+                    "quantity": 1
+                },
+                {
+                    "name": "Crucible Tree Armor",
+                    "quantity": 1
+                },
+                {
+                    "name": "Crucible Gauntlets",
+                    "quantity": 1
+                },
+                {
+                    "name": "Crucible Greaves",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 60,
+            "slug": "dragonbarrow-01",
+            "name": "Divine Tower of Caelid basement",
+            "region_id": 15,
+            "region": "Dragonbarrow",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.57401514807612,
+            "map_y": 0.66790072974587,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Godslayer's Greatsword",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 45,
+            "slug": "caelid-01",
+            "name": "Fort Faroth Tower",
+            "region_id": 15,
+            "region": "Dragonbarrow",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.61529548796189,
+            "map_y": 0.69416934833784,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Dectus Medallion (Right)",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 159,
+            "slug": "new-chest-ayqyIaZL",
+            "name": "Lenne's Rise upper room",
+            "region_id": 15,
+            "region": "Dragonbarrow",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.6498208986642,
+            "map_y": 0.6547459462946,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Memory Stone",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 211,
+            "slug": "new-chest-ds2D0tNC",
+            "name": "Behind rotten Crystalian trio",
+            "region_id": 65,
+            "region": "Elphael Brace of the Haligtree",
+            "dungeon_id": 81,
+            "dungeon": "Elphael Brace of the Haligtree",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-elphael-brace-of-the-haligtree.png",
+            "map_slug": "overworld",
+            "map_x": 0.57786589718149,
+            "map_y": 0.085974377852459,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Rotten Crystal Sword",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 101,
+            "slug": "miquellas-haligtree-04",
+            "name": "Elphael cathedral gallery",
+            "region_id": 65,
+            "region": "Elphael Brace of the Haligtree",
+            "dungeon_id": 81,
+            "dungeon": "Elphael Brace of the Haligtree",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-elphael-brace-of-the-haligtree.png",
+            "map_slug": "overworld",
+            "map_x": 0.59019064067102,
+            "map_y": 0.086370385653161,
+            "description": "Accessed via hole in the roof of the cathedral",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Dragoncrest Greatshield Talisman",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 99,
+            "slug": "miquellas-haligtree-02",
+            "name": "Elphael guarded by Cleanrot Knight",
+            "region_id": 65,
+            "region": "Elphael Brace of the Haligtree",
+            "dungeon_id": 81,
+            "dungeon": "Elphael Brace of the Haligtree",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-elphael-brace-of-the-haligtree.png",
+            "map_slug": "overworld",
+            "map_x": 0.58481165714831,
+            "map_y": 0.090485732886245,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Cleanrot Knight Finlay",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 100,
+            "slug": "miquellas-haligtree-03",
+            "name": "Elphael high room after climbing architecture",
+            "region_id": 65,
+            "region": "Elphael Brace of the Haligtree",
+            "dungeon_id": 81,
+            "dungeon": "Elphael Brace of the Haligtree",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-elphael-brace-of-the-haligtree.png",
+            "map_slug": "overworld",
+            "map_x": 0.58373356284156,
+            "map_y": 0.0871154172219,
+            "description": "After Finlay ashes, go north west and climb diagonal architecture to ledge where the room is.",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Somber Ancient Dragon Smithing Stone",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 210,
+            "slug": "new-chest-lJiuRh0x",
+            "name": "In decadent room near the Plaza",
+            "region_id": 65,
+            "region": "Elphael Brace of the Haligtree",
+            "dungeon_id": 6,
+            "dungeon": "Miquella's Haligtree",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-miquellas-haligtree.png",
+            "map_slug": "overworld",
+            "map_x": 0.57714402212365,
+            "map_y": 0.11913755206019,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Viridian Amber Medallion +2",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 98,
+            "slug": "miquellas-haligtree-01",
+            "name": "Miquella's Haligtree in Stonesword Key room dropping down from Prayer Room",
+            "region_id": 65,
+            "region": "Elphael Brace of the Haligtree",
+            "dungeon_id": 81,
+            "dungeon": "Elphael Brace of the Haligtree",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-elphael-brace-of-the-haligtree.png",
+            "map_slug": "overworld",
+            "map_x": 0.58698134061706,
+            "map_y": 0.10070753660801,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Triple Rings of Light",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 118,
+            "slug": "gravesite-plain-03",
+            "name": "Belurat Gaol wooden platform after dropping down hanging pots",
+            "region_id": 42,
+            "region": "Gravesite Plain",
+            "dungeon_id": 73,
+            "dungeon": "Belurat Gaol",
+            "dungeon_type": "Gaol",
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.26197927586704,
+            "map_y": 0.56329491081908,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Hefty Cracked Pot",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 187,
+            "slug": "new-chest-SpCkEhXd",
+            "name": "Castle Ensis outer encampment",
+            "region_id": 42,
+            "region": "Gravesite Plain",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.38119186091603,
+            "map_y": 0.57871048557003,
+            "description": "Under grey tent",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Firespark Perfume Bottle",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 184,
+            "slug": "new-chest-5NSS2udB",
+            "name": "Fog Rift Catacombs on a high secret ledge",
+            "region_id": 42,
+            "region": "Gravesite Plain",
+            "dungeon_id": 76,
+            "dungeon": "Fog Rift Catacombs",
+            "dungeon_type": "Catacombs",
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.33001036643144,
+            "map_y": 0.48115432296384,
+            "description": "On a high ledge accessed by taking the third spike trap up",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Ash of War: Blinkbolt",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 117,
+            "slug": "gravesite-plain-02",
+            "name": "Prospect Town upstairs room",
+            "region_id": 42,
+            "region": "Gravesite Plain",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.2715,
+            "map_y": 0.7090336,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Outer God Heirloom",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 116,
+            "slug": "gravesite-plain-01",
+            "name": "Scorched Ruins upstairs room",
+            "region_id": 42,
+            "region": "Gravesite Plain",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.37948,
+            "map_y": 0.676983,
+            "description": "Contents also known as Blade of Mitchge",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Blade of Mercy",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 183,
+            "slug": "new-chest-u74vNcJA",
+            "name": "Suppressing Pillar",
+            "region_id": 42,
+            "region": "Gravesite Plain",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.44272292250232,
+            "map_y": 0.68549592639584,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Ancient Dragon Smithing Stone",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 107,
+            "slug": "lake-of-rot-01",
+            "name": "Grand Cloister",
+            "region_id": 36,
+            "region": "Lake of Rot",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "underground",
+            "map_x": 0.18016933760961,
+            "map_y": 0.5523029575546,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Scorpion's Stinger",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 176,
+            "slug": "new-chest-2khxu0R7",
+            "name": "Lake of Rot in small building to the west",
+            "region_id": 36,
+            "region": "Lake of Rot",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "underground",
+            "map_x": 0.19068120079712,
+            "map_y": 0.53439709126024,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Nomadic Warrior's Cookbook [22]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 86,
+            "slug": "leyndell-royal-capital-03",
+            "name": "Divine Bridge",
+            "region_id": 22,
+            "region": "Leyndell, Royal Capital",
+            "dungeon_id": 4,
+            "dungeon": "Leyndell, Royal Capital",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-leyndell-royal-capital.png",
+            "map_slug": "overworld",
+            "map_x": 0.4117638,
+            "map_y": 0.39233,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Blessed Dew Talisman",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 84,
+            "slug": "leyndell-royal-capital-01",
+            "name": "Erdtree Sanctuary gallery",
+            "region_id": 22,
+            "region": "Leyndell, Royal Capital",
+            "dungeon_id": 4,
+            "dungeon": "Leyndell, Royal Capital",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-leyndell-royal-capital.png",
+            "map_slug": "overworld",
+            "map_x": 0.4453239,
+            "map_y": 0.4011882,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Erdtree Bow",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 66,
+            "slug": "altus-plateau-06",
+            "name": "Estate house at end of East Ramparts",
+            "region_id": 22,
+            "region": "Leyndell, Royal Capital",
+            "dungeon_id": 4,
+            "dungeon": "Leyndell, Royal Capital",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-leyndell-royal-capital.png",
+            "map_slug": "overworld",
+            "map_x": 0.4549125,
+            "map_y": 0.3848346,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Perfume Bottle",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 85,
+            "slug": "leyndell-royal-capital-02",
+            "name": "Leyndell room under Avenue Balcony",
+            "region_id": 22,
+            "region": "Leyndell, Royal Capital",
+            "dungeon_id": 4,
+            "dungeon": "Leyndell, Royal Capital",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-leyndell-royal-capital.png",
+            "map_slug": "overworld",
+            "map_x": 0.4426307779983,
+            "map_y": 0.37877674248809,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Stonesword Key",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "slug": "limgrave-12",
+            "name": "Chapel of Anticipation gallery",
+            "region_id": 4,
+            "region": "Limgrave",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.28561432713382,
+            "map_y": 0.73629317587464,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Stormhawk Deenh",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 135,
+            "slug": "new-chest-1IX6Ny9L",
+            "name": "Deathtouched Catacombs boss arena",
+            "region_id": 4,
+            "region": "Limgrave",
+            "dungeon_id": 29,
+            "dungeon": "Deathtouched Catacombs",
+            "dungeon_type": "Catacombs",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.38853568528483,
+            "map_y": 0.7060124615621,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Deathroot",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "slug": "limgrave-05",
+            "name": "Dragon-Burnt Ruins cellar",
+            "region_id": 4,
+            "region": "Limgrave",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.40770295737884,
+            "map_y": 0.79994720358863,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:41.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Twinblade",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 196,
+            "slug": "new-chest-CbUAEHp5",
+            "name": "Encampment between Warmaster's Shack and Saintsbridge",
+            "region_id": 4,
+            "region": "Limgrave",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.39377697396459,
+            "map_y": 0.71544289410065,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:35.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Beast Crest Heater Shield",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "slug": "limgrave-11",
+            "name": "Fort Haight tower",
+            "region_id": 4,
+            "region": "Limgrave",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.4864179,
+            "map_y": 0.794356,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:48.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Dectus Medallion (Left)",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 194,
+            "slug": "limgrave-902",
+            "name": "Gatefront Ruins cellar",
+            "region_id": 4,
+            "region": "Limgrave",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.389,
+            "map_y": 0.7584,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:38.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Whetstone Knife",
+                    "quantity": 1
+                },
+                {
+                    "name": "Ash of War: Storm Stomp",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "slug": "limgrave-02",
+            "name": "Gatefront Ruins eastern carriage",
+            "region_id": 4,
+            "region": "Limgrave",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.39419452083478,
+            "map_y": 0.75259887971398,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:38.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Flail",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "slug": "limgrave-03",
+            "name": "Gatefront Ruins western carriage",
+            "region_id": 4,
+            "region": "Limgrave",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.38573392384671,
+            "map_y": 0.75278060765316,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:37.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Lordsworn's Greatsword",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "slug": "limgrave-01",
+            "name": "Gatefront upper platform",
+            "region_id": 4,
+            "region": "Limgrave",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.38122234298049,
+            "map_y": 0.75141954271155,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:37.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Arrow's Reach Talisman",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 153,
+            "slug": "new-chest-SbZphgfl",
+            "name": "Mistwood Ruins cellar",
+            "region_id": 4,
+            "region": "Limgrave",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.45344779124342,
+            "map_y": 0.77753916666412,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:45.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Axe Talisman",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 152,
+            "slug": "new-chest-qOIPBSp7",
+            "name": "Mistwood Ruins small room",
+            "region_id": 4,
+            "region": "Limgrave",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.45440845293197,
+            "map_y": 0.77621665891112,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:46.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Smithing Stone [2]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "slug": "limgrave-08",
+            "name": "Murkwater Cave dead-end tunnel",
+            "region_id": 4,
+            "region": "Limgrave",
+            "dungeon_id": 27,
+            "dungeon": "Murkwater Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.40545271818316,
+            "map_y": 0.76049776929365,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:40.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Mushroom",
+                    "quantity": 5
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "slug": "limgrave-07",
+            "name": "Murkwater Cave Patches chest",
+            "region_id": 4,
+            "region": "Limgrave",
+            "dungeon_id": 27,
+            "dungeon": "Murkwater Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.41224394743121,
+            "map_y": 0.75585824970815,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:39.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Cloth Garb",
+                    "quantity": 1
+                },
+                {
+                    "name": "Cloth Trousers",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 150,
+            "slug": "new-chest-lSPFpx9N",
+            "name": "Summonwater Village",
+            "region_id": 4,
+            "region": "Limgrave",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.46174085980849,
+            "map_y": 0.70159897218948,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:52.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Green Turtle Talisman",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 134,
+            "slug": "new-chest-4BYnRzxP",
+            "name": "Waypoint Ruins encampment approach",
+            "region_id": 4,
+            "region": "Limgrave",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.44273323813933,
+            "map_y": 0.8146439162855,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:43.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Great Épée",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "slug": "limgrave-04",
+            "name": "Waypoint Ruins troll-drawn carriage",
+            "region_id": 4,
+            "region": "Limgrave",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.4297995,
+            "map_y": 0.7873717,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Greataxe",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 44,
+            "slug": "liurnia-eastern-coast-07",
+            "name": "Black Knife Catacombs boss chest",
+            "region_id": 8,
+            "region": "Liurnia Eastern Coast",
+            "dungeon_id": 42,
+            "dungeon": "Black Knife Catacombs",
+            "dungeon_type": "Catacombs",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.28213099239813,
+            "map_y": 0.44466460702443,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Deathroot",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 200,
+            "slug": "new-chest-R0UQk2a2",
+            "name": "Chest in encampment in front of Grand Lift of Dectus",
+            "region_id": 8,
+            "region": "Liurnia Eastern Coast",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.25329400474232,
+            "map_y": 0.42503663906437,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Great Mace",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 199,
+            "slug": "new-chest-C7kWSfIs",
+            "name": "Church of Vows right of altar pool",
+            "region_id": 8,
+            "region": "Liurnia Eastern Coast",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.24342795345292,
+            "map_y": 0.51220203316446,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Golden Tailoring Tools",
+                    "quantity": 1
+                },
+                {
+                    "name": "Gold Sewing Needle",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 148,
+            "slug": "new-chest-21PhKsho",
+            "name": "Converted Fringe Tower highest room",
+            "region_id": 8,
+            "region": "Liurnia Eastern Coast",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.30004819981487,
+            "map_y": 0.45253969772946,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Cannon of Haima",
+                    "quantity": 1
+                },
+                {
+                    "name": "Gavel of Haima",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "slug": "liurnia-eastern-coast-02",
+            "name": "Frenzy-Flaming Tower 2nd floor",
+            "region_id": 8,
+            "region": "Liurnia Eastern Coast",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.2752404,
+            "map_y": 0.4395169,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Howl of Shabriri",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 146,
+            "slug": "new-chest-Htod2Sae",
+            "name": "Highway Lookout Tower first floor",
+            "region_id": 8,
+            "region": "Liurnia Eastern Coast",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.28879841651097,
+            "map_y": 0.61184093887022,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Glintstone Craftsman's Cookbook [3]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "slug": "liurnia-eastern-coast-01",
+            "name": "Purified Ruins cellar",
+            "region_id": 8,
+            "region": "Liurnia Eastern Coast",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.29535460143758,
+            "map_y": 0.64273756396743,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Two Fingers Heirloom",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "slug": "liurnia-eastern-coast-06",
+            "name": "Raya Lucaria Crystal Tunnel side room",
+            "region_id": 8,
+            "region": "Liurnia Eastern Coast",
+            "dungeon_id": 41,
+            "dungeon": "Raya Lucaria Crystal Tunnel",
+            "dungeon_type": "Tunnel",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.24436731776956,
+            "map_y": 0.48525317366028,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Crystal Knife",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "slug": "liurnia-eastern-coast-05",
+            "name": "Stone chest on wooden deck",
+            "region_id": 8,
+            "region": "Liurnia Eastern Coast",
+            "dungeon_id": 41,
+            "dungeon": "Raya Lucaria Crystal Tunnel",
+            "dungeon_type": "Tunnel",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.24345605063956,
+            "map_y": 0.48820534880066,
+            "description": "Near grace",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Somber Smithing Stone [2]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 142,
+            "slug": "new-chest-pGQnr3l2",
+            "name": "Storage room",
+            "region_id": 8,
+            "region": "Liurnia Eastern Coast",
+            "dungeon_id": 40,
+            "dungeon": "Academy Crystal Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.18485440988154,
+            "map_y": 0.53236431020369,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Rune Arc",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "slug": "liurnia-eastern-coast-04",
+            "name": "Storage room upper ledge",
+            "region_id": 8,
+            "region": "Liurnia Eastern Coast",
+            "dungeon_id": 40,
+            "dungeon": "Academy Crystal Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.18524402410722,
+            "map_y": 0.53063312581649,
+            "description": "Access via illusory cave wall",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Crystal Staff",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 198,
+            "slug": "new-chest-JDNNQ0Rc",
+            "name": "Abandoned carriage south Liurnia Highway on bridge",
+            "region_id": 8,
+            "region": "Liurnia Eastern Coast",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.3261377226223,
+            "map_y": 0.68917905188848,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Treespear",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 141,
+            "slug": "new-chest-MLO2x7kp",
+            "name": "Sunken spire in western Academy Gate Town",
+            "region_id": 10,
+            "region": "Liurnia Lakebed",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.21620075588784,
+            "map_y": 0.54852197357686,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Stonesword Key",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 140,
+            "slug": "new-chest-kf2OioTk",
+            "name": "Laskyar Ruins cellar",
+            "region_id": 10,
+            "region": "Liurnia Lakebed",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.25637686593242,
+            "map_y": 0.63877127400984,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Wraith Calling Bell",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 217,
+            "slug": "new-chest-GnxBtNI6",
+            "name": "Sunken spire in central Academy Gate Town",
+            "region_id": 10,
+            "region": "Liurnia Lakebed",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.2360945588064,
+            "map_y": 0.56619049923567,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Glintstone Craftsman's Cookbook [4]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "slug": "liurnia-western-coast-07",
+            "name": "Testu's Rise upper room",
+            "region_id": 10,
+            "region": "Liurnia Lakebed",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.1884151038699,
+            "map_y": 0.47806887670539,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Memory Stone",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "slug": "liurnia-western-coast-00",
+            "name": "Atop large tower in Raya Lucaria",
+            "region_id": 9,
+            "region": "Liurnia Western Coast",
+            "dungeon_id": 40,
+            "dungeon": "Academy Crystal Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.19220446194653,
+            "map_y": 0.53042352143371,
+            "description": "Access via Academy Crystal Cave boss room elevator",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Terra Magica",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 145,
+            "slug": "new-chest-jkxGQdYl",
+            "name": "Converted tower top room",
+            "region_id": 9,
+            "region": "Liurnia Western Coast",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.16203979448575,
+            "map_y": 0.60523333749117,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Memory Stone",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "slug": "liurnia-western-coast-06",
+            "name": "Encampment lower level",
+            "region_id": 9,
+            "region": "Liurnia Western Coast",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.14330812326924,
+            "map_y": 0.49308009770019,
+            "description": "Under blue tent by barrels and crates",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Cuckoo Glintstone",
+                    "quantity": 10
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "slug": "liurnia-western-coast-02",
+            "name": "Encampment upper level",
+            "region_id": 9,
+            "region": "Liurnia Western Coast",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.1476207,
+            "map_y": 0.4955621,
+            "description": "Under blue tent by barrels and crates",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Smithing Stone [4]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "slug": "liurnia-western-coast-05",
+            "name": "Encampment upper level",
+            "region_id": 9,
+            "region": "Liurnia Western Coast",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.1464792,
+            "map_y": 0.4964138,
+            "description": "Under blue tent by bundles and crates",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Albinauric Bloodclot",
+                    "quantity": 6
+                }
+            ]
+        },
+        {
+            "id": 144,
+            "slug": "new-chest-RP7wMapO",
+            "name": "Kingsrealm Ruins cellar",
+            "region_id": 9,
+            "region": "Liurnia Western Coast",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.17568932100789,
+            "map_y": 0.45010485616882,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Frozen Needle",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "slug": "liurnia-western-coast-11",
+            "name": "Lakeside Crystal Cave entrance",
+            "region_id": 9,
+            "region": "Liurnia Western Coast",
+            "dungeon_id": 38,
+            "dungeon": "Lakeside Crystal Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.23762866870465,
+            "map_y": 0.65285422505496,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Arteria Leaf",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "slug": "liurnia-western-coast-12",
+            "name": "Lakeside Crystal Cave rear room",
+            "region_id": 9,
+            "region": "Liurnia Western Coast",
+            "dungeon_id": 38,
+            "dungeon": "Lakeside Crystal Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.23258301945221,
+            "map_y": 0.64708957574326,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Spear Talisman",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 133,
+            "slug": "liurnia-western-coast-14",
+            "name": "Ranni's Rise",
+            "region_id": 9,
+            "region": "Liurnia Western Coast",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.1617753,
+            "map_y": 0.4016993,
+            "description": "Behind table",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Spectral Steed Regalia: Carian Silver",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 43,
+            "slug": "liurnia-western-coast-13",
+            "name": "Road's End Catacombs hidden room",
+            "region_id": 9,
+            "region": "Liurnia Western Coast",
+            "dungeon_id": 39,
+            "dungeon": "Road's End Catacombs",
+            "dungeon_type": "Catacombs",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.15821958510304,
+            "map_y": 0.60397698898721,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Raya Lucaria Soldier Ashes",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "slug": "liurnia-western-coast-01",
+            "name": "Temple Quarter sunken spire",
+            "region_id": 9,
+            "region": "Liurnia Western Coast",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.17549952611118,
+            "map_y": 0.56503199468103,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Icerind Hatchet",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "slug": "liurnia-western-coast-03",
+            "name": "The Four Belfries fourth Belfry",
+            "region_id": 9,
+            "region": "Liurnia Western Coast",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.1517301,
+            "map_y": 0.4947103,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Imbued Sword Key",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "slug": "liurnia-western-coast-04",
+            "name": "West Liurnia troll-drawn carriage",
+            "region_id": 9,
+            "region": "Liurnia Western Coast",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.14588421876245,
+            "map_y": 0.48788762085805,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Carian Knight's Sword",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 216,
+            "slug": "new-chest-jgsCLLOw",
+            "name": "Chest atop elevator tower",
+            "region_id": 28,
+            "region": "Miquella's Haligtree",
+            "dungeon_id": 6,
+            "dungeon": "Miquella's Haligtree",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-miquellas-haligtree.png",
+            "map_slug": "overworld",
+            "map_x": 0.5928889821177,
+            "map_y": 0.10892759355442,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Ancient Dragon Smithing Stone",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 174,
+            "slug": "new-chest-12T9r1cd",
+            "name": "Mohgwyn Dynasty Mausoleum atop stage",
+            "region_id": 32,
+            "region": "Mohgwyn Palace",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "underground",
+            "map_x": 0.58482146323897,
+            "map_y": 0.7437442371864,
+            "description": "In front of the Sanguine Noble",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Somber Ancient Dragon Smithing Stone",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 177,
+            "slug": "new-chest-P7qxTIOA",
+            "name": "Chelona's Rise upper room",
+            "region_id": 63,
+            "region": "Moonlight Altar",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.14425331978928,
+            "map_y": 0.67756695428642,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Ranni's Dark Moon",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "slug": "liurnia-western-coast-10",
+            "name": "Lunar Estate Ruins east cellar",
+            "region_id": 63,
+            "region": "Moonlight Altar",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.21143584167824,
+            "map_y": 0.64080769888138,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Smithing Stone [8]",
+                    "quantity": 3
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "slug": "liurnia-western-coast-09",
+            "name": "Lunar Estate Ruins west cellar",
+            "region_id": 63,
+            "region": "Moonlight Altar",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.19148434599567,
+            "map_y": 0.64035660024857,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Cerulean Amber Medallion +2",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "slug": "liurnia-western-coast-08",
+            "name": "Moonfolk Ruins cellar",
+            "region_id": 63,
+            "region": "Moonlight Altar",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.17636286791159,
+            "map_y": 0.62327134397897,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Somber Smithing Stone [8]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 95,
+            "slug": "mountaintops-of-the-giants-03",
+            "name": "Giants' Mountaintop Catacombs boss chest",
+            "region_id": 24,
+            "region": "Mountaintops of the Giants",
+            "dungeon_id": 67,
+            "dungeon": "Giants' Mountaintop Catacombs",
+            "dungeon_type": "Catacombs",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.57711677179434,
+            "map_y": 0.30102861281536,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Deathroot",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 94,
+            "slug": "mountaintops-of-the-giants-02",
+            "name": "Giants' Mountaintop Catacombs secret basement",
+            "region_id": 24,
+            "region": "Mountaintops of the Giants",
+            "dungeon_id": 67,
+            "dungeon": "Giants' Mountaintop Catacombs",
+            "dungeon_type": "Catacombs",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.59136632848636,
+            "map_y": 0.29270204421185,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Fire Monk Ashes",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 170,
+            "slug": "new-chest-o3AtvM0A",
+            "name": "Guardians' Garrison",
+            "region_id": 24,
+            "region": "Mountaintops of the Giants",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.6382919420069,
+            "map_y": 0.26232881667716,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Giant's Prayerbook",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 171,
+            "slug": "new-chest-cKyG1bhT",
+            "name": "Heretical Rise upper floor",
+            "region_id": 24,
+            "region": "Mountaintops of the Giants",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.65513949823757,
+            "map_y": 0.21521164135769,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Founding Rain of Stars",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 93,
+            "slug": "mountaintops-of-the-giants-01",
+            "name": "Stargazers' Ruins cellar",
+            "region_id": 24,
+            "region": "Mountaintops of the Giants",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.61933593022392,
+            "map_y": 0.2296336857798,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Primal Glintstone Blade",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 172,
+            "slug": "new-chest-BKbLv16d",
+            "name": "Zamor Ruins cellar",
+            "region_id": 24,
+            "region": "Mountaintops of the Giants",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.57466560584166,
+            "map_y": 0.32815152273721,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Smithing-Stone Miner's Bell Bearing [3]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 82,
+            "slug": "mt-gelmir-01",
+            "name": "Gelmir Hero's Grave boss chest",
+            "region_id": 19,
+            "region": "Mt. Gelmir",
+            "dungeon_id": 59,
+            "dungeon": "Gelmir Hero's Grave",
+            "dungeon_type": "Hero's Grave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.2347210204399,
+            "map_y": 0.30963350019768,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Deathroot",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 83,
+            "slug": "mt-gelmir-02",
+            "name": "Gelmir Hero's Grave room after lava",
+            "region_id": 19,
+            "region": "Mt. Gelmir",
+            "dungeon_id": 59,
+            "dungeon": "Gelmir Hero's Grave",
+            "dungeon_type": "Hero's Grave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.23836479500321,
+            "map_y": 0.32841512786783,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Ringed Finger",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 173,
+            "slug": "new-chest-rDMpWBJ0",
+            "name": "Night's Sacred Ground in Stonesword Key room",
+            "region_id": 33,
+            "region": "Nokron, Eternal City",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "underground",
+            "map_x": 0.50463439329505,
+            "map_y": 0.74414223283267,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Mimic Tear Ashes",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 114,
+            "slug": "nokron-eternal-city-01",
+            "name": "Night's Sacred Ground under ancient being",
+            "region_id": 33,
+            "region": "Nokron, Eternal City",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "underground",
+            "map_x": 0.500905308798,
+            "map_y": 0.73384473696033,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Great Ghost Glovewort",
+                    "quantity": 1
+                },
+                {
+                    "name": "Fingerslayer Blade",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 106,
+            "slug": "ainsel-river-02",
+            "name": "Nokstella at the back of large room",
+            "region_id": 37,
+            "region": "Nokstella, Eternal City",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "underground",
+            "map_x": 0.23609614461812,
+            "map_y": 0.46653442470254,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Great Ghost Glovewort",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 108,
+            "slug": "ainsel-river-03",
+            "name": "Nokstella back of large room with large ambush",
+            "region_id": 37,
+            "region": "Nokstella, Eternal City",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "underground",
+            "map_x": 0.2292457,
+            "map_y": 0.4608,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Somber Smithing Stone [7]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 109,
+            "slug": "ainsel-river-04",
+            "name": "Nokstella building bordering the river, up stairway",
+            "region_id": 37,
+            "region": "Nokstella, Eternal City",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "underground",
+            "map_x": 0.22976808604468,
+            "map_y": 0.47343454772744,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Ghost Glovewort [9]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 110,
+            "slug": "nokstella-eternal-city-01",
+            "name": "Nokstella cathedral altar",
+            "region_id": 37,
+            "region": "Nokstella, Eternal City",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "underground",
+            "map_x": 0.21029113334168,
+            "map_y": 0.46260297918015,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Moon of Nokstella",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 175,
+            "slug": "new-chest-02VjyPYv",
+            "name": "Nokstella dark room at top of staircases",
+            "region_id": 37,
+            "region": "Nokstella, Eternal City",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "underground",
+            "map_x": 0.23683258196393,
+            "map_y": 0.47880588195081,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Somber Smithing Stone [7]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 111,
+            "slug": "ainsel-river-05",
+            "name": "Nokstella first staircase room",
+            "region_id": 37,
+            "region": "Nokstella, Eternal City",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "underground",
+            "map_x": 0.24170063760871,
+            "map_y": 0.48448035009724,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Ant's Skull Plate",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 112,
+            "slug": "nokstella-eternal-city-02",
+            "name": "Nokstella second staircase room",
+            "region_id": 37,
+            "region": "Nokstella, Eternal City",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "underground",
+            "map_x": 0.23853805280197,
+            "map_y": 0.48389786701754,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Ghost-Glovewort Picker's Bell Bearing [2]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 113,
+            "slug": "nokstella-eternal-city-03",
+            "name": "Nokstella Stonesword Key room at very top of building",
+            "region_id": 37,
+            "region": "Nokstella, Eternal City",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "underground",
+            "map_x": 0.23589366450273,
+            "map_y": 0.47890199112914,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Nightmaiden & Swordstress Puppets",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 125,
+            "slug": "rauh-base-02",
+            "name": "North of Temple Town Ruins via Spiritspring",
+            "region_id": 55,
+            "region": "Rauh Base",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.3236517913788,
+            "map_y": 0.48629343206821,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Divine Bird Warrior Ornis",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 185,
+            "slug": "new-chest-vYorCnch",
+            "name": "North of Temple Town Ruins via Spiritspring",
+            "region_id": 55,
+            "region": "Rauh Base",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.31258330344316,
+            "map_y": 0.48041975280872,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Beast Horn",
+                    "quantity": 2
+                }
+            ]
+        },
+        {
+            "id": 129,
+            "slug": "rauh-base-04",
+            "name": "Scorpion River Catacombs secret high chamber by floating eyes",
+            "region_id": 55,
+            "region": "Rauh Base",
+            "dungeon_id": 77,
+            "dungeon": "Scorpion River Catacombs",
+            "dungeon_type": "Catacombs",
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.25294603283901,
+            "map_y": 0.47931735001524,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Ancient Dragon Knight's Cookbook [2]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 126,
+            "slug": "rauh-base-03",
+            "name": "Small encampment under a brown tent",
+            "region_id": 55,
+            "region": "Rauh Base",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.39873119852014,
+            "map_y": 0.44005407498255,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Pearl Shield Talisman",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 124,
+            "slug": "rauh-base-01",
+            "name": "Temple Town Ruins upstairs room",
+            "region_id": 55,
+            "region": "Rauh Base",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.3102697,
+            "map_y": 0.4947763,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Two-Handed Sword Talisman",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 91,
+            "slug": "roundtable-hold-1",
+            "name": "Roundtable Hold dining room",
+            "region_id": 2,
+            "region": "Roundtable Hold",
+            "dungeon_id": 80,
+            "dungeon": "Roundtable Hold",
+            "dungeon_type": null,
+            "dungeon_icon": "location-table-of-lost-grace.png",
+            "map_slug": "overworld",
+            "map_x": 0.08,
+            "map_y": 0.93,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Crepus's Black-Key Crossbow",
+                    "quantity": 1
+                },
+                {
+                    "name": "Black-Key Bolt",
+                    "quantity": 20
+                }
+            ]
+        },
+        {
+            "id": 92,
+            "slug": "roundtable-hold-2",
+            "name": "Roundtable Hold kitchen",
+            "region_id": 2,
+            "region": "Roundtable Hold",
+            "dungeon_id": 80,
+            "dungeon": "Roundtable Hold",
+            "dungeon_type": null,
+            "dungeon_icon": "location-table-of-lost-grace.png",
+            "map_slug": "overworld",
+            "map_x": 0.077,
+            "map_y": 0.92,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Assassin's Prayerbook",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 182,
+            "slug": "new-chest-4mufmu35",
+            "name": "Chest on rear battlement",
+            "region_id": 51,
+            "region": "Scadu Altus",
+            "dungeon_id": 19,
+            "dungeon": "Fort of Reprimand",
+            "dungeon_type": "Minor Legacy Dungeon",
+            "dungeon_icon": "location-fort.png",
+            "map_slug": "shadow",
+            "map_x": 0.50191386634543,
+            "map_y": 0.60714958164999,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Ancient Dragon Smithing Stone",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 181,
+            "slug": "new-chest-d9nssIVY",
+            "name": "Courtyard behind flame throwers",
+            "region_id": 51,
+            "region": "Scadu Altus",
+            "dungeon_id": 79,
+            "dungeon": "Fog Rift Fort",
+            "dungeon_type": "Fort",
+            "dungeon_icon": "location-fort.png",
+            "map_slug": "shadow",
+            "map_x": 0.38564118080642,
+            "map_y": 0.52544247457835,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Serpent Flail",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 130,
+            "slug": "scadu-altus-04",
+            "name": "Darklight Catacombs behind giant Bigmouth Imp",
+            "region_id": 51,
+            "region": "Scadu Altus",
+            "dungeon_id": 78,
+            "dungeon": "Darklight Catacombs",
+            "dungeon_type": "Catacombs",
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.62534593158358,
+            "map_y": 0.56931510259749,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Bigmouth Imp Ashes",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 121,
+            "slug": "scadu-altus-01",
+            "name": "Fog Rift Fort - chest atop the southernmost rampart tower",
+            "region_id": 51,
+            "region": "Scadu Altus",
+            "dungeon_id": 79,
+            "dungeon": "Fog Rift Fort",
+            "dungeon_type": "Fort",
+            "dungeon_icon": "location-fort.png",
+            "map_slug": "shadow",
+            "map_x": 0.383,
+            "map_y": 0.5397,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Arrow's Soaring Sting Talisman",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 189,
+            "slug": "new-chest-7t7HnHs1",
+            "name": "Fort of Reprimand dungeon cells",
+            "region_id": 51,
+            "region": "Scadu Altus",
+            "dungeon_id": 19,
+            "dungeon": "Fort of Reprimand",
+            "dungeon_type": "Minor Legacy Dungeon",
+            "dungeon_icon": "location-fort.png",
+            "map_slug": "shadow",
+            "map_x": 0.50580062834771,
+            "map_y": 0.61363225145494,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Sunwarmth Stone",
+                    "quantity": 3
+                },
+                {
+                    "name": "Smithing Stone [7]",
+                    "quantity": 1
+                },
+                {
+                    "name": "Spiritgrave Stone",
+                    "quantity": 6
+                }
+            ]
+        },
+        {
+            "id": 123,
+            "slug": "scadu-altus-03",
+            "name": "Fort of Reprimand highest tower behind boss",
+            "region_id": 51,
+            "region": "Scadu Altus",
+            "dungeon_id": 19,
+            "dungeon": "Fort of Reprimand",
+            "dungeon_type": "Minor Legacy Dungeon",
+            "dungeon_icon": "location-fort.png",
+            "map_slug": "shadow",
+            "map_x": 0.5019832,
+            "map_y": 0.6149108,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Battlefield Priest's Cookbook [2]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 122,
+            "slug": "scadu-altus-02",
+            "name": "Fort of Reprimand inside main building behind a mess of cages",
+            "region_id": 51,
+            "region": "Scadu Altus",
+            "dungeon_id": 19,
+            "dungeon": "Fort of Reprimand",
+            "dungeon_type": "Minor Legacy Dungeon",
+            "dungeon_icon": "location-fort.png",
+            "map_slug": "shadow",
+            "map_x": 0.50934942657187,
+            "map_y": 0.61658450528768,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Flamedrake Talisman +3",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 180,
+            "slug": "new-chest-WNWldlf6",
+            "name": "Inside building behind Garrew",
+            "region_id": 51,
+            "region": "Scadu Altus",
+            "dungeon_id": 79,
+            "dungeon": "Fog Rift Fort",
+            "dungeon_type": "Fort",
+            "dungeon_icon": "location-fort.png",
+            "map_slug": "shadow",
+            "map_x": 0.38464959793594,
+            "map_y": 0.53662749894126,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Blessed Bone Shard",
+                    "quantity": 1
+                },
+                {
+                    "name": "Smithing Stone [8]",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 131,
+            "slug": "scadu-altus-05",
+            "name": "Moorth Ruins sinkhole in tall building",
+            "region_id": 51,
+            "region": "Scadu Altus",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.5073779,
+            "map_y": 0.5484285,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Golden Arcs",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 213,
+            "slug": "new-chest-4mt4RnfQ",
+            "name": "Rabbath's Rise high room",
+            "region_id": 51,
+            "region": "Scadu Altus",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.61231729244353,
+            "map_y": 0.44852623393367,
+            "description": "Accessible by sealed Spiritspring or dropping down from Hinterlands",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Rabbath's Cannon",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 188,
+            "slug": "new-chest-VXkdvABN",
+            "name": "Ruins of Unte back room",
+            "region_id": 51,
+            "region": "Scadu Altus",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.54520095465128,
+            "map_y": 0.45513523488639,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Giant Golden Arc",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 190,
+            "slug": "new-chest-0OQHwK7U",
+            "name": "Secret room accessible from ledge near start of catacomb",
+            "region_id": 51,
+            "region": "Scadu Altus",
+            "dungeon_id": 78,
+            "dungeon": "Darklight Catacombs",
+            "dungeon_type": "Catacombs",
+            "dungeon_icon": null,
+            "map_slug": "shadow",
+            "map_x": 0.59689199246099,
+            "map_y": 0.57446298548943,
+            "description": "Hidden in secret room accessible from jumping down to ledge",
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Viridian Amber Medallion +3",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 87,
+            "slug": "leyndell-royal-capital-04",
+            "name": "Cathedral of the Forsaken",
+            "region_id": 72,
+            "region": "Sewers & Shunning Grounds",
+            "dungeon_id": 14,
+            "dungeon": "Subterranean Shunning-Grounds",
+            "dungeon_type": "Minor Legacy Dungeon",
+            "dungeon_icon": "location-subterranean-shunning-grounds.png",
+            "map_slug": "overworld",
+            "map_x": 0.47019498122237,
+            "map_y": 0.36838696955227,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Erdtree's Favor +1",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 204,
+            "slug": "new-chest-NS95clrN",
+            "name": "Behind illusory wall Frenzied Flame Proscription",
+            "region_id": 72,
+            "region": "Sewers & Shunning Grounds",
+            "dungeon_id": 14,
+            "dungeon": "Subterranean Shunning-Grounds",
+            "dungeon_type": "Minor Legacy Dungeon",
+            "dungeon_icon": "location-subterranean-shunning-grounds.png",
+            "map_slug": "overworld",
+            "map_x": 0.47671836218454,
+            "map_y": 0.37097121759915,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Rune Arc",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 115,
+            "slug": "siofra-river-01",
+            "name": "Ancestral Woods water ruins",
+            "region_id": 31,
+            "region": "Siofra River",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "underground",
+            "map_x": 0.48125295292491,
+            "map_y": 0.69599996533987,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Ancestral Infant's Head",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 139,
+            "slug": "new-chest-VsDIcy8c",
+            "name": "Balcony above scion hall",
+            "region_id": 6,
+            "region": "Stormveil Castle",
+            "dungeon_id": 1,
+            "dungeon": "Stormveil Castle",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-stormveil-castle.png",
+            "map_slug": "overworld",
+            "map_x": 0.32147404035442,
+            "map_y": 0.72812010634415,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Pickled Turtle Neck",
+                    "quantity": 3
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "slug": "stormveil-castle-02",
+            "name": "Banquet room",
+            "region_id": 6,
+            "region": "Stormveil Castle",
+            "dungeon_id": 1,
+            "dungeon": "Stormveil Castle",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-stormveil-castle.png",
+            "map_slug": "overworld",
+            "map_x": 0.32272901583645,
+            "map_y": 0.72920733513242,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Mimic's Veil",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "slug": "stormveil-castle-01",
+            "name": "Barracks basement east chest",
+            "region_id": 6,
+            "region": "Stormveil Castle",
+            "dungeon_id": 1,
+            "dungeon": "Stormveil Castle",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-stormveil-castle.png",
+            "map_slug": "overworld",
+            "map_x": 0.32155824814202,
+            "map_y": 0.73025887814976,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Godslayer's Seal",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "slug": "stormveil-castle-04",
+            "name": "Barracks basement west chest",
+            "region_id": 6,
+            "region": "Stormveil Castle",
+            "dungeon_id": 1,
+            "dungeon": "Stormveil Castle",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-stormveil-castle.png",
+            "map_slug": "overworld",
+            "map_x": 0.3204342015135,
+            "map_y": 0.73139863458788,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Godskin Prayerbook",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "slug": "stormveil-castle-03",
+            "name": "Gostoc trap room",
+            "region_id": 6,
+            "region": "Stormveil Castle",
+            "dungeon_id": 1,
+            "dungeon": "Stormveil Castle",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-stormveil-castle.png",
+            "map_slug": "overworld",
+            "map_x": 0.3187389411413,
+            "map_y": 0.72895181929032,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Curved Sword Talisman",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 132,
+            "slug": "stormveil-castle-05",
+            "name": "Room right of Throne Room",
+            "region_id": 6,
+            "region": "Stormveil Castle",
+            "dungeon_id": 1,
+            "dungeon": "Stormveil Castle",
+            "dungeon_type": "Legacy Dungeon",
+            "dungeon_icon": "location-stormveil-castle.png",
+            "map_slug": "overworld",
+            "map_x": 0.31436462391839,
+            "map_y": 0.69317344786923,
+            "description": null,
+            "opened": false,
+            "opened_at": null,
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Spectral Steed Regalia: Tree Sentinel",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 197,
+            "slug": "new-chest-gief6a1l",
+            "name": "Broken down carriage",
+            "region_id": 5,
+            "region": "Weeping Peninsula",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.44372073559202,
+            "map_y": 0.864191094918,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:58.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Morning Star",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "slug": "weeping-peninsula-03",
+            "name": "Castle Morne backside tower",
+            "region_id": 5,
+            "region": "Weeping Peninsula",
+            "dungeon_id": 9,
+            "dungeon": "Castle Morne",
+            "dungeon_type": "Minor Legacy Dungeon",
+            "dungeon_icon": "location-castle-morne.png",
+            "map_slug": "overworld",
+            "map_x": 0.40239004728574,
+            "map_y": 0.93792480309254,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:12:04.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Twinblade Talisman",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 137,
+            "slug": "new-chest-mruJzUaN",
+            "name": "Chest behind wooden screens",
+            "region_id": 5,
+            "region": "Weeping Peninsula",
+            "dungeon_id": 9,
+            "dungeon": "Castle Morne",
+            "dungeon_type": "Minor Legacy Dungeon",
+            "dungeon_icon": "location-castle-morne.png",
+            "map_slug": "overworld",
+            "map_x": 0.40865398900038,
+            "map_y": 0.93389629967458,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:12:03.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Claymore",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 136,
+            "slug": "new-chest-JJUX3i9N",
+            "name": "Chest in mining shack",
+            "region_id": 5,
+            "region": "Weeping Peninsula",
+            "dungeon_id": 33,
+            "dungeon": "Morne Tunnel",
+            "dungeon_type": "Tunnel",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.41915307375305,
+            "map_y": 0.89306265028487,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:12:01.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Exalted Flesh",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 149,
+            "slug": "new-chest-drf8p4G9",
+            "name": "Demi-Human Forest Ruins cellar",
+            "region_id": 5,
+            "region": "Weeping Peninsula",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.40937904533654,
+            "map_y": 0.85285141767487,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:55.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Shield of the Guilty",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "slug": "weeping-peninsula-01",
+            "name": "Earthbore Cave entrance",
+            "region_id": 5,
+            "region": "Weeping Peninsula",
+            "dungeon_id": 32,
+            "dungeon": "Earthbore Cave",
+            "dungeon_type": "Cave",
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.42021674661722,
+            "map_y": 0.85441876754288,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:56.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Pickled Turtle Neck",
+                    "quantity": 3
+                }
+            ]
+        },
+        {
+            "id": 195,
+            "slug": "new-chest-Nss8mMFz2",
+            "name": "Forest Lookout Tower top floor",
+            "region_id": 5,
+            "region": "Weeping Peninsula",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.4347,
+            "map_y": 0.8537,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:57.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Hand Ballista",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 138,
+            "slug": "new-chest-Nss8mMFz",
+            "name": "Oridys's Rise top room",
+            "region_id": 5,
+            "region": "Weeping Peninsula",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.45366157322074,
+            "map_y": 0.88115843495141,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:11:59.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Memory Stone",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "slug": "weeping-peninsula-02",
+            "name": "Tombsward Ruins cellar",
+            "region_id": 5,
+            "region": "Weeping Peninsula",
+            "dungeon_id": null,
+            "dungeon": null,
+            "dungeon_type": null,
+            "dungeon_icon": null,
+            "map_slug": "overworld",
+            "map_x": 0.38458922415858,
+            "map_y": 0.85817448224685,
+            "description": null,
+            "opened": true,
+            "opened_at": "2026-10-24T12:12:06.000000Z",
+            "gideon_tracked": true,
+            "items": [
+                {
+                    "name": "Winged Scythe",
+                    "quantity": 1
+                }
+            ]
+        }
+    ]
+}
