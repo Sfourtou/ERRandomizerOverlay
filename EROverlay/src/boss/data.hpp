@@ -27,6 +27,7 @@ constexpr uint32_t kStrandedGraveyardFlagId = 101;
 constexpr int kUpdateTickMask = 0x1F; // update every 32 ticks (~60Hz / 32 ≈ ~2Hz)
 constexpr size_t kMaxKillNotifications = 8;
 constexpr int kKillNotificationMaxAgeSeconds = 6;
+constexpr size_t kNoRegion = static_cast<size_t>(-1);
 
 struct BossData {
     std::string boss;
@@ -49,6 +50,18 @@ struct BossData {
     size_t regionIndex = 0;
 };
 
+// A treasure chest tracked by its open event flag (Chest Challenge dataset).
+// flagId 0 = no flag known; the chest is then only markable in-game manually.
+struct ChestData {
+    std::string chest;
+    std::string place;
+    uint32_t flagId = 0;
+    uintptr_t offset = 0;
+    uint8_t bits = 0;
+    size_t index = 0;
+    size_t regionIndex = 0;
+};
+
 // A boss defeat detected in real time, shown as a toast by the renderer.
 struct KillNotification {
     std::string boss;   // Vanilla boss name of the location
@@ -60,6 +73,10 @@ struct KillNotification {
 struct RegionData {
     std::string name;
     std::vector<size_t> bosses;
+    std::vector<size_t> chests;
+    // Child regions (Chest Challenge tree); empty for flat datasets.
+    std::vector<size_t> children;
+    size_t parent = kNoRegion;
 };
 
 // Thread-safe snapshot of mutable state for the render thread.
@@ -75,6 +92,10 @@ struct RenderState {
     std::vector<uint8_t> dead;
     std::vector<int> regionCounts;
     std::vector<KillNotification> notifications;
+    // Chest tracking (Chest Challenge dataset); empty in boss-only mode.
+    std::vector<uint8_t> chestsOpened;
+    int chestCount = 0;
+    int chestTotal = 0;
 };
 
 // Challenge mode state and persistence (config read/write for Challenge.txt).
@@ -114,8 +135,12 @@ public:
     // Immutable after load() — safe to read from any thread without synchronization.
     [[nodiscard]] int toggleFullModeKey() const { return toggleFullModeKey_; }
     [[nodiscard]] const std::vector<BossData> &bosses() const { return bosses_; }
+    [[nodiscard]] const std::vector<ChestData> &chests() const { return chests_; }
     [[nodiscard]] const std::vector<RegionData> &regions() const { return regions_; }
     [[nodiscard]] int total() const { return static_cast<int>(bosses_.size()); }
+    [[nodiscard]] int chestTotal() const { return static_cast<int>(chests_.size()); }
+    // True when the loaded dataset has a region tree (Chest Challenge mode).
+    [[nodiscard]] bool hasTree() const { return !chests_.empty() || treeMode_; }
     // True when a randomizer spoiler log with boss placements was loaded.
     [[nodiscard]] bool randoLoaded() const { return randoLog_.loaded(); }
     // True when the randomizer's enemy data (entity -> defeat flag table) was loaded.
@@ -139,7 +164,9 @@ private:
     bool allowRevive_ = false;
     bool notificationsEnabled_ = true;
     bool firstUpdate_ = true;
+    bool treeMode_ = false;
     std::vector<BossData> bosses_;
+    std::vector<ChestData> chests_;
     std::vector<RegionData> regions_;
     std::map<uint32_t, int> regionMap_;
     RandoLog randoLog_;
@@ -147,9 +174,11 @@ private:
     // Mutable state (protected by mutex_)
     std::mutex mutex_;
     int count_ = 0;
+    int chestCount_ = 0;
     uint32_t mapId_ = 0;
     int regionIndex_ = -1;
     std::vector<uint8_t> dead_;
+    std::vector<uint8_t> chestsOpened_;
     std::vector<int> regionCounts_;
     std::vector<KillNotification> notifications_;
 
@@ -159,6 +188,7 @@ private:
 
     // Swap buffers (avoid per-frame heap allocation in updateBosses)
     std::vector<uint8_t> deadSwapBuf_;
+    std::vector<uint8_t> chestSwapBuf_;
     std::vector<int> regionCountSwapBuf_;
 
     ChallengeState challenge_;

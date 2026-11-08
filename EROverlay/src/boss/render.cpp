@@ -9,6 +9,7 @@
 
 #include <algorithm>
 #include <cstdio>
+#include <functional>
 #include <map>
 #include <vector>
 
@@ -90,6 +91,13 @@ void Renderer::renderMini(const RenderState &state) {
                      ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoSavedSettings)) {
         auto text = formatStatusText(state.inGameTime, state.challengeMode);
         ImGui::TextUnformatted(text.c_str());
+        if (gBossDataSet.chestTotal() > 0) {
+            ImGui::SameLine();
+            ImGui::TextColored(ImVec4(0.85f, 0.75f, 0.45f, 1.f), "%dC", state.chestCount);
+            if (ImGui::IsItemHovered()) {
+                ImGui::SetTooltip("Chests opened: %d/%d", state.chestCount, state.chestTotal);
+            }
+        }
         ImGui::SameLine();
         if (ImGui::ArrowButton("##bosses_arrow", ImGuiDir_Down)) {
             showFull_ = true;
@@ -101,13 +109,6 @@ void Renderer::renderFull(const RenderState &state) {
     auto *vp = ImGui::GetMainViewport();
     ImGui::SetNextWindowSize(ImVec2(calculatePos(vp->Size.x, std::abs(width_)), calculatePos(vp->Size.y, std::abs(height_))), ImGuiCond_Always);
     if (ImGui::Begin("##bosses_window", nullptr, (ImGuiWindowFlags_NoDecoration & ~ImGuiWindowFlags_NoScrollbar) | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoSavedSettings)) {
-        // Auto-expand the tree node for the current region (only on region change)
-        int autoExpandRegion = -1;
-        if (state.regionIndex != lastRegionIndex_) {
-            autoExpandRegion = state.regionIndex;
-            lastRegionIndex_ = state.regionIndex;
-        }
-
         auto text = formatStatusText(state.inGameTime, state.challengeMode);
         ImGui::TextUnformatted(text.c_str());
         auto &style = ImGui::GetStyle();
@@ -139,64 +140,17 @@ void Renderer::renderFull(const RenderState &state) {
             }
         }
 
-        const auto &bosses = gBossDataSet.bosses();
         bool popup = false;
         if (ImGui::BeginChild("##bosses_list", ImGui::GetContentRegionAvail())) {
+            // Top-level regions; the tree renderer walks children recursively.
+            std::vector<size_t> roots;
             const auto &regions = gBossDataSet.regions();
-            int sz = static_cast<int>(regions.size());
-            for (int i = 0; i < sz; i++) {
-                const auto &region = regions[i];
-                // When the filter is active, skip regions whose bosses are all defeated.
-                if (hideDefeated_ && showDefeatedFilter_) {
-                    bool anyAlive = false;
-                    for (auto bossIndex: region.bosses) {
-                        if (state.dead[bossIndex] == 0) {
-                            anyAlive = true;
-                            break;
-                        }
-                    }
-                    if (!anyAlive) continue;
-                }
-                auto bossCount = static_cast<int>(region.bosses.size());
-                if (autoExpandRegion >= 0) {
-                    ImGui::SetNextItemOpen(i == autoExpandRegion);
-                }
-                if (ImGui::TreeNode(&region, "%d/%d %s", state.regionCounts[i], bossCount, region.name.c_str())) {
-                    for (int j = 0; j < bossCount; j++) {
-                        auto &bd = bosses[region.bosses[j]];
-                        bool dead = state.dead[bd.index] != 0;
-                        // "Hide defeated" filter: skip defeated bosses.
-                        if (hideDefeated_ && showDefeatedFilter_ && dead) continue;
-                        // In randomizer mode, reveal the placed enemy's name only once the
-                        // boss is defeated (unless always_reveal is enabled); both names go
-                        // to the tooltip.
-                        bool rando = bd.randoPlacements != nullptr && !bd.randoPlacements->empty();
-                        bool label = rando && (revealOnKill_ ? dead : true) && !bd.displayLabel.empty();
-                        if (ImGui::Checkbox(label ? bd.displayLabel.c_str() : bd.boss.c_str(), &dead, dead) && dead && allowRevive_) {
-                            popupBossIndex_ = static_cast<int>(bd.index);
-                            reviveFailed_ = false;
-                            popup = true;
-                        }
-                        if (ImGui::IsItemHovered()) {
-                            if (rando && (dead || !revealOnKill_)) {
-                                std::string placed = bd.displayLabel.empty() ? bd.boss : bd.displayLabel;
-                                std::string tooltip = fmt::format("{}\nVanilla: {}", bd.place.empty() ? "(no location)" : bd.place.c_str(), bd.boss);
-                                tooltip += fmt::format("\nPlaced: {}", placed);
-                                const auto &first = bd.randoPlacements->front();
-                                if (!first.sourcePlace.empty()) {
-                                    tooltip += fmt::format(" (from {})", first.sourcePlace);
-                                }
-                                ImGui::SetTooltip("%s", tooltip.c_str());
-                            } else if (rando) {
-                                ImGui::SetTooltip("%s\nVanilla: %s\nRandomized — defeat the boss to reveal it", bd.place.empty() ? "(no location)" : bd.place.c_str(), bd.boss.c_str());
-                            } else {
-                                ImGui::SetTooltip("%s: %s", bd.boss.c_str(), bd.place.c_str());
-                            }
-                        }
-                    }
-                    ImGui::TreePop();
+            for (size_t i = 0; i < regions.size(); i++) {
+                if (regions[i].parent == kNoRegion) {
+                    roots.push_back(i);
                 }
             }
+            renderRegionTree(roots, state, 0, popup);
         }
         ImGui::EndChild();
 
@@ -207,6 +161,112 @@ void Renderer::renderFull(const RenderState &state) {
             ImGui::SetNextWindowPos(ImVec2(vp->Size.x * 0.94f, vp->Size.y / 2.0f), ImGuiCond_Appearing, ImVec2(.5f, .5f));
         }
         renderRevivePopup();
+    }
+}
+
+void Renderer::renderRegionTree(const std::vector<size_t> &regionIndices, const RenderState &state, int depth, bool &popup) {
+    const auto &regions = gBossDataSet.regions();
+    const auto &bosses = gBossDataSet.bosses();
+    for (size_t idx: regionIndices) {
+        const auto &region = regions[idx];
+        if (hideDefeated_ && showDefeatedFilter_) {
+            bool anyAlive = false;
+            std::function<void(size_t)> checkAlive = [&](size_t ri) {
+                const auto &r = regions[ri];
+                for (auto bi: r.bosses) {
+                    if (state.dead[bi] == 0) { anyAlive = true; }
+                }
+                for (auto ci: r.chests) {
+                    if (state.chestsOpened[ci] == 0) { anyAlive = true; }
+                }
+                for (auto child: r.children) checkAlive(child);
+            };
+            checkAlive(idx);
+            if (!anyAlive) {
+                continue;
+            }
+        }
+
+        // Tally boss/chest counts over the region and all descendants.
+        int bossAlive = 0, bossTotal = 0, chestAlive = 0, chestTotal = 0;
+        std::function<void(size_t)> tally = [&](size_t ri) {
+            const auto &r = regions[ri];
+            for (auto bi: r.bosses) {
+                bossTotal++;
+                if (state.dead[bi] == 0) bossAlive++;
+            }
+            for (auto ci: r.chests) {
+                chestTotal++;
+                if (state.chestsOpened[ci] == 0) chestAlive++;
+            }
+            for (auto child: r.children) tally(child);
+        };
+        tally(idx);
+
+        std::string countSuffix;
+        if (bossTotal > 0) {
+            countSuffix = fmt::format(" | {}/{}B", bossAlive, bossTotal);
+        }
+        std::string indent(depth * 2, ' ');
+        ImGui::SetNextItemOpen(depth < 2, ImGuiCond_Once);
+        if (ImGui::TreeNode(&region, "%s%s  %d/%dC%s", indent.c_str(), region.name.c_str(),
+                            chestAlive, chestTotal, countSuffix.c_str())) {
+            renderChestList(region.chests, state);
+            for (int j = 0; j < static_cast<int>(region.bosses.size()); j++) {
+                auto &bd = bosses[region.bosses[j]];
+                bool dead = state.dead[bd.index] != 0;
+                // "Hide defeated" filter: skip defeated bosses.
+                if (hideDefeated_ && showDefeatedFilter_ && dead) continue;
+                // In randomizer mode, reveal the placed enemy's name only once the
+                // boss is defeated (unless always_reveal is enabled); both names go
+                // to the tooltip.
+                bool rando = bd.randoPlacements != nullptr && !bd.randoPlacements->empty();
+                bool label = rando && (revealOnKill_ ? dead : true) && !bd.displayLabel.empty();
+                if (ImGui::Checkbox(label ? bd.displayLabel.c_str() : bd.boss.c_str(), &dead, dead) && dead && allowRevive_) {
+                    popupBossIndex_ = static_cast<int>(bd.index);
+                    reviveFailed_ = false;
+                    popup = true;
+                }
+                if (ImGui::IsItemHovered()) {
+                    if (rando && (dead || !revealOnKill_)) {
+                        std::string placed = bd.displayLabel.empty() ? bd.boss : bd.displayLabel;
+                        std::string tooltip = fmt::format("{}\nVanilla: {}", bd.place.empty() ? "(no location)" : bd.place.c_str(), bd.boss);
+                        tooltip += fmt::format("\nPlaced: {}", placed);
+                        const auto &first = bd.randoPlacements->front();
+                        if (!first.sourcePlace.empty()) {
+                            tooltip += fmt::format(" (from {})", first.sourcePlace);
+                        }
+                        ImGui::SetTooltip("%s", tooltip.c_str());
+                    } else if (rando) {
+                        ImGui::SetTooltip("%s\nVanilla: %s\nRandomized — defeat the boss to reveal it", bd.place.empty() ? "(no location)" : bd.place.c_str(), bd.boss.c_str());
+                    } else {
+                        ImGui::SetTooltip("%s: %s", bd.boss.c_str(), bd.place.c_str());
+                    }
+                }
+            }
+            renderRegionTree(region.children, state, depth + 1, popup);
+            ImGui::TreePop();
+        }
+    }
+}
+
+void Renderer::renderChestList(const std::vector<size_t> &chestIndices, const RenderState &state) {
+    const auto &chests = gBossDataSet.chests();
+    for (size_t ci: chestIndices) {
+        auto &cd = chests[ci];
+        if (hideDefeated_ && showDefeatedFilter_ && state.chestsOpened[ci]) continue;
+        bool opened = state.chestsOpened[ci] != 0;
+        std::string label = cd.flagId == 0 ? cd.chest + " (?)" : cd.chest;
+        if (ImGui::Checkbox(label.c_str(), &opened, opened)) {
+            // Toggling is display-only; chest state comes from the game's open flags.
+        }
+        if (ImGui::IsItemHovered()) {
+            std::string tooltip = cd.place.empty() ? cd.chest : fmt::format("{}: {}", cd.place, cd.chest);
+            if (cd.flagId == 0) {
+                tooltip += "\nNo event flag — track this chest on the website";
+            }
+            ImGui::SetTooltip("%s", tooltip.c_str());
+        }
     }
 }
 
@@ -271,7 +331,11 @@ void Renderer::renderRemainingPool(const RenderState &state) {
     std::sort(alive.begin(), alive.end(), [](const PoolEntry *a, const PoolEntry *b) { return a->label < b->label; });
 
     char header[96];
-    snprintf(header, sizeof(header), "Remaining pool: %d/%d", remainingTotal, gBossDataSet.total());
+    if (gBossDataSet.chestTotal() > 0) {
+        snprintf(header, sizeof(header), "Remaining: %d/%dB, %d/%dC", remainingTotal, gBossDataSet.total(), state.chestCount, gBossDataSet.chestTotal());
+    } else {
+        snprintf(header, sizeof(header), "Remaining pool: %d/%d", remainingTotal, gBossDataSet.total());
+    }
     if (!ImGui::CollapsingHeader(header)) {
         return;
     }

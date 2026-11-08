@@ -30,6 +30,8 @@ private:
     [[nodiscard]] std::string formatStatusText(int igt, bool challengeMode) const;
     void renderMini(const RenderState &state);
     void renderFull(const RenderState &state);
+    void renderRegionTree(const std::vector<size_t> &regionIndices, const RenderState &state, int depth, bool &popup);
+    void renderChestList(const std::vector<size_t> &chestIndices, const RenderState &state);
     void renderRevivePopup();
     void renderKillNotifications(const RenderState &state);
     void renderRemainingPool(const RenderState &state);

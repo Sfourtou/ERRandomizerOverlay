@@ -164,35 +164,71 @@ void BossDataSet::load(bool hasDLC) {
         fwprintf(stderr, L"Invalid boss data in %ls\n", filename.c_str());
         return;
     }
-    for (auto &p: j.items()) {
-        if (!hasDLC && p.value()["dlc"] == 1) {
-            continue;
-        }
-        auto regionIndex = regions_.size();
-        auto &rd = regions_.emplace_back();
-        rd.name = p.value()["region_name"];
-        for (auto &n: p.value()["regions"]) {
-            regionMap_[n.get<uint32_t>()] = static_cast<int>(regionIndex);
-        }
-        for (auto &n: p.value()["bosses"]) {
-            auto index = bosses_.size();
-            auto &bd = bosses_.emplace_back();
-            bd.boss = n["boss"];
-            bd.place = n["place"];
-            auto primary = n.find("flag_id");
-            bd.reviveFlagsValid = primary != n.end() && readFlagId(*primary, bd.flagId) && loadReviveFlags(n, bd);
-            if (!bd.reviveFlagsValid) {
-                fprintf(stderr, "Invalid flag_id or revive_flags for boss %u (%s); revival is disabled for this boss\n", bd.flagId, bd.boss.c_str());
+
+    // Recursive loader: handles both the flat dataset (regions + bosses) and the
+    // Chest Challenge tree (children + chests + bosses at any depth).
+    struct Loader {
+        BossDataSet &self;
+        bool hasDLC;
+        std::vector<size_t> loadNodes(const nlohmann::ordered_json &nodes, size_t parent) {
+            std::vector<size_t> indices;
+            for (auto &p: nodes.items()) {
+                auto &v = p.value();
+                if (!hasDLC && v.value("dlc", 0) == 1) {
+                    continue;
+                }
+                auto regionIndex = self.regions_.size();
+                auto &rd = self.regions_.emplace_back();
+                rd.name = v["region_name"];
+                rd.parent = parent;
+                indices.push_back(regionIndex);
+                for (auto &n: v.value("regions", nlohmann::ordered_json::array())) {
+                    self.regionMap_[n.get<uint32_t>()] = static_cast<int>(regionIndex);
+                }
+                for (auto &n: v.value("bosses", nlohmann::ordered_json::array())) {
+                    auto index = self.bosses_.size();
+                    auto &bd = self.bosses_.emplace_back();
+                    bd.boss = n["boss"];
+                    bd.place = n.value("place", "");
+                    auto primary = n.find("flag_id");
+                    bd.reviveFlagsValid = primary != n.end() && readFlagId(*primary, bd.flagId) && loadReviveFlags(n, bd);
+                    if (!bd.reviveFlagsValid) {
+                        fprintf(stderr, "Invalid flag_id or revive_flags for boss %u (%s); revival is disabled for this boss\n", bd.flagId, bd.boss.c_str());
+                    }
+                    bd.index = index;
+                    bd.regionIndex = regionIndex;
+                    rd.bosses.push_back(index);
+                }
+                for (auto &n: v.value("chests", nlohmann::ordered_json::array())) {
+                    auto index = self.chests_.size();
+                    auto &cd = self.chests_.emplace_back();
+                    cd.chest = n.value("chest", n.value("name", ""));
+                    cd.place = n.value("place", "");
+                    auto primary = n.find("flag_id");
+                    if (primary != n.end()) {
+                        readFlagId(*primary, cd.flagId);
+                    }
+                    cd.index = index;
+                    cd.regionIndex = regionIndex;
+                    rd.chests.push_back(index);
+                }
+                auto children = v.find("children");
+                if (children != v.end() && children->is_array()) {
+                    rd.children = loadNodes(*children, regionIndex);
+                }
             }
-            bd.index = index;
-            rd.bosses.push_back(index);
-            bd.regionIndex = regionIndex;
+            return indices;
         }
-    }
+    } loader{*this, hasDLC};
+    loader.loadNodes(j, kNoRegion);
+    treeMode_ = !chests_.empty();
+
     regionCounts_.resize(regions_.size());
     dead_.resize(bosses_.size());
     deadSwapBuf_.resize(bosses_.size());
     regionCountSwapBuf_.resize(regions_.size());
+    chestsOpened_.resize(chests_.size());
+    chestSwapBuf_.resize(chests_.size());
 
     notificationsEnabled_ = api->configGetString("boss.randomizer_notifications", L"true") == std::wstring(L"true");
     loadRandoLog();
@@ -408,6 +444,27 @@ void BossDataSet::updateBosses() {
             }
         }
 
+        // Chest open flags (Chest Challenge dataset).
+        int chestCnt = 0;
+        std::fill(chestSwapBuf_.begin(), chestSwapBuf_.end(), 0);
+        for (size_t i = 0; i < chests_.size(); i++) {
+            auto &c = chests_[i];
+            if (c.flagId == 0) {
+                continue; // manual-only chest
+            }
+            c.offset = api->resolveFlagAddress(c.flagId, &c.bits);
+            if (c.offset == 0 || c.bits == 0) {
+                continue;
+            }
+            bool opened = (std::atomic_ref(util::MemoryHandle(c.offset).as<uint8_t &>()).load(std::memory_order_relaxed) & c.bits) != 0;
+            chestSwapBuf_[i] = opened ? 1 : 0;
+            if (opened) {
+                chestCnt++;
+            }
+        }
+        chestsOpened_.swap(chestSwapBuf_);
+        chestCount_ = chestCnt;
+
         regionCounts_.swap(regionCountSwapBuf_);
         dead_.swap(deadSwapBuf_);
         count_ = cnt;
@@ -481,6 +538,9 @@ void BossDataSet::fillRenderState(RenderState &out) {
     out.challengeTries = challenge_.tries;
     out.dead = dead_;
     out.regionCounts = regionCounts_;
+    out.chestsOpened = chestsOpened_;
+    out.chestCount = chestCount_;
+    out.chestTotal = static_cast<int>(chests_.size());
     // Drop expired notifications, then hand a copy to the render thread.
     auto now = std::chrono::steady_clock::now();
     notifications_.erase(std::remove_if(notifications_.begin(), notifications_.end(), [&](const KillNotification &n) {
