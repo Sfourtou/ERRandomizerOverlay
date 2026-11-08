@@ -211,37 +211,56 @@ void Renderer::renderRegionTree(const std::vector<size_t> &regionIndices, const 
         ImGui::SetNextItemOpen(depth < 2, ImGuiCond_Once);
         if (ImGui::TreeNode(&region, "%s%s  %d/%dC%s", indent.c_str(), region.name.c_str(),
                             chestAlive, chestTotal, countSuffix.c_str())) {
-            renderChestList(region.chests, state);
-            for (int j = 0; j < static_cast<int>(region.bosses.size()); j++) {
-                auto &bd = bosses[region.bosses[j]];
-                bool dead = state.dead[bd.index] != 0;
-                // "Hide defeated" filter: skip defeated bosses.
-                if (hideDefeated_ && showDefeatedFilter_ && dead) continue;
-                // In randomizer mode, reveal the placed enemy's name only once the
-                // boss is defeated (unless always_reveal is enabled); both names go
-                // to the tooltip.
-                bool rando = bd.randoPlacements != nullptr && !bd.randoPlacements->empty();
-                bool label = rando && (revealOnKill_ ? dead : true) && !bd.displayLabel.empty();
-                if (ImGui::Checkbox(label ? bd.displayLabel.c_str() : bd.boss.c_str(), &dead, dead) && dead && allowRevive_) {
-                    popupBossIndex_ = static_cast<int>(bd.index);
-                    reviveFailed_ = false;
-                    popup = true;
+            // Sub-groups: Bosses and Chests as separate tree nodes.
+            if (!region.bosses.empty()) {
+                int alive = 0;
+                for (auto bi: region.bosses) {
+                    if (state.dead[bi] == 0) alive++;
                 }
-                if (ImGui::IsItemHovered()) {
-                    if (rando && (dead || !revealOnKill_)) {
-                        std::string placed = bd.displayLabel.empty() ? bd.boss : bd.displayLabel;
-                        std::string tooltip = fmt::format("{}\nVanilla: {}", bd.place.empty() ? "(no location)" : bd.place.c_str(), bd.boss);
-                        tooltip += fmt::format("\nPlaced: {}", placed);
-                        const auto &first = bd.randoPlacements->front();
-                        if (!first.sourcePlace.empty()) {
-                            tooltip += fmt::format(" (from {})", first.sourcePlace);
+                if (ImGui::TreeNode(&region.bosses, "Bosses  %d/%d", alive, static_cast<int>(region.bosses.size()))) {
+                    for (int j = 0; j < static_cast<int>(region.bosses.size()); j++) {
+                        auto &bd = bosses[region.bosses[j]];
+                        bool dead = state.dead[bd.index] != 0;
+                        // "Hide defeated" filter: skip defeated bosses.
+                        if (hideDefeated_ && showDefeatedFilter_ && dead) continue;
+                        // In randomizer mode, reveal the placed enemy's name only once the
+                        // boss is defeated (unless always_reveal is enabled); both names go
+                        // to the tooltip.
+                        bool rando = bd.randoPlacements != nullptr && !bd.randoPlacements->empty();
+                        bool label = rando && (revealOnKill_ ? dead : true) && !bd.displayLabel.empty();
+                        if (ImGui::Checkbox(label ? bd.displayLabel.c_str() : bd.boss.c_str(), &dead, dead) && dead && allowRevive_) {
+                            popupBossIndex_ = static_cast<int>(bd.index);
+                            reviveFailed_ = false;
+                            popup = true;
                         }
-                        ImGui::SetTooltip("%s", tooltip.c_str());
-                    } else if (rando) {
-                        ImGui::SetTooltip("%s\nVanilla: %s\nRandomized — defeat the boss to reveal it", bd.place.empty() ? "(no location)" : bd.place.c_str(), bd.boss.c_str());
-                    } else {
-                        ImGui::SetTooltip("%s: %s", bd.boss.c_str(), bd.place.c_str());
+                        if (ImGui::IsItemHovered()) {
+                            if (rando && (dead || !revealOnKill_)) {
+                                std::string placed = bd.displayLabel.empty() ? bd.boss : bd.displayLabel;
+                                std::string tooltip = fmt::format("{}\nVanilla: {}", bd.place.empty() ? "(no location)" : bd.place.c_str(), bd.boss);
+                                tooltip += fmt::format("\nPlaced: {}", placed);
+                                const auto &first = bd.randoPlacements->front();
+                                if (!first.sourcePlace.empty()) {
+                                    tooltip += fmt::format(" (from {})", first.sourcePlace);
+                                }
+                                ImGui::SetTooltip("%s", tooltip.c_str());
+                            } else if (rando) {
+                                ImGui::SetTooltip("%s\nVanilla: %s\nRandomized — defeat the boss to reveal it", bd.place.empty() ? "(no location)" : bd.place.c_str(), bd.boss.c_str());
+                            } else {
+                                ImGui::SetTooltip("%s: %s", bd.boss.c_str(), bd.place.c_str());
+                            }
+                        }
                     }
+                    ImGui::TreePop();
+                }
+            }
+            if (!region.chests.empty()) {
+                int alive = 0;
+                for (auto ci: region.chests) {
+                    if (state.chestsOpened[ci] == 0) alive++;
+                }
+                if (ImGui::TreeNode(&region.chests, "Chests  %d/%d", alive, static_cast<int>(region.chests.size()))) {
+                    renderChestList(region.chests, state);
+                    ImGui::TreePop();
                 }
             }
             renderRegionTree(region.children, state, depth + 1, popup);
