@@ -77,6 +77,8 @@ struct RegionData {
     // Child regions (Chest Challenge tree); empty for flat datasets.
     std::vector<size_t> children;
     size_t parent = kNoRegion;
+    // True when this region belongs to the Shadow of the Erdtree DLC.
+    bool dlc = false;
 };
 
 // Thread-safe snapshot of mutable state for the render thread.

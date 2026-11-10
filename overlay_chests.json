@@ -2495,7 +2495,8 @@
         "place": "",
         "flag_id": 2048380850
        }
-      ]
+      ],
+      "dlc": 1
      },
      {
       "region_name": "Castle Ensis",
@@ -2544,9 +2545,11 @@
         "lot_id": 1050390910
        }
       ],
-      "bosses": []
+      "bosses": [],
+      "dlc": 1
      }
-    ]
+    ],
+    "dlc": 1
    },
    {
     "region_name": "Greater Cerulean",
@@ -2567,7 +2570,8 @@
         "place": "Southern Nameless Mausoleum",
         "flag_id": 2046380800
        }
-      ]
+      ],
+      "dlc": 1
      },
      {
       "region_name": "Stone Coffin Fissure",
@@ -2579,9 +2583,11 @@
         "place": "Stone Coffin Fissure",
         "flag_id": 22000800
        }
-      ]
+      ],
+      "dlc": 1
      }
-    ]
+    ],
+    "dlc": 1
    },
    {
     "region_name": "Belurat and Enir-Ilim",
@@ -2597,7 +2603,8 @@
         "place": "Belurat, Tower Settlement",
         "flag_id": 20000800
        }
-      ]
+      ],
+      "dlc": 1
      },
      {
       "region_name": "Enir-Ilim",
@@ -2609,9 +2616,11 @@
         "place": "",
         "flag_id": 20010800
        }
-      ]
+      ],
+      "dlc": 1
      }
-    ]
+    ],
+    "dlc": 1
    },
    {
     "region_name": "Greater Scadu",
@@ -2762,7 +2771,8 @@
         "place": "Darklight Catacombs",
         "flag_id": 2052430800
        }
-      ]
+      ],
+      "dlc": 1
      },
      {
       "region_name": "Scaduview",
@@ -2789,7 +2799,8 @@
         "place": "Hinterland Bridge",
         "flag_id": 2050480860
        }
-      ]
+      ],
+      "dlc": 1
      },
      {
       "region_name": "Shadow Keep",
@@ -2801,7 +2812,8 @@
         "place": "Shadow Keep",
         "flag_id": 21010800
        }
-      ]
+      ],
+      "dlc": 1
      },
      {
       "region_name": "Hinterlands",
@@ -2813,9 +2825,11 @@
         "place": "Fingerstone Hill",
         "flag_id": 2052480800
        }
-      ]
+      ],
+      "dlc": 1
      }
-    ]
+    ],
+    "dlc": 1
    },
    {
     "region_name": "Greater Rauh",
@@ -2882,7 +2896,8 @@
         "place": "Scorpion River Catacombs",
         "flag_id": 40010800
        }
-      ]
+      ],
+      "dlc": 1
      },
      {
       "region_name": "Ancient Ruins of Rauh",
@@ -2914,9 +2929,11 @@
         "place": "Church of the Bud",
         "flag_id": 2044450800
        }
-      ]
+      ],
+      "dlc": 1
      }
-    ]
+    ],
+    "dlc": 1
    },
    {
     "region_name": "Greater Jagged Peak",
@@ -2947,7 +2964,8 @@
         "place": "Jagged Peak Summit",
         "flag_id": 2054390800
        }
-      ]
+      ],
+      "dlc": 1
      },
      {
       "region_name": "Charo's Hidden Grave",
@@ -2964,9 +2982,11 @@
         "place": "Lamenter's Gaol",
         "flag_id": 41020800
        }
-      ]
+      ],
+      "dlc": 1
      }
-    ]
+    ],
+    "dlc": 1
    },
    {
     "region_name": "Greater Abyss",
@@ -2982,16 +3002,20 @@
         "place": "Midra's Manse",
         "flag_id": 28000800
        }
-      ]
+      ],
+      "dlc": 1
      },
      {
       "region_name": "Midra's Manse",
       "regions": [],
       "chests": [],
-      "bosses": []
+      "bosses": [],
+      "dlc": 1
      }
-    ]
+    ],
+    "dlc": 1
    }
-  ]
+  ],
+  "dlc": 1
  }
 ]

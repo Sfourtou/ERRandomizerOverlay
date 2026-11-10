@@ -294,13 +294,16 @@ void Renderer::renderRemainingPool(const RenderState &state) {
         return;
     }
     const auto &bosses = gBossDataSet.bosses();
+    const auto &regions = gBossDataSet.regions();
     // Group alive bosses by the identity of the placed enemy (sourceId from the
     // spoiler log, known from the start — no location is revealed). The randomizer
     // can place the same boss at several locations, so groups show copy counts.
     // Bosses missing from the log (unidentified) are grouped by vanilla name.
+    // Entries are split base game / Shadow of the Erdtree by their region's dlc flag.
     struct PoolEntry {
         std::string label;          // identity label
         uint32_t sourceId = 0;      // identity key (0 for vanilla-name groups)
+        bool dlc = false;           // belongs to the Shadow of the Erdtree DLC
         int remaining = 0;          // copies not yet defeated
         int total = 0;              // copies in the whole run
     };
@@ -310,6 +313,10 @@ void Renderer::renderRemainingPool(const RenderState &state) {
     int remainingTotal = 0;
     for (const auto &bd: bosses) {
         bool dead = bd.index < state.dead.size() && state.dead[bd.index] != 0;
+        bool dlc = false;
+        if (bd.regionIndex < regions.size()) {
+            dlc = regions[bd.regionIndex].dlc;
+        }
         size_t index;
         if (bd.randoPlacements != nullptr && !bd.randoPlacements->empty()) {
             uint32_t sourceId = bd.randoPlacements->front().sourceId;
@@ -318,6 +325,7 @@ void Renderer::renderRemainingPool(const RenderState &state) {
                 PoolEntry entry;
                 entry.label = bd.randoPlacements->front().name;
                 entry.sourceId = sourceId;
+                entry.dlc = dlc;
                 identifiedIndex[sourceId] = pool.size();
                 index = pool.size();
                 pool.push_back(std::move(entry));
@@ -329,6 +337,7 @@ void Renderer::renderRemainingPool(const RenderState &state) {
             if (it == vanillaIndex.end()) {
                 PoolEntry entry;
                 entry.label = bd.boss;
+                entry.dlc = dlc;
                 vanillaIndex[bd.boss] = pool.size();
                 index = pool.size();
                 pool.push_back(std::move(entry));
@@ -342,12 +351,17 @@ void Renderer::renderRemainingPool(const RenderState &state) {
             remainingTotal++;
         }
     }
-    // Keep only alive entries, sorted by name.
-    std::vector<const PoolEntry *> alive;
+    // Keep only alive entries, sorted by name, base game first.
+    std::vector<const PoolEntry *> aliveBase;
+    std::vector<const PoolEntry *> aliveDlc;
     for (const auto &entry: pool) {
-        if (entry.remaining > 0) alive.push_back(&entry);
+        if (entry.remaining > 0) {
+            (entry.dlc ? aliveDlc : aliveBase).push_back(&entry);
+        }
     }
-    std::sort(alive.begin(), alive.end(), [](const PoolEntry *a, const PoolEntry *b) { return a->label < b->label; });
+    auto byLabel = [](const PoolEntry *a, const PoolEntry *b) { return a->label < b->label; };
+    std::sort(aliveBase.begin(), aliveBase.end(), byLabel);
+    std::sort(aliveDlc.begin(), aliveDlc.end(), byLabel);
 
     char header[96];
     if (gBossDataSet.chestTotal() > 0) {
@@ -358,12 +372,26 @@ void Renderer::renderRemainingPool(const RenderState &state) {
     if (!ImGui::CollapsingHeader(header)) {
         return;
     }
-    for (const auto *entry: alive) {
-        if (entry->total == 1) {
-            ImGui::BulletText("%s", entry->label.c_str());
-        } else {
-            ImGui::BulletText("%s (x%d remaining of %d in run)", entry->label.c_str(), entry->remaining, entry->total);
+    auto renderEntries = [](const std::vector<const PoolEntry *> &entries) {
+        for (const auto *entry: entries) {
+            if (entry->total == 1) {
+                ImGui::BulletText("%s", entry->label.c_str());
+            } else {
+                ImGui::BulletText("%s (x%d remaining of %d in run)", entry->label.c_str(), entry->remaining, entry->total);
+            }
         }
+    };
+    if (!aliveDlc.empty()) {
+        if (ImGui::TreeNode("##pool_base", "Base game (%d remaining)", static_cast<int>(aliveBase.size()))) {
+            renderEntries(aliveBase);
+            ImGui::TreePop();
+        }
+        if (ImGui::TreeNode("##pool_dlc", "Shadow of the Erdtree (%d remaining)", static_cast<int>(aliveDlc.size()))) {
+            renderEntries(aliveDlc);
+            ImGui::TreePop();
+        }
+    } else {
+        renderEntries(aliveBase);
     }
 }
 

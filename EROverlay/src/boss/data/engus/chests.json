@@ -2342,9 +2342,11 @@
  },
  {
   "region_name": "Greater Gravesite",
+  "dlc": 1,
   "children": [
    {
     "region_name": "Gravesite Plain",
+    "dlc": 1,
     "chests": [
      {
       "chest": "Belurat Gaol wooden platform after dropping down hanging pots",
@@ -2429,6 +2431,7 @@
    },
    {
     "region_name": "Castle Ensis",
+    "dlc": 1,
     "chests": [
      {
       "chest": "Castle Ensis approach battlements in tower",
@@ -2478,9 +2481,11 @@
  },
  {
   "region_name": "Greater Cerulean",
+  "dlc": 1,
   "children": [
    {
     "region_name": "Cerulean Coast",
+    "dlc": 1,
     "bosses": [
      {
       "boss": "[26] Demi-Human Queen Marigga",
@@ -2496,6 +2501,7 @@
    },
    {
     "region_name": "Stone Coffin Fissure",
+    "dlc": 1,
     "bosses": [
      {
       "boss": "[28] Putrescent Knight",
@@ -2508,9 +2514,11 @@
  },
  {
   "region_name": "Belurat and Enir-Ilim",
+  "dlc": 1,
   "children": [
    {
     "region_name": "Belurat, Tower Settlement",
+    "dlc": 1,
     "bosses": [
      {
       "boss": "[24] Divine Beast Dancing Lion",
@@ -2521,6 +2529,7 @@
    },
    {
     "region_name": "Enir-Ilim",
+    "dlc": 1,
     "bosses": [
      {
       "boss": "[33] Promised Consort Radahn & Radahn, Consort of Miquella",
@@ -2533,9 +2542,11 @@
  },
  {
   "region_name": "Greater Scadu",
+  "dlc": 1,
   "children": [
    {
     "region_name": "Scadu Altus",
+    "dlc": 1,
     "chests": [
      {
       "chest": "Chest on rear battlement",
@@ -2682,6 +2693,7 @@
    },
    {
     "region_name": "Scaduview",
+    "dlc": 1,
     "bosses": [
      {
       "boss": "[28] Scadutree Avatar",
@@ -2707,6 +2719,7 @@
    },
    {
     "region_name": "Shadow Keep",
+    "dlc": 1,
     "bosses": [
      {
       "boss": "[30] Messmer the Impaler & Base Serpent Messmer",
@@ -2717,6 +2730,7 @@
    },
    {
     "region_name": "Hinterlands",
+    "dlc": 1,
     "bosses": [
      {
       "boss": "[32] Fallingstar Beast",
@@ -2729,9 +2743,11 @@
  },
  {
   "region_name": "Greater Rauh",
+  "dlc": 1,
   "children": [
    {
     "region_name": "Rauh Base",
+    "dlc": 1,
     "chests": [
      {
       "chest": "North of Temple Town Ruins via Spiritspring",
@@ -2794,6 +2810,7 @@
    },
    {
     "region_name": "Ancient Ruins of Rauh",
+    "dlc": 1,
     "chests": [
      {
       "chest": "Ancient Ruins of Rauh by secret elevator",
@@ -2827,9 +2844,11 @@
  },
  {
   "region_name": "Greater Jagged Peak",
+  "dlc": 1,
   "children": [
    {
     "region_name": "Jagged Peak",
+    "dlc": 1,
     "bosses": [
      {
       "boss": "[28] Jagged Peak Drake",
@@ -2855,6 +2874,7 @@
    },
    {
     "region_name": "Charo's Hidden Grave",
+    "dlc": 1,
     "bosses": [
      {
       "boss": "[28] Death Rite Bird",
@@ -2872,9 +2892,11 @@
  },
  {
   "region_name": "Greater Abyss",
+  "dlc": 1,
   "children": [
    {
     "region_name": "Abyssal Woods",
+    "dlc": 1,
     "bosses": [
      {
       "boss": "[32] Midra, Lord of Frenzied Flame",
@@ -2884,7 +2906,8 @@
     ]
    },
    {
-    "region_name": "Midra's Manse"
+    "region_name": "Midra's Manse",
+    "dlc": 1
    }
   ]
  }

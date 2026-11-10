@@ -185,6 +185,7 @@ void BossDataSet::load(bool hasDLC) {
                     auto &rd = self.regions_.emplace_back();
                     rd.name = v["region_name"];
                     rd.parent = parent;
+                    rd.dlc = v.value("dlc", 0) == 1;
                 }
                 indices.push_back(regionIndex);
                 for (auto &n: v.value("regions", nlohmann::ordered_json::array())) {
