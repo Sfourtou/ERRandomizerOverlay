@@ -177,8 +177,62 @@ bool RandoLog::parse(const std::string &content) {
         }
         placementCount_++;
     }
-    loaded_ = !placements_.empty();
+    parseItemPlacements(content);
+    loaded_ = !placements_.empty() || !itemPlacements_.empty();
     return loaded_;
+}
+
+// Item placement lines live in the Spoilers section:
+//   "<Item>[ Nx] in <Region>: In a chest <description>. Replaces <item>."
+//   "<Item> in <Region>: In a Caravan Chest at <place>. Replaces <item>."
+// Only chest grants matter for chest attribution (corpses/shops/drops use their own
+// flags and are not tracked per-location).
+void RandoLog::parseItemPlacements(const std::string &content) {
+    itemPlacements_.clear();
+    size_t pos = 0;
+    // Strip a UTF-8 BOM if present.
+    if (content.size() >= 3 && static_cast<unsigned char>(content[0]) == 0xEF && static_cast<unsigned char>(content[1]) == 0xBB && static_cast<unsigned char>(content[2]) == 0xBF) {
+        pos = 3;
+    }
+    while (pos < content.size()) {
+        auto eol = content.find('\n', pos);
+        std::string line = content.substr(pos, eol == std::string::npos ? std::string::npos : eol - pos);
+        pos = eol == std::string::npos ? content.size() : eol + 1;
+        while (!line.empty() && (line.back() == '\r' || line.back() == ' ' || line.back() == '\t')) line.pop_back();
+        if (line.empty()) continue;
+
+        auto chestPos = line.find("In a chest ");
+        if (chestPos == std::string::npos) {
+            chestPos = line.find("In a Caravan Chest ");
+        }
+        if (chestPos == std::string::npos) continue;
+
+        auto inPos = line.find(" in ");
+        if (inPos == std::string::npos || inPos >= chestPos) continue;
+        std::string item = line.substr(0, inPos);
+        // Strip a trailing count suffix like " 8x".
+        while (!item.empty() && isdigit(static_cast<unsigned char>(item.back()))) item.pop_back();
+        if (item.size() >= 2 && item.compare(item.size() - 2, 2, " x") == 0) item.resize(item.size() - 2);
+        while (!item.empty() && item.back() == ' ') item.pop_back();
+        if (item.empty()) continue;
+
+        auto colonPos = line.find(": ", inPos);
+        if (colonPos == std::string::npos) continue;
+        std::string region = line.substr(inPos + 4, colonPos - inPos - 4);
+
+        auto replacesPos = line.find(". Replaces ", chestPos);
+        if (replacesPos == std::string::npos) continue;
+        std::string phrase = line.substr(chestPos, replacesPos - chestPos);
+        std::string replaced = line.substr(replacesPos + sizeof(". Replaces ") - 1);
+        while (!replaced.empty() && (replaced.back() == '.')) replaced.pop_back();
+
+        ItemPlacement placement;
+        placement.item = std::move(item);
+        placement.region = std::move(region);
+        placement.chestPhrase = std::move(phrase);
+        placement.replaced = std::move(replaced);
+        itemPlacements_.push_back(std::move(placement));
+    }
 }
 
 const std::vector<RandoPlacement> *RandoLog::find(uint32_t flagId) const {

@@ -1,10 +1,13 @@
 #include <algorithm>
 #include <atomic>
+#include <cctype>
 #include <cstdio>
 #include <cstring>
 #include <filesystem>
 #include <fstream>
 #include <limits>
+#include <map>
+#include <vector>
 
 #include <nlohmann/json.hpp>
 
@@ -12,6 +15,7 @@
 #include "data.hpp"
 #include "params/param.hpp"
 #include "util/eventflag.hpp"
+#include "util/file.hpp"
 #include "util/memory.hpp"
 
 extern EROverlayAPI *api;
@@ -347,13 +351,13 @@ void BossDataSet::initMemoryAddresses() {
 }
 
 // ItemLotParam row (game v1.16 layout, row size 174): getItemFlagId at 0x80 — the flag
-// the game writes when any item of the lot is granted. The randomizer patches this field
-// in its modified regulation, so reading it live gives the chest's actual open flag for
-// the loaded run, whatever the randomizer did (aux pool, moved item's original flag...).
+// the game writes when any item of the lot is granted; lotItemId01..08 at 0x00..0x1C —
+// the granted item IDs. The randomizer repoints chest entities to other lots (the placed
+// item's original lot, or its own aux lots) without patching the chest's vanilla row, so
+// the vanilla row's getItemFlagId alone misses those chests. Instead we match by granted
+// item: the spoiler log tells which item each tracked chest received; rows granting that
+// item identify the candidate grant flags.
 void BossDataSet::resolveChestLotFlags() {
-    // Note: called without mutex_ from update(); chests_ and lotFlagId are immutable
-    // after load and only read here, while updateBosses() (holding mutex_) may also
-    // read lotFlagId — benign for a single aligned uint32 read.
     // The param table walk touches game-internal structures whose layout may differ
     // between game versions (no plugin used it before this feature); contain any bad
     // dereference instead of taking the game down.
@@ -362,32 +366,112 @@ void BossDataSet::resolveChestLotFlags() {
         if (table == nullptr) {
             return; // params not loaded yet; retried on the next update tick
         }
-        size_t withLot = 0;
-        for (auto &c: chests_) {
-            if (c.lotId == 0) {
-                continue;
-            }
-            withLot++;
-            // paramTableFindId returns on match; wrap in a lambda to convert to a value.
-            auto findRow = [&](uint32_t id) -> const uint8_t * {
-                paramTableFindId(table, id, uint8_t);
-                return nullptr; // not found
-            };
-            const uint8_t *row = findRow(c.lotId);
-            if (row != nullptr) {
-                auto flag = *(const uint32_t *)(row + 0x80);
-                c.lotFlagId = flag;
-                if (flag != 0 && flag != c.flagId) {
-                    // Log the divergence for the debug watcher documentation.
-                    fwprintf(stderr, L"Chest '%hs': lot %u getItemFlagId=%u (dataset flag %u)\n",
-                             c.chest.c_str(), c.lotId, flag, c.flagId);
+        // 1. Collect every row: grant flag -> granted item IDs. Rows are dense
+        //    (paramId, offset) entries; iterate them all once.
+        struct LotRow {
+            uint32_t flag = 0;
+            uint32_t itemIds[8] = {};
+        };
+        std::map<uint32_t, LotRow> rows; // row id -> LotRow
+        {
+            const ::er::params::ParamTable *paramTable = table;
+            uint16_t count = paramTable->count;
+            for (uint16_t i = 0; i < count; i++) {
+                const ::er::params::ParamEntryOffset *entry = &paramTable->entries[i];
+                const uint8_t *row = (const uint8_t *)((uintptr_t)table + entry->offset);
+                auto &lr = rows[entry->paramId];
+                lr.flag = *(const uint32_t *)(row + 0x80);
+                for (int k = 0; k < 8; k++) {
+                    lr.itemIds[k] = *(const uint32_t *)(row + 4 * k);
                 }
-            } else {
-                fwprintf(stderr, L"Chest '%hs': lot %u not found in ItemLotParam\n", c.chest.c_str(), c.lotId);
             }
         }
+        // 2. Item name -> vanilla lot ids (chest_items.json, generated from the live
+        //    extraction). Needed to translate the log's item names into item IDs.
+        std::map<std::string, std::vector<uint32_t>> itemLots;
+        loadChestItemLots(itemLots);
+        // 3. For each tracked chest, find its placement in the log (best phrase match),
+        //    the placed item's ID, and every row granting that item: their grant flags
+        //    are the chest's candidate open flags.
+        size_t attributed = 0, ambiguous = 0, unplaced = 0;
+        for (auto &c: chests_) {
+            // Keep the vanilla row's flag as a fallback signal (may itself be patched).
+            if (c.lotId != 0) {
+                auto row = rows.find(c.lotId);
+                if (row != rows.end()) {
+                    c.lotFlagId = row->second.flag;
+                    if (c.lotFlagId != 0 && c.lotFlagId != c.flagId) {
+                        fwprintf(stderr, L"Chest '%hs': lot %u getItemFlagId=%u (dataset flag %u)\n",
+                                 c.chest.c_str(), c.lotId, c.lotFlagId, c.flagId);
+                    }
+                }
+            }
+            // Find the log placement describing this chest.
+            const ItemPlacement *placement = nullptr;
+            int bestScore = 0;
+            for (const auto &p: randoLog_.itemPlacements()) {
+                int score = matchChestPlacement(c, p);
+                if (score > bestScore) {
+                    bestScore = score;
+                    placement = &p;
+                }
+            }
+            if (placement == nullptr) {
+                unplaced++;
+                continue;
+            }
+            // Placed item's IDs: from the item's vanilla lots' granted item IDs.
+            std::vector<uint32_t> wantedIds;
+            auto lots = itemLots.find(placement->item);
+            if (lots != itemLots.end()) {
+                for (auto lotId: lots->second) {
+                    auto row = rows.find(lotId);
+                    if (row == rows.end()) continue;
+                    for (auto id: row->second.itemIds) {
+                        if (id != 0 && id != 0xFFFFFFFF) {
+                            wantedIds.push_back(id);
+                        }
+                    }
+                }
+            }
+            if (wantedIds.empty()) {
+                unplaced++;
+                continue;
+            }
+            // Candidate grant rows: any row granting one of the placed item's IDs whose
+            // grant flag is not a tracked chest's dataset/vanilla flag. The chest's own
+            // flags are already checked; only NEW flags extend tracking.
+            std::vector<uint32_t> candidates;
+            for (const auto &[rowId, lr]: rows) {
+                if (lr.flag == 0) continue;
+                if (lr.flag == c.flagId || lr.flag == c.lotFlagId) continue;
+                bool grants = false;
+                for (auto id: lr.itemIds) {
+                    if (id != 0 && id != 0xFFFFFFFF) {
+                        for (auto want: wantedIds) {
+                            if (id == want) {
+                                grants = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (grants) break;
+                }
+                if (grants) {
+                    candidates.push_back(lr.flag);
+                }
+            }
+            if (candidates.empty()) {
+                unplaced++;
+                continue;
+            }
+            c.extraFlags = std::move(candidates);
+            attributed++;
+            if (c.extraFlags.size() > 1) ambiguous++;
+        }
         lotFlagsPending_ = false;
-        fwprintf(stderr, L"Chest lot flags: %zu lots resolved from ItemLotParam\n", withLot);
+        fwprintf(stderr, L"Chest flags: %zu attributed (%zu ambiguous), %zu without placement\n",
+                 attributed, ambiguous, unplaced);
     } __except (EXCEPTION_EXECUTE_HANDLER) {
         lotFlagsPending_ = false;
         fwprintf(stderr, L"Chest lot flags: ItemLotParam walk failed (exception %lx); "
@@ -526,10 +610,11 @@ void BossDataSet::updateBosses() {
         }
 
         // Chest open flags (Chest Challenge dataset).
-        // Two flags per chest: flagId (dataset/event-script flag) and lotFlagId (the
-        // chest's ItemLotParam row's live getItemFlagId, which the randomizer may patch
-        // to a different flag — its aux pool, or the placed item's original flag).
-        // A chest counts as opened when either flag is set.
+        // Three flag sources per chest: flagId (dataset/event-script flag), lotFlagId
+        // (the chest's vanilla ItemLotParam row's live getItemFlagId) and extraFlags
+        // (grant flags of the lots granting the item the chest received — the
+        // randomizer repoints chest entities to other lots per run). A chest counts
+        // as opened when any of them is set.
         int chestCnt = 0;
         std::fill(chestSwapBuf_.begin(), chestSwapBuf_.end(), 0);
         for (size_t i = 0; i < chests_.size(); i++) {
@@ -544,6 +629,20 @@ void BossDataSet::updateBosses() {
                 c.lotFlagOffset = api->resolveFlagAddress(c.lotFlagId, &c.lotFlagBits);
                 opened = c.lotFlagOffset != 0 && c.lotFlagBits != 0 &&
                          (std::atomic_ref(util::MemoryHandle(c.lotFlagOffset).as<uint8_t &>()).load(std::memory_order_relaxed) & c.lotFlagBits) != 0;
+            }
+            if (!opened && !c.extraFlags.empty()) {
+                if (c.extraOffsets.size() != c.extraFlags.size()) {
+                    c.extraOffsets.assign(c.extraFlags.size(), 0);
+                    c.extraBits.assign(c.extraFlags.size(), 0);
+                }
+                for (size_t k = 0; k < c.extraFlags.size(); k++) {
+                    c.extraOffsets[k] = api->resolveFlagAddress(c.extraFlags[k], &c.extraBits[k]);
+                    if (c.extraOffsets[k] != 0 && c.extraBits[k] != 0 &&
+                        (std::atomic_ref(util::MemoryHandle(c.extraOffsets[k]).as<uint8_t &>()).load(std::memory_order_relaxed) & c.extraBits[k]) != 0) {
+                        opened = true;
+                        break;
+                    }
+                }
             }
             if (!opened) {
                 continue; // manual-only or fully-unresolvable chest
@@ -662,6 +761,81 @@ int BossDataSet::readDeathCount() const {
     if (addr == 0)
         return 0;
     return util::MemoryHandle(addr + offsets::kDeathCount).as<int &>();
+}
+
+// Load the item name -> vanilla lot ids table (data/<lang>/chest_items.json, generated
+// from a live extraction by tools). Falls back to engUS like the boss data loader.
+void BossDataSet::loadChestItemLots(std::map<std::string, std::vector<uint32_t>> &itemLots) {
+    std::wstring lang = api->configGetString("common.language", L"");
+    if (lang.empty()) {
+        lang = api->getGameLanguage();
+    }
+    std::wstring filename = std::wstring(api->getModulePath()) + L"\\data\\" + lang + L"\\chest_items.json";
+    auto read = [&]() -> nlohmann::ordered_json {
+        std::ifstream ifs(filename.c_str());
+        if (!ifs) return {};
+        auto j = nlohmann::ordered_json::parse(ifs, nullptr, false);
+        return j;
+    };
+    auto j = read();
+    if (!j.is_object()) {
+        lang = L"engUS";
+        filename = std::wstring(api->getModulePath()) + L"\\data\\" + lang + L"\\chest_items.json";
+        j = read();
+        if (!j.is_object()) return;
+    }
+    for (auto &entry: j.items()) {
+        if (!entry.value().is_array()) continue;
+        std::vector<uint32_t> lots;
+        for (auto &lot: entry.value()) {
+            if (lot.is_number_unsigned() && lot.get<uint64_t>() > 0 && lot.get<uint64_t>() <= 0xFFFFFFFFu) {
+                lots.push_back(static_cast<uint32_t>(lot.get<uint64_t>()));
+            }
+        }
+        if (!lots.empty()) itemLots[entry.key()] = std::move(lots);
+    }
+}
+
+// Score how well a log item placement describes a tracked chest: common significant
+// words between the chest's name+place and the placement's chest phrase, requiring the
+// region's first word to appear as a bonus anchor. Returns 0 when clearly unrelated.
+int BossDataSet::matchChestPlacement(const ChestData &chest, const ItemPlacement &placement) const {
+    static const char *stopwords[] = {"a", "an", "the", "in", "of", "at", "on", "to", "and",
+                                      "by", "near", "from", "with", "for", "one", "two", "top"};
+    auto significant = [](const std::string &word) {
+        for (auto *stop: stopwords) {
+            if (word == stop) return false;
+        }
+        return word.size() >= 3;
+    };
+    auto words = [](const std::string &text) {
+        std::vector<std::string> out;
+        std::string current;
+        for (char c: text) {
+            if (isalnum(static_cast<unsigned char>(c))) {
+                current.push_back(static_cast<char>(tolower(static_cast<unsigned char>(c))));
+            } else if (!current.empty()) {
+                out.push_back(std::move(current));
+                current.clear();
+            }
+        }
+        if (!current.empty()) out.push_back(std::move(current));
+        return out;
+    };
+    auto haystack = words(chest.chest + " " + chest.place);
+    auto needle = words(placement.chestPhrase);
+    if (needle.empty()) return 0;
+    int score = 0;
+    for (const auto &n: needle) {
+        if (!significant(n)) continue;
+        for (const auto &h: haystack) {
+            if (h == n || (n.size() >= 5 && h.size() >= 5 && h.find(n) == 0)) {
+                score++;
+                break;
+            }
+        }
+    }
+    return score;
 }
 
 // Chest flag debug watcher (boss.chest_debug_watch=true). On the first pass it

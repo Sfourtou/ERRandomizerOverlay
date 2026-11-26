@@ -52,9 +52,11 @@ struct BossData {
 
 // A treasure chest tracked by its open event flag (Chest Challenge dataset).
 // flagId 0 = no flag known; the chest is then only markable in-game manually.
-// lotId: the chest's vanilla ItemLotParam row; the randomizer may patch that row's
-// getItemFlagId to a different flag (its own aux pool, or the placed item's original
-// flag). lotFlagId is read live from the param table and checked in addition to flagId.
+// lotId: the chest's vanilla ItemLotParam row. The randomizer repoints chest entities to
+// other lots (the placed item's original lot or its own aux lots) without patching the
+// vanilla row, so the tracker also matches by granted item: extraFlags are the grant
+// flags of every lot granting the item the chest received (resolved per run from the
+// spoiler log + ItemLotParam).
 struct ChestData {
     std::string chest;
     std::string place;
@@ -65,6 +67,9 @@ struct ChestData {
     uint8_t bits = 0;
     uintptr_t lotFlagOffset = 0;
     uint8_t lotFlagBits = 0;
+    std::vector<uint32_t> extraFlags;
+    std::vector<uintptr_t> extraOffsets;
+    std::vector<uint8_t> extraBits;
     size_t index = 0;
     size_t regionIndex = 0;
 };
@@ -172,9 +177,11 @@ private:
     void updateNormalMode();
     void updateChallengeMode();
     void updateChestDebugWatch();
-    // Read the live getItemFlagId of every tracked chest's ItemLotParam row into
-    // lotFlagId (retry until the param table is loaded; then done).
+    // Resolve per-chest grant flags: vanilla lot flag from ItemLotParam + candidate
+    // flags for the placed item (spoiler log + item-lot item IDs).
     void resolveChestLotFlags();
+    void loadChestItemLots(std::map<std::string, std::vector<uint32_t>> &itemLots);
+    [[nodiscard]] int matchChestPlacement(const ChestData &chest, const ItemPlacement &placement) const;
     [[nodiscard]] int readDeathCount() const;
     [[nodiscard]] int readInGameTime() const;
 

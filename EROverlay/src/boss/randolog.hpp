@@ -42,6 +42,16 @@ struct RandoPlacement {
     RandoSection section = RandoSection::None;
 };
 
+// An item placement line from the log's Spoilers section describing a chest:
+//   <Item>[ Nx] in <Region>: In a chest <description>. Replaces <item>.
+//   <Item> in <Region>: In a Caravan Chest at <place>. Replaces <item>.
+struct ItemPlacement {
+    std::string item;        // Name of the placed item, e.g. "Nomadic Warrior's Cookbook [22]"
+    std::string region;      // Log region, e.g. "Limgrave"
+    std::string chestPhrase; // "In a chest ..." / "In a Caravan Chest ..." up to ". Replaces"
+    std::string replaced;    // Vanilla item that was in the chest
+};
+
 class RandoLog {
 public:
     // Parse the randomizer's enemy data (diste/Base/enemy.txt) to build the
@@ -75,17 +85,22 @@ public:
     // Number of parsed placements (all sections).
     [[nodiscard]] size_t size() const { return placementCount_; }
 
+    // Item placements into chests parsed from the Spoilers section.
+    [[nodiscard]] const std::vector<ItemPlacement> &itemPlacements() const { return itemPlacements_; }
+
     // Find the most recent *_log_*.txt file in a directory. Returns an empty
     // string when the directory does not exist or contains no log.
     [[nodiscard]] static std::wstring findNewest(const std::wstring &directory);
 
 private:
+    void parseItemPlacements(const std::string &content);
     bool loaded_ = false;
     size_t placementCount_ = 0;
     std::wstring path_;
     std::wstring enemyDataPath_;
     std::map<uint32_t, uint32_t> entityToFlag_;
     std::map<uint32_t, std::vector<RandoPlacement>> placements_;
+    std::vector<ItemPlacement> itemPlacements_;
 };
 
 } // namespace er::bosses

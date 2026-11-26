@@ -314,8 +314,9 @@ void Renderer::renderChestDebugLog(const RenderState &state) {
         for (size_t i = 0; i < chests.size(); i++) {
             const auto &cd = chests[i];
             bool opened = i < state.chestsOpened.size() && state.chestsOpened[i] != 0;
-            ImGui::TextUnformatted(fmt::format("{}  dataset={} lot={} -> {}",
-                                               cd.chest, cd.flagId, cd.lotFlagId, opened ? "OPEN" : "closed").c_str());
+            ImGui::TextUnformatted(fmt::format("{}  dataset={} lot={} extra#{} -> {}",
+                                               cd.chest, cd.flagId, cd.lotFlagId, cd.extraFlags.size(),
+                                               opened ? "OPEN" : "closed").c_str());
         }
         ImGui::TreePop();
     }
