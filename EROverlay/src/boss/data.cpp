@@ -10,6 +10,7 @@
 
 #include "api.h"
 #include "data.hpp"
+#include "params/param.hpp"
 #include "util/eventflag.hpp"
 #include "util/memory.hpp"
 
@@ -220,6 +221,10 @@ void BossDataSet::load(bool hasDLC) {
                     if (primary != n.end()) {
                         readFlagId(*primary, cd.flagId);
                     }
+                    auto lot = n.find("lot_id");
+                    if (lot != n.end()) {
+                        readFlagId(*lot, cd.lotId);
+                    }
                     cd.index = index;
                     cd.regionIndex = regionIndex;
                     self.regions_[regionIndex].chests.push_back(index);
@@ -338,6 +343,47 @@ void BossDataSet::initMemoryAddresses() {
     auto addr = api->getGameAddresses();
     gameDataMan_ = addr.gameDataMan;
     fieldArea_ = addr.fieldArea;
+    lotFlagsPending_ = true;
+}
+
+// ItemLotParam row (game v1.16 layout, row size 174): getItemFlagId at 0x80 — the flag
+// the game writes when any item of the lot is granted. The randomizer patches this field
+// in its modified regulation, so reading it live gives the chest's actual open flag for
+// the loaded run, whatever the randomizer did (aux pool, moved item's original flag...).
+void BossDataSet::resolveChestLotFlags() {
+    // Note: called without mutex_ from update(); chests_ and lotFlagId are immutable
+    // after load and only read here, while updateBosses() (holding mutex_) may also
+    // read lotFlagId — benign for a single aligned uint32 read.
+    auto table = (const er::params::ParamTable *)api->paramFindTable(L"ItemLotParam");
+    if (table == nullptr) {
+        return; // params not loaded yet; retried on the next update tick
+    }
+    size_t withLot = 0;
+    for (auto &c: chests_) {
+        if (c.lotId == 0) {
+            continue;
+        }
+        withLot++;
+        // paramTableFindId returns on match; wrap in a lambda to convert to a value.
+        auto findRow = [&](uint32_t id) -> const uint8_t * {
+            paramTableFindId(table, id, uint8_t);
+            return nullptr; // not found
+        };
+        const uint8_t *row = findRow(c.lotId);
+        if (row != nullptr) {
+            auto flag = *(const uint32_t *)(row + 0x80);
+            c.lotFlagId = flag;
+            if (flag != 0 && flag != c.flagId) {
+                // Log the divergence for the debug watcher documentation.
+                fwprintf(stderr, L"Chest '%hs': lot %u getItemFlagId=%u (dataset flag %u)\n",
+                         c.chest.c_str(), c.lotId, flag, c.flagId);
+            }
+        } else {
+            fwprintf(stderr, L"Chest '%hs': lot %u not found in ItemLotParam\n", c.chest.c_str(), c.lotId);
+        }
+    }
+    lotFlagsPending_ = false;
+    fwprintf(stderr, L"Chest lot flags: %zu lots resolved from ItemLotParam\n", withLot);
 }
 
 void BossDataSet::update() {
@@ -347,6 +393,9 @@ void BossDataSet::update() {
             gameDataMan_ = gameAddresses.gameDataMan;
         if (fieldArea_ == 0)
             fieldArea_ = gameAddresses.fieldArea;
+    }
+    if (lotFlagsPending_) {
+        resolveChestLotFlags();
     }
 
     challenge_.checkForChange(api->getModulePath());
@@ -466,22 +515,30 @@ void BossDataSet::updateBosses() {
         }
 
         // Chest open flags (Chest Challenge dataset).
+        // Two flags per chest: flagId (dataset/event-script flag) and lotFlagId (the
+        // chest's ItemLotParam row's live getItemFlagId, which the randomizer may patch
+        // to a different flag — its aux pool, or the placed item's original flag).
+        // A chest counts as opened when either flag is set.
         int chestCnt = 0;
         std::fill(chestSwapBuf_.begin(), chestSwapBuf_.end(), 0);
         for (size_t i = 0; i < chests_.size(); i++) {
             auto &c = chests_[i];
-            if (c.flagId == 0) {
-                continue; // manual-only chest
+            bool opened = false;
+            if (c.flagId != 0) {
+                c.offset = api->resolveFlagAddress(c.flagId, &c.bits);
+                opened = c.offset != 0 && c.bits != 0 &&
+                         (std::atomic_ref(util::MemoryHandle(c.offset).as<uint8_t &>()).load(std::memory_order_relaxed) & c.bits) != 0;
             }
-            c.offset = api->resolveFlagAddress(c.flagId, &c.bits);
-            if (c.offset == 0 || c.bits == 0) {
-                continue;
+            if (!opened && c.lotFlagId != 0) {
+                c.lotFlagOffset = api->resolveFlagAddress(c.lotFlagId, &c.lotFlagBits);
+                opened = c.lotFlagOffset != 0 && c.lotFlagBits != 0 &&
+                         (std::atomic_ref(util::MemoryHandle(c.lotFlagOffset).as<uint8_t &>()).load(std::memory_order_relaxed) & c.lotFlagBits) != 0;
             }
-            bool opened = (std::atomic_ref(util::MemoryHandle(c.offset).as<uint8_t &>()).load(std::memory_order_relaxed) & c.bits) != 0;
-            chestSwapBuf_[i] = opened ? 1 : 0;
-            if (opened) {
-                chestCnt++;
+            if (!opened) {
+                continue; // manual-only or fully-unresolvable chest
             }
+            chestSwapBuf_[i] = 1;
+            chestCnt++;
         }
         chestsOpened_.swap(chestSwapBuf_);
         chestCount_ = chestCnt;

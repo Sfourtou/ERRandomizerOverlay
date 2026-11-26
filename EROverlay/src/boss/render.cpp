@@ -280,13 +280,13 @@ void Renderer::renderChestList(const std::vector<size_t> &chestIndices, const Re
         auto &cd = chests[ci];
         if (hideDefeated_ && showDefeatedFilter_ && state.chestsOpened[ci]) continue;
         bool opened = state.chestsOpened[ci] != 0;
-        std::string label = cd.flagId == 0 ? cd.chest + " (?)" : cd.chest;
+        std::string label = (cd.flagId == 0 && cd.lotFlagId == 0) ? cd.chest + " (?)" : cd.chest;
         if (ImGui::Checkbox(label.c_str(), &opened, opened)) {
             // Toggling is display-only; chest state comes from the game's open flags.
         }
         if (ImGui::IsItemHovered()) {
             std::string tooltip = cd.place.empty() ? cd.chest : fmt::format("{}: {}", cd.place, cd.chest);
-            if (cd.flagId == 0) {
+            if (cd.flagId == 0 && cd.lotFlagId == 0) {
                 tooltip += "\nNo event flag — track this chest on the website";
             }
             ImGui::SetTooltip("%s", tooltip.c_str());

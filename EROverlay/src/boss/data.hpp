@@ -52,12 +52,19 @@ struct BossData {
 
 // A treasure chest tracked by its open event flag (Chest Challenge dataset).
 // flagId 0 = no flag known; the chest is then only markable in-game manually.
+// lotId: the chest's vanilla ItemLotParam row; the randomizer may patch that row's
+// getItemFlagId to a different flag (its own aux pool, or the placed item's original
+// flag). lotFlagId is read live from the param table and checked in addition to flagId.
 struct ChestData {
     std::string chest;
     std::string place;
     uint32_t flagId = 0;
+    uint32_t lotId = 0;
+    uint32_t lotFlagId = 0;
     uintptr_t offset = 0;
     uint8_t bits = 0;
+    uintptr_t lotFlagOffset = 0;
+    uint8_t lotFlagBits = 0;
     size_t index = 0;
     size_t regionIndex = 0;
 };
@@ -165,6 +172,9 @@ private:
     void updateNormalMode();
     void updateChallengeMode();
     void updateChestDebugWatch();
+    // Read the live getItemFlagId of every tracked chest's ItemLotParam row into
+    // lotFlagId (retry until the param table is loaded; then done).
+    void resolveChestLotFlags();
     [[nodiscard]] int readDeathCount() const;
     [[nodiscard]] int readInGameTime() const;
 
@@ -175,6 +185,7 @@ private:
     bool firstUpdate_ = true;
     bool treeMode_ = false;
     bool chestDebugWatch_ = false;
+    bool lotFlagsPending_ = false;
     std::vector<BossData> bosses_;
     std::vector<ChestData> chests_;
     std::vector<RegionData> regions_;
