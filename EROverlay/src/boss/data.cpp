@@ -1,5 +1,7 @@
 #include <algorithm>
 #include <atomic>
+#include <cstdio>
+#include <cstring>
 #include <filesystem>
 #include <fstream>
 #include <limits>
@@ -8,6 +10,7 @@
 
 #include "api.h"
 #include "data.hpp"
+#include "util/eventflag.hpp"
 #include "util/memory.hpp"
 
 extern EROverlayAPI *api;
@@ -248,6 +251,7 @@ void BossDataSet::load(bool hasDLC) {
     chestSwapBuf_.resize(chests_.size());
 
     notificationsEnabled_ = api->configGetString("boss.randomizer_notifications", L"true") == std::wstring(L"true");
+    chestDebugWatch_ = api->configEnabled("boss.chest_debug_watch");
     loadRandoLog();
 
     challenge_.enabled = api->configEnabled("boss.challenge_mode");
@@ -481,6 +485,9 @@ void BossDataSet::updateBosses() {
         }
         chestsOpened_.swap(chestSwapBuf_);
         chestCount_ = chestCnt;
+        if (chestDebugWatch_) {
+            updateChestDebugWatch();
+        }
 
         regionCounts_.swap(regionCountSwapBuf_);
         dead_.swap(deadSwapBuf_);
@@ -587,6 +594,75 @@ int BossDataSet::readDeathCount() const {
     if (addr == 0)
         return 0;
     return util::MemoryHandle(addr + offsets::kDeathCount).as<int &>();
+}
+
+// Chest flag debug watcher (boss.chest_debug_watch=true). On the first pass it
+// snapshots every event flag category that holds a tracked chest's flag; on later
+// passes it reports each bit that changed in those categories. Because a chest can
+// legitimately write a flag we did not map (randomizer aux lots), this observes the
+// whole category rather than only the tracked flags.
+void BossDataSet::updateChestDebugWatch() {
+    // Note: called with mutex_ held from updateBosses().
+    if (gameDataMan_ == 0)
+        return;
+    auto eventFlagMan = api->getGameAddresses().eventFlagMan;
+    auto manager = eventFlagMan == 0 ? 0 : util::MemoryHandle(eventFlagMan).as<uintptr_t &>();
+    if (manager == 0)
+        return;
+    if (debugCategories_.empty()) {
+        std::map<uint32_t, bool> categories;
+        for (const auto &c: chests_) {
+            if (c.flagId != 0) {
+                categories[c.flagId / 1000] = true;
+            }
+        }
+        for (const auto &[category, ignored]: categories) {
+            (void)ignored;
+            auto &dc = debugCategories_.emplace_back();
+            dc.category = category;
+        }
+        return;
+    }
+    constexpr size_t kMaxDebugLogLines = 200;
+    for (auto &dc: debugCategories_) {
+        uint32_t bytes = 0;
+        auto buffer = util::resolveFlagCategory(manager, dc.category, &bytes);
+        if (buffer == 0) {
+            continue;
+        }
+        if (dc.snapshot.empty()) {
+            dc.snapshot.resize(bytes);
+            std::memcpy(dc.snapshot.data(), (const void *)buffer, bytes);
+            continue;
+        }
+        if (bytes != dc.snapshot.size()) {
+            // Buffer size changed (save reload): re-snapshot without reporting.
+            dc.snapshot.assign(bytes, 0);
+            std::memcpy(dc.snapshot.data(), (const void *)buffer, bytes);
+            continue;
+        }
+        for (uint32_t b = 0; b < bytes; b++) {
+            uint8_t now = std::atomic_ref(util::MemoryHandle(buffer + b).as<uint8_t &>()).load(std::memory_order_relaxed);
+            uint8_t before = dc.snapshot[b];
+            if (now == before) {
+                continue;
+            }
+            dc.snapshot[b] = now;
+            uint8_t diff = static_cast<uint8_t>(now ^ before);
+            for (int bit = 0; bit < 8; bit++) {
+                if ((diff & (1u << bit)) == 0) {
+                    continue;
+                }
+                uint32_t flagId = dc.category * 1000 + b * 8 + (7 - bit);
+                char line[64];
+                std::snprintf(line, sizeof(line), "%u %d->%d", flagId, (before >> bit) & 1, (now >> bit) & 1);
+                chestDebugLog_.emplace_back(line);
+            }
+        }
+    }
+    if (chestDebugLog_.size() > kMaxDebugLogLines) {
+        chestDebugLog_.erase(chestDebugLog_.begin(), chestDebugLog_.end() - kMaxDebugLogLines);
+    }
 }
 
 } // namespace er::bosses

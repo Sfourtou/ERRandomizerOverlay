@@ -146,6 +146,9 @@ public:
     [[nodiscard]] int chestTotal() const { return static_cast<int>(chests_.size()); }
     // True when the loaded dataset has a region tree (Chest Challenge mode).
     [[nodiscard]] bool hasTree() const { return !chests_.empty() || treeMode_; }
+    // Chest flag debug watcher output (boss.chest_debug_watch=true): every bit change
+    // inside the chests' flag categories, as "<flag> 0->1" lines.
+    [[nodiscard]] const std::vector<std::string> &chestDebugLog() const { return chestDebugLog_; }
     // True when a randomizer spoiler log with boss placements was loaded.
     [[nodiscard]] bool randoLoaded() const { return randoLog_.loaded(); }
     // True when the randomizer's enemy data (entity -> defeat flag table) was loaded.
@@ -161,6 +164,7 @@ private:
     void updateBosses();
     void updateNormalMode();
     void updateChallengeMode();
+    void updateChestDebugWatch();
     [[nodiscard]] int readDeathCount() const;
     [[nodiscard]] int readInGameTime() const;
 
@@ -170,11 +174,20 @@ private:
     bool notificationsEnabled_ = true;
     bool firstUpdate_ = true;
     bool treeMode_ = false;
+    bool chestDebugWatch_ = false;
     std::vector<BossData> bosses_;
     std::vector<ChestData> chests_;
     std::vector<RegionData> regions_;
     std::map<uint32_t, int> regionMap_;
     RandoLog randoLog_;
+
+    // Chest debug watcher: one snapshot buffer per chest flag category.
+    struct DebugCategory {
+        uint32_t category = 0;
+        std::vector<uint8_t> snapshot;
+    };
+    std::vector<DebugCategory> debugCategories_;
+    std::vector<std::string> chestDebugLog_;
 
     // Mutable state (protected by mutex_)
     std::mutex mutex_;

@@ -63,4 +63,61 @@ namespace er::util {
     return buffer + (remainder >> 3u);
 }
 
+// Resolve the storage range of an event flag category (flagId / divisor): the
+// buffer holding the category's packed bits and its size in bytes. Used by the
+// chest debug watcher to observe every flag in the chests' categories.
+[[nodiscard]] inline uintptr_t resolveFlagCategory(uintptr_t manager, uint32_t category, uint32_t *bytes) {
+    if (bytes == nullptr)
+        return 0;
+    *bytes = 0;
+    if (manager == 0)
+        return 0;
+    auto divisor = MemoryHandle(manager + 0x1C).as<uint32_t &>();
+    if (divisor == 0)
+        return 0;
+    auto sentinel = MemoryHandle(manager + 0x38).as<uintptr_t &>();
+    if (sentinel == 0)
+        return 0;
+    auto candidate = sentinel;
+    auto node = MemoryHandle(sentinel + 0x08).as<uintptr_t &>();
+    unsigned depth = 0;
+    while (node != 0 && MemoryHandle(node + 0x19).as<uint8_t &>() == 0) {
+        if (++depth > 64)
+            return 0;
+        if (MemoryHandle(node + 0x20).as<uint32_t &>() < category) {
+            node = MemoryHandle(node + 0x10).as<uintptr_t &>();
+        } else {
+            candidate = node;
+            node = MemoryHandle(node).as<uintptr_t &>();
+        }
+    }
+    if (node == 0 || candidate == sentinel || MemoryHandle(candidate + 0x20).as<uint32_t &>() != category)
+        return 0;
+    uintptr_t buffer = 0;
+    switch (MemoryHandle(candidate + 0x28).as<uint32_t &>()) {
+        case 1: {
+            auto base = MemoryHandle(manager + 0x28).as<uintptr_t &>();
+            if (base == 0)
+                return 0;
+            auto stride = MemoryHandle(manager + 0x20).as<uint32_t &>();
+            auto index = MemoryHandle(candidate + 0x30).as<uint32_t &>();
+            if (stride == 0 || stride < (divisor + uint64_t{7}) / 8)
+                return 0;
+            // The native storage index multiplication is 32-bit.
+            buffer = base + static_cast<uint32_t>(stride * index);
+            *bytes = stride;
+            break;
+        }
+        case 2:
+            buffer = MemoryHandle(candidate + 0x30).as<uintptr_t &>();
+            *bytes = MemoryHandle(manager + 0x20).as<uint32_t &>();
+            break;
+        default:
+            return 0;
+    }
+    if (buffer == 0 || *bytes == 0)
+        return 0;
+    return buffer;
+}
+
 } // namespace er::util

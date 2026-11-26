@@ -159,6 +159,8 @@ void Renderer::renderFull(const RenderState &state) {
 
         renderRemainingPool(state);
 
+        renderChestDebugLog(state);
+
         if (popup) {
             ImGui::OpenPopup("##bosses_revive_confirm");
             ImGui::SetNextWindowPos(ImVec2(vp->Size.x * 0.94f, vp->Size.y / 2.0f), ImGuiCond_Appearing, ImVec2(.5f, .5f));
@@ -292,8 +294,22 @@ void Renderer::renderChestList(const std::vector<size_t> &chestIndices, const Re
     }
 }
 
-void Renderer::renderRemainingPool(const RenderState &state) {
-    if (!showRemaining_ || gBossDataSet.total() == 0) {
+// Debug watcher output (boss.chest_debug_watch=true): every flag bit change inside the
+// tracked chests' event flag categories, newest last. Plain text lines "<flag> 0->1".
+void Renderer::renderChestDebugLog(const RenderState &state) {
+    const auto &log = gBossDataSet.chestDebugLog();
+    if (log.empty()) {
+        return;
+    }
+    if (ImGui::TreeNode("##chest_debug", "Chest flag changes (%zu)", log.size())) {
+        for (const auto &line: log) {
+            ImGui::TextUnformatted(line.c_str());
+        }
+        ImGui::TreePop();
+    }
+}
+
+void Renderer::renderRemainingPool(const RenderState &state) {    if (!showRemaining_ || gBossDataSet.total() == 0) {
         return;
     }
     const auto &bosses = gBossDataSet.bosses();
