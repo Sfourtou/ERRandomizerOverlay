@@ -354,36 +354,45 @@ void BossDataSet::resolveChestLotFlags() {
     // Note: called without mutex_ from update(); chests_ and lotFlagId are immutable
     // after load and only read here, while updateBosses() (holding mutex_) may also
     // read lotFlagId — benign for a single aligned uint32 read.
-    auto table = (const er::params::ParamTable *)api->paramFindTable(L"ItemLotParam");
-    if (table == nullptr) {
-        return; // params not loaded yet; retried on the next update tick
-    }
-    size_t withLot = 0;
-    for (auto &c: chests_) {
-        if (c.lotId == 0) {
-            continue;
+    // The param table walk touches game-internal structures whose layout may differ
+    // between game versions (no plugin used it before this feature); contain any bad
+    // dereference instead of taking the game down.
+    __try {
+        auto table = (const er::params::ParamTable *)api->paramFindTable(L"ItemLotParam");
+        if (table == nullptr) {
+            return; // params not loaded yet; retried on the next update tick
         }
-        withLot++;
-        // paramTableFindId returns on match; wrap in a lambda to convert to a value.
-        auto findRow = [&](uint32_t id) -> const uint8_t * {
-            paramTableFindId(table, id, uint8_t);
-            return nullptr; // not found
-        };
-        const uint8_t *row = findRow(c.lotId);
-        if (row != nullptr) {
-            auto flag = *(const uint32_t *)(row + 0x80);
-            c.lotFlagId = flag;
-            if (flag != 0 && flag != c.flagId) {
-                // Log the divergence for the debug watcher documentation.
-                fwprintf(stderr, L"Chest '%hs': lot %u getItemFlagId=%u (dataset flag %u)\n",
-                         c.chest.c_str(), c.lotId, flag, c.flagId);
+        size_t withLot = 0;
+        for (auto &c: chests_) {
+            if (c.lotId == 0) {
+                continue;
             }
-        } else {
-            fwprintf(stderr, L"Chest '%hs': lot %u not found in ItemLotParam\n", c.chest.c_str(), c.lotId);
+            withLot++;
+            // paramTableFindId returns on match; wrap in a lambda to convert to a value.
+            auto findRow = [&](uint32_t id) -> const uint8_t * {
+                paramTableFindId(table, id, uint8_t);
+                return nullptr; // not found
+            };
+            const uint8_t *row = findRow(c.lotId);
+            if (row != nullptr) {
+                auto flag = *(const uint32_t *)(row + 0x80);
+                c.lotFlagId = flag;
+                if (flag != 0 && flag != c.flagId) {
+                    // Log the divergence for the debug watcher documentation.
+                    fwprintf(stderr, L"Chest '%hs': lot %u getItemFlagId=%u (dataset flag %u)\n",
+                             c.chest.c_str(), c.lotId, flag, c.flagId);
+                }
+            } else {
+                fwprintf(stderr, L"Chest '%hs': lot %u not found in ItemLotParam\n", c.chest.c_str(), c.lotId);
+            }
         }
+        lotFlagsPending_ = false;
+        fwprintf(stderr, L"Chest lot flags: %zu lots resolved from ItemLotParam\n", withLot);
+    } __except (EXCEPTION_EXECUTE_HANDLER) {
+        lotFlagsPending_ = false;
+        fwprintf(stderr, L"Chest lot flags: ItemLotParam walk failed (exception %lx); "
+                         L"falling back to dataset flags only\n", GetExceptionCode());
     }
-    lotFlagsPending_ = false;
-    fwprintf(stderr, L"Chest lot flags: %zu lots resolved from ItemLotParam\n", withLot);
 }
 
 void BossDataSet::update() {
@@ -394,10 +403,6 @@ void BossDataSet::update() {
         if (fieldArea_ == 0)
             fieldArea_ = gameAddresses.fieldArea;
     }
-    if (lotFlagsPending_) {
-        resolveChestLotFlags();
-    }
-
     challenge_.checkForChange(api->getModulePath());
     if (api->screenState() != 0) {
         return;
@@ -405,6 +410,12 @@ void BossDataSet::update() {
     auto igt = readInGameTime();
     if (igt <= 0)
         return;
+    // Resolve chest lot flags only once the game is actually running (regulation
+    // loaded, stable state): paramFindTable walks the regulation manager, which is
+    // still being initialized during boot, and must not be touched before then.
+    if (lotFlagsPending_) {
+        resolveChestLotFlags();
+    }
     updateBosses();
     if (challenge_.enabled)
         updateChallengeMode();
