@@ -98,6 +98,8 @@ struct RenderState {
     std::vector<uint8_t> chestsOpened;
     int chestCount = 0;
     int chestTotal = 0;
+    // Chest Challenge personal best (0 when challenge mode is off).
+    int chestBest = 0;
 };
 
 // Challenge mode state and persistence (config read/write for Challenge.txt).
@@ -105,6 +107,7 @@ struct ChallengeState {
     bool enabled = false;
     int maxDeaths = 0;
     int best = 0;
+    int chestBest = 0;
     int deathsOnStart = 0;
     int tries = 0;
     int playerDeaths = 0;

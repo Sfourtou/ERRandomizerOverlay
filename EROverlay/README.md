@@ -58,10 +58,10 @@ The loader reads INI files from `configs/`. Save edits as UTF-8 and restart the 
 | `data_file` | `bosses.json` | Boss data filename, located in `data/<language>/`. |
 | `allow_revive` | `false` | Allow reviving defeated bosses. |
 | `panel_pos` | `-10,10,15%,90%` | Panel position and size: `x, y, width, height`. Values can be pixels or percentages; negative x/y are relative to the right/bottom edge. |
-| `boss_kill_text` | `{kills}/{total}` | Display format for boss kill count. Supports `{kills}`, `{total}`, `{deaths}`, `{igt}`, `$n` (newline). |
+| `boss_kill_text` | `{kills}/{total}` | Display format for boss kill count. Supports `{kills}`, `{total}`, `{deaths}`, `{igt}`, `{chests}`, `{chest_total}`, `{chest_pb}`, `$n` (newline). |
 | `challenge_mode` | `false` | Track a personal best within the death limit; exceeding it stops best-score updates while the current kill count still updates. |
 | `challenge_death_count` | `0` | Maximum allowed deaths in challenge mode. |
-| `challenge_status_text` | `PB: {pb}/{total}  Tries: {tries}$nCurrent: {kills}/{total}` | Display format for challenge mode status. Supports `{kills}`, `{total}`, `{deaths}`, `{igt}`, `{pb}`, `{tries}`, `$n`. |
+| `challenge_status_text` | `PB: {pb}/{total}  Tries: {tries}$nCurrent: {kills}/{total}` | Display format for challenge mode status. Supports `{kills}`, `{total}`, `{deaths}`, `{igt}`, `{pb}`, `{tries}`, `{chests}`, `{chest_total}`, `{chest_pb}`, `$n`. |
 
 Revival also restores the arena and phase flags configured for that boss. Travel or reload the area afterwards. Radahn/Redmane and Patches involve shared arena or quest state; see the [revival schema and reverse-engineering evidence](docs/boss-revival.md).
 

@@ -91,6 +91,8 @@ void ChallengeState::loadConfig(const wchar_t *modulePath) {
             deathsOnStart = std::strtol(val.c_str(), nullptr, 10);
         } else if (key == "best") {
             best = std::strtol(val.c_str(), nullptr, 10);
+        } else if (key == "chest_best") {
+            chestBest = std::strtol(val.c_str(), nullptr, 10);
         }
     }
     // Only create change notification once (avoid handle leak on reload)
@@ -108,6 +110,7 @@ void ChallengeState::saveConfig(const wchar_t *modulePath) {
     }
     ofs << "# Total tries\ntries=" << tries << "\n";
     ofs << "# Personal Best\nbest=" << best << "\n";
+    ofs << "# Chest Challenge Personal Best\nchest_best=" << chestBest << "\n";
     ofs << "\n# !!!DO NOT EDIT THIS!!!\ndeaths_on_start=" << deathsOnStart << "\n";
     ofs.flush();
 
@@ -501,6 +504,10 @@ void BossDataSet::updateBosses() {
             challenge_.best = cnt;
             needSave = true;
         }
+        if (challenge_.enabled && chestCnt > challenge_.chestBest && challenge_.deaths() <= challenge_.maxDeaths) {
+            challenge_.chestBest = chestCnt;
+            needSave = true;
+        }
     }
     if (needSave) {
         challenge_.saveConfig(api->getModulePath());
@@ -555,6 +562,7 @@ void BossDataSet::fillRenderState(RenderState &out) {
     out.chestsOpened = chestsOpened_;
     out.chestCount = chestCount_;
     out.chestTotal = static_cast<int>(chests_.size());
+    out.chestBest = challenge_.chestBest;
     // Drop expired notifications, then hand a copy to the render thread.
     auto now = std::chrono::steady_clock::now();
     notifications_.erase(std::remove_if(notifications_.begin(), notifications_.end(), [&](const KillNotification &n) {

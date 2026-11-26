@@ -66,6 +66,9 @@ void Renderer::init(void *context, void *allocFunc, void *freeFunc, void *userDa
     args_.push_back(fmt::arg("deaths", std::cref(deaths_)));
     args_.push_back(fmt::arg("pb", std::cref(pb_)));
     args_.push_back(fmt::arg("tries", std::cref(tries_)));
+    args_.push_back(fmt::arg("chests", std::cref(chests_)));
+    args_.push_back(fmt::arg("chest_total", std::cref(chestTotal_)));
+    args_.push_back(fmt::arg("chest_pb", std::cref(chestPb_)));
     args_.push_back(fmt::arg("igt", std::cref(igt_)));
 }
 
@@ -454,6 +457,9 @@ bool Renderer::render() {
     kills_ = renderState_.count;
     total_ = gBossDataSet.total();
     deaths_ = renderState_.deaths;
+    chests_ = renderState_.chestCount;
+    chestTotal_ = renderState_.chestTotal;
+    chestPb_ = renderState_.chestBest;
     if (renderState_.challengeMode) {
         pb_ = renderState_.challengeBest;
         tries_ = renderState_.challengeTries;

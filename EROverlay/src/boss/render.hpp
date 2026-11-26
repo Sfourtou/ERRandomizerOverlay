@@ -68,6 +68,9 @@ private:
     IntProxy deaths_;
     IntProxy pb_;
     IntProxy tries_;
+    IntProxy chests_;
+    IntProxy chestTotal_;
+    IntProxy chestPb_;
 
     // Cached render state (reused across frames to avoid per-frame vector allocation)
     RenderState renderState_;

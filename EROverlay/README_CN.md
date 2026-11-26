@@ -58,10 +58,10 @@ UI_SCENE 是唯一渲染方式，通过 signature scan 和 RTTI 校验游戏内�
 | `data_file` | `bosses.json` | Boss 数据文件名，位于 `data/<language>/` 目录下。 |
 | `allow_revive` | `false` | 允许复活已击败的 Boss。 |
 | `panel_pos` | `-10,10,15%,90%` | 面板位置和大小：`x, y, 宽度, 高度`。值可以是像素或百分比；负数 x/y 表示相对于屏幕右侧/底部的偏移。 |
-| `boss_kill_text` | `{kills}/{total}` | Boss 击杀数的显示格式。支持 `{kills}`、`{total}`、`{deaths}`、`{igt}`、`$n`（换行）。 |
+| `boss_kill_text` | `{kills}/{total}` | Boss 击杀数的显示格式。支持 `{kills}`、`{total}`、`{deaths}`、`{igt}`、`{chests}`、`{chest_total}`、`{chest_pb}`、`$n`（换行）。 |
 | `challenge_mode` | `false` | 记录未超过死亡上限时的个人最佳成绩；超限后不再提高最佳成绩，当前击杀数仍更新。 |
 | `challenge_death_count` | `0` | 挑战模式允许的最大死亡次数。 |
-| `challenge_status_text` | `PB: {pb}/{total}  Tries: {tries}$nCurrent: {kills}/{total}` | 挑战模式状态的显示格式。支持 `{kills}`、`{total}`、`{deaths}`、`{igt}`、`{pb}`、`{tries}`、`$n`。 |
+| `challenge_status_text` | `PB: {pb}/{total}  Tries: {tries}$nCurrent: {kills}/{total}` | 挑战模式状态的显示格式。支持 `{kills}`、`{total}`、`{deaths}`、`{igt}`、`{pb}`、`{tries}`、`{chests}`、`{chest_total}`、`{chest_pb}`、`$n`。 |
 
 复活会同时恢复数据文件中的场地与阶段 flag；复活后需传送或重新加载场地。拉塔恩/红狮子城和帕奇涉及共用场地或支线状态，详见[复活说明与逆向证据](docs/boss-revival.md)。
 

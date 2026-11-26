@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### Added
 
+- Chest placeholders in the status text: `{chests}` (opened chests), `{chest_total}` (chests in the dataset) and `{chest_pb}` (best chest count within the death limit across attempts, challenge mode), usable in both `boss_kill_text` and `challenge_status_text`. The chest personal best is persisted in `Challenge.txt` like the boss one.
 - Randomizer integration: read the Elden Ring Item and Enemy Randomizer's spoiler log to show, per boss location, which enemy was placed there. The full list reveals the placed boss's name once it is defeated (`randomizer_reveal=on_kill`, default, spoiler-free; `always` shows it from the start), tooltips show both names, and a "Boss defeated" toast names the placed enemy. A collapsible "Remaining pool" section lists alive bosses grouped by placed enemy identity (locations stay hidden), and an optional "Hide defeated" filter shortens the list to what is left. Placements are matched through the randomizer's `diste/Base/enemy.txt` entity→defeat-flag table, covering every boss including festival Radahn, Night's Cavalry and duo/trio fights. Configure with `randomizer_spoiler_log`, `randomizer_enemy_data` and the pool options in `boss.ini`; see the Boss README. Without a log the overlay behaves as before.
 - Add Chinese text, special-boss behavior notices and failure messages to the revival confirmation dialog. Failed revival attempts leave the previous state unchanged.
 
