@@ -307,6 +307,18 @@ void Renderer::renderChestDebugLog(const RenderState &state) {
         }
         ImGui::TreePop();
     }
+    // Flag resolution status for every tracked chest: which of the two candidate flags
+    // (dataset / live ItemLotParam) is set. Catches chests whose grant wrote neither.
+    if (ImGui::TreeNode("##chest_flags", "Chest flag status")) {
+        const auto &chests = gBossDataSet.chests();
+        for (size_t i = 0; i < chests.size(); i++) {
+            const auto &cd = chests[i];
+            bool opened = i < state.chestsOpened.size() && state.chestsOpened[i] != 0;
+            ImGui::TextUnformatted(fmt::format("{}  dataset={} lot={} -> {}",
+                                               cd.chest, cd.flagId, cd.lotFlagId, opened ? "OPEN" : "closed").c_str());
+        }
+        ImGui::TreePop();
+    }
 }
 
 void Renderer::renderRemainingPool(const RenderState &state) {    if (!showRemaining_ || gBossDataSet.total() == 0) {
