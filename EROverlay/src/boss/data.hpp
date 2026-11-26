@@ -180,6 +180,7 @@ private:
     // Resolve per-chest grant flags: vanilla lot flag from ItemLotParam + candidate
     // flags for the placed item (spoiler log + item-lot item IDs).
     void resolveChestLotFlags();
+    void resolveChestLotFlagsGuarded();
     void loadChestItemLots(std::map<std::string, std::vector<uint32_t>> &itemLots);
     [[nodiscard]] int matchChestPlacement(const ChestData &chest, const ItemPlacement &placement) const;
     [[nodiscard]] int readDeathCount() const;

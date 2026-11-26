@@ -358,14 +358,22 @@ void BossDataSet::initMemoryAddresses() {
 // item: the spoiler log tells which item each tracked chest received; rows granting that
 // item identify the candidate grant flags.
 void BossDataSet::resolveChestLotFlags() {
-    // The param table walk touches game-internal structures whose layout may differ
-    // between game versions (no plugin used it before this feature); contain any bad
-    // dereference instead of taking the game down.
+    // SEH wrapper: the guarded worker uses C++ objects (map/vector) that require
+    // unwinding, which cannot live inside __try (MSVC C2712).
     __try {
-        auto table = (const er::params::ParamTable *)api->paramFindTable(L"ItemLotParam");
-        if (table == nullptr) {
-            return; // params not loaded yet; retried on the next update tick
-        }
+        resolveChestLotFlagsGuarded();
+    } __except (EXCEPTION_EXECUTE_HANDLER) {
+        lotFlagsPending_ = false;
+        fwprintf(stderr, L"Chest lot flags: ItemLotParam walk failed (exception %lx); "
+                         L"falling back to dataset flags only\n", GetExceptionCode());
+    }
+}
+
+void BossDataSet::resolveChestLotFlagsGuarded() {
+    auto table = (const er::params::ParamTable *)api->paramFindTable(L"ItemLotParam");
+    if (table == nullptr) {
+        return; // params not loaded yet; retried on the next update tick
+    }
         // 1. Collect every row: grant flag -> granted item IDs. Rows are dense
         //    (paramId, offset) entries; iterate them all once.
         struct LotRow {
@@ -472,11 +480,6 @@ void BossDataSet::resolveChestLotFlags() {
         lotFlagsPending_ = false;
         fwprintf(stderr, L"Chest flags: %zu attributed (%zu ambiguous), %zu without placement\n",
                  attributed, ambiguous, unplaced);
-    } __except (EXCEPTION_EXECUTE_HANDLER) {
-        lotFlagsPending_ = false;
-        fwprintf(stderr, L"Chest lot flags: ItemLotParam walk failed (exception %lx); "
-                         L"falling back to dataset flags only\n", GetExceptionCode());
-    }
 }
 
 void BossDataSet::update() {
