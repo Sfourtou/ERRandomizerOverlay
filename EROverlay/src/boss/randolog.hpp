@@ -42,14 +42,18 @@ struct RandoPlacement {
     RandoSection section = RandoSection::None;
 };
 
-// An item placement line from the log's Spoilers section describing a chest:
-//   <Item>[ Nx] in <Region>: In a chest <description>. Replaces <item>.
-//   <Item> in <Region>: In a Caravan Chest at <place>. Replaces <item>.
+// An item placement line from the log's Spoilers section describing an item
+// grant: "<Item>[ Nx] in <Region>: <delivery phrase>. Replaces <item>."
+// Delivery phrases include "In a chest ...", "In a Caravan Chest ...",
+// "From Chest. Near ...", "In the left chest ..." and non-chest grants
+// ("On a corpse ...", "Sold by ...", "Dropped by ..."). Chest attribution
+// matches on `replaced`: a tracked chest whose vanilla item was replaced by
+// this placement received `item` (and its flags fire on that item's lots).
 struct ItemPlacement {
-    std::string item;        // Name of the placed item, e.g. "Nomadic Warrior's Cookbook [22]"
+    std::string item;        // Name of the placed item, count suffix stripped
     std::string region;      // Log region, e.g. "Limgrave"
-    std::string chestPhrase; // "In a chest ..." / "In a Caravan Chest ..." up to ". Replaces"
-    std::string replaced;    // Vanilla item that was in the chest
+    std::string chestPhrase; // Delivery phrase up to ". Replaces"
+    std::string replaced;    // Vanilla item that was replaced, count suffix stripped
 };
 
 class RandoLog {

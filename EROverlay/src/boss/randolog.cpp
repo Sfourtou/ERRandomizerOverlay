@@ -183,10 +183,12 @@ bool RandoLog::parse(const std::string &content) {
 }
 
 // Item placement lines live in the Spoilers section:
-//   "<Item>[ Nx] in <Region>: In a chest <description>. Replaces <item>."
-//   "<Item> in <Region>: In a Caravan Chest at <place>. Replaces <item>."
-// Only chest grants matter for chest attribution (corpses/shops/drops use their own
-// flags and are not tracked per-location).
+//   "<Item>[ Nx] in <Region>: <delivery phrase>. Replaces <vanilla item>[ Nx]."
+// Delivery phrases cover chest grants ("In a chest ...", "In a Caravan Chest ...",
+// "From Chest. Near ...", "In the left chest ...", "Down the stairs in ...") as
+// well as corpses/shops/drops. Every placement is kept: chest attribution keys on
+// the replaced vanilla item, and a chest's vanilla content can be randomized into
+// a corpse or shop line, which proves the chest lot itself was repointed.
 void RandoLog::parseItemPlacements(const std::string &content) {
     itemPlacements_.clear();
     size_t pos = 0;
@@ -194,6 +196,27 @@ void RandoLog::parseItemPlacements(const std::string &content) {
     if (content.size() >= 3 && static_cast<unsigned char>(content[0]) == 0xEF && static_cast<unsigned char>(content[1]) == 0xBB && static_cast<unsigned char>(content[2]) == 0xBF) {
         pos = 3;
     }
+    // Strip a trailing count suffix ("Item 8x"; older logs wrote "Item x8").
+    // Keeps "+1"/"+2" upgrade-level suffixes: only digits preceded by a space are
+    // part of a count.
+    auto stripCount = [](std::string &text) {
+        while (!text.empty() && text.back() == '.') text.pop_back();
+        if (!text.empty() && text.back() == 'x') {
+            size_t end = text.size() - 1;
+            size_t begin = end;
+            while (begin > 0 && isdigit(static_cast<unsigned char>(text[begin - 1]))) begin--;
+            if (begin > 0 && text[begin - 1] == ' ' && end > begin) text.resize(begin - 1);
+        }
+        size_t scan = text.size();
+        while (scan > 0 && isdigit(static_cast<unsigned char>(text[scan - 1]))) scan--;
+        if (scan > 0 && scan < text.size() && text[scan - 1] == ' ') {
+            text.resize(scan - 1);
+        } else if (scan > 1 && scan < text.size() && text[scan - 1] == 'x' && text[scan - 2] == ' ') {
+            text.resize(scan - 2); // legacy "Item x8"
+        }
+        if (text.size() >= 2 && text.compare(text.size() - 2, 2, " x") == 0) text.resize(text.size() - 2);
+        while (!text.empty() && text.back() == ' ') text.pop_back();
+    };
     while (pos < content.size()) {
         auto eol = content.find('\n', pos);
         std::string line = content.substr(pos, eol == std::string::npos ? std::string::npos : eol - pos);
@@ -201,30 +224,22 @@ void RandoLog::parseItemPlacements(const std::string &content) {
         while (!line.empty() && (line.back() == '\r' || line.back() == ' ' || line.back() == '\t')) line.pop_back();
         if (line.empty()) continue;
 
-        auto chestPos = line.find("In a chest ");
-        if (chestPos == std::string::npos) {
-            chestPos = line.find("In a Caravan Chest ");
-        }
-        if (chestPos == std::string::npos) continue;
+        auto replacesPos = line.find(". Replaces ");
+        if (replacesPos == std::string::npos) continue;
 
         auto inPos = line.find(" in ");
-        if (inPos == std::string::npos || inPos >= chestPos) continue;
+        if (inPos == std::string::npos || inPos >= replacesPos) continue;
         std::string item = line.substr(0, inPos);
-        // Strip a trailing count suffix like " 8x".
-        while (!item.empty() && isdigit(static_cast<unsigned char>(item.back()))) item.pop_back();
-        if (item.size() >= 2 && item.compare(item.size() - 2, 2, " x") == 0) item.resize(item.size() - 2);
-        while (!item.empty() && item.back() == ' ') item.pop_back();
+        stripCount(item);
         if (item.empty()) continue;
 
         auto colonPos = line.find(": ", inPos);
-        if (colonPos == std::string::npos) continue;
+        if (colonPos == std::string::npos || colonPos >= replacesPos) continue;
         std::string region = line.substr(inPos + 4, colonPos - inPos - 4);
 
-        auto replacesPos = line.find(". Replaces ", chestPos);
-        if (replacesPos == std::string::npos) continue;
-        std::string phrase = line.substr(chestPos, replacesPos - chestPos);
+        std::string phrase = line.substr(colonPos + 2, replacesPos - colonPos - 2);
         std::string replaced = line.substr(replacesPos + sizeof(". Replaces ") - 1);
-        while (!replaced.empty() && (replaced.back() == '.')) replaced.pop_back();
+        stripCount(replaced);
 
         ItemPlacement placement;
         placement.item = std::move(item);

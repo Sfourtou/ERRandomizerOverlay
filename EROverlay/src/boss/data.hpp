@@ -182,6 +182,8 @@ private:
     void resolveChestLotFlags();
     void resolveChestLotFlagsGuarded();
     void loadChestItemLots(std::map<std::string, std::vector<uint32_t>> &itemLots);
+    // Score how well a placement's region describes the chest's place (higher is
+    // a better tie-break for chests sharing one vanilla item). 0 when unrelated.
     [[nodiscard]] int matchChestPlacement(const ChestData &chest, const ItemPlacement &placement) const;
     [[nodiscard]] int readDeathCount() const;
     [[nodiscard]] int readInGameTime() const;
@@ -199,6 +201,12 @@ private:
     std::vector<RegionData> regions_;
     std::map<uint32_t, int> regionMap_;
     RandoLog randoLog_;
+
+    // Item name -> granted item IDs (reverse of chest_items.json) and granted item
+    // ID -> item name, built from the same file. Used to identify a tracked chest's
+    // vanilla item and the item IDs a log placement granted.
+    std::map<uint32_t, std::string> itemNameByItemId_;
+    std::map<uint32_t, std::string> vanillaNameByLot_;
 
     // Chest debug watcher: one snapshot buffer per chest flag category.
     struct DebugCategory {

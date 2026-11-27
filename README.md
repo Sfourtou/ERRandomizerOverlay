@@ -136,6 +136,23 @@ g++ -std=c++23 -I EROverlay/deps/nlohmann_json/include -o bossdata_validate tool
 ./bossdata_validate bosses.json
 ```
 
+`tools/simulate_chest_flags.py` replays the chest-flag attribution offline against a spoiler log
+(pass its path as the first argument) and reports per-region attribution counts plus the chests
+that remain unattributable — useful after updating `chest_items.json` or the matcher:
+
+```sh
+python3 tools/simulate_chest_flags.py path/to/2026-10-16_log_468546657_35494.txt
+```
+
+`tools/gen_chest_items_patch.py` regenerates `EROverlay/src/boss/data/engus/chest_items.json`
+(item name → vanilla `ItemLotParam` row ids) by merging the vanilla item-lot dump
+(`tools/er_items.html`) into the current table. Run it after a game update changes lots:
+
+```sh
+python3 tools/gen_chest_items_patch.py            # fetches the dump and merges it
+python3 tools/gen_chest_items_patch.py --no-fetch # reuse the cached tools/er_items.html
+```
+
 ## Updating
 
 Between releases, only these files change: `EROverlay.dll`, `overlays\Boss.dll` and the language

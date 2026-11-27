@@ -395,13 +395,37 @@ void BossDataSet::resolveChestLotFlagsGuarded() {
             }
         }
         // 2. Item name -> vanilla lot ids (chest_items.json, generated from the live
-        //    extraction). Needed to translate the log's item names into item IDs.
+        //    extraction). Needed to translate the log's item names into item IDs, and
+        //    (reversed) to name each tracked chest's vanilla item. The granted item
+        //    IDs come from the live ItemLotParam rows.
         std::map<std::string, std::vector<uint32_t>> itemLots;
         loadChestItemLots(itemLots);
-        // 3. For each tracked chest, find its placement in the log (best phrase match),
-        //    the placed item's ID, and every row granting that item: their grant flags
-        //    are the chest's candidate open flags.
-        size_t attributed = 0, ambiguous = 0, unplaced = 0;
+        vanillaNameByLot_.clear();
+        itemNameByItemId_.clear();
+        for (const auto &[name, lots]: itemLots) {
+            for (auto lotId: lots) {
+                vanillaNameByLot_[lotId] = name;
+                auto row = rows.find(lotId);
+                if (row == rows.end()) continue;
+                for (auto id: row->second.itemIds) {
+                    if (id != 0 && id != 0xFFFFFFFF) {
+                        itemNameByItemId_[id] = name;
+                    }
+                }
+            }
+        }
+        // 3. For each tracked chest, find the log placement that consumed its vanilla
+        //    content: the line whose "Replaces" item equals the chest's vanilla item
+        //    (looked up by reversing chest_items.json on the chest's vanilla lot).
+        //    That line's placed item was written into the chest; every row granting
+        //    that item's IDs is a candidate open flag.
+        //    Ties (same vanilla item replaced in several lines, e.g. shared pool items)
+        //    are broken by region word overlap, falling back to the union of candidates.
+        //    A vanilla item replaced only by non-chest lines (shop/corpse/drop) proves
+        //    the chest lot was repointed too — those lines are valid matches as well.
+        //    An item never replaced anywhere means the chest kept its vanilla content
+        //    and the vanilla flag fires on its own: no extra tracking needed.
+        size_t attributed = 0, ambiguous = 0, unplaced = 0, vanilla = 0;
         for (auto &c: chests_) {
             // Keep the vanilla row's flag as a fallback signal (may itself be patched).
             if (c.lotId != 0) {
@@ -414,24 +438,59 @@ void BossDataSet::resolveChestLotFlagsGuarded() {
                     }
                 }
             }
-            // Find the log placement describing this chest.
-            const ItemPlacement *placement = nullptr;
-            int bestScore = 0;
-            for (const auto &p: randoLog_.itemPlacements()) {
-                int score = matchChestPlacement(c, p);
-                if (score > bestScore) {
-                    bestScore = score;
-                    placement = &p;
+            // Vanilla item name of this chest (reverse of chest_items.json; falls back
+            // to the live vanilla lot row's granted item name).
+            const std::string *vanillaItem = nullptr;
+            auto vanName = vanillaNameByLot_.find(c.lotId);
+            if (vanName != vanillaNameByLot_.end()) {
+                vanillaItem = &vanName->second;
+            } else if (c.lotId != 0) {
+                auto row = rows.find(c.lotId);
+                if (row != rows.end()) {
+                    for (auto id: row->second.itemIds) {
+                        auto name = itemNameByItemId_.find(id);
+                        if (name != itemNameByItemId_.end() && !name->second.empty()) {
+                            vanillaItem = &name->second;
+                            break;
+                        }
+                    }
                 }
             }
-            if (placement == nullptr) {
+            if (vanillaItem == nullptr || vanillaItem->empty()) {
                 unplaced++;
                 continue;
             }
-            // Placed item's IDs: from the item's vanilla lots' granted item IDs.
+            // Log lines that replaced this chest's vanilla item, best region match
+            // first. All best-score-tied lines contribute their placed items (their
+            // candidate flags are unioned below): a wrong tie-break would leave the
+            // chest untracked, while the union only risks cross-talk between the
+            // handful of chests sharing one vanilla item.
+            std::vector<const ItemPlacement *> matches;
+            int bestScore = 0;
+            bool anyReplaced = false;
+            for (const auto &p: randoLog_.itemPlacements()) {
+                if (p.replaced != *vanillaItem) continue;
+                anyReplaced = true;
+                int score = matchChestPlacement(c, p);
+                if (score > bestScore) {
+                    bestScore = score;
+                    matches.clear();
+                }
+                if (score == bestScore) {
+                    matches.push_back(&p);
+                }
+            }
+            if (!anyReplaced) {
+                // Vanilla content untouched: the chest's own flag fires when opened.
+                vanilla++;
+                continue;
+            }
+            // Placed items' IDs: from each tied placement's item's vanilla lots'
+            // granted item IDs.
             std::vector<uint32_t> wantedIds;
-            auto lots = itemLots.find(placement->item);
-            if (lots != itemLots.end()) {
+            for (const ItemPlacement *placement: matches) {
+                auto lots = itemLots.find(placement->item);
+                if (lots == itemLots.end()) continue;
                 for (auto lotId: lots->second) {
                     auto row = rows.find(lotId);
                     if (row == rows.end()) continue;
@@ -478,8 +537,8 @@ void BossDataSet::resolveChestLotFlagsGuarded() {
             if (c.extraFlags.size() > 1) ambiguous++;
         }
         lotFlagsPending_ = false;
-        fwprintf(stderr, L"Chest flags: %zu attributed (%zu ambiguous), %zu without placement\n",
-                 attributed, ambiguous, unplaced);
+        fwprintf(stderr, L"Chest flags: %zu attributed (%zu ambiguous), %zu vanilla-kept, %zu unresolved\n",
+                 attributed, ambiguous, vanilla, unplaced);
 }
 
 void BossDataSet::update() {
@@ -799,9 +858,11 @@ void BossDataSet::loadChestItemLots(std::map<std::string, std::vector<uint32_t>>
     }
 }
 
-// Score how well a log item placement describes a tracked chest: common significant
-// words between the chest's name+place and the placement's chest phrase, requiring the
-// region's first word to appear as a bonus anchor. Returns 0 when clearly unrelated.
+// Score how well a log placement's region describes a tracked chest's place:
+// common significant words between the chest's name+place and the placement's
+// region (and chest phrase, as a weak bonus). Used only as a tie-break when
+// several placements replaced the same vanilla item; exact matching is done on
+// the replaced item name. Returns 0 when unrelated.
 int BossDataSet::matchChestPlacement(const ChestData &chest, const ItemPlacement &placement) const {
     static const char *stopwords[] = {"a", "an", "the", "in", "of", "at", "on", "to", "and",
                                       "by", "near", "from", "with", "for", "one", "two", "top"};
@@ -826,7 +887,7 @@ int BossDataSet::matchChestPlacement(const ChestData &chest, const ItemPlacement
         return out;
     };
     auto haystack = words(chest.chest + " " + chest.place);
-    auto needle = words(placement.chestPhrase);
+    auto needle = words(placement.region + " " + placement.chestPhrase);
     if (needle.empty()) return 0;
     int score = 0;
     for (const auto &n: needle) {

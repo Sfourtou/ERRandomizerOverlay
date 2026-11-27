@@ -110,6 +110,47 @@ static void testSynthetic() {
     assert(!rl3.parse(log3));
     assert(!rl3.loaded());
 
+    // Item placements: chest lines, count suffixes ("Item 8x"), replaced names with
+    // counts, and non-chest grants (corpse/shop/drop) are all parsed now.
+    std::string log4 =
+        "-- Spoilers:\n"
+        "Fulgurbloom 8x in Altus Plateau: In a chest after defeating Demi-Human Queen Gilika, down some stairs in Lux Ruins. Replaces Ritual Sword Talisman.\n"
+        "Kukri 4x in Limgrave: In a chest down some stairs in Gatefront Ruins. Replaces Ash of War: Storm Stomp.\n"
+        "Talisman Pouch in Limgrave: In a chest down stairs in Dragon-Burnt Ruins, beside the lakeshore. Replaces Twinblade.\n"
+        "Thawfrost Boluses 3x in Weeping Peninsula: In a chest at the top of Forest Lookout Tower. Replaces Hand Ballista 3x.\n"
+        "Whetstone Knife in Limgrave: In a chest in the cellar of Gatefront Ruins. Replaces Whetstone Knife.\n"
+        "Spirit Calling Bell in Limgrave: From Chest. Near Mistwood Ruins (Ruins) - 7,94 away. Replaces Axe Talisman.\n"
+        "Golden Rune [4] in Stormveil Castle: From Corpse. Near Liftside Chamber (Site of Grace). Replaces Smithing Stone [2] 3x.\n"
+        "Rune Arc in Liurnia: Sold by Iji. Replaces Carian Filigreed Crest.\n"
+        "Flask of Crimson Tears 3x in Stranded Graveyard: Obtained after arriving. Replaces Flask of Crimson Tears 3x.\n";
+    RandoLog rl4;
+    assert(rl4.parse(log4));
+    const auto &ips = rl4.itemPlacements();
+    assert(ips.size() == 9);
+    // Count suffix "8x" stripped from item names (was broken: "Fulgurbloom 8x").
+    bool foundFulgurbloom = false, foundKukri = false, foundBoluses = false;
+    for (const auto &p: ips) {
+        if (p.item == "Fulgurbloom" && p.replaced == "Ritual Sword Talisman") foundFulgurbloom = true;
+        if (p.item == "Kukri" && p.replaced == "Ash of War: Storm Stomp") foundKukri = true;
+        if (p.item == "Thawfrost Boluses" && p.replaced == "Hand Ballista") foundBoluses = true;
+    }
+    assert(foundFulgurbloom);
+    assert(foundKukri);
+    assert(foundBoluses);
+    // "Replaces X 3x" keeps the base name.
+    for (const auto &p: ips) {
+        if (p.item == "Golden Rune [4]") assert(p.replaced == "Smithing Stone [2]");
+        if (p.item == "Flask of Crimson Tears") assert(p.replaced == "Flask of Crimson Tears");
+    }
+    // Non-chest grants parse too (corpse/shop lines feed vanilla-consumed proofs).
+    bool foundCorpse = false, foundShop = false, foundFromChest = false;
+    for (const auto &p: ips) {
+        if (p.item == "Golden Rune [4]") foundCorpse = true;
+        if (p.item == "Rune Arc") foundShop = true;
+        if (p.item == "Spirit Calling Bell") foundFromChest = true;
+    }
+    assert(foundCorpse && foundShop && foundFromChest);
+
     printf("testSynthetic OK\n");
 }
 
@@ -123,8 +164,14 @@ static void testUserLog(const char *path) {
     ss << ifs.rdbuf();
     RandoLog rl;
     bool ok = rl.parse(ss.str());
-    printf("user log parsed=%d placements=%zu (expected 0 for items-only run)\n", ok ? 1 : 0, rl.size());
-    assert(!ok && rl.size() == 0);
+    // Items-only logs yield no boss placements (parse == false); full runs parse.
+    if (ok) {
+        printf("user log parsed=%d placements=%zu itemPlacements=%zu\n", ok ? 1 : 0, rl.size(), rl.itemPlacements().size());
+        assert(rl.itemPlacements().size() > 0);
+    } else {
+        printf("user log parsed=%d placements=%zu (expected 0 for items-only run)\n", ok ? 1 : 0, rl.size());
+        assert(rl.size() == 0);
+    }
     printf("testUserLog OK\n");
 }
 
@@ -194,7 +241,7 @@ static void testEdgeCases() {
 
 int main() {
     testSynthetic();
-    testUserLog("/workspaces/ERTracker/spoiler_logs.txt");
+    testUserLog("/workspaces/ERTracker/2026-10-16_11.04.04_log_468546657_35494.txt");
     testEdgeCases();
     printf("ALL TESTS PASSED\n");
     return 0;
