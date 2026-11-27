@@ -55,37 +55,60 @@ def fetch(force=True):
 
 
 def parse_dump(content):
-    """name -> sorted lot ids from the ItemLotParam_map/_enemy sections."""
+    """name -> sorted lot ids from the ItemLotParam_map section.
+
+    Row grammar: "<lotId> [context] <entry>[, <entry>...]" where each entry ends
+    with "- flag <n>", a drop-rate percentage, or nothing (single-entry rows).
+    Entries are split on ", " and rejoined until an entry terminator is seen, so
+    item names containing commas ("Flame, Cleanse Me") stay intact. Only the
+    ItemLotParam_map section is used: ItemLotParam_enemy re-uses overlapping row
+    ids and is redundant for chest tracking.
+    """
     sec = re.split(r"<h2>(.*?)</h2>", content)
     sections = {sec[i]: sec[i + 1] for i in range(1, len(sec), 2)}
+    body = sections.get("ItemLotParam_map", "")
+    cats = r"(?:Goods|Weapon|Protector|Head|Body|Arms|Legs|Talisman|FCS|Generator|Accessory|Booster)"
+
+    def split_entries(rest):
+        pieces = rest.split(", ")
+        out, cur = [], []
+        for piece in pieces:
+            cur.append(piece)
+            joined = ", ".join(cur)
+            if re.search(r"- flag \d+\s*$", joined) or re.search(r"\d+(?:\.\d+)?%\s*$", joined):
+                out.append(joined)
+                cur = []
+        if cur:
+            out.append(", ".join(cur))
+        return out
+
     name2lots = {}
-    for secname in ("ItemLotParam_map", "ItemLotParam_enemy"):
-        for line in sections.get(secname, "").splitlines():
-            m = re.match(r"^(\d+) ", line)
-            if not m:
+    for line in body.splitlines():
+        m = re.match(r"^(\d+) ", line)
+        if not m:
+            continue
+        lotid = int(m.group(1))
+        rest = line[m.end():]
+        if rest.startswith("["):
+            depth = 0
+            for i, ch in enumerate(rest):
+                if ch == "[":
+                    depth += 1
+                elif ch == "]":
+                    depth -= 1
+                    if depth == 0:
+                        rest = rest[i + 1:].lstrip()
+                        break
+        for part in split_entries(rest):
+            part = part.strip()
+            p2 = re.sub(r"\s*- flag \d+\s*$", "", part)
+            p2 = re.sub(r"\s+\d+x\s*$", "", p2)
+            p2 = re.sub(r"\s*\d+(?:\.\d+)?%\s*$", "", p2)
+            p2 = re.sub(rf"\s*\({cats} \d+\)\s*$", "", p2)
+            name = re.sub(r"\s+", " ", html.unescape(p2).strip())
+            if not name or name == "[unknown]" or "[ERROR]" in name or not re.search(r"[A-Za-z]{2}", name):
                 continue
-            lotid = int(m.group(1))
-            rest = line[m.end():]
-            # cut the leading [context] group (may contain nested brackets)
-            if rest.startswith("["):
-                depth = 0
-                for i, ch in enumerate(rest):
-                    if ch == "[":
-                        depth += 1
-                    elif ch == "]":
-                        depth -= 1
-                        if depth == 0:
-                            rest = rest[i + 1:].lstrip()
-                            break
-            for part in rest.split(", "):
-                part = part.strip()
-                p2 = re.sub(r"\s*- flag \d+\s*$", "", part)
-                p2 = re.sub(r"\s+\d+x\s*$", "", p2)
-                p2 = re.sub(r"\s*\((?:Goods|Weapon|Protector|Head|Body|Arms|Legs|Talisman|FCS|Generator|Accessory|Booster) \d+\)\s*$", "", p2)
-                name = re.sub(r"\s+", " ", html.unescape(p2).strip())
-                if not name or name == "[unknown]" or "[ERROR]" in name or not re.search(r"[A-Za-z]{2}", name):
-                    continue
-                name2lots.setdefault(name, set()).add(lotid)
+            name2lots.setdefault(name, set()).add(lotid)
     return {k: sorted(v) for k, v in name2lots.items()}
 
 
