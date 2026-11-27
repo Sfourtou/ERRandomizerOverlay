@@ -65,14 +65,22 @@ bool RandoLog::loadEnemyData(const std::wstring &path) {
     //     Map: m60_13_09_02
     //     Class: Boss
     //     DefeatFlag: 1252380800
-    // Only the entity ID and DefeatFlag lines are relevant.
+    // Only the entity ID and DefeatFlag lines are relevant. Both "- ID: " and
+    // indented "ID: " starts are accepted (the exact indentation varies across
+    // randomizer versions).
     std::string line;
     uint32_t currentEntity = 0;
+    size_t idLineCount = 0;
     while (std::getline(ifs, line)) {
         while (!line.empty() && (line.back() == '\r' || line.back() == '\n')) line.pop_back();
-        // Top-level entries start with "- ID: " (two spaces would nest).
-        if (startsWith(line, 0, "- ID: ")) {
-            currentEntity = parseUint(line, sizeof("- ID: ") - 1, line.size());
+        size_t start = line.find_first_not_of(" \t");
+        if (start == std::string::npos) continue;
+        // "- ID: N" and "ID: N" both start a new enemy entry.
+        bool dashed = line.compare(start, 2, "- ") == 0;
+        size_t idPos = dashed ? start + 2 : start;
+        if (line.compare(idPos, 4, "ID: ") == 0) {
+            idLineCount++;
+            currentEntity = parseUint(line, idPos + 4, line.size());
             continue;
         }
         if (currentEntity == 0) continue;
@@ -84,7 +92,14 @@ bool RandoLog::loadEnemyData(const std::wstring &path) {
             currentEntity = 0;
         }
     }
-    if (entityToFlag_.empty()) return false;
+    if (entityToFlag_.empty()) {
+        if (idLineCount == 0) {
+            fwprintf(stderr, L"enemy data %ls: no 'ID:' entry found; unexpected file format\n", path.c_str());
+        } else {
+            fwprintf(stderr, L"enemy data %ls: %zu ID entries but none with a DefeatFlag mapping\n", path.c_str(), idLineCount);
+        }
+        return false;
+    }
     enemyDataPath_ = path;
     return true;
 }

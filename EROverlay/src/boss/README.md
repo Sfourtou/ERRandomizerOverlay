@@ -38,6 +38,14 @@ placed at each vanilla boss location, instead of only showing the vanilla boss o
   bosses and fully-defeated regions disappear until the checkbox is cleared.
 * Without a spoiler log (or for an enemies-not-randomized run, e.g. items-only), the tracker
   behaves exactly like the vanilla overlay.
+* **Chest tracking** (Chest Challenge dataset): chests count as opened when the grant flag of the
+  item they received is set, matched per run from the spoiler log and the live `ItemLotParam`
+  table. If the console (`common.console=true`) shows `Chest flags: 0 attributed` or
+  `ItemLotParam table not found`, grant-flag resolution is not running; chests that keep their
+  vanilla content still track through their location flag. `chest_debug_watch=true` adds
+  "Chest flag changes" (every flag bit that flips in the chests' flag categories — shows the
+  flag a chest really writes when opened) and "Chest flag status" (per chest: which candidate
+  flag is set).
 
 ## [LICENSE](https://github.com/soarqin/EROverlay/blob/master/LICENSE)
 

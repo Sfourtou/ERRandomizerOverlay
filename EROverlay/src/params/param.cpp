@@ -10,6 +10,8 @@
 #include "wstring.hpp"
 #include "pointers.hpp"
 
+#include <cstdio>
+
 #include <windows.h>
 
 #include <unordered_map>
@@ -55,9 +57,17 @@ bool paramLoadTable() {
         return false;
     }
     const CSRegulationManager *regMan;
-    while (1) {
+    // Wait for the regulation to load, but never forever: a hung wait here runs on
+    // the caller's thread (the overlay update thread), which would freeze chest
+    // flag resolution and any other param consumer for the whole session.
+    for (int attempts = 0; ; attempts++) {
         regMan = (const CSRegulationManager*)*(uintptr_t*)gPointers.csRegulationManager;
         if (regMan != nullptr && regMan->start != nullptr && regMan->end != nullptr && regMan->loaded) break;
+        if (attempts >= 100) { // ~10 seconds
+            fwprintf(stderr, L"params: regulation manager did not report loaded after 10s; "
+                             L"param tables unavailable this session\n");
+            return false;
+        }
         Sleep(100);
     }
     // fwprintf(stderr, L"%p %p %zd\n", regMan->start, regMan->end, regMan->end - regMan->start);
@@ -66,6 +76,7 @@ bool paramLoadTable() {
         const auto *name = wstringImplStr(&param->name);
         paramTypes.emplace(name, ParamType { name, param->path->data });
     }
+    fwprintf(stderr, L"params: %zu tables loaded\n", paramTypes.size());
     return true;
 }
 

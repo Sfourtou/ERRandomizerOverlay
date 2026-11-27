@@ -239,10 +239,74 @@ static void testEdgeCases() {
     printf("testEdgeCases OK\n");
 }
 
+static void testEnemyDataFormats() {
+    // v0.12.2 writes diste/Base/enemy.txt as YAML with top-level sections
+    // (Classes:, Categories:, ...) before the Enemies: list. Only the enemy
+    // entries matter; "- ID: " items in other sections must be ignored.
+    std::string yaml =
+        "Classes:\r\n"
+        "- Class: Basic\r\n"
+        "  DlcSilo: true\r\n"
+        "- Class: Boss\r\n"
+        "  Parent: Basic\r\n"
+        "BaseCategories: []\r\n"
+        "Categories:\r\n"
+        "- Name: AllEnemies\r\n"
+        "  Count: 20737\r\n"
+        "Enemies:\r\n"
+        "- ID: 10000850\r\n"
+        "  Map: m10_00_00_00\r\n"
+        "  Name: c2130_9000\r\n"
+        "  Class: Boss\r\n"
+        "  DefeatFlag: 10000850\r\n"
+        "  StartFlag: 10002855\r\n"
+        "- ID: 1043370340\r\n"
+        "  Map: m60_43_37_00\r\n"
+        "  Class: NightMiniboss\r\n"
+        "  DefeatFlag: 1043370800\r\n"
+        "- ID: 1042360730\r\n"
+        "  Map: m60_42_36_00\r\n"
+        "  Class: None\r\n";
+    {
+        FILE *f = fopen("/tmp/randolog_enemy_yaml.txt", "wb");
+        assert(f != nullptr);
+        fwrite(yaml.data(), 1, yaml.size(), f);
+        fclose(f);
+    }
+    RandoLog rl;
+    assert(rl.loadEnemyData(L"/tmp/randolog_enemy_yaml.txt"));
+    assert(rl.enemyDataLoaded());
+    // The entity->flag mapping is exercised when parsing a log: an enemy placed at
+    // entity 1043370340 is keyed by its DefeatFlag 1043370800.
+    std::string log =
+        "-- Miniboss placements\r\n"
+        "Replacing Night's Cavalry (#1043370340) in Agheel Lake: Ulcerated Tree Spirit (#18000800) from Limgrave\r\n";
+    assert(rl.parse(log));
+    const auto *p = rl.find(1043370800);
+    assert(p != nullptr && p->front().name == "Ulcerated Tree Spirit");
+    // Class: None entries without DefeatFlag must not break parsing.
+    std::string indented =
+        "Enemies:\r\n"
+        "  - ID: 1052380800\r\n"
+        "    Class: Boss\r\n"
+        "    DefeatFlag: 1252380800\r\n";
+    {
+        FILE *f = fopen("/tmp/randolog_enemy_indent.txt", "wb");
+        assert(f != nullptr);
+        fwrite(indented.data(), 1, indented.size(), f);
+        fclose(f);
+    }
+    RandoLog rl2;
+    assert(rl2.loadEnemyData(L"/tmp/randolog_enemy_indent.txt"));
+    assert(rl2.enemyDataLoaded());
+    printf("testEnemyDataFormats OK\n");
+}
+
 int main() {
     testSynthetic();
-    testUserLog("/workspaces/ERTracker/2026-10-16_11.04.04_log_468546657_35494.txt");
     testEdgeCases();
+    testEnemyDataFormats();
+    testUserLog("/workspaces/ERTracker/2026-11-27_22.26.00_log_1837314600_35494.txt");
     printf("ALL TESTS PASSED\n");
     return 0;
 }

@@ -196,6 +196,7 @@ private:
     bool treeMode_ = false;
     bool chestDebugWatch_ = false;
     bool lotFlagsPending_ = false;
+    bool lotParamFailureLogged_ = false;
     std::vector<BossData> bosses_;
     std::vector<ChestData> chests_;
     std::vector<RegionData> regions_;

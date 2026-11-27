@@ -372,7 +372,15 @@ void BossDataSet::resolveChestLotFlags() {
 void BossDataSet::resolveChestLotFlagsGuarded() {
     auto table = (const er::params::ParamTable *)api->paramFindTable(L"ItemLotParam");
     if (table == nullptr) {
-        return; // params not loaded yet; retried on the next update tick
+        // Log once per session: params not loaded yet (retried on the next update
+        // tick) or the regulation manager pointer was never found. Either way the
+        // user must be able to tell chest grant-flag resolution is not running.
+        if (!lotParamFailureLogged_) {
+            lotParamFailureLogged_ = true;
+            fwprintf(stderr, L"Chest lot flags: ItemLotParam table not found; "
+                             L"grant-flag resolution will retry (this repeats until the regulation loads)\n");
+        }
+        return;
     }
         // 1. Collect every row: grant flag -> granted item IDs. Rows are dense
         //    (paramId, offset) entries; iterate them all once.
