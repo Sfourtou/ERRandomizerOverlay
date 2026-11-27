@@ -90,6 +90,15 @@ const ParamTable *paramFindTable(const wchar_t *name) {
     }
     auto it = paramTypes.find(name);
     if (it == paramTypes.end()) {
+        // Log once per session: the regulation loaded but this param name is absent
+        // (game version renaming, DLC-only table, or a stale expectations list).
+        static bool lookupFailureLogged = false;
+        if (!lookupFailureLogged) {
+            lookupFailureLogged = true;
+            size_t n = paramTypes.size();
+            fwprintf(stderr, L"params: table '%ls' not found among %zu loaded tables; "
+                             L"consumer will fall back\n", name, n);
+        }
         return nullptr;
     }
     return it->second.param;
